@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import Tweaks
+import PureLayout
+
+var SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
+var SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Shake to open tweaks menu
+        if let rootViewController = window?.rootViewController {
+            window = FBTweakShakeWindow(frame: UIScreen.mainScreen().bounds)
+            window!.rootViewController = rootViewController
+        }
+            
         return true
     }
 
