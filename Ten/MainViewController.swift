@@ -27,13 +27,18 @@ class ViewController: UIViewController {
 
 import UIKit
 import QuartzCore
+import CoreLocation
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
+    
     
     var addButton:UIImageView
     var tapView:UIView
-    
     var radialMenu:RadialMenu!
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    let locationManager:CLLocationManager
     
     let num = 5
     let addButtonSize: CGFloat = 20.0
@@ -43,16 +48,23 @@ class ViewController: UIViewController {
     
     let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
     
+    @IBOutlet weak var locationLabel: UILabel!
     
     required init(coder aDecoder: NSCoder) {
         
         addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()
+        locationManager = appDelegate.locationManager
+        
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set location
+  //      var latitude = locationManager.location.coordinate.latitude
+   //     self.locationLabel.text =  "\(latitude)"
         
         let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
         
@@ -64,8 +76,6 @@ class ViewController: UIViewController {
         
         radialMenu = RadialMenu(menus: subMenus, radius: menuRadius)
         radialMenu.center = view.center
-        
-        println("\(SCREEN_WIDTH) \(SCREEN_HEIGHT)")
         radialMenu.openDelayStep = 0.05
         radialMenu.closeDelayStep = 0.00
         radialMenu.minAngle = 275
@@ -78,8 +88,18 @@ class ViewController: UIViewController {
                 self.resetSubMenu(subMenu)
             }
         }
+        
         radialMenu.onHighlight = { subMenu in
             self.highlightSubMenu(subMenu)
+            let pos = subMenu.tag % self.colors.count
+            
+            println("selected: \(pos)")
+            
+            if pos == 4 {
+                
+                let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
+                self.navigationController!.pushViewController(vc, animated: true )
+            }
             
             let color = self.colorForSubMenu(subMenu).colorWithAlphaComponent(1.0)
             

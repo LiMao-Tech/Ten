@@ -9,17 +9,18 @@
 import UIKit
 import Tweaks
 import PureLayout
+import CoreLocation
 
-var SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
-var SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
+let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
+let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
+
+let DISTANCE_FILTER : Double = 100 // meters
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     var window: UIWindow?
     
-    
-
+    var locationManager = CLLocationManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,6 +29,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let rootViewController = window?.rootViewController {
             window = FBTweakShakeWindow(frame: UIScreen.mainScreen().bounds)
             window!.rootViewController = rootViewController
+        }
+        
+        // init locationManager
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.distanceFilter = DISTANCE_FILTER
+        
+        let status = CLLocationManager.authorizationStatus()
+        switch CLLocationManager.authorizationStatus() {
+        case .AuthorizedAlways:
+            break
+            
+        case .NotDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            
+        case .AuthorizedWhenInUse, .Restricted, .Denied:
+            let alertController = UIAlertController(
+                title: "Background Location Access Disabled",
+                message: "In order to be notified about adorable kittens near you, please open this app's settings and set location access to 'Always'.",
+                preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
+                if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
+                    UIApplication.sharedApplication().openURL(url)
+                }
+            }
+            alertController.addAction(openAction)
         }
             
         return true
