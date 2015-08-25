@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
+		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C4179C591B8A4850007CCC14 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4179C571B8A4850007CCC14 /* SettingsTableViewController.swift */; };
 		C4179C5A1B8A4850007CCC14 /* SettingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4179C581B8A4850007CCC14 /* SettingsTableViewController.xib */; };
@@ -35,6 +36,7 @@
 		032746A50B016C79F1BAEF9D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		04E4A3C8E90507E375B44E7E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4179C571B8A4850007CCC14 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		C4179C581B8A4850007CCC14 /* SettingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewController.xib; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16988AE01B8CCC6000270DBA /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */,
+			);
+			name = LocationManager;
+			sourceTree = "<group>";
+		};
 		AA00EDF29C15F6580F061DCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				16988AE01B8CCC6000270DBA /* LocationManager */,
 				C4179C561B8A47BE007CCC14 /* Settings */,
 				C4CED3081B88FB010008BCF2 /* Ten */,
 				C4CED32B1B8916480008BCF2 /* RadialMenu */,
@@ -321,6 +332,7 @@
 			files = (
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
+				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
 				C4179C591B8A4850007CCC14 /* SettingsTableViewController.swift in Sources */,
 				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,

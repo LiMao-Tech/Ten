@@ -17,6 +17,7 @@ let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 let DISTANCE_FILTER : Double = 100 // meters
 
 public var AUTHORIZATION_STATUS_FLAG : Int = 0
+public var FIRST_TIME = 0
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -49,16 +50,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        // going to be something:
+        // first time use of the app, status change if accepted.
         switch status {
         
         case .AuthorizedWhenInUse:
             AUTHORIZATION_STATUS_FLAG = 1
+            locationManager.startUpdatingLocation()
             break
         case .Denied, .NotDetermined, .Restricted:
             let alertController = UIAlertController(
-                title: "Background Location Access Disabled",
-                message: "In order to be notified about adorable kittens near you, please open this app's settings and set location access to 'Always'.",
+                title: "While In Use Location Access Disabled",
+                message: "In order to be notified about nearby cute boys and girls, please enable this service while in use of Ten.",
                 preferredStyle: .Alert)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -77,6 +79,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         default:
             AUTHORIZATION_STATUS_FLAG = -1 // error
         }
+        
+        FIRST_TIME = 1
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        // much more to do
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        // error state on lcoation manager updatelocation
+        println("error on update location: \(error)")
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -102,40 +115,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // checking for location Manager's authorization status
         
-        let status = CLLocationManager.authorizationStatus()
-        println("status is: \(status.rawValue)")
-        switch status {
-        case .AuthorizedWhenInUse:
-            AUTHORIZATION_STATUS_FLAG = 1 // passed
-            break
+        if(FIRST_TIME == 0){
+            // do nothing
+            println("detected it was the first time the app runs before the determination")
+        }
+        else if(FIRST_TIME == 1){
             
-        case .NotDetermined, .Restricted, .Denied:
-            
-            println("<<<< --- in denied case --- >>>>")
-            let alertController = UIAlertController(
-                title: "Background Location Access Disabled",
-                message: "In order to be notified about adorable kittens near you, please open this app's settings and set location access to 'Always'.",
-                preferredStyle: .Alert)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            alertController.addAction(cancelAction)
-            
-            let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
-                if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
-                    UIApplication.sharedApplication().openURL(url)
+            let status = CLLocationManager.authorizationStatus()
+            println("status is: \(status.rawValue)")
+            switch status {
+            case .AuthorizedWhenInUse:
+                AUTHORIZATION_STATUS_FLAG = 1 // passed
+                locationManager.startUpdatingLocation()
+                break
+                
+            case .NotDetermined, .Restricted, .Denied:
+                
+                println("<<<< --- in denied case --- >>>>")
+                let alertController = UIAlertController(
+                    title: "While In Use Location Access Disabled",
+                    message: "In order to be notified about nearby cute boys and girls, please enable this service while in use of Ten.",
+                    preferredStyle: .Alert)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                alertController.addAction(cancelAction)
+                
+                let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
+                    if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
+                        UIApplication.sharedApplication().openURL(url)
+                    }
                 }
-            }
-            alertController.addAction(openAction)
-            
-            self.window!.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+                alertController.addAction(openAction)
+                
+                self.window!.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
 
-            // keep authorization status flag to be 0;
-            break
-            
-        default:
-            // error state
-            AUTHORIZATION_STATUS_FLAG = -1
-            break
+                // keep authorization status flag to be 0;
+                break
+                
+            default:
+                // error state
+                AUTHORIZATION_STATUS_FLAG = -1
+                break
+            }
+        }
+        else{
+            //error 
+            println("error occured on FIRST_TIME variable")
         }
         
         // end of location manager authorization

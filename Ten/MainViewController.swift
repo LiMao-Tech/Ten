@@ -48,7 +48,8 @@ class MainViewController: UIViewController {
     
     let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
     
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var latitudeLabel: UILabel!
     
     required init(coder aDecoder: NSCoder) {
         
