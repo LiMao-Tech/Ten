@@ -28,6 +28,8 @@ class ViewController: UIViewController {
 import UIKit
 import QuartzCore
 import CoreLocation
+import Foundation
+import AFNetworking
 
 class MainViewController: UIViewController {
     
@@ -38,7 +40,7 @@ class MainViewController: UIViewController {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    let locationManager:CLLocationManager
+    //let locationManager:CLLocationManager
     
     let num = 5
     let addButtonSize: CGFloat = 20.0
@@ -51,17 +53,23 @@ class MainViewController: UIViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     
+
+    
     required init(coder aDecoder: NSCoder) {
         
         addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()
-        locationManager = appDelegate.locationManager
+        sharedManager
         
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set location, status, and update lat and longt
+        let status = CLLocationManager.authorizationStatus()
+        
         
         // set location
   //      var latitude = locationManager.location.coordinate.latitude
@@ -129,6 +137,35 @@ class MainViewController: UIViewController {
         view.addSubview(tapView)
         
         view.backgroundColor = UIColor.whiteColor()
+    }
+    
+    @IBAction func updateLocation(sender: AnyObject) {
+    
+        // Stop location services, here
+        if(sharedManager.is_ready == 1){
+            
+            //assign the lat and lon
+            let lat = sharedManager.currentLocation!.coordinate.latitude
+            let lon = sharedManager.currentLocation!.coordinate.longitude
+            longitudeLabel.text = lon.description
+            latitudeLabel.text = lat.description
+            
+            // upload using POST: 
+            // TODO: change the url to what yumen will be provided
+            let manager = AFHTTPRequestOperationManager()
+            var parameters = ["user":"001","longtitude":lon.description,"latitude":lat.description]
+            var postURL = "http://something.com/post"
+            
+            manager.POST( postURL,
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                println("JSON: " + responseObject.description)
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+            })
+        }
+        
     }
     
     // FIXME: Consider moving this to the radial menu and making standard interaction types  that are configurable

@@ -16,14 +16,11 @@ let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 
 let DISTANCE_FILTER : Double = 100 // meters
 
-public var AUTHORIZATION_STATUS_FLAG : Int = 0
-public var FIRST_TIME = 0
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     var window: UIWindow?
     
-    var locationManager = CLLocationManager()
+    //var locationManager = SharedLocationManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -34,63 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             window!.rootViewController = rootViewController
         }
         
-        // init locationManager
         if CLLocationManager.authorizationStatus() == .NotDetermined {
-            locationManager.requestWhenInUseAuthorization()
+            sharedManager.locationManager!.requestWhenInUseAuthorization()
         }
-        
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.distanceFilter = DISTANCE_FILTER
-        
-        
-        
-            
+          
         return true
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        // first time use of the app, status change if accepted.
-        switch status {
-        
-        case .AuthorizedWhenInUse:
-            AUTHORIZATION_STATUS_FLAG = 1
-            locationManager.startUpdatingLocation()
-            break
-        case .Denied, .NotDetermined, .Restricted:
-            let alertController = UIAlertController(
-                title: "While In Use Location Access Disabled",
-                message: "In order to be notified about nearby cute boys and girls, please enable this service while in use of Ten.",
-                preferredStyle: .Alert)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            alertController.addAction(cancelAction)
-            
-            let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
-                if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
-                    UIApplication.sharedApplication().openURL(url)
-                }
-            }
-            alertController.addAction(openAction)
-            
-            self.window!.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
-            
-            break
-        default:
-            AUTHORIZATION_STATUS_FLAG = -1 // error
-        }
-        
-        FIRST_TIME = 1
-    }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        // much more to do
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        // error state on lcoation manager updatelocation
-        println("error on update location: \(error)")
-    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -115,21 +62,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // checking for location Manager's authorization status
         
-        if(FIRST_TIME == 0){
+        if(sharedManager.FIRST_TIME == 0){
             // do nothing
+            sharedManager.FIRST_TIME = 1
             println("detected it was the first time the app runs before the determination")
         }
-        else if(FIRST_TIME == 1){
+        else if(sharedManager.FIRST_TIME == 1){
             
             let status = CLLocationManager.authorizationStatus()
             println("status is: \(status.rawValue)")
             switch status {
             case .AuthorizedWhenInUse:
-                AUTHORIZATION_STATUS_FLAG = 1 // passed
-                locationManager.startUpdatingLocation()
+                //AUTHORIZATION_STATUS_FLAG = 1 // passed
+                //sharedManager.locationManager!.startUpdatingLocation()
                 break
                 
             case .NotDetermined, .Restricted, .Denied:
+                
+                println("first time veriable is: \(sharedManager.FIRST_TIME)")
                 
                 println("<<<< --- in denied case --- >>>>")
                 let alertController = UIAlertController(
@@ -154,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 
             default:
                 // error state
-                AUTHORIZATION_STATUS_FLAG = -1
+                //AUTHORIZATION_STATUS_FLAG = -1
                 break
             }
         }

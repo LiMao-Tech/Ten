@@ -19,6 +19,9 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager?
     var currentLocation: CLLocation?
+    var authorization_status: NSInteger? // 0 == non-determinate, 1 == all good, -1 == error
+    var FIRST_TIME: NSInteger?
+    var is_ready : NSInteger?
     
     override init(){
     
@@ -27,23 +30,30 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager?.distanceFilter = 200
         self.locationManager?.delegate = self
+        self.authorization_status = 0; // not determinated
+        self.FIRST_TIME = 0;
+        self.is_ready = 0;
+        
     
     }
     
     func startUpdatingLocation() {
         println("Starting Location Updates")
         self.locationManager?.startUpdatingLocation()
+        
     }
     
     func stopUpdatingLocation() {
         println("Stop Location Updates")
         self.locationManager?.stopUpdatingLocation()
+        is_ready = 1
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
         var location: AnyObject? = (locations as NSArray).lastObject
         self.currentLocation = location as? CLLocation
+        println("location is updated ...");
         
         //TODO: assign the location into the coordinate 2D
         
@@ -59,5 +69,59 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
         let lat = currentLocation.coordinate.latitude
         let lon = currentLocation.coordinate.longitude
     }
+    
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        // first time use of the app, status change if accepted.
+        switch status {
+            
+        case .AuthorizedWhenInUse:
+            authorization_status = 1
+            startUpdatingLocation()
+            NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("stopUpdatingLocation"), userInfo: nil, repeats: false)
+            break
+        case .Denied, .NotDetermined, .Restricted:
+            break
+        default:
+            authorization_status = -1 // error
+        }
+        
+        //FIRST_TIME = 1
+    }
+    /*
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    // first time use of the app, status change if accepted.
+    switch status {
+    
+    case .AuthorizedWhenInUse:
+    authorization_status = 1
+    locationManager.startUpdatingLocation()
+    break
+    case .Denied, .NotDetermined, .Restricted:
+    let alertController = UIAlertController(
+    title: "While In Use Location Access Disabled",
+    message: "In order to be notified about nearby cute boys and girls, please enable this service while in use of Ten.",
+    preferredStyle: .Alert)
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+    alertController.addAction(cancelAction)
+    
+    let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
+    if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
+    UIApplication.sharedApplication().openURL(url)
+    }
+    }
+    alertController.addAction(openAction)
+    
+    self.window!.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+    
+    break
+    default:
+    AUTHORIZATION_STATUS_FLAG = -1 // error
+    }
+    
+    FIRST_TIME = 1
+    }
+    */
    
 }
+let sharedManager = SharedLocationManager()

@@ -3,5 +3,6 @@ pod 'Tweaks'
 pod 'POP+MCAnimate'
 pod 'UIColor-CrossFade'
 pod 'PureLayout'
+pod 'AFNetworking'
 
 use_frameworks!
