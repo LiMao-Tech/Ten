@@ -38,8 +38,8 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
     @IBInspectable public var openDelayStep = 0.05
     @IBInspectable public var closeDelayStep = 0.035
     @IBInspectable public var activatedDelay = 0.0
-    @IBInspectable public var minAngle = 180
-    @IBInspectable public var maxAngle = 540
+    @IBInspectable public var minAngle = 185
+    @IBInspectable public var maxAngle = 355
     @IBInspectable public var allowMultipleHighlights = false
     
     // get's set automatically on initialized to a percentage of radius
@@ -68,7 +68,8 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
     public let backgroundView = UIView()
     
     // FIXME: Make private when Swift adds access controls
-    public var subMenus: [RadialSubMenu]
+    public var outerSubMenus: [RadialSubMenu]
+    public var innerSubMenus: [RadialSubMenu]
     
     var numOpeningSubMenus = 0
     var numOpenedSubMenus = 0
@@ -105,12 +106,16 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
     // MARK: Init
 
     required public init(coder decoder: NSCoder) {
-        subMenus = []
+        outerSubMenus = []
+        innerSubMenus = []
+        
         super.init(coder: decoder)
     }
     
     override public init(frame: CGRect) {
-        subMenus = []
+        outerSubMenus = []
+        innerSubMenus = []
+        
         super.init(frame: frame)
     }
     
@@ -120,10 +125,10 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
     
     convenience public init(menus: [RadialSubMenu], radius: CGFloat) {
         self.init(frame: CGRect(x: 0, y: 0, width: radius*2, height: radius*2))
-        self.subMenus = menus
+        self.outerSubMenus = menus
         self.radius = radius
         
-        for (i, menu) in enumerate(subMenus) {
+        for (i, menu) in enumerate(outerSubMenus) {
             menu.delegate = self
             menu.tag = i
             self.addSubview(menu)
@@ -158,14 +163,14 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
         numOpeningSubMenus = 0
         numHighlightedSubMenus = 0
         
-        for subMenu in subMenus {
+        for subMenu in outerSubMenus {
             subMenu.removeAllAnimations()
         }
     }
     
     public func openAtPosition(newPosition: CGPoint) {
         
-        let max = subMenus.count
+        let max = outerSubMenus.count
         
         if max == 0 {
             return println("No submenus to open")
@@ -184,7 +189,7 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
         
         let relPos = convertPoint(position, fromView:superview)
         
-        for (i, subMenu) in enumerate(subMenus) {
+        for (i, subMenu) in enumerate(outerSubMenus) {
             let subMenuPos = getPositionForSubMenu(subMenu)
             let delay = openDelayStep * Double(i)
             numOpeningSubMenus++
@@ -194,7 +199,7 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
     
     func getAngleForSubMenu(subMenu: RadialSubMenu) -> Double {
         let fullCircle = isFullCircle(minAngle, maxAngle)
-        let max = fullCircle ? subMenus.count : subMenus.count - 1
+        let max = fullCircle ? outerSubMenus.count : outerSubMenus.count - 1
         return getAngleForIndex(subMenu.tag, max, Double(minAngle), Double(maxAngle))
     }
     
@@ -222,12 +227,12 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
         
         state = .Closing
         
-        for (i, subMenu) in enumerate(subMenus) {
+        for (i, subMenu) in enumerate(outerSubMenus) {
             let delay = closeDelayStep * Double(i)
             
             // FIXME: Why can't I use shortcut enum syntax .Highlighted here?
             if subMenu.state == RadialSubMenu.State.Highlighted {
-                let closeDelay = (closeDelayStep * Double(subMenus.count)) + activatedDelay
+                let closeDelay = (closeDelayStep * Double(outerSubMenus.count)) + activatedDelay
                 subMenu.activate(closeDelay)
             } else {
                 subMenu.close(delay)
@@ -254,7 +259,7 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
             highlightDistance = highlightDistance * highlightScale
         }
         
-        for subMenu in subMenus {
+        for subMenu in outerSubMenus {
             
             let distance = distanceBetweenPoints(subMenu.center, relPos)
             if distanceFromCenter >= Double(minHighlightDistance) && distance <= Double(highlightDistance) {
@@ -326,7 +331,7 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
     func growSubMenus() {
         
         // FIXME: Refactor
-        for subMenu in subMenus {
+        for subMenu in outerSubMenus {
             let subMenuPos = getExpandedPositionForSubMenu(subMenu)
             moveSubMenuToPosition(subMenu, pos: subMenuPos)
         }
@@ -335,7 +340,7 @@ public class RadialMenu: UIView, RadialSubMenuDelegate {
     func shrinkSubMenus() {
         
         // FIXME: Refactor
-        for subMenu in subMenus {
+        for subMenu in outerSubMenus {
             let subMenuPos = getPositionForSubMenu(subMenu)
             moveSubMenuToPosition(subMenu, pos: subMenuPos)
         }

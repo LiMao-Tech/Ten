@@ -6,25 +6,6 @@
 //  Copyright (c) 2015 LiMao Tech. All rights reserved.
 //
 
-/*
-import UIKit
-
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-}
-*/
-
 import UIKit
 import QuartzCore
 import CoreLocation
@@ -40,10 +21,10 @@ class MainViewController: UIViewController {
     
     let locationManager:CLLocationManager
     
-    let num = 5
-    let addButtonSize: CGFloat = 20.0
-    let menuRadius: CGFloat = 125.0
-    let subMenuRadius: CGFloat = 15.0
+    let num = 8
+    let addButtonSize: CGFloat = 30.0
+    let menuRadius: CGFloat = 150.0
+    let subMenuRadius: CGFloat = 20.0
     var didSetupConstraints = false
     
     let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
@@ -78,13 +59,11 @@ class MainViewController: UIViewController {
         radialMenu.center = view.center
         radialMenu.openDelayStep = 0.05
         radialMenu.closeDelayStep = 0.00
-        radialMenu.minAngle = 275
-        radialMenu.maxAngle = 355
         radialMenu.activatedDelay = 0.5
         radialMenu.backgroundView.alpha = 0.0
         
         radialMenu.onClose = {
-            for subMenu in self.radialMenu.subMenus {
+            for subMenu in self.radialMenu.outerSubMenus {
                 self.resetSubMenu(subMenu)
             }
         }
@@ -151,11 +130,11 @@ class MainViewController: UIViewController {
             
             // FIXME: Any way to simplify this?
             addButton.autoAlignAxisToSuperviewAxis(.Baseline)
-            //addButton.autoAlignAxisToSuperviewAxis(.Vertical)
+            addButton.autoAlignAxisToSuperviewAxis(.Vertical)
             addButton.autoSetDimensionsToSize(CGSize(width: addButtonSize, height: addButtonSize))
             
             tapView.autoAlignAxisToSuperviewAxis(.Baseline)
-            //tapView.autoAlignAxisToSuperviewAxis(.Vertical)
+            tapView.autoAlignAxisToSuperviewAxis(.Vertical)
             tapView.autoSetDimensionsToSize(CGSize(width: addButtonSize*2, height: addButtonSize*2))
 
             didSetupConstraints = true
