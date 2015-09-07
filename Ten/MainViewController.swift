@@ -228,6 +228,7 @@ class MainViewController: UIViewController {
             tapView.autoSetDimensionsToSize(CGSize(width: addButtonSize*2, height: addButtonSize*2))
             
             didSetupConstraints = true
+            
         }
     }
     
