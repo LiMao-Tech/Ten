@@ -24,7 +24,7 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
     var is_ready : NSInteger?
     
     override init(){
-    
+        
         super.init()
         self.locationManager = CLLocationManager()
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
@@ -34,7 +34,7 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
         self.FIRST_TIME = 0;
         self.is_ready = 0;
         
-    
+        
     }
     
     func startUpdatingLocation() {
@@ -47,6 +47,7 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
         println("Stop Location Updates")
         self.locationManager?.stopUpdatingLocation()
         is_ready = 1
+        NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -122,6 +123,6 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
     FIRST_TIME = 1
     }
     */
-   
+    
 }
 let sharedManager = SharedLocationManager()

@@ -11,15 +11,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+override func viewDidLoad() {
+super.viewDidLoad()
+// Do any additional setup after loading the view, typically from a nib.
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+override func didReceiveMemoryWarning() {
+super.didReceiveMemoryWarning()
+// Dispose of any resources that can be recreated.
+}
 
 
 }
@@ -30,6 +30,8 @@ import QuartzCore
 import CoreLocation
 import Foundation
 import AFNetworking
+
+let mySpecialNotificationKey = "www.code-desire.com";
 
 class MainViewController: UIViewController {
     
@@ -53,7 +55,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     
-
+    
     
     required init(coder aDecoder: NSCoder) {
         
@@ -72,8 +74,8 @@ class MainViewController: UIViewController {
         
         
         // set location
-  //      var latitude = locationManager.location.coordinate.latitude
-   //     self.locationLabel.text =  "\(latitude)"
+        //      var latitude = locationManager.location.coordinate.latitude
+        //     self.locationLabel.text =  "\(latitude)"
         
         let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
         
@@ -137,10 +139,28 @@ class MainViewController: UIViewController {
         view.addSubview(tapView)
         
         view.backgroundColor = UIColor.whiteColor()
+        
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "locationChanged:",
+            name: mySpecialNotificationKey,
+            object: nil)
     }
     
     @IBAction func updateLocation(sender: AnyObject) {
+        
+        //nothing
+        if(sharedManager.authorization_status == 1){
+            sharedManager.startUpdatingLocation()
+            NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("sharedManagerStopUpdatingLocation"), userInfo: nil, repeats: false)
+        }
+    }
     
+    @objc func locationChanged(notification: NSNotification){
+        //do stuff
+        println("Location Changed...")
         // Stop location services, here
         if(sharedManager.is_ready == 1){
             
@@ -150,21 +170,32 @@ class MainViewController: UIViewController {
             longitudeLabel.text = lon.description
             latitudeLabel.text = lat.description
             
-            // upload using POST: 
-            // TODO: change the url to what yumen will be provided
-            let manager = AFHTTPRequestOperationManager()
-            var parameters = ["user":"001","longtitude":lon.description,"latitude":lat.description]
-            var postURL = "http://something.com/post"
-            
-            manager.POST( postURL,
+            //self.postLocationToServer(lon.description, lat: lat.description)
+        }
+        
+    }
+    
+    func sharedManagerStopUpdatingLocation(){
+        
+        sharedManager.stopUpdatingLocation()
+    }
+    
+    func postLocationToServer(lon:NSString, lat: NSString){
+        
+        // upload using POST:
+        // TODO: change the url to what yumen will be provided
+        let manager = AFHTTPRequestOperationManager()
+        var parameters = ["user":"001","longtitude":lon,"latitude":lat]
+        var postURL = "http://something.com/post"
+        
+        manager.POST( postURL,
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 println("JSON: " + responseObject.description)
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("Error: " + error.localizedDescription)
-            })
-        }
+        })
         
     }
     
@@ -195,7 +226,7 @@ class MainViewController: UIViewController {
             tapView.autoAlignAxisToSuperviewAxis(.Baseline)
             //tapView.autoAlignAxisToSuperviewAxis(.Vertical)
             tapView.autoSetDimensionsToSize(CGSize(width: addButtonSize*2, height: addButtonSize*2))
-
+            
             didSetupConstraints = true
         }
     }
@@ -227,6 +258,9 @@ class MainViewController: UIViewController {
         let color = colorForSubMenu(subMenu)
         subMenu.backgroundColor = color.colorWithAlphaComponent(0.75)
     }
+    
+    
+    
 }
 
 
