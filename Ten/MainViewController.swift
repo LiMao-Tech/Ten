@@ -106,6 +106,8 @@ class MainViewController: UIViewController {
             
             println("selected: \(pos)")
             
+            //TODO: add more pos to different pages
+            
             if pos == 4 {
                 
                 let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)

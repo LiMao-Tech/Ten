@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		164EA7221BA61B2700446691 /* UserLevelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7201BA61B2700446691 /* UserLevelTableViewController.swift */; };
+		164EA7231BA61B2700446691 /* UserLevelTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA7211BA61B2700446691 /* UserLevelTableViewController.xib */; };
+		164EA7261BA61B4700446691 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7241BA61B4700446691 /* ProfileTableViewController.swift */; };
+		164EA7271BA61B4700446691 /* ProfileTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA7251BA61B4700446691 /* ProfileTableViewController.xib */; };
+		164EA72A1BA61B6200446691 /* UserRandomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7281BA61B6200446691 /* UserRandomTableViewController.swift */; };
+		164EA72B1BA61B6200446691 /* UserRandomTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA7291BA61B6200446691 /* UserRandomTableViewController.xib */; };
+		164EA72E1BA61B7800446691 /* UserSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA72C1BA61B7800446691 /* UserSettingTableViewController.swift */; };
+		164EA72F1BA61B7800446691 /* UserSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA72D1BA61B7800446691 /* UserSettingTableViewController.xib */; };
+		164EA7321BA61B8B00446691 /* UserChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7301BA61B8B00446691 /* UserChatTableViewController.swift */; };
+		164EA7331BA61B8B00446691 /* UserChatTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA7311BA61B8B00446691 /* UserChatTableViewController.xib */; };
+		164EA7361BA61B9D00446691 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7341BA61B9D00446691 /* NotificationTableViewController.swift */; };
+		164EA7371BA61B9D00446691 /* NotificationTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA7351BA61B9D00446691 /* NotificationTableViewController.xib */; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -35,6 +47,18 @@
 /* Begin PBXFileReference section */
 		032746A50B016C79F1BAEF9D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		04E4A3C8E90507E375B44E7E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		164EA7201BA61B2700446691 /* UserLevelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLevelTableViewController.swift; sourceTree = "<group>"; };
+		164EA7211BA61B2700446691 /* UserLevelTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserLevelTableViewController.xib; sourceTree = "<group>"; };
+		164EA7241BA61B4700446691 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		164EA7251BA61B4700446691 /* ProfileTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewController.xib; sourceTree = "<group>"; };
+		164EA7281BA61B6200446691 /* UserRandomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRandomTableViewController.swift; sourceTree = "<group>"; };
+		164EA7291BA61B6200446691 /* UserRandomTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserRandomTableViewController.xib; sourceTree = "<group>"; };
+		164EA72C1BA61B7800446691 /* UserSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingTableViewController.swift; sourceTree = "<group>"; };
+		164EA72D1BA61B7800446691 /* UserSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSettingTableViewController.xib; sourceTree = "<group>"; };
+		164EA7301BA61B8B00446691 /* UserChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserChatTableViewController.swift; sourceTree = "<group>"; };
+		164EA7311BA61B8B00446691 /* UserChatTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserChatTableViewController.xib; sourceTree = "<group>"; };
+		164EA7341BA61B9D00446691 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
+		164EA7351BA61B9D00446691 /* NotificationTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewController.xib; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +97,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		164EA7161BA618B900446691 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				164EA7241BA61B4700446691 /* ProfileTableViewController.swift */,
+				164EA7251BA61B4700446691 /* ProfileTableViewController.xib */,
+			);
+			name = UserProfile;
+			sourceTree = "<group>";
+		};
+		164EA7171BA618DE00446691 /* UserLevel */ = {
+			isa = PBXGroup;
+			children = (
+				164EA7201BA61B2700446691 /* UserLevelTableViewController.swift */,
+				164EA7211BA61B2700446691 /* UserLevelTableViewController.xib */,
+			);
+			name = UserLevel;
+			sourceTree = "<group>";
+		};
+		164EA7181BA618F900446691 /* UserRandom */ = {
+			isa = PBXGroup;
+			children = (
+				164EA7281BA61B6200446691 /* UserRandomTableViewController.swift */,
+				164EA7291BA61B6200446691 /* UserRandomTableViewController.xib */,
+			);
+			name = UserRandom;
+			sourceTree = "<group>";
+		};
+		164EA7191BA6190F00446691 /* UserSetting */ = {
+			isa = PBXGroup;
+			children = (
+				164EA72C1BA61B7800446691 /* UserSettingTableViewController.swift */,
+				164EA72D1BA61B7800446691 /* UserSettingTableViewController.xib */,
+			);
+			name = UserSetting;
+			sourceTree = "<group>";
+		};
+		164EA71A1BA6192100446691 /* UserChat */ = {
+			isa = PBXGroup;
+			children = (
+				164EA7301BA61B8B00446691 /* UserChatTableViewController.swift */,
+				164EA7311BA61B8B00446691 /* UserChatTableViewController.xib */,
+			);
+			name = UserChat;
+			sourceTree = "<group>";
+		};
+		164EA71B1BA6192C00446691 /* UserNotification */ = {
+			isa = PBXGroup;
+			children = (
+				164EA7341BA61B9D00446691 /* NotificationTableViewController.swift */,
+				164EA7351BA61B9D00446691 /* NotificationTableViewController.xib */,
+			);
+			name = UserNotification;
+			sourceTree = "<group>";
+		};
 		16988AE01B8CCC6000270DBA /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +179,12 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				164EA71B1BA6192C00446691 /* UserNotification */,
+				164EA71A1BA6192100446691 /* UserChat */,
+				164EA7191BA6190F00446691 /* UserSetting */,
+				164EA7181BA618F900446691 /* UserRandom */,
+				164EA7171BA618DE00446691 /* UserLevel */,
+				164EA7161BA618B900446691 /* UserProfile */,
 				16988AE01B8CCC6000270DBA /* LocationManager */,
 				C4179C561B8A47BE007CCC14 /* Settings */,
 				C4CED3081B88FB010008BCF2 /* Ten */,
@@ -261,8 +345,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164EA7231BA61B2700446691 /* UserLevelTableViewController.xib in Resources */,
+				164EA72B1BA61B6200446691 /* UserRandomTableViewController.xib in Resources */,
 				C4179C5A1B8A4850007CCC14 /* SettingsTableViewController.xib in Resources */,
+				164EA72F1BA61B7800446691 /* UserSettingTableViewController.xib in Resources */,
+				164EA7331BA61B8B00446691 /* UserChatTableViewController.xib in Resources */,
 				16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */,
+				164EA7371BA61B9D00446691 /* NotificationTableViewController.xib in Resources */,
+				164EA7271BA61B4700446691 /* ProfileTableViewController.xib in Resources */,
 				C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */,
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
 			);
@@ -330,12 +420,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164EA7361BA61B9D00446691 /* NotificationTableViewController.swift in Sources */,
+				164EA7261BA61B4700446691 /* ProfileTableViewController.swift in Sources */,
+				164EA72A1BA61B6200446691 /* UserRandomTableViewController.swift in Sources */,
+				164EA7321BA61B8B00446691 /* UserChatTableViewController.swift in Sources */,
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
 				C4179C591B8A4850007CCC14 /* SettingsTableViewController.swift in Sources */,
 				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,
+				164EA7221BA61B2700446691 /* UserLevelTableViewController.swift in Sources */,
+				164EA72E1BA61B7800446691 /* UserSettingTableViewController.swift in Sources */,
 				C4CED32F1B8916480008BCF2 /* CircleHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
