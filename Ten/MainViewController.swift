@@ -206,7 +206,7 @@ class MainViewController: UIViewController {
             longitudeLabel.text = lon.description
             latitudeLabel.text = lat.description
             
-            //self.postLocationToServer(lon.description, lat: lat.description)
+            self.postLocationToServer(lon.description, lat: lat.description)
         }
         
     }
@@ -219,18 +219,25 @@ class MainViewController: UIViewController {
     func postLocationToServer(lon:NSString, lat: NSString){
         
         // upload using POST:
-        // TODO: change the url to what yumen will be provided
+        // TODO: error on AFNetworking connect with background
+        
         let manager = AFHTTPRequestOperationManager()
-        var parameters = ["user":"001","longtitude":lon,"latitude":lat]
-        var postURL = "http://something.com/post"
+        var parameters = ["id":"1","latitude":lon,"longitude":lat]
+        var postURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
+        //manager.requestSerializer = AFHTTPRequestSerializer()
+        manager.responseSerializer = AFHTTPResponseSerializer()
         
         manager.POST( postURL,
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 println("JSON: " + responseObject.description)
+                
+                
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("Error: " + error.localizedDescription)
+                let data = error.userInfo![AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
+                println(NSString(data: data, encoding: NSUTF8StringEncoding))
         })
         
     }

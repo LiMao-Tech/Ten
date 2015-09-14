@@ -10,6 +10,7 @@ import UIKit
 import Tweaks
 import PureLayout
 import CoreLocation
+import AFNetworkActivityLogger
 
 let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
 let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
@@ -24,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //AFNetworkActivityLogger.sharedLogger().level = AFHTTPRequestLoggerLevel.AFLoggerLevelDebug
+        //AFNetworkActivityLogger.sharedLogger().startLogging()
         
         // Shake to open tweaks menu
         if let rootViewController = window?.rootViewController {

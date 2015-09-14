@@ -4,5 +4,6 @@ pod 'POP+MCAnimate'
 pod 'UIColor-CrossFade'
 pod 'PureLayout'
 pod 'AFNetworking'
+pod 'AFNetworkActivityLogger'
 
 use_frameworks!
