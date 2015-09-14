@@ -224,14 +224,17 @@ class MainViewController: UIViewController {
         let manager = AFHTTPRequestOperationManager()
         var parameters = ["id":"1","latitude":lon,"longitude":lat]
         var postURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
-        //manager.requestSerializer = AFHTTPRequestSerializer()
+        manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFHTTPResponseSerializer()
+        //manager.responseSerializer.acceptableContentTypes =
         
         manager.POST( postURL,
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                println("JSON: " + responseObject.description)
-                
+                println("the respond object is: ")
+                println( operation.responseData )
+                var str = NSString(data: responseObject! as! NSData, encoding: NSUTF8StringEncoding)
+                println(str);
                 
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
