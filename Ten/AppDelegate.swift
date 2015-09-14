@@ -10,7 +10,7 @@ import UIKit
 import Tweaks
 import PureLayout
 import CoreLocation
-import AFNetworkActivityLogger
+//import AFNetworkActivityLogger
 
 let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
 let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
