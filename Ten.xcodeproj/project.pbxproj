@@ -19,6 +19,8 @@
 		164EA7331BA61B8B00446691 /* UserChatTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA7311BA61B8B00446691 /* UserChatTableViewController.xib */; };
 		164EA7361BA61B9D00446691 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7341BA61B9D00446691 /* NotificationTableViewController.swift */; };
 		164EA7371BA61B9D00446691 /* NotificationTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA7351BA61B9D00446691 /* NotificationTableViewController.xib */; };
+		164EA73D1BA64BB600446691 /* RadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA73B1BA64BB600446691 /* RadarViewController.swift */; };
+		164EA73E1BA64BB600446691 /* RadarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164EA73C1BA64BB600446691 /* RadarViewController.xib */; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -59,6 +61,8 @@
 		164EA7311BA61B8B00446691 /* UserChatTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserChatTableViewController.xib; sourceTree = "<group>"; };
 		164EA7341BA61B9D00446691 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		164EA7351BA61B9D00446691 /* NotificationTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewController.xib; sourceTree = "<group>"; };
+		164EA73B1BA64BB600446691 /* RadarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarViewController.swift; sourceTree = "<group>"; };
+		164EA73C1BA64BB600446691 /* RadarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarViewController.xib; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +155,15 @@
 			name = UserNotification;
 			sourceTree = "<group>";
 		};
+		164EA7381BA64B1C00446691 /* Radar */ = {
+			isa = PBXGroup;
+			children = (
+				164EA73B1BA64BB600446691 /* RadarViewController.swift */,
+				164EA73C1BA64BB600446691 /* RadarViewController.xib */,
+			);
+			name = Radar;
+			sourceTree = "<group>";
+		};
 		16988AE01B8CCC6000270DBA /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +192,7 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				164EA7381BA64B1C00446691 /* Radar */,
 				164EA71B1BA6192C00446691 /* UserNotification */,
 				164EA71A1BA6192100446691 /* UserChat */,
 				164EA7191BA6190F00446691 /* UserSetting */,
@@ -345,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164EA73E1BA64BB600446691 /* RadarViewController.xib in Resources */,
 				164EA7231BA61B2700446691 /* UserLevelTableViewController.xib in Resources */,
 				164EA72B1BA61B6200446691 /* UserRandomTableViewController.xib in Resources */,
 				C4179C5A1B8A4850007CCC14 /* SettingsTableViewController.xib in Resources */,
@@ -427,6 +442,7 @@
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
+				164EA73D1BA64BB600446691 /* RadarViewController.swift in Sources */,
 				C4179C591B8A4850007CCC14 /* SettingsTableViewController.swift in Sources */,
 				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,

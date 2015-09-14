@@ -102,22 +102,55 @@ class MainViewController: UIViewController {
         
         radialMenu.onHighlight = { subMenu in
             self.highlightSubMenu(subMenu)
+            
+            
+            let color = self.colorForSubMenu(subMenu).colorWithAlphaComponent(1.0)
+            
+            // TODO: Add nice color transition
+            self.view.backgroundColor = color
+        }
+        
+        radialMenu.onActivate = { subMenu in
+            // did select subMenu
             let pos = subMenu.tag % self.colors.count
             
             println("selected: \(pos)")
             
             //TODO: add more pos to different pages
             
-            if pos == 4 {
+            if pos == 0 {
+                
+                let vc = UITableViewController(nibName: "ProfileTableViewController", bundle: nil)
+                self.navigationController!.pushViewController(vc, animated: true)
+                
+            }
+                
+            else if pos == 1 {
+                
+                let vc = UIViewController(nibName: "RadarViewController", bundle: nil)
+                self.navigationController!.pushViewController(vc, animated: true)
+                
+            }
+                
+            else if pos == 2 {
+                
+                let vc = UITableViewController(nibName: "UserChatTableViewController", bundle: nil)
+                self.navigationController!.pushViewController(vc, animated: true)
+                
+            }
+                
+            else if pos == 3 {
+                
+                let vc = UITableViewController(nibName: "NotificationTableViewController", bundle: nil)
+                self.navigationController!.pushViewController(vc, animated: true)
+                
+            }
+                
+            else if pos == 4 {
                 
                 let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
                 self.navigationController!.pushViewController(vc, animated: true )
             }
-            
-            let color = self.colorForSubMenu(subMenu).colorWithAlphaComponent(1.0)
-            
-            // TODO: Add nice color transition
-            self.view.backgroundColor = color
         }
         
         radialMenu.onUnhighlight = { subMenu in
@@ -144,6 +177,7 @@ class MainViewController: UIViewController {
         
         
         
+        // add observer for location
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "locationChanged:",
