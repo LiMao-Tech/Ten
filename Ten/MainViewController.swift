@@ -35,14 +35,12 @@ let mySpecialNotificationKey = "www.code-desire.com";
 
 class MainViewController: UIViewController {
     
-    
+    /* variables for radial menu */
     var addButton:UIImageView
     var tapView:UIView
     var radialMenu:RadialMenu!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
-    //let locationManager:CLLocationManager
     
     let num = 5
     let addButtonSize: CGFloat = 20.0
@@ -51,6 +49,8 @@ class MainViewController: UIViewController {
     var didSetupConstraints = false
     
     let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
+    /* end of variables for radial menu */
+    
     
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -77,9 +77,12 @@ class MainViewController: UIViewController {
         //      var latitude = locationManager.location.coordinate.latitude
         //     self.locationLabel.text =  "\(latitude)"
         
+        
+        
+        /* Setup radial menu */
+        
         let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
         
-        // Setup radial menu
         var subMenus: [RadialSubMenu] = []
         for i in 0..<num {
             subMenus.append(self.createSubMenu(i))
@@ -149,7 +152,7 @@ class MainViewController: UIViewController {
             else if pos == 4 {
                 
                 let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true )
+                self.navigationController!.pushViewController(vc, animated: true)
             }
         }
         
@@ -172,6 +175,8 @@ class MainViewController: UIViewController {
         tapView.center = view.center
         tapView.addGestureRecognizer(longPress)
         view.addSubview(tapView)
+        
+        /* end of radial menu */
         
         view.backgroundColor = UIColor.whiteColor()
         
