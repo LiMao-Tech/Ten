@@ -10,6 +10,7 @@ import UIKit
 import Tweaks
 import PureLayout
 import CoreLocation
+import Foundation
 //import AFNetworkActivityLogger
 
 let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
@@ -38,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             sharedManager.locationManager!.requestWhenInUseAuthorization()
         }
+        
+               
           
         return true
     }

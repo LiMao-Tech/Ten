@@ -363,6 +363,11 @@ class RadarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func findUsers(sender: AnyObject) {
+        
+        
+        
+    }
 
     // FIXME: Consider moving this to the radial menu and making standard interaction types  that are configurable
     func pressedButton(gesture:UIGestureRecognizer) {

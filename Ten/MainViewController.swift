@@ -124,6 +124,7 @@ class MainViewController: UIViewController {
             if pos == 0 {
                 
                 let vc = UITableViewController(nibName: "ProfileTableViewController", bundle: nil)
+                
                 self.navigationController!.pushViewController(vc, animated: true)
                 
             }
@@ -131,6 +132,7 @@ class MainViewController: UIViewController {
             else if pos == 1 {
                 
                 let vc = UIViewController(nibName: "RadarViewController", bundle: nil)
+                
                 self.navigationController!.pushViewController(vc, animated: true)
                 
             }
@@ -138,6 +140,7 @@ class MainViewController: UIViewController {
             else if pos == 2 {
                 
                 let vc = UITableViewController(nibName: "UserChatTableViewController", bundle: nil)
+                
                 self.navigationController!.pushViewController(vc, animated: true)
                 
             }
@@ -145,6 +148,7 @@ class MainViewController: UIViewController {
             else if pos == 3 {
                 
                 let vc = UITableViewController(nibName: "NotificationTableViewController", bundle: nil)
+                
                 self.navigationController!.pushViewController(vc, animated: true)
                 
             }
@@ -152,6 +156,7 @@ class MainViewController: UIViewController {
             else if pos == 4 {
                 
                 let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
+                
                 self.navigationController!.pushViewController(vc, animated: true)
             }
         }
