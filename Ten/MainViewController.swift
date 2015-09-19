@@ -135,6 +135,7 @@ class MainViewController: UIViewController {
                 let vc = RadarViewController(nibName: "RadarViewController", bundle: nil)
                 println("after init")
                 self.navigationController!.presentViewController(vc, animated: true, completion: nil)
+                //https://www.youtube.com/watch?v=tfPZ93yvAko
                 
                 
             }
