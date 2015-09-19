@@ -131,9 +131,11 @@ class MainViewController: UIViewController {
                 
             else if pos == 1 {
                 
-                let vc = UIViewController(nibName: "RadarViewController", bundle: nil)
+                //let vc = UIViewController(nibName: "RadarViewController", bundle: nil)
+                let vc = RadarViewController(nibName: "RadarViewController", bundle: nil)
+                println("after init")
+                self.navigationController!.presentViewController(vc, animated: true, completion: nil)
                 
-                self.navigationController!.pushViewController(vc, animated: true)
                 
             }
                 

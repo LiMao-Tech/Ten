@@ -35,121 +35,31 @@ class RadarViewController: UIViewController {
         
         addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()
-        sharedManager
+        //sharedManager
         
         super.init(coder: aDecoder)
+        
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         
-        println("in rader view controller now")
+        addButton = UIImageView(image: UIImage(named: "plus"))
+        tapView = UIView()
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         /* Setup radial menu */
+        println("in rader view controller now")
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
         
-        var subMenus: [RadialSubMenu] = []
-        for i in 0..<num {
-            subMenus.append(self.createSubMenu(i))
-        }
-        
-        radialMenu = RadialMenu(menus: subMenus, radius: menuRadius)
-        radialMenu.center = view.center
-        radialMenu.openDelayStep = 0.05
-        radialMenu.closeDelayStep = 0.00
-        radialMenu.minAngle = 275
-        radialMenu.maxAngle = 355
-        radialMenu.activatedDelay = 0.5
-        radialMenu.backgroundView.alpha = 0.0
-        
-        radialMenu.onClose = {
-            for subMenu in self.radialMenu.subMenus {
-                self.resetSubMenu(subMenu)
-            }
-        }
-        
-        radialMenu.onHighlight = { subMenu in
-            self.highlightSubMenu(subMenu)
-            
-            
-            let color = self.colorForSubMenu(subMenu).colorWithAlphaComponent(1.0)
-            
-            // TODO: Add nice color transition
-            self.view.backgroundColor = color
-        }
-        
-        radialMenu.onActivate = { subMenu in
-            // did select subMenu
-            let pos = subMenu.tag % self.colors.count
-            
-            println("selected: \(pos)")
-            
-            //TODO: add more pos to different pages
-            
-            if pos == 0 {
-                
-                let vc = UITableViewController(nibName: "ProfileTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 1 {
-                
-                let vc = UIViewController(nibName: "RadarViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 2 {
-                
-                let vc = UITableViewController(nibName: "UserChatTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 3 {
-                
-                let vc = UITableViewController(nibName: "NotificationTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 4 {
-                
-                let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true )
-            }
-        }
-        
-        radialMenu.onUnhighlight = { subMenu in
-            self.resetSubMenu(subMenu)
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        radialMenu.onClose = {
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        view.addSubview(radialMenu)
-        
-        // Setup add button
-        addButton.userInteractionEnabled = true
-        addButton.alpha = 0.65
-        view.addSubview(addButton)
-        
-        tapView.center = view.center
-        tapView.addGestureRecognizer(longPress)
-        view.addSubview(tapView)
-        
-        /* end of radial menu */
-
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("in rader view controller now")
+        println("in rader view controller ViewDidLoad NOW")
         
         /* Setup radial menu */
         
@@ -202,8 +112,9 @@ class RadarViewController: UIViewController {
                 
             else if pos == 1 {
                 
-                let vc = UIViewController(nibName: "RadarViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
+                let vc = RadarViewController(nibName: "RadarViewController", bundle: nil)
+                println("after init")
+                self.navigationController!.presentViewController(vc, animated: true, completion: nil)
                 
             }
                 
@@ -253,110 +164,6 @@ class RadarViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        
-        println("in rader viewwillappear controller now")
-        
-        /* Setup radial menu */
-        
-        let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
-        
-        var subMenus: [RadialSubMenu] = []
-        for i in 0..<num {
-            subMenus.append(self.createSubMenu(i))
-        }
-        
-        radialMenu = RadialMenu(menus: subMenus, radius: menuRadius)
-        radialMenu.center = view.center
-        radialMenu.openDelayStep = 0.05
-        radialMenu.closeDelayStep = 0.00
-        radialMenu.minAngle = 275
-        radialMenu.maxAngle = 355
-        radialMenu.activatedDelay = 0.5
-        radialMenu.backgroundView.alpha = 0.0
-        
-        radialMenu.onClose = {
-            for subMenu in self.radialMenu.subMenus {
-                self.resetSubMenu(subMenu)
-            }
-        }
-        
-        radialMenu.onHighlight = { subMenu in
-            self.highlightSubMenu(subMenu)
-            
-            
-            let color = self.colorForSubMenu(subMenu).colorWithAlphaComponent(1.0)
-            
-            // TODO: Add nice color transition
-            self.view.backgroundColor = color
-        }
-        
-        radialMenu.onActivate = { subMenu in
-            // did select subMenu
-            let pos = subMenu.tag % self.colors.count
-            
-            println("selected: \(pos)")
-            
-            //TODO: add more pos to different pages
-            
-            if pos == 0 {
-                
-                let vc = UITableViewController(nibName: "ProfileTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 1 {
-                
-                let vc = UIViewController(nibName: "RadarViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 2 {
-                
-                let vc = UITableViewController(nibName: "UserChatTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 3 {
-                
-                let vc = UITableViewController(nibName: "NotificationTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 4 {
-                
-                let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true )
-            }
-        }
-        
-        radialMenu.onUnhighlight = { subMenu in
-            self.resetSubMenu(subMenu)
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        radialMenu.onClose = {
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        view.addSubview(radialMenu)
-        
-        // Setup add button
-        addButton.userInteractionEnabled = true
-        addButton.alpha = 0.65
-        view.addSubview(addButton)
-        
-        tapView.center = view.center
-        tapView.addGestureRecognizer(longPress)
-        view.addSubview(tapView)
-        
-        /* end of radial menu */
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
