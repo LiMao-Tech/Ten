@@ -105,8 +105,7 @@ class RadarViewController: UIViewController {
             
             if pos == 0 {
                 
-                let vc = UITableViewController(nibName: "ProfileTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
+                 self.performSegueWithIdentifier("RadarToProfile", sender: self)
                 
             }
                 

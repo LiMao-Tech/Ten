@@ -123,19 +123,13 @@ class MainViewController: UIViewController {
             
             if pos == 0 {
                 
-                let vc = UITableViewController(nibName: "ProfileTableViewController", bundle: nil)
-                
-                self.navigationController!.pushViewController(vc, animated: true)
+                self.performSegueWithIdentifier("MainToProfile", sender: self)
                 
             }
                 
             else if pos == 1 {
                 
-                //let vc = UIViewController(nibName: "RadarViewController", bundle: nil)
-                let vc = RadarViewController(nibName: "RadarViewController", bundle: nil)
-                println("after init")
-                self.navigationController!.presentViewController(vc, animated: true, completion: nil)
-                //https://www.youtube.com/watch?v=tfPZ93yvAko
+                self.performSegueWithIdentifier("MainToRadar", sender: self)
                 
                 
             }

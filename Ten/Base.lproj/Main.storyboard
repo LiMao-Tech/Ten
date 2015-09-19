@@ -45,6 +45,7 @@
                         <outlet property="latitudeLabel" destination="fsa-ez-r4o" id="QZf-As-cuP"/>
                         <outlet property="longitudeLabel" destination="Cse-jf-K64" id="1gS-fF-uRT"/>
                         <segue destination="ZTE-We-8nW" kind="modal" identifier="MainToProfile" id="Sup-NY-L8L"/>
+                        <segue destination="4oD-1F-f3H" kind="modal" identifier="MainToRadar" id="wSd-pz-GeR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -154,23 +155,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shw-Ud-6Y1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="-230"/>
+            <point key="canvasLocation" x="1325" y="-233"/>
         </scene>
         <!--Radar View Controller-->
-        <scene sceneID="gra-OT-Cls">
+        <scene sceneID="wUe-bw-KHQ">
             <objects>
-                <viewController id="QAe-7L-AOP" customClass="RadarViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
-                    <label key="view" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rader View Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u9j-5j-00a">
+                <viewController id="4oD-1F-f3H" customClass="RadarViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aYB-lg-W6i"/>
+                        <viewControllerLayoutGuide type="bottom" id="B89-WD-DD0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="71C-Yq-xOA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Radar View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUI-ET-GIa">
+                                <rect key="frame" x="117" y="273" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="ZTE-We-8nW" kind="modal" identifier="RadarToProfile" id="WkZ-NC-z60"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UWb-ra-evB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qeT-53-tWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1778" y="-206"/>
+            <point key="canvasLocation" x="1768" y="-215"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="99f-EP-rdf">
@@ -196,4 +210,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="WkZ-NC-z60"/>
+    </inferredMetricsTieBreakers>
 </document>
