@@ -61,6 +61,26 @@ class RadarViewController: UIViewController {
         
         println("in rader view controller ViewDidLoad NOW")
         
+        self.initRadialMenu()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func findUsers(sender: AnyObject) {
+        
+        
+        
+    }
+
+    // FIXME: Consider moving this to the radial menu and making standard interaction types  that are configurable
+    func initRadialMenu(){
+    
         /* Setup radial menu */
         
         let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
@@ -105,36 +125,30 @@ class RadarViewController: UIViewController {
             
             if pos == 0 {
                 
-                 self.performSegueWithIdentifier("RadarToProfile", sender: self)
+                self.performSegueWithIdentifier("RadarToProfile", sender: self)
                 
             }
                 
             else if pos == 1 {
                 
-                let vc = RadarViewController(nibName: "RadarViewController", bundle: nil)
-                println("after init")
-                self.navigationController!.presentViewController(vc, animated: true, completion: nil)
+                self.presentViewController(self, animated: true, completion: nil)
                 
             }
                 
             else if pos == 2 {
                 
-                let vc = UITableViewController(nibName: "UserChatTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
-                
+                self.performSegueWithIdentifier("RadarToChat", sender: self)
             }
                 
             else if pos == 3 {
                 
-                let vc = UITableViewController(nibName: "NotificationTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true)
+                self.performSegueWithIdentifier("RadarToNotification", sender: self)
                 
             }
                 
             else if pos == 4 {
                 
-                let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true )
+                self.performSegueWithIdentifier("RadarToSetting", sender: self)
             }
         }
         
@@ -159,23 +173,10 @@ class RadarViewController: UIViewController {
         view.addSubview(tapView)
         
         /* end of radial menu */
-
-        // Do any additional setup after loading the view.
+    
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func findUsers(sender: AnyObject) {
-        
-        
-        
-    }
-
-    // FIXME: Consider moving this to the radial menu and making standard interaction types  that are configurable
     func pressedButton(gesture:UIGestureRecognizer) {
         switch(gesture.state) {
         case .Began:

@@ -72,117 +72,9 @@ class MainViewController: UIViewController {
         // set location, status, and update lat and longt
         let status = CLLocationManager.authorizationStatus()
         
-        
-        // set location
-        //      var latitude = locationManager.location.coordinate.latitude
-        //     self.locationLabel.text =  "\(latitude)"
-        
-        
-        
-        /* Setup radial menu */
-        
-        let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
-        
-        var subMenus: [RadialSubMenu] = []
-        for i in 0..<num {
-            subMenus.append(self.createSubMenu(i))
-        }
-        
-        radialMenu = RadialMenu(menus: subMenus, radius: menuRadius)
-        radialMenu.center = view.center
-        radialMenu.openDelayStep = 0.05
-        radialMenu.closeDelayStep = 0.00
-        radialMenu.minAngle = 275
-        radialMenu.maxAngle = 355
-        radialMenu.activatedDelay = 0.5
-        radialMenu.backgroundView.alpha = 0.0
-        
-        radialMenu.onClose = {
-            for subMenu in self.radialMenu.subMenus {
-                self.resetSubMenu(subMenu)
-            }
-        }
-        
-        radialMenu.onHighlight = { subMenu in
-            self.highlightSubMenu(subMenu)
-            
-            
-            let color = self.colorForSubMenu(subMenu).colorWithAlphaComponent(1.0)
-            
-            // TODO: Add nice color transition
-            self.view.backgroundColor = color
-        }
-        
-        radialMenu.onActivate = { subMenu in
-            // did select subMenu
-            let pos = subMenu.tag % self.colors.count
-            
-            println("selected: \(pos)")
-            
-            //TODO: add more pos to different pages
-            
-            if pos == 0 {
-                
-                self.performSegueWithIdentifier("MainToProfile", sender: self)
-                
-            }
-                
-            else if pos == 1 {
-                
-                self.performSegueWithIdentifier("MainToRadar", sender: self)
-                
-                
-            }
-                
-            else if pos == 2 {
-                
-                let vc = UITableViewController(nibName: "UserChatTableViewController", bundle: nil)
-                
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 3 {
-                
-                let vc = UITableViewController(nibName: "NotificationTableViewController", bundle: nil)
-                
-                self.navigationController!.pushViewController(vc, animated: true)
-                
-            }
-                
-            else if pos == 4 {
-                
-                let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
-                
-                self.navigationController!.pushViewController(vc, animated: true)
-            }
-        }
-        
-        radialMenu.onUnhighlight = { subMenu in
-            self.resetSubMenu(subMenu)
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        radialMenu.onClose = {
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        view.addSubview(radialMenu)
-        
-        // Setup add button
-        addButton.userInteractionEnabled = true
-        addButton.alpha = 0.65
-        view.addSubview(addButton)
-        
-        tapView.center = view.center
-        tapView.addGestureRecognizer(longPress)
-        view.addSubview(tapView)
-        
-        /* end of radial menu */
+        self.initRadialMenu()
         
         view.backgroundColor = UIColor.whiteColor()
-        
-        
         
         // add observer for location
         NSNotificationCenter.defaultCenter().addObserver(
@@ -191,6 +83,7 @@ class MainViewController: UIViewController {
             name: mySpecialNotificationKey,
             object: nil)
     }
+    
     
     @IBAction func updateLocation(sender: AnyObject) {
         
@@ -251,6 +144,106 @@ class MainViewController: UIViewController {
         })
         
     }
+    
+    //TODO: starting the RadiaMenu
+    func initRadialMenu(){
+        
+        /* Setup radial menu */
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
+        
+        var subMenus: [RadialSubMenu] = []
+        for i in 0..<num {
+            subMenus.append(self.createSubMenu(i))
+        }
+        
+        radialMenu = RadialMenu(menus: subMenus, radius: menuRadius)
+        radialMenu.center = view.center
+        radialMenu.openDelayStep = 0.05
+        radialMenu.closeDelayStep = 0.00
+        radialMenu.minAngle = 275
+        radialMenu.maxAngle = 355
+        radialMenu.activatedDelay = 0.5
+        radialMenu.backgroundView.alpha = 0.0
+        
+        radialMenu.onClose = {
+            for subMenu in self.radialMenu.subMenus {
+                self.resetSubMenu(subMenu)
+            }
+        }
+        
+        radialMenu.onHighlight = { subMenu in
+            self.highlightSubMenu(subMenu)
+            
+            
+            let color = self.colorForSubMenu(subMenu).colorWithAlphaComponent(1.0)
+            
+            // TODO: Add nice color transition
+            self.view.backgroundColor = color
+        }
+        
+        radialMenu.onActivate = { subMenu in
+            // did select subMenu
+            let pos = subMenu.tag % self.colors.count
+            
+            println("selected: \(pos)")
+            
+            //TODO: add more pos to different pages
+            
+            if pos == 0 {
+                
+                self.performSegueWithIdentifier("MainToProfile", sender: self)
+                
+            }
+                
+            else if pos == 1 {
+                
+                self.performSegueWithIdentifier("MainToRadar", sender: self)
+                
+                
+            }
+                
+            else if pos == 2 {
+                
+                self.performSegueWithIdentifier("MainToChat", sender: self)
+                
+            }
+                
+            else if pos == 3 {
+                
+                self.performSegueWithIdentifier("MainToNotification", sender: self)
+                
+            }
+                
+            else if pos == 4 {
+                
+                self.performSegueWithIdentifier("MainToSetting", sender: self)
+            }
+        }
+        
+        radialMenu.onUnhighlight = { subMenu in
+            self.resetSubMenu(subMenu)
+            self.view.backgroundColor = UIColor.whiteColor()
+        }
+        
+        radialMenu.onClose = {
+            self.view.backgroundColor = UIColor.whiteColor()
+        }
+        
+        view.addSubview(radialMenu)
+        
+        // Setup add button
+        addButton.userInteractionEnabled = true
+        addButton.alpha = 0.65
+        view.addSubview(addButton)
+        
+        tapView.center = view.center
+        tapView.addGestureRecognizer(longPress)
+        view.addSubview(tapView)
+        
+        /* end of radial menu */
+    }
+
     
     // FIXME: Consider moving this to the radial menu and making standard interaction types  that are configurable
     func pressedButton(gesture:UIGestureRecognizer) {
