@@ -125,30 +125,48 @@ class RadarViewController: UIViewController {
             
             if pos == 0 {
                 
-                self.performSegueWithIdentifier("RadarToProfile", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Profile") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+                //self.performSegueWithIdentifier("ProfileToRadar", sender: self)
+                //println("new method works")
                 
             }
                 
             else if pos == 1 {
                 
-                self.presentViewController(self, animated: true, completion: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Radar") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+                //self.performSegueWithIdentifier("ProfileToRadar", sender: self)
+                //println("new method works")
+                
                 
             }
                 
             else if pos == 2 {
                 
-                self.performSegueWithIdentifier("RadarToChat", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Chat") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
             }
                 
             else if pos == 3 {
                 
-                self.performSegueWithIdentifier("RadarToNotification", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Notification") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
                 
             }
                 
             else if pos == 4 {
                 
-                self.performSegueWithIdentifier("RadarToSetting", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Setting") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
             }
         }
         

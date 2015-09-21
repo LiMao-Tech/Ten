@@ -96,35 +96,54 @@ class ChatViewController: UIViewController {
             
             //TODO: add more pos to different pages
             
+            //TODO: add more pos to different pages
+            
             if pos == 0 {
                 
-                self.performSegueWithIdentifier("ChatToProfile", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Profile") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+                //self.performSegueWithIdentifier("ProfileToRadar", sender: self)
+                //println("new method works")
                 
             }
                 
             else if pos == 1 {
                 
-                self.performSegueWithIdentifier("ChatToRadar", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Radar") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+                //self.performSegueWithIdentifier("ProfileToRadar", sender: self)
+                //println("new method works")
                 
                 
             }
                 
             else if pos == 2 {
                 
-                self.presentViewController(self, animated: true, completion: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Chat") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
                 
             }
                 
             else if pos == 3 {
                 
-                self.performSegueWithIdentifier("ChatToNotification", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Notification") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
                 
             }
                 
             else if pos == 4 {
                 
-                self.performSegueWithIdentifier("ChatToSetting", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Setting") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
             }
+            
         }
         
         radialMenu.onUnhighlight = { subMenu in

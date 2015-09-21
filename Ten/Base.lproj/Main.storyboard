@@ -58,7 +58,7 @@
         <!--Setting View Controller-->
         <scene sceneID="Ajd-6g-pFf">
             <objects>
-                <viewController id="Oyw-Sq-z7P" customClass="SettingViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oyw-Sq-z7P" customClass="SettingViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K7X-yk-aFf"/>
                         <viewControllerLayoutGuide type="bottom" id="XNI-QJ-W8C"/>
@@ -76,12 +76,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="bFA-XS-Uh3" kind="modal" identifier="SettingToNotification" id="Q44-Mv-DuA"/>
-                        <segue destination="g4L-5f-bne" kind="modal" identifier="SettingToChat" id="1VI-Ec-jyC"/>
-                        <segue destination="ZTE-We-8nW" kind="modal" identifier="SettingToProfile" id="pbo-HF-NEw"/>
-                        <segue destination="4oD-1F-f3H" kind="modal" identifier="SettingToRadar" id="LEM-V6-8mf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNB-Dk-dx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +84,7 @@
         <!--Notification View Controller-->
         <scene sceneID="U32-FC-Pb9">
             <objects>
-                <viewController id="bFA-XS-Uh3" customClass="NotificationViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Notification" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bFA-XS-Uh3" customClass="NotificationViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9E4-pE-PQb"/>
                         <viewControllerLayoutGuide type="bottom" id="SPW-LC-82w"/>
@@ -108,12 +102,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="Oyw-Sq-z7P" kind="modal" identifier="NotificationToSetting" id="KDf-z3-1RE"/>
-                        <segue destination="g4L-5f-bne" kind="modal" identifier="NotificationToChat" id="nGX-RP-Rma"/>
-                        <segue destination="4oD-1F-f3H" kind="modal" identifier="NotificationToRadar" id="eJE-Lb-fw2"/>
-                        <segue destination="ZTE-We-8nW" kind="modal" identifier="NotificationToProfile" id="mTH-wu-0Eh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FF1-Xg-Z4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,7 +110,7 @@
         <!--Chat View Controller-->
         <scene sceneID="jpr-iA-szf">
             <objects>
-                <viewController id="g4L-5f-bne" customClass="ChatViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Chat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g4L-5f-bne" customClass="ChatViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bcc-y4-Nfq"/>
                         <viewControllerLayoutGuide type="bottom" id="Lol-BB-Oc4"/>
@@ -140,12 +128,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="Oyw-Sq-z7P" kind="modal" identifier="ChatToSetting" id="Cmm-uA-Nuv"/>
-                        <segue destination="bFA-XS-Uh3" kind="modal" identifier="ChatToNotification" id="Z9q-sJ-unp"/>
-                        <segue destination="ZTE-We-8nW" kind="modal" identifier="ChatToProfile" id="hZT-vk-xiB"/>
-                        <segue destination="4oD-1F-f3H" kind="modal" identifier="ChatToRadar" id="rlR-9Z-gVd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5k4-gp-gaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,7 +136,7 @@
         <!--Profile View Controller-->
         <scene sceneID="8GQ-aF-RTy">
             <objects>
-                <viewController id="ZTE-We-8nW" customClass="ProfileViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTE-We-8nW" customClass="ProfileViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SC3-9q-jH9"/>
                         <viewControllerLayoutGuide type="bottom" id="lkJ-2g-T2h"/>
@@ -173,12 +155,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HYw-zW-BzF"/>
-                    <connections>
-                        <segue destination="Oyw-Sq-z7P" kind="modal" identifier="ProfileToSetting" id="FNx-8f-gfZ"/>
-                        <segue destination="bFA-XS-Uh3" kind="modal" identifier="ProfileToNotification" id="1ld-uo-AnQ"/>
-                        <segue destination="g4L-5f-bne" kind="modal" identifier="ProfileToChat" id="Y1D-aU-yJU"/>
-                        <segue destination="4oD-1F-f3H" kind="modal" identifier="ProfileToRadar" id="2aQ-uJ-y71"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shw-Ud-6Y1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,7 +163,7 @@
         <!--Radar View Controller-->
         <scene sceneID="wUe-bw-KHQ">
             <objects>
-                <viewController id="4oD-1F-f3H" customClass="RadarViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Radar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4oD-1F-f3H" customClass="RadarViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aYB-lg-W6i"/>
                         <viewControllerLayoutGuide type="bottom" id="B89-WD-DD0"/>
@@ -205,12 +181,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="ZTE-We-8nW" kind="modal" identifier="RadarToProfile" id="WkZ-NC-z60"/>
-                        <segue destination="Oyw-Sq-z7P" kind="modal" identifier="RadarToSetting" id="0x7-cV-ScN"/>
-                        <segue destination="bFA-XS-Uh3" kind="modal" identifier="RadarToNotification" id="x8k-le-6of"/>
-                        <segue destination="g4L-5f-bne" kind="modal" identifier="RadarToChat" id="Zvv-9k-chi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeT-53-tWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,11 +210,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="wSd-pz-GeR"/>
-        <segue reference="f3E-JQ-zEy"/>
-        <segue reference="sUw-BU-ybW"/>
-        <segue reference="g7s-jL-dAG"/>
-        <segue reference="Sup-NY-L8L"/>
-    </inferredMetricsTieBreakers>
 </document>
