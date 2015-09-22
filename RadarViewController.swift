@@ -12,6 +12,8 @@ import CoreLocation
 import Foundation
 import AFNetworking
 
+let mySpecialNotificationKey = "www.code-desire.com";
+
 class RadarViewController: UIViewController {
 
     
@@ -31,11 +33,15 @@ class RadarViewController: UIViewController {
     let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
     /* end of variables for radial menu */
     
+    @IBOutlet weak var lonLabel: UILabel!
+    @IBOutlet weak var latLabel: UILabel!
+    
+    
     required init(coder aDecoder: NSCoder) {
         
         addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()
-        //sharedManager
+        sharedManager
         
         super.init(coder: aDecoder)
         
@@ -61,9 +67,17 @@ class RadarViewController: UIViewController {
         
         println("in rader view controller ViewDidLoad NOW")
         
+        
         self.initRadialMenu()
 
         // Do any additional setup after loading the view.
+        
+        // add observer for location
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "locationChanged:",
+            name: mySpecialNotificationKey,
+            object: nil)
     }
     
     
@@ -72,11 +86,66 @@ class RadarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func findUsers(sender: AnyObject) {
-        
-        
+    
+    @IBAction func refreshLocation(sender: AnyObject) {
+        //nothing
+        if(sharedManager.authorization_status == 1){
+            sharedManager.startUpdatingLocation()
+            NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("sharedManagerStopUpdatingLocation"), userInfo: nil, repeats: false)
+        }
+    }
+    
+    @objc func locationChanged(notification: NSNotification){
+        //do stuff
+        println("Location Changed...")
+        // Stop location services, here
+        if(sharedManager.is_ready == 1){
+            
+            //assign the lat and lon
+            let lat = sharedManager.currentLocation!.coordinate.latitude
+            let lon = sharedManager.currentLocation!.coordinate.longitude
+            lonLabel.text = lon.description
+            latLabel.text = lat.description
+            
+            self.postLocationToServer(lon.description, lat: lat.description)
+        }
         
     }
+    
+    func sharedManagerStopUpdatingLocation(){
+        
+        sharedManager.stopUpdatingLocation()
+    }
+    
+    func postLocationToServer(lon:NSString, lat: NSString){
+        
+        // upload using POST:
+        // TODO: error on AFNetworking connect with background
+        
+        let manager = AFHTTPRequestOperationManager()
+        var parameters = ["id":"1","latitude":lon,"longitude":lat]
+        var postURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.responseSerializer = AFHTTPResponseSerializer()
+        //manager.responseSerializer.acceptableContentTypes =
+        
+        manager.POST( postURL,
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                println("the respond object is: ")
+                println( operation.responseData )
+                var str = NSString(data: responseObject! as! NSData, encoding: NSUTF8StringEncoding)
+                println(str);
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+                let data = error.userInfo![AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
+                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+        })
+        
+    }
+
 
     // FIXME: Consider moving this to the radial menu and making standard interaction types  that are configurable
     func initRadialMenu(){

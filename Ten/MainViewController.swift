@@ -31,11 +31,11 @@ import CoreLocation
 import Foundation
 import AFNetworking
 
-let mySpecialNotificationKey = "www.code-desire.com";
+
 
 class MainViewController: UIViewController {
     
-    /* variables for radial menu */
+    /* variables for radial menu
     var addButton:UIImageView
     var tapView:UIView
     var radialMenu:RadialMenu!
@@ -48,20 +48,20 @@ class MainViewController: UIViewController {
     let subMenuRadius: CGFloat = 15.0
     var didSetupConstraints = false
     
-    let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
-    /* end of variables for radial menu */
+    let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]*/
+    /* end of variables for radial menu
     
     
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     
-    
+    */
     
     required init(coder aDecoder: NSCoder) {
         
-        addButton = UIImageView(image: UIImage(named: "plus"))
+        /*addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()
-        sharedManager
+        sharedManager*/
         
         super.init(coder: aDecoder)
     }
@@ -69,8 +69,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set location, status, and update lat and longt
         let status = CLLocationManager.authorizationStatus()
+        
+        /*
+        // set location, status, and update lat and longt
+        
         
         self.initRadialMenu()
         
@@ -82,10 +85,16 @@ class MainViewController: UIViewController {
             selector: "locationChanged:",
             name: mySpecialNotificationKey,
             object: nil)
+        */
     }
     
+    @IBAction func GoRadarPage(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("MainToRadar", sender: self)
+        
+    }
     
-    @IBAction func updateLocation(sender: AnyObject) {
+    /*@IBAction func updateLocation(sender: AnyObject) {
         
         //nothing
         if(sharedManager.authorization_status == 1){
@@ -306,7 +315,7 @@ class MainViewController: UIViewController {
         subMenu.backgroundColor = color.colorWithAlphaComponent(0.75)
     }
     
-    
+    */
     
 }
 
