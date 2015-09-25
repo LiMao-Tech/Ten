@@ -72,6 +72,17 @@ class MainViewController: UIViewController {
         let status = CLLocationManager.authorizationStatus()
         
         /*
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        CGFloat screenHeight = screenRect.size.height;
+        */
+        let screenRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_launchImage")!)
+        
+        /*
         // set location, status, and update lat and longt
         
         

@@ -69,6 +69,8 @@ class RadarViewController: UIViewController {
         
         
         self.initRadialMenu()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_radar")!)
 
         // Do any additional setup after loading the view.
         

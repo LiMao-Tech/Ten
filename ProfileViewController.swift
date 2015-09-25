@@ -44,7 +44,8 @@ class ProfileViewController: UIViewController {
         
         self.initRadialMenu()
 
-
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_menu")!)
+        
         // Do any additional setup after loading the view.
     }
 

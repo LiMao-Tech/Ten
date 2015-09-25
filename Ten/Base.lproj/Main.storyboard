@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNB-Dk-dx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="1070"/>
+            <point key="canvasLocation" x="1484" y="1078"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="U32-FC-Pb9">
@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FF1-Xg-Z4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="1070"/>
+            <point key="canvasLocation" x="2134" y="874"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="jpr-iA-szf">
@@ -113,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5k4-gp-gaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182" y="410"/>
+            <point key="canvasLocation" x="2184" y="114"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="8GQ-aF-RTy">
@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shw-Ud-6Y1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325" y="-233"/>
+            <point key="canvasLocation" x="1395" y="-239"/>
         </scene>
         <!--Radar View Controller-->
         <scene sceneID="wUe-bw-KHQ">
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeT-53-tWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1768" y="-215"/>
+            <point key="canvasLocation" x="1374" y="425"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="99f-EP-rdf">
