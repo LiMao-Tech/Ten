@@ -16,6 +16,7 @@
 		164EA7461BADD02E00446691 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7451BADD02E00446691 /* ChatViewController.swift */; };
 		164EA7481BADD12B00446691 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7471BADD12B00446691 /* ProfileViewController.swift */; };
 		164EA74A1BADD14600446691 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA7491BADD14600446691 /* SettingViewController.swift */; };
+		164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA74C1BB799E700446691 /* MobileInfo.swift */; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -51,6 +52,7 @@
 		164EA7451BADD02E00446691 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		164EA7471BADD12B00446691 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		164EA7491BADD14600446691 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		164EA74C1BB799E700446691 /* MobileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileInfo.swift; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				16988ADC1B8A57A500270DBA /* Images.xcassets */,
+				164EA74C1BB799E700446691 /* MobileInfo.swift */,
 				C4CED30B1B88FB010008BCF2 /* AppDelegate.swift */,
 				C4CED30D1B88FB010008BCF2 /* MainViewController.swift */,
 				C4CED30F1B88FB010008BCF2 /* Main.storyboard */,
@@ -406,6 +409,7 @@
 				164EA7441BADD00100446691 /* NotificationViewController.swift in Sources */,
 				164EA7481BADD12B00446691 /* ProfileViewController.swift in Sources */,
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
+				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
 				164EA74A1BADD14600446691 /* SettingViewController.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
 				164EA73D1BA64BB600446691 /* RadarViewController.swift in Sources */,

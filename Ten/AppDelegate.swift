@@ -40,6 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             sharedManager.locationManager!.requestWhenInUseAuthorization()
         }
         
+        // getting the width and height
+        let screenRect = UIScreen.mainScreen().bounds;
+        let screenWidth = screenRect.size.width;
+        let screenHeight = screenRect.size.height;
+        sharedMobileInformation.gettingMobileHeightAndWidth(screenHeight, andWidth: screenWidth);
                
           
         return true
