@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        NSThread.sleepForTimeInterval(3.0)
+        
         //AFNetworkActivityLogger.sharedLogger().level = AFHTTPRequestLoggerLevel.AFLoggerLevelDebug
         //AFNetworkActivityLogger.sharedLogger().startLogging()
         
@@ -44,8 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let screenRect = UIScreen.mainScreen().bounds;
         let screenWidth = screenRect.size.width;
         let screenHeight = screenRect.size.height;
-        sharedMobileInformation.gettingMobileHeightAndWidth(screenHeight, andWidth: screenWidth);
-               
+        sharedMobileInformation.gettingMobileViewBounds(screenRect);
+        println([screenWidth, screenHeight])
           
         return true
     }

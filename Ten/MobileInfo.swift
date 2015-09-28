@@ -14,23 +14,20 @@ class MobileInfo: NSObject{
 
     static let sharedMobileInfo = MobileInfo()
     
-    var mobileWidth: CGFloat?
-    var mobileHeight: CGFloat?
+    var mobileBounds: CGRect?
 
     override init(){
         
         super.init()
         
-        self.mobileHeight = 0.0
-        self.mobileWidth = 0.0
+        self.mobileBounds = CGRect()
         
         // more here
         
     }
     
-    func gettingMobileHeightAndWidth(mobileH: CGFloat, andWidth mobileW: CGFloat){
-        self.mobileHeight = mobileH;
-        self.mobileWidth = mobileW;
+    func gettingMobileViewBounds(bounds: CGRect){
+        self.mobileBounds = bounds;
         println("mobile size is stored  in shared class");
     }
 

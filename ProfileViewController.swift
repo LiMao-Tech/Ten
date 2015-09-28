@@ -42,9 +42,11 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let imageName = UIImage(named: "bg_menu")
+        
+        self.view.backgroundColor = UIColor(patternImage: imageName!)
+        
         self.initRadialMenu()
-
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_menu")!)
         
         // Do any additional setup after loading the view.
     }

@@ -80,7 +80,7 @@ class MainViewController: UIViewController {
         let screenWidth = screenRect.size.width
         let screenHeight = screenRect.size.height
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_launchImage")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_welcome")!)
         
         /*
         // set location, status, and update lat and longt

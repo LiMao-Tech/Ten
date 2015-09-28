@@ -196,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				16988ADC1B8A57A500270DBA /* Images.xcassets */,
-				164EA74C1BB799E700446691 /* MobileInfo.swift */,
 				C4CED30B1B88FB010008BCF2 /* AppDelegate.swift */,
 				C4CED30D1B88FB010008BCF2 /* MainViewController.swift */,
 				C4CED30F1B88FB010008BCF2 /* Main.storyboard */,
@@ -209,6 +208,7 @@
 		C4CED3091B88FB010008BCF2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				164EA74C1BB799E700446691 /* MobileInfo.swift */,
 				16988AE01B8CCC6000270DBA /* LocationManager */,
 				C4CED30A1B88FB010008BCF2 /* Info.plist */,
 			);

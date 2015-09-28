@@ -41,6 +41,10 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let imageName = UIImage(named: "bg")
+        
+        self.view.backgroundColor = UIColor(patternImage: imageName!)
+        
         self.initRadialMenu()
         // Do any additional setup after loading the view.
     }
