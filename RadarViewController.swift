@@ -37,7 +37,7 @@ class RadarViewController: UIViewController {
     @IBOutlet weak var latLabel: UILabel!
     
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         
         addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()
@@ -56,7 +56,7 @@ class RadarViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         /* Setup radial menu */
-        println("in rader view controller now")
+        print("in rader view controller now")
         
         
     }
@@ -65,7 +65,7 @@ class RadarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("in rader view controller ViewDidLoad NOW")
+        print("in rader view controller ViewDidLoad NOW")
         
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_radar")!)
         
@@ -102,7 +102,7 @@ class RadarViewController: UIViewController {
     
     @objc func locationChanged(notification: NSNotification){
         //do stuff
-        println("Location Changed...")
+        print("Location Changed...")
         // Stop location services, here
         if(sharedManager.is_ready == 1){
             
@@ -128,8 +128,8 @@ class RadarViewController: UIViewController {
         // TODO: error on AFNetworking connect with background
         
         let manager = AFHTTPRequestOperationManager()
-        var parameters = ["id":"1","latitude":lon,"longitude":lat]
-        var postURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
+        let parameters = ["id":"1","latitude":lon,"longitude":lat]
+        let postURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFHTTPResponseSerializer()
         //manager.responseSerializer.acceptableContentTypes =
@@ -137,16 +137,15 @@ class RadarViewController: UIViewController {
         manager.POST( postURL,
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                println("the respond object is: ")
-                println( operation.responseData )
-                var str = NSString(data: responseObject! as! NSData, encoding: NSUTF8StringEncoding)
-                println(str);
-                
+                print("the respond object is: ")
+                print(operation.responseData)
+                let str = NSString(data: responseObject! as! NSData, encoding: NSUTF8StringEncoding)
+                print(str)
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                println("Error: " + error.localizedDescription)
-                let data = error.userInfo![AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
-                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+               print("Error: " + error.localizedDescription)
+                let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
+                print(NSString(data: data, encoding: NSUTF8StringEncoding))
         })
         
     }
@@ -193,14 +192,14 @@ class RadarViewController: UIViewController {
             // did select subMenu
             let pos = subMenu.tag % self.colors.count
             
-            println("selected: \(pos)")
+            print("selected: \(pos)")
             
             //TODO: add more pos to different pages
             
             if pos == 0 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Profile") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Profile") 
                 self.presentViewController(vc, animated: true, completion: nil)
                 
                 //self.performSegueWithIdentifier("ProfileToRadar", sender: self)
@@ -211,7 +210,7 @@ class RadarViewController: UIViewController {
             else if pos == 1 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Radar") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Radar") 
                 self.presentViewController(vc, animated: true, completion: nil)
                 
                 //self.performSegueWithIdentifier("ProfileToRadar", sender: self)
@@ -223,7 +222,7 @@ class RadarViewController: UIViewController {
             else if pos == 2 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Chat") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Chat") 
                 self.presentViewController(vc, animated: true, completion: nil)
                 
             }
@@ -231,7 +230,7 @@ class RadarViewController: UIViewController {
             else if pos == 3 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Notification") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Notification") 
                 self.presentViewController(vc, animated: true, completion: nil)
                 
             }
@@ -239,7 +238,7 @@ class RadarViewController: UIViewController {
             else if pos == 4 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Setting") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Setting") 
                 self.presentViewController(vc, animated: true, completion: nil)
             }
         }

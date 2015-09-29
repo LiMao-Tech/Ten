@@ -28,7 +28,7 @@ class MobileInfo: NSObject{
     
     func gettingMobileViewBounds(bounds: CGRect){
         self.mobileBounds = bounds;
-        println("mobile size is stored  in shared class");
+        print("mobile size is stored  in shared class");
     }
 
 }

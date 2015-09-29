@@ -30,7 +30,7 @@ class SettingViewController: UIViewController {
     let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
     /* end of variables for radial menu */
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         
         addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()
@@ -96,7 +96,7 @@ class SettingViewController: UIViewController {
             // did select subMenu
             let pos = subMenu.tag % self.colors.count
             
-            println("selected: \(pos)")
+            print("selected: \(pos)")
             
             //TODO: add more pos to different pages
             
@@ -105,7 +105,7 @@ class SettingViewController: UIViewController {
             if pos == 0 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Profile") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Profile") 
                 self.presentViewController(vc, animated: true, completion: nil)
                 
                 //self.performSegueWithIdentifier("ProfileToRadar", sender: self)
@@ -116,7 +116,7 @@ class SettingViewController: UIViewController {
             else if pos == 1 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Radar") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Radar") 
                 self.presentViewController(vc, animated: true, completion: nil)
                 
                 //self.performSegueWithIdentifier("ProfileToRadar", sender: self)
@@ -128,7 +128,7 @@ class SettingViewController: UIViewController {
             else if pos == 2 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Chat") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Chat") 
                 self.presentViewController(vc, animated: true, completion: nil)
                 
             }
@@ -136,7 +136,7 @@ class SettingViewController: UIViewController {
             else if pos == 3 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Notification") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Notification") 
                 self.presentViewController(vc, animated: true, completion: nil)
                 
             }
@@ -144,7 +144,7 @@ class SettingViewController: UIViewController {
             else if pos == 4 {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Setting") as! UIViewController
+                let vc = storyboard.instantiateViewControllerWithIdentifier("Setting") 
                 self.presentViewController(vc, animated: true, completion: nil)
             }
             

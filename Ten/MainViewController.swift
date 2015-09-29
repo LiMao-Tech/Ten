@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
     
     */
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         
         /*addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()

@@ -38,32 +38,30 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func startUpdatingLocation() {
-        println("Starting Location Updates")
+        print("Starting Location Updates")
         self.locationManager?.startUpdatingLocation()
         
     }
     
     func stopUpdatingLocation() {
-        println("Stop Location Updates")
+        print("Stop Location Updates")
         self.locationManager?.stopUpdatingLocation()
         is_ready = 1
         NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        var location: AnyObject? = (locations as NSArray).lastObject
+        let location: AnyObject? = (locations as NSArray).lastObject
         self.currentLocation = location as? CLLocation
-        println("location is updated ...");
+        print("location is updated ...");
         
         //TODO: assign the location into the coordinate 2D
         
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        if (error != nil) {
-            println("Update Location Error : \(error.description)")
-        }
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+            print("Update Location Error : \(error.description)")
     }
     
     func updateLocation(currentLocation:CLLocation){
@@ -71,7 +69,7 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
         let lon = currentLocation.coordinate.longitude
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         // first time use of the app, status change if accepted.
         switch status {
             
