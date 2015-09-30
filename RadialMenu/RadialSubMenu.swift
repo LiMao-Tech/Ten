@@ -77,6 +77,14 @@ public class RadialSubMenu: UIView, POPAnimationDelegate {
         imageView.userInteractionEnabled = true
         addSubview(imageView)
     }
+    
+    convenience public init(frame: CGRect, imageView: UIImageView) {
+        self.init(frame: frame)
+        imageView.userInteractionEnabled = true
+        imageView.frame = frame
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        addSubview(imageView)
+    }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

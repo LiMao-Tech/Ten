@@ -13,6 +13,9 @@ import CoreLocation
 import Foundation
 //import AFNetworkActivityLogger
 
+let locationNotiName = "LocationNotification"
+let updateLocationByIdURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
+
 let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
 let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 

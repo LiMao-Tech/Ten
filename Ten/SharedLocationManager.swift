@@ -13,6 +13,8 @@ import UIKit
 import Foundation
 import CoreLocation
 
+let sharedManager = SharedLocationManager()
+
 class SharedLocationManager: NSObject, CLLocationManagerDelegate {
     
     static let SharedInstance = SharedLocationManager()
@@ -47,7 +49,7 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
         print("Stop Location Updates")
         self.locationManager?.stopUpdatingLocation()
         is_ready = 1
-        NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: self)
+        NSNotificationCenter.defaultCenter().postNotificationName(locationNotiName, object: self)
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -65,8 +67,10 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func updateLocation(currentLocation:CLLocation){
-        let lat = currentLocation.coordinate.latitude
-        let lon = currentLocation.coordinate.longitude
+        let lati = currentLocation.coordinate.latitude
+        let longi = currentLocation.coordinate.longitude
+        
+        print(lati + longi)
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -123,4 +127,4 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
     */
     
 }
-let sharedManager = SharedLocationManager()
+
