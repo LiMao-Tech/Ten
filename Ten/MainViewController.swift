@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
     let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
     
     required init?(coder aDecoder: NSCoder) {
-        menuButton = UIImageView(image: UIImage(named: "menuButton"))
+        menuButton = UIImageView(image: UIImage(named: "btn_menu"))
         tapView = UIView()
         
         super.init(coder: aDecoder)
@@ -39,6 +39,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // add location observer
         NSNotificationCenter.defaultCenter().addObserver(
             self,
@@ -54,6 +55,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_radar")!)
+        
     }
     override func viewDidAppear(animated: Bool) {
         
@@ -73,11 +75,16 @@ class MainViewController: UIViewController {
         print("Location Changed...")
         // Stop location services, here
         if(sharedManager.is_ready == 1){
-            let lati = sharedManager.currentLocation!.coordinate.latitude
-            let longi = sharedManager.currentLocation!.coordinate.longitude
+            let lati = sharedManager.currentLocation?.coordinate.latitude
+            let longi = sharedManager.currentLocation?.coordinate.longitude
             
             print("\(lati) \(longi)")
-            // self.postLocationToServer(longi.description, lati: lati.description)
+            if((longi?.description) != nil){
+                self.postLocationToServer(longi!.description, lati: lati!.description)
+            }
+            else{
+                print("this device did not support location manager")
+            }
         }
         
     }
@@ -109,8 +116,8 @@ class MainViewController: UIViewController {
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 print("Error: " + error.localizedDescription)
-                let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
-                print(NSString(data: data, encoding: NSUTF8StringEncoding))
+                //let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
+                //print(NSString(data: data, encoding: NSUTF8StringEncoding))
         })
         
     }
@@ -147,6 +154,11 @@ class MainViewController: UIViewController {
             switch pos {
             case 0:
                 print("Not Implemented yet!")
+                // testing tutorial
+                /*self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+                self.navigationController?.navigationBar.hidden = true
+                let pVC = TutorialViewController()
+                self.navigationController?.pushViewController(pVC, animated: true)*/
             case 1:
                 print("Not Implemented yet!")
             case 2:

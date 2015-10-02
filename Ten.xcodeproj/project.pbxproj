@@ -10,6 +10,8 @@
 		164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA74C1BB799E700446691 /* MobileInfo.swift */; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
+		16D1748F1BBE6D1000820AEF /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D1748E1BBE6D1000820AEF /* TutorialViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		16D174911BBE6D2100820AEF /* TutorialChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D174901BBE6D2100820AEF /* TutorialChildViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30B1B88FB010008BCF2 /* AppDelegate.swift */; };
 		C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30D1B88FB010008BCF2 /* MainViewController.swift */; };
@@ -45,6 +47,8 @@
 		164EA74C1BB799E700446691 /* MobileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileInfo.swift; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		16D1748E1BBE6D1000820AEF /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		16D174901BBE6D2100820AEF /* TutorialChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialChildViewController.swift; sourceTree = "<group>"; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED3061B88FB010008BCF2 /* Ten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED30A1B88FB010008BCF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 			name = LocationManager;
 			sourceTree = "<group>";
 		};
+		16D1746B1BBCF36C00820AEF /* Welcome&Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				16D1748E1BBE6D1000820AEF /* TutorialViewController.swift */,
+				16D174901BBE6D2100820AEF /* TutorialChildViewController.swift */,
+			);
+			name = "Welcome&Tutorial";
+			sourceTree = "<group>";
+		};
 		AA00EDF29C15F6580F061DCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +119,7 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				16D1746B1BBCF36C00820AEF /* Welcome&Tutorial */,
 				D44EC9471BBB719100BF41A2 /* Profile */,
 				D44EC94A1BBB825F00BF41A2 /* Chats */,
 				D44EC95C1BBB846F00BF41A2 /* Notification */,
@@ -277,7 +291,6 @@
 				TargetAttributes = {
 					C4CED3051B88FB010008BCF2 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = QDC996CTVH;
 					};
 					C4CED31A1B88FB010008BCF2 = {
 						CreatedOnToolsVersion = 6.4;
@@ -386,11 +399,13 @@
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
+				16D174911BBE6D2100820AEF /* TutorialChildViewController.swift in Sources */,
 				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,
 				C4CED32F1B8916480008BCF2 /* CircleHelpers.swift in Sources */,
 				D44EC94D1BBB82B100BF41A2 /* ChatsTableViewController.swift in Sources */,
 				D44EC9631BBB858600BF41A2 /* ProfileCollectionViewController.swift in Sources */,
+				16D1748F1BBE6D1000820AEF /* TutorialViewController.swift in Sources */,
 				D44EC95A1BBB843A00BF41A2 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
