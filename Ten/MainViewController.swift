@@ -12,7 +12,6 @@ import CoreLocation
 import Foundation
 import AFNetworking
 
-
 class MainViewController: UIViewController {
     
     // variables for radial menu
@@ -154,7 +153,7 @@ class MainViewController: UIViewController {
             case 3:
                 self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
                 self.navigationController?.navigationBar.hidden = false
-                let pVC = ProfileCollectionViewController()
+                let pVC = ProfileViewController()
                 self.navigationController?.pushViewController(pVC, animated: true)
             case 4:
                 self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()

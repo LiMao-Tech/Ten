@@ -16,10 +16,18 @@ import Foundation
 let locationNotiName = "LocationNotification"
 let updateLocationByIdURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
 
+
+
 let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
 let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 
+let NAV_BAR_HEIGHT : CGFloat = SCREEN_HEIGHT == 568 ? 88 : 132
+let SCREEN_HEIGHT_WO_NAV = SCREEN_HEIGHT - NAV_BAR_HEIGHT
+
 let DISTANCE_FILTER : Double = 100 // meters
+
+let PROFILE_FONT_SIZE : CGFloat = 12
+let USERNAME_FONT_SIZE : CGFloat = 24
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {

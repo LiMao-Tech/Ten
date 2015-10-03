@@ -25,8 +25,10 @@
 		D44EC95B1BBB843A00BF41A2 /* SettingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC9591BBB843A00BF41A2 /* SettingsTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		D44EC95F1BBB849500BF41A2 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EC95D1BBB849500BF41A2 /* NotificationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D44EC9601BBB849500BF41A2 /* NotificationTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC95E1BBB849500BF41A2 /* NotificationTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		D44EC9631BBB858600BF41A2 /* ProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EC9611BBB858600BF41A2 /* ProfileCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D44EC9641BBB858600BF41A2 /* ProfileCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC9621BBB858600BF41A2 /* ProfileCollectionViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F301BBDB9090019C09B /* ProfileViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		D4D96F3A1BBF84670019C09B /* ProfilePicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F381BBF84670019C09B /* ProfilePicsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D4D96F3B1BBF84670019C09B /* ProfilePicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F391BBF84670019C09B /* ProfilePicsViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +66,10 @@
 		D44EC9591BBB843A00BF41A2 /* SettingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewController.xib; sourceTree = "<group>"; };
 		D44EC95D1BBB849500BF41A2 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		D44EC95E1BBB849500BF41A2 /* NotificationTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewController.xib; sourceTree = "<group>"; };
-		D44EC9611BBB858600BF41A2 /* ProfileCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewController.swift; sourceTree = "<group>"; };
-		D44EC9621BBB858600BF41A2 /* ProfileCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCollectionViewController.xib; sourceTree = "<group>"; };
+		D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D4D96F301BBDB9090019C09B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		D4D96F381BBF84670019C09B /* ProfilePicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsViewController.swift; sourceTree = "<group>"; };
+		D4D96F391BBF84670019C09B /* ProfilePicsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePicsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				D4D96F371BBF82270019C09B /* ProfilePics */,
 				D44EC9471BBB719100BF41A2 /* Profile */,
 				D44EC94A1BBB825F00BF41A2 /* Chats */,
 				D44EC95C1BBB846F00BF41A2 /* Notification */,
@@ -181,8 +186,8 @@
 		D44EC9471BBB719100BF41A2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				D44EC9611BBB858600BF41A2 /* ProfileCollectionViewController.swift */,
-				D44EC9621BBB858600BF41A2 /* ProfileCollectionViewController.xib */,
+				D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */,
+				D4D96F301BBDB9090019C09B /* ProfileViewController.xib */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -212,6 +217,15 @@
 				D44EC95E1BBB849500BF41A2 /* NotificationTableViewController.xib */,
 			);
 			name = Notification;
+			sourceTree = "<group>";
+		};
+		D4D96F371BBF82270019C09B /* ProfilePics */ = {
+			isa = PBXGroup;
+			children = (
+				D4D96F381BBF84670019C09B /* ProfilePicsViewController.swift */,
+				D4D96F391BBF84670019C09B /* ProfilePicsViewController.xib */,
+			);
+			name = ProfilePics;
 			sourceTree = "<group>";
 		};
 		E96E63921E9EBB4A5FCFEE0A /* Pods */ = {
@@ -309,12 +323,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */,
 				16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */,
 				C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */,
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
 				D44EC94E1BBB82B100BF41A2 /* ChatsTableViewController.xib in Resources */,
+				D4D96F3B1BBF84670019C09B /* ProfilePicsViewController.xib in Resources */,
 				D44EC9601BBB849500BF41A2 /* NotificationTableViewController.xib in Resources */,
-				D44EC9641BBB858600BF41A2 /* ProfileCollectionViewController.xib in Resources */,
 				D44EC95B1BBB843A00BF41A2 /* SettingsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,11 +401,12 @@
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
+				D4D96F3A1BBF84670019C09B /* ProfilePicsViewController.swift in Sources */,
 				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,
+				D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,
 				C4CED32F1B8916480008BCF2 /* CircleHelpers.swift in Sources */,
 				D44EC94D1BBB82B100BF41A2 /* ChatsTableViewController.swift in Sources */,
-				D44EC9631BBB858600BF41A2 /* ProfileCollectionViewController.swift in Sources */,
 				D44EC95A1BBB843A00BF41A2 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
