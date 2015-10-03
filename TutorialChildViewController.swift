@@ -25,13 +25,16 @@ class TutorialChildViewController: UIViewController {
         label.textAlignment = .Center
         view.addSubview(label)
         
-        /*let button = UIButton(type: UIButtonType.System)
-        button.frame = CGRectMake(20, view.frame.height - 110, view.frame.width - 40, 50)
-        button.backgroundColor = UIColor(red: 138/255.0, green: 181/255.0, blue: 91/255.0, alpha: 1)
-        button.setTitle(titleText, forState: UIControlState.Normal)
-        button.addTarget(self, action: "Action:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(button)*/
-
+        if(pageIndex == 4){
+            let button = UIButton()
+            button.frame = CGRectMake(0, 0, 125, 45)
+            button.center = CGPointMake(view.frame.width - 100, view.frame.height - 100)
+            button.setImage(UIImage(named: "btn_gotIt"), forState: UIControlState.Normal)
+            button.addTarget(self, action: "toProfilePage", forControlEvents: UIControlEvents.TouchUpInside)
+            self.view.addSubview(button)
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -40,7 +43,16 @@ class TutorialChildViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func toProfilePage(){
+    
+        self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.hidden = true
+        let pVC = ProfileViewController()
+        self.navigationController?.pushViewController(pVC, animated: true)
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

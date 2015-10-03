@@ -30,6 +30,10 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         view.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
         // Do any additional setup after loading the view.
+        
+        
+
+        
     }
 
     override func didReceiveMemoryWarning() {

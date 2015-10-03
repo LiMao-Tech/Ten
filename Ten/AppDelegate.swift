@@ -32,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         NSThread.sleepForTimeInterval(3.0)
         
+        let pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
+        pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
+        //pageControl.backgroundColor = UIColor.whiteColor()
+        
         //AFNetworkActivityLogger.sharedLogger().level = AFHTTPRequestLoggerLevel.AFLoggerLevelDebug
         //AFNetworkActivityLogger.sharedLogger().startLogging()
         
@@ -51,6 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let screenHeight = screenRect.size.height;
         sharedMobileInformation.gettingMobileViewBounds(screenRect);
         print([screenWidth, screenHeight])
+        
+        // first time tutorial
           
         return true
     }

@@ -12,6 +12,8 @@
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		16D1748F1BBE6D1000820AEF /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D1748E1BBE6D1000820AEF /* TutorialViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		16D174911BBE6D2100820AEF /* TutorialChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D174901BBE6D2100820AEF /* TutorialChildViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		16D174941BBF6AF200820AEF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D174921BBF6AF200820AEF /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		16D174951BBF6AF200820AEF /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D174931BBF6AF200820AEF /* ProfileViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30B1B88FB010008BCF2 /* AppDelegate.swift */; };
 		C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30D1B88FB010008BCF2 /* MainViewController.swift */; };
@@ -49,6 +51,8 @@
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		16D1748E1BBE6D1000820AEF /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		16D174901BBE6D2100820AEF /* TutorialChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialChildViewController.swift; sourceTree = "<group>"; };
+		16D174921BBF6AF200820AEF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		16D174931BBF6AF200820AEF /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED3061B88FB010008BCF2 /* Ten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED30A1B88FB010008BCF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			children = (
 				16D1748E1BBE6D1000820AEF /* TutorialViewController.swift */,
 				16D174901BBE6D2100820AEF /* TutorialChildViewController.swift */,
+				16D174921BBF6AF200820AEF /* ProfileViewController.swift */,
+				16D174931BBF6AF200820AEF /* ProfileViewController.xib */,
 			);
 			name = "Welcome&Tutorial";
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			files = (
 				16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */,
 				C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */,
+				16D174951BBF6AF200820AEF /* ProfileViewController.xib in Resources */,
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
 				D44EC94E1BBB82B100BF41A2 /* ChatsTableViewController.xib in Resources */,
 				D44EC9601BBB849500BF41A2 /* NotificationTableViewController.xib in Resources */,
@@ -398,6 +405,7 @@
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
+				16D174941BBF6AF200820AEF /* ProfileViewController.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
 				16D174911BBE6D2100820AEF /* TutorialChildViewController.swift in Sources */,
 				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,

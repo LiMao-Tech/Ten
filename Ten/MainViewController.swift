@@ -40,16 +40,33 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // add location observer
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: "locationChanged:",
-            name: locationNotiName,
-            object: nil)
-        // set location, status, and update lati and longi
-        self.initRadialMenu()
-        view.addSubview(menuButton)
-        view.addSubview(tapView)
+        let defaultData = NSUserDefaults.standardUserDefaults()
+        if(!defaultData.boolForKey("notFirstTime")){
+            
+            defaultData.setBool(true, forKey: "notFirstTime")
+            
+            // go tutorial
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = true
+            let pVC = TutorialViewController()
+            self.navigationController?.pushViewController(pVC, animated: true)
+            
+        }
+        //else{
+        
+        
+            // add location observer
+            NSNotificationCenter.defaultCenter().addObserver(
+                self,
+                selector: "locationChanged:",
+                name: locationNotiName,
+                object: nil)
+            // set location, status, and update lati and longi
+            self.initRadialMenu()
+            view.addSubview(menuButton)
+            view.addSubview(tapView)
+            
+        //}
     }
     
     override func viewWillAppear(animated: Bool) {
