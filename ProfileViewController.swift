@@ -74,6 +74,10 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         //self.scrollView.
 
         // Do any additional setup after loading the view.
+        
+        /*----------- ELCImagePicker Edition -----------*/
+        
+        
     }
     
     // UI Helper Functions
@@ -126,7 +130,6 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         // TODO: imagepicker
         print("going to do imagepicker here")
     }
-    
     
     
 
