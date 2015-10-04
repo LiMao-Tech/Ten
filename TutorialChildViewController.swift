@@ -27,8 +27,8 @@ class TutorialChildViewController: UIViewController {
         
         if(pageIndex == 4){
             let button = UIButton()
-            button.frame = CGRectMake(0, 0, 125, 45)
-            button.center = CGPointMake(view.frame.width - 100, view.frame.height - 100)
+            button.frame = CGRectMake(0, 0, 60, 20)
+            button.center = CGPointMake(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 100)
             button.setImage(UIImage(named: "btn_gotIt"), forState: UIControlState.Normal)
             button.addTarget(self, action: "toProfilePage", forControlEvents: UIControlEvents.TouchUpInside)
             self.view.addSubview(button)

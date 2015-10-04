@@ -5,5 +5,6 @@ pod 'UIColor-CrossFade'
 pod 'PureLayout'
 pod 'AFNetworking'
 pod 'AFNetworkActivityLogger'
+pod 'ELCImagePickerController'
 
 use_frameworks!
