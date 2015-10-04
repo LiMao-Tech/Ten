@@ -9,12 +9,15 @@
 import UIKit
 import ELCImagePickerController
 
-class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationControllerDelegate,UIPopoverControllerDelegate {
+class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationControllerDelegate,ELCImagePickerControllerDelegate, UIImagePickerControllerDelegate{
 
     // Image Picker Variables //
     var chosenImages : NSMutableArray?
     var counter : Int?
+    var ELCpicker : ELCImagePickerController? = ELCImagePickerController()
+    var picker : UIImagePickerController? = UIImagePickerController()
     
+    // scrollView Variables //
     var scrollView: UIScrollView?
     
     override func viewDidLoad() {
@@ -78,6 +81,8 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         /*----------- ELCImagePicker Edition -----------*/
         
         
+        
+        
     }
     
     // UI Helper Functions
@@ -126,11 +131,97 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    // MARK: Entering the image picker
     func toImagePicker(){
-        // TODO: imagepicker
+        //
         print("going to do imagepicker here")
+        
+        let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default)
+            {
+                UIAlertAction in
+                self.openCamera()
+                
+        }
+        let gallaryAction = UIAlertAction(title: "Gallary", style: UIAlertActionStyle.Default)
+            {
+                UIAlertAction in
+                self.openGallary()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel)
+            {
+                UIAlertAction in
+                
+        }
+        
+        // Add the actions
+        
+        ELCpicker?.imagePickerDelegate = self
+        ELCpicker?.maximumImagesCount = 1 //TODO: Tuantuan, this is where you can change the number of image you want to select
+        picker?.delegate = self
+        
+        alert.addAction(cameraAction)
+        alert.addAction(gallaryAction)
+        alert.addAction(cancelAction)
+        // Present the controller
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone
+        {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            print("Please use an IPhone for this action")
+        }
     }
     
+    func openCamera()
+    {
+        
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera))
+        {
+            picker!.sourceType = UIImagePickerControllerSourceType.Camera
+            self.presentViewController(picker!, animated: true, completion: nil)
+
+        }
+        else
+        {
+            openGallary()
+        }
+    }
+    func openGallary()
+    {
+        //picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone
+        {
+            self.presentViewController(ELCpicker!, animated: true, completion: nil)
+
+        }
+        else
+        {
+            print("Please use an IPhone for this action")
+        }
+    }
+    
+    // MARK: All Following are ELCImagePicker Methods
+    func elcImagePickerController(picker: ELCImagePickerController!, didFinishPickingMediaWithInfo info: [AnyObject]!) {
+        
+        // TODO: add the info images into
+        
+    }
+    
+    func elcImagePickerControllerDidCancel(picker: ELCImagePickerController!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        // TODO: add image into profile
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 
 }// end of the class
