@@ -20,12 +20,14 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
     // scrollView Variables //
     var scrollView: UIScrollView?
     
+    var buttonProfile : UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         
-        
+        chosenImages = NSMutableArray()
         
         print("\(self.view.frame.width) and \(self.view.frame.height)")
         
@@ -38,7 +40,7 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         
         // init buttons
         let button = initButton(posX: SCREEN_WIDTH/2, posY: SCREEN_HEIGHT*1.5 - 50, btnWidth: 430/2, btnHeight: 75/2, imageName: "btn_done", targetAction: "toRadarPage")
-        let buttonProfile = initButton(posX: SCREEN_WIDTH/2, posY: SCREEN_HEIGHT/5, btnWidth: 110/3*2, btnHeight: 110/3*2, imageName: "user_pic_110", targetAction: "toImagePicker")
+        buttonProfile = initButton(posX: SCREEN_WIDTH/2, posY: SCREEN_HEIGHT/5, btnWidth: 110/3*2, btnHeight: 110/3*2, imageName: "user_pic_110", targetAction: "toImagePicker")
         
         // init labels
         let basicInfoLabel = initLabel(posX: SCREEN_WIDTH/10, posY: SCREEN_HEIGHT*3/12, labelWidth: 200, labelHeight: 100, labelText: "Basic Info")
@@ -56,7 +58,7 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         
         
         self.scrollView!.addSubview(button)
-        self.scrollView!.addSubview(buttonProfile)
+        self.scrollView!.addSubview(buttonProfile!)
         
         self.scrollView!.addSubview(basicInfoLabel)
         self.scrollView!.addSubview(userNameLabel)
@@ -153,7 +155,7 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
             {
                 UIAlertAction in
                 
-        }
+            }
         
         // Add the actions
         
@@ -208,6 +210,19 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
     func elcImagePickerController(picker: ELCImagePickerController!, didFinishPickingMediaWithInfo info: [AnyObject]!) {
         
         // TODO: add the info images into
+        ELCpicker?.dismissViewControllerAnimated(true, completion: nil)
+        
+        var image = UIImage()
+        
+        for any in info {
+            let dict = any as! NSMutableDictionary
+            image = dict.objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
+            chosenImages!.addObject(image)
+        }
+        
+        self.buttonProfile?.setImage(image, forState: UIControlState.Normal)
+        
+        print(chosenImages)
         
     }
     
@@ -215,8 +230,13 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
         // TODO: add image into profile
+        picker .dismissViewControllerAnimated(true, completion: nil)
+        let image=info[UIImagePickerControllerOriginalImage] as? UIImage
+        chosenImages?.addObject(image!)
+        self.buttonProfile?.setImage(image, forState: UIControlState.Normal)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
