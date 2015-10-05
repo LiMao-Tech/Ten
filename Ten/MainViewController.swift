@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         let defaultData = NSUserDefaults.standardUserDefaults()
-        //if(!defaultData.boolForKey("notFirstTime")){
+        if(!defaultData.boolForKey("notFirstTime")){
             
             defaultData.setBool(true, forKey: "notFirstTime")
             
@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
             let pVC = TutorialViewController()
             self.navigationController?.pushViewController(pVC, animated: true)
             
-        //}
+        }
         //else{
         
         
