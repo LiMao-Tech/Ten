@@ -12,50 +12,97 @@ import CoreLocation
 import Foundation
 import AFNetworking
 
-class MainViewController: UIViewController {
-    
-    // variables for radial menu
-    var menuButton : UIImageView = UIImageView()
-    var tapView : UIView
-    var radialMenu : RadialMenu!
+class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    let numRadialOptions = 7
-    let menuButtonSize: CGFloat = 35.0
-    let menuRadius: CGFloat = 125.0
-    let subMenuRadius: CGFloat = 15.0
-    var didSetupConstraints = false
+    let menuButton = UIButton(frame: CGRectMake(0, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
+    let randomButton = UIButton(frame: CGRectMake(SCREEN_WIDTH-SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
     
-    let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
+    // circular menu
+    let circularMenuVC = ADCircularMenuViewController(frame: UIScreen.mainScreen().bounds)
     
-    required init?(coder aDecoder: NSCoder) {
-        menuButton = UIImageView(image: UIImage(named: "menuButton"))
-        tapView = UIView()
-        
-        super.init(coder: aDecoder)
-    }
-    
+    // view loading
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set circularMenu
+        self.circularMenuVC.circularMenuDelegate = self
+        self.circularMenuVC.view.frame = UIScreen.mainScreen().bounds
+        
         // add location observer
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "locationChanged:",
             name: locationNotiName,
             object: nil)
-        // set location, status, and update lati and longi
-        self.initRadialMenu()
-        view.addSubview(menuButton)
-        view.addSubview(tapView)
+        
+        // config buttons
+        menuButton.setImage(UIImage(named: "menuButton"), forState: UIControlState.Normal)
+        randomButton.setImage(UIImage(named: "btn_radar_random"), forState: UIControlState.Normal)
+        menuButton.addTarget(self, action: "menuButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
+        randomButton.addTarget(self, action: "randomButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(menuButton)
+        self.view.addSubview(randomButton)
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_radar")!)
     }
-    override func viewDidAppear(animated: Bool) {
+    
+    // button actions
+    func menuButtonAction() {
+        self.view.addSubview(self.circularMenuVC.view)
+        circularMenuVC.show()
+    }
+    func randomButtonAction() {
         
+    }
+    
+    
+    func circularMenuClickedButtonAtIndex(buttonIndex: Int32) {
+        // did select subMenu
+        
+        print("selected: \(buttonIndex)")
+        
+        //TODO: add more pos to different pages
+        
+        switch buttonIndex {
+        case 0:
+            print("Not Implemented yet!")
+        case 1:
+            print("Not Implemented yet!")
+        case 2:
+            print("Not Implemented yet!")
+        case 3:
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = false
+            let pVC = ProfileViewController()
+            self.navigationController?.pushViewController(pVC, animated: true)
+        case 4:
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = false
+            let cVC = ChatsTableViewController()
+            self.navigationController?.pushViewController(cVC, animated: true)
+            
+        case 5:
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = false
+            let nVC = NotificationTableViewController()
+            self.navigationController?.pushViewController(nVC, animated: true)
+            
+        case 6:
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = false
+            let sVC = SettingsTableViewController()
+            self.navigationController?.pushViewController(sVC, animated: true)
+            
+        default:
+            print("Not Implemented yet!")
+            
+        }
+
     }
     
     @IBAction func updateLocation(sender: AnyObject) {
@@ -113,173 +160,4 @@ class MainViewController: UIViewController {
         })
         
     }
-    
-    // TODO: starting the RadiaMenu
-    func initRadialMenu(){
-        
-        /* Setup radial menu */
-        
-        let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
-        
-        var subMenus: [RadialSubMenu] = []
-        for i in 0..<numRadialOptions {
-            subMenus.append(self.createSubMenu(i))
-        }
-        
-        radialMenu = RadialMenu(menus: subMenus, radius: menuRadius)
-        radialMenu.center = view.center
-        radialMenu.openDelayStep = 0.05
-        radialMenu.closeDelayStep = 0.00
-        radialMenu.minAngle = 180
-        radialMenu.maxAngle = 355
-        radialMenu.activatedDelay = 0.5
-        radialMenu.backgroundView.alpha = 0.0
-        
-        radialMenu.onActivate = { subMenu in
-            // did select subMenu
-            let pos = subMenu.tag
-            
-            print("selected: \(pos)")
-            
-            //TODO: add more pos to different pages
-            
-            switch pos {
-            case 0:
-                print("Not Implemented yet!")
-            case 1:
-                print("Not Implemented yet!")
-            case 2:
-                print("Not Implemented yet!")
-            case 3:
-                self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
-                self.navigationController?.navigationBar.hidden = false
-                let pVC = ProfileViewController()
-                self.navigationController?.pushViewController(pVC, animated: true)
-            case 4:
-                self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
-                self.navigationController?.navigationBar.hidden = false
-                let cVC = ChatsTableViewController()
-                self.navigationController?.pushViewController(cVC, animated: true)
-                
-            case 5:
-                self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
-                self.navigationController?.navigationBar.hidden = false
-                let nVC = NotificationTableViewController()
-                self.navigationController?.pushViewController(nVC, animated: true)
-                
-            case 6:
-                self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
-                self.navigationController?.navigationBar.hidden = false
-                let sVC = SettingsTableViewController()
-                self.navigationController?.pushViewController(sVC, animated: true)
-                
-            default:
-                print("Not Implemented yet!")
-                
-            }
-            
-        }
-        
-        radialMenu.onClose = {
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        view.addSubview(radialMenu)
-        
-        // Setup add button
-        menuButton.userInteractionEnabled = true
-        menuButton.alpha = 1
-        
-        
-        tapView.center = view.center
-        tapView.addGestureRecognizer(longPress)
-        
-        /* end of radial menu */
-    }
-
-    
-    // FIXME: Consider moving this to the radial menu and making standard interaction types  that are configurable
-    func pressedButton(gesture:UIGestureRecognizer) {
-        switch(gesture.state) {
-        case .Began:
-            self.radialMenu.openAtPosition(self.menuButton.center)
-        case .Ended:
-            self.radialMenu.close()
-        case .Changed:
-            self.radialMenu.moveAtPosition(gesture.locationInView(self.view))
-        default:
-            break
-        }
-    }
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        if (!didSetupConstraints) {
-            
-            // FIXME: Any way to simplify this?
-            menuButton.autoAlignAxisToSuperviewAxis(.Baseline)
-            menuButton.autoAlignAxisToSuperviewAxis(.Vertical)
-            menuButton.autoSetDimensionsToSize(CGSize(width: menuButtonSize, height: menuButtonSize))
-            
-            tapView.autoAlignAxisToSuperviewAxis(.Baseline)
-            tapView.autoAlignAxisToSuperviewAxis(.Vertical)
-            tapView.autoSetDimensionsToSize(CGSize(width: menuButtonSize*2, height: menuButtonSize*2))
-            
-            didSetupConstraints = true
-            
-        }
-    }
-    
-    // MARK - RadialSubMenu helpers
-    
-    func createSubMenu(i: Int) -> RadialSubMenu {
-        var subMenu: RadialSubMenu
-        let subMenuFrame = CGRect(x: 0.0, y: 0.0, width: CGFloat(subMenuRadius*2), height: CGFloat(subMenuRadius*2))
-        switch i {
-        case 0:
-            subMenu = RadialSubMenu(frame: subMenuFrame, imageView: UIImageView(image: UIImage(named: "btn_menu_search_female")))
-        case 1:
-            subMenu = RadialSubMenu(frame: subMenuFrame, imageView: UIImageView(image: UIImage(named: "btn_menu_search_male")))
-        case 2:
-            subMenu = RadialSubMenu(frame: subMenuFrame, imageView: UIImageView(image: UIImage(named: "btn_menu_search_all")))
-        case 3:
-            subMenu = RadialSubMenu(frame: subMenuFrame, imageView: UIImageView(image: UIImage(named: "user_pic_88")))
-        case 4:
-            subMenu = RadialSubMenu(frame: subMenuFrame, imageView: UIImageView(image: UIImage(named: "btn_menu_chat_normal")))
-        case 5:
-            subMenu = RadialSubMenu(frame: subMenuFrame, imageView: UIImageView(image: UIImage(named: "btn_menu_notification_normal")))
-        case 6:
-            subMenu = RadialSubMenu(frame: subMenuFrame, imageView: UIImageView(image: UIImage(named: "btn_menu_setting")))
-        default:
-            print("Not implemented")
-            subMenu = RadialSubMenu(frame: CGRect(x: 0.0, y: 0.0, width: CGFloat(subMenuRadius*2), height: CGFloat(subMenuRadius*2)))
-        }
-        
-        subMenu.userInteractionEnabled = true
-        subMenu.layer.cornerRadius = subMenuRadius
-        subMenu.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.5).CGColor
-        subMenu.layer.borderWidth = 1
-        subMenu.tag = i
-        return subMenu
-    }
-    
-    /*
-    func colorForSubMenu(subMenu: RadialSubMenu) -> UIColor {
-        let pos = subMenu.tag % colors.count
-        return colors[pos] as UIColor!
-    }
-    
-    func highlightSubMenu(subMenu: RadialSubMenu) {
-        let color = colorForSubMenu(subMenu)
-        subMenu.backgroundColor = color.colorWithAlphaComponent(1.0)
-    }
-    
-    func resetSubMenu(subMenu: RadialSubMenu) {
-        let color = colorForSubMenu(subMenu)
-        subMenu.backgroundColor = color.colorWithAlphaComponent(0.75)
-    }
-    */
 }
-
-
