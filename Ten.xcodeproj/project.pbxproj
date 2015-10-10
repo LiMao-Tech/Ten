@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160FA73B1BC8178B001FED10 /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA73A1BC8178B001FED10 /* FMDBManager.swift */; settings = {ASSET_TAGS = (); }; };
+		160FA73E1BC81F0E001FED10 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 160FA73C1BC81F0E001FED10 /* libsqlite3.0.tbd */; };
+		160FA73F1BC81F0E001FED10 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 160FA73D1BC81F0E001FED10 /* libsqlite3.tbd */; };
+		160FA75D1BC81FDA001FED10 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 160FA7531BC81FDA001FED10 /* FMDatabase.m */; settings = {ASSET_TAGS = (); }; };
+		160FA75E1BC81FDA001FED10 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 160FA7551BC81FDA001FED10 /* FMDatabaseAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		160FA75F1BC81FDA001FED10 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 160FA7571BC81FDA001FED10 /* FMDatabasePool.m */; settings = {ASSET_TAGS = (); }; };
+		160FA7601BC81FDA001FED10 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 160FA7591BC81FDA001FED10 /* FMDatabaseQueue.m */; settings = {ASSET_TAGS = (); }; };
+		160FA7611BC81FDA001FED10 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 160FA75C1BC81FDA001FED10 /* FMResultSet.m */; settings = {ASSET_TAGS = (); }; };
+		160FA77A1BC825A7001FED10 /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA7781BC825A7001FED10 /* FMDatabaseAdditionsVariadic.swift */; settings = {ASSET_TAGS = (); }; };
+		160FA77B1BC825A7001FED10 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA7791BC825A7001FED10 /* FMDatabaseVariadic.swift */; settings = {ASSET_TAGS = (); }; };
 		164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA74C1BB799E700446691 /* MobileInfo.swift */; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
@@ -46,6 +56,23 @@
 /* Begin PBXFileReference section */
 		032746A50B016C79F1BAEF9D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		04E4A3C8E90507E375B44E7E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		160FA73A1BC8178B001FED10 /* FMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
+		160FA73C1BC81F0E001FED10 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		160FA73D1BC81F0E001FED10 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		160FA7521BC81FDA001FED10 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		160FA7531BC81FDA001FED10 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		160FA7541BC81FDA001FED10 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		160FA7551BC81FDA001FED10 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		160FA7561BC81FDA001FED10 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		160FA7571BC81FDA001FED10 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		160FA7581BC81FDA001FED10 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		160FA7591BC81FDA001FED10 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		160FA75A1BC81FDA001FED10 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		160FA75B1BC81FDA001FED10 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		160FA75C1BC81FDA001FED10 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		160FA7641BC824D1001FED10 /* Ten-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ten-Bridging-Header.h"; sourceTree = "<group>"; };
+		160FA7781BC825A7001FED10 /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
+		160FA7791BC825A7001FED10 /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
 		164EA74C1BB799E700446691 /* MobileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileInfo.swift; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -81,6 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160FA73E1BC81F0E001FED10 /* libsqlite3.0.tbd in Frameworks */,
+				160FA73F1BC81F0E001FED10 /* libsqlite3.tbd in Frameworks */,
 				3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +124,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160FA7391BC814BB001FED10 /* Database Manager */ = {
+			isa = PBXGroup;
+			children = (
+				160FA7771BC825A7001FED10 /* Swift extensions */,
+				160FA7511BC81FDA001FED10 /* fmdb */,
+				160FA73A1BC8178B001FED10 /* FMDBManager.swift */,
+				160FA7641BC824D1001FED10 /* Ten-Bridging-Header.h */,
+			);
+			name = "Database Manager";
+			sourceTree = "<group>";
+		};
+		160FA7511BC81FDA001FED10 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				160FA7521BC81FDA001FED10 /* FMDatabase.h */,
+				160FA7531BC81FDA001FED10 /* FMDatabase.m */,
+				160FA7541BC81FDA001FED10 /* FMDatabaseAdditions.h */,
+				160FA7551BC81FDA001FED10 /* FMDatabaseAdditions.m */,
+				160FA7561BC81FDA001FED10 /* FMDatabasePool.h */,
+				160FA7571BC81FDA001FED10 /* FMDatabasePool.m */,
+				160FA7581BC81FDA001FED10 /* FMDatabaseQueue.h */,
+				160FA7591BC81FDA001FED10 /* FMDatabaseQueue.m */,
+				160FA75A1BC81FDA001FED10 /* FMDB.h */,
+				160FA75B1BC81FDA001FED10 /* FMResultSet.h */,
+				160FA75C1BC81FDA001FED10 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		160FA7771BC825A7001FED10 /* Swift extensions */ = {
+			isa = PBXGroup;
+			children = (
+				160FA7781BC825A7001FED10 /* FMDatabaseAdditionsVariadic.swift */,
+				160FA7791BC825A7001FED10 /* FMDatabaseVariadic.swift */,
+			);
+			path = "Swift extensions";
+			sourceTree = "<group>";
+		};
 		16988AE01B8CCC6000270DBA /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +184,8 @@
 		AA00EDF29C15F6580F061DCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				160FA73C1BC81F0E001FED10 /* libsqlite3.0.tbd */,
+				160FA73D1BC81F0E001FED10 /* libsqlite3.tbd */,
 				C16B2F1E77B7FE57018887C4 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -125,6 +194,7 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				160FA7391BC814BB001FED10 /* Database Manager */,
 				16D1746B1BBCF36C00820AEF /* Welcome&Tutorial */,
 				D44EC9471BBB719100BF41A2 /* Profile */,
 				D44EC94A1BBB825F00BF41A2 /* Chats */,
@@ -292,7 +362,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "LiMao Tech";
 				TargetAttributes = {
 					C4CED3051B88FB010008BCF2 = {
@@ -402,19 +472,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44EC95F1BBB849500BF41A2 /* NotificationTableViewController.swift in Sources */,
+				160FA73B1BC8178B001FED10 /* FMDBManager.swift in Sources */,
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
+				160FA75E1BC81FDA001FED10 /* FMDatabaseAdditions.m in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
 				16D1749C1BC05AD100820AEF /* ProfileViewController.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
+				160FA77A1BC825A7001FED10 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				16D174911BBE6D2100820AEF /* TutorialChildViewController.swift in Sources */,
+				160FA7601BC81FDA001FED10 /* FMDatabaseQueue.m in Sources */,
 				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,
+				160FA77B1BC825A7001FED10 /* FMDatabaseVariadic.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,
 				C4CED32F1B8916480008BCF2 /* CircleHelpers.swift in Sources */,
 				D44EC94D1BBB82B100BF41A2 /* ChatsTableViewController.swift in Sources */,
+				160FA7611BC81FDA001FED10 /* FMResultSet.m in Sources */,
+				160FA75F1BC81FDA001FED10 /* FMDatabasePool.m in Sources */,
 				D44EC9631BBB858600BF41A2 /* ProfileCollectionViewController.swift in Sources */,
 				16D1748F1BBE6D1000820AEF /* TutorialViewController.swift in Sources */,
 				D44EC95A1BBB843A00BF41A2 /* SettingsTableViewController.swift in Sources */,
+				160FA75D1BC81FDA001FED10 /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +555,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -496,6 +575,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Ten-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -533,6 +613,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Ten-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -547,6 +628,7 @@
 				INFOPLIST_FILE = Ten/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -562,6 +644,7 @@
 				INFOPLIST_FILE = Ten/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -581,6 +664,7 @@
 				);
 				INFOPLIST_FILE = TenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ten.app/Ten";
 			};
@@ -596,6 +680,7 @@
 				);
 				INFOPLIST_FILE = TenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ten.app/Ten";
 			};
