@@ -17,6 +17,8 @@
 		160FA7611BC81FDA001FED10 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 160FA75C1BC81FDA001FED10 /* FMResultSet.m */; settings = {ASSET_TAGS = (); }; };
 		160FA77A1BC825A7001FED10 /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA7781BC825A7001FED10 /* FMDatabaseAdditionsVariadic.swift */; settings = {ASSET_TAGS = (); }; };
 		160FA77B1BC825A7001FED10 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA7791BC825A7001FED10 /* FMDatabaseVariadic.swift */; settings = {ASSET_TAGS = (); }; };
+		160FA77D1BC97AEF001FED10 /* TenDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 160FA77C1BC97AEE001FED10 /* TenDB.sql */; settings = {ASSET_TAGS = (); }; };
+		160FA77F1BC9C460001FED10 /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA77E1BC9C460001FED10 /* userModel.swift */; settings = {ASSET_TAGS = (); }; };
 		164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA74C1BB799E700446691 /* MobileInfo.swift */; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
@@ -73,6 +75,8 @@
 		160FA7641BC824D1001FED10 /* Ten-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ten-Bridging-Header.h"; sourceTree = "<group>"; };
 		160FA7781BC825A7001FED10 /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
 		160FA7791BC825A7001FED10 /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		160FA77C1BC97AEE001FED10 /* TenDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = TenDB.sql; sourceTree = "<group>"; };
+		160FA77E1BC9C460001FED10 /* userModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
 		164EA74C1BB799E700446691 /* MobileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileInfo.swift; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -131,6 +135,7 @@
 				160FA7511BC81FDA001FED10 /* fmdb */,
 				160FA73A1BC8178B001FED10 /* FMDBManager.swift */,
 				160FA7641BC824D1001FED10 /* Ten-Bridging-Header.h */,
+				160FA77E1BC9C460001FED10 /* userModel.swift */,
 			);
 			name = "Database Manager";
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 		C4CED3091B88FB010008BCF2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				160FA77C1BC97AEE001FED10 /* TenDB.sql */,
 				164EA74C1BB799E700446691 /* MobileInfo.swift */,
 				C4CED30A1B88FB010008BCF2 /* Info.plist */,
 			);
@@ -404,6 +410,7 @@
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
 				D44EC94E1BBB82B100BF41A2 /* ChatsTableViewController.xib in Resources */,
 				D44EC9601BBB849500BF41A2 /* NotificationTableViewController.xib in Resources */,
+				160FA77D1BC97AEF001FED10 /* TenDB.sql in Resources */,
 				D44EC9641BBB858600BF41A2 /* ProfileCollectionViewController.xib in Resources */,
 				D44EC95B1BBB843A00BF41A2 /* SettingsTableViewController.xib in Resources */,
 			);
@@ -484,6 +491,7 @@
 				160FA7601BC81FDA001FED10 /* FMDatabaseQueue.m in Sources */,
 				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,
 				160FA77B1BC825A7001FED10 /* FMDatabaseVariadic.swift in Sources */,
+				160FA77F1BC9C460001FED10 /* userModel.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,
 				C4CED32F1B8916480008BCF2 /* CircleHelpers.swift in Sources */,
 				D44EC94D1BBB82B100BF41A2 /* ChatsTableViewController.swift in Sources */,

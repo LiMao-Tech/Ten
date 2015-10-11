@@ -57,7 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         sharedMobileInformation.gettingMobileViewBounds(screenRect);
         print([screenWidth, screenHeight])
         
-        // first time tutorial
+        // first time init databse:
+        sharedDatabase.fmdbQueue?.description
+        
           
         return true
     }
