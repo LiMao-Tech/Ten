@@ -17,17 +17,23 @@ let locationNotiName = "LocationNotification"
 let updateLocationByIdURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
 
 
-
 let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
 let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
 
-let NAV_BAR_HEIGHT : CGFloat = SCREEN_HEIGHT == 568 ? 88 : 132
+let BUTTON_DENO : CGFloat = 15
+let NAV_BAR_HEIGHT : CGFloat = SCREEN_HEIGHT == 568 ? 44 : 66
+let TOOL_BAR_HEIGHT : CGFloat = SCREEN_HEIGHT == 568 ? 48 : 73
+
 let SCREEN_HEIGHT_WO_NAV = SCREEN_HEIGHT - NAV_BAR_HEIGHT
+
+
 
 let DISTANCE_FILTER : Double = 100 // meters
 
 let PROFILE_FONT_SIZE : CGFloat = 12
-let USERNAME_FONT_SIZE : CGFloat = 24
+let USERNAME_FONT_SIZE : CGFloat = 26
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -53,12 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             sharedManager.locationManager!.requestWhenInUseAuthorization()
         }
         
-        // getting the width and height
-        let screenRect = UIScreen.mainScreen().bounds;
-        let screenWidth = screenRect.size.width;
-        let screenHeight = screenRect.size.height;
-        sharedMobileInformation.gettingMobileViewBounds(screenRect);
-        print([screenWidth, screenHeight])
+
+        print([SCREEN_WIDTH, SCREEN_HEIGHT])
           
         return true
     }

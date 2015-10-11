@@ -33,15 +33,13 @@ class ProfileViewController: UIViewController {
         morePictureButton.addTarget(self, action: "pushPictureCollectionView", forControlEvents: UIControlEvents.TouchUpInside)
         morePictureButton.tintColor = UIColor.whiteColor()
         
-        
-        print (SCREEN_HEIGHT_WO_NAV)
         // score label
         let inner = 7
         let outter = 8
         let energy = 9
         let scoreLabel = UILabel(frame: CGRectMake(0, SCREEN_HEIGHT-40, SCREEN_WIDTH-70, 50))
         scoreLabel.textColor = UIColor.whiteColor()
-        scoreLabel.text = "Inner \(inner)   Outter \(outter)   Energy \(energy)"
+        scoreLabel.text = "内在 \(inner)   外在 \(outter)   能量 \(energy)"
         scoreLabel.textAlignment = NSTextAlignment.Center
         scoreLabel.font = UIFont.systemFontOfSize(PROFILE_FONT_SIZE)
         
@@ -54,14 +52,14 @@ class ProfileViewController: UIViewController {
         quoteLabel.numberOfLines = 3
         
         // add location icon
-        let locationIcon = UIImageView(frame: CGRectMake(SCREEN_WIDTH/10, SCREEN_HEIGHT-90, 25, 15))
+        let locationIcon = UIImageView(frame: CGRectMake(SCREEN_WIDTH/2-30, SCREEN_HEIGHT-90, 25, 15))
         locationIcon.contentMode = UIViewContentMode.ScaleAspectFit
         locationIcon.image = UIImage(named: "icon_profile_location")
         
         // add location text
-        let locationLabel = UILabel(frame: CGRectMake(SCREEN_WIDTH/10+20, SCREEN_HEIGHT-90, SCREEN_WIDTH/2, 15))
+        let locationLabel = UILabel(frame: CGRectMake(SCREEN_WIDTH/2, SCREEN_HEIGHT-90, SCREEN_WIDTH/2, 15))
         locationLabel.textColor = UIColor.whiteColor()
-        locationLabel.text = "Roma, Italia"
+        locationLabel.text = "南京， 江苏"
         locationLabel.textAlignment = NSTextAlignment.Left
         locationLabel.font = UIFont.systemFontOfSize(PROFILE_FONT_SIZE)
         
@@ -78,9 +76,9 @@ class ProfileViewController: UIViewController {
         pcoinLabel.font = UIFont.systemFontOfSize(PROFILE_FONT_SIZE)
         
         // add user name and age
-        let userNameLabel = UILabel(frame: CGRectMake(20, SCREEN_HEIGHT-140, SCREEN_WIDTH-40, 20))
+        let userNameLabel = UILabel(frame: CGRectMake(20, SCREEN_HEIGHT-150, SCREEN_WIDTH-40, 35))
         userNameLabel.textColor = UIColor.whiteColor()
-        userNameLabel.text = "Monice Bellucci     \(26)"
+        userNameLabel.text = "梅婷     \(40)"
         userNameLabel.textAlignment = NSTextAlignment.Center
         userNameLabel.font = UIFont.systemFontOfSize(USERNAME_FONT_SIZE)
         
@@ -93,21 +91,23 @@ class ProfileViewController: UIViewController {
         self.view.addSubview(pcoinIcon)
         self.view.addSubview(pcoinLabel)
         self.view.addSubview(userNameLabel)
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         // update profile picture everytime
-        self.profileImageView.image = UIImage(named: "monica")
+        self.profileImageView.image = UIImage(named: "meiting")
         
         
         
     }
     
     func pushPictureCollectionView() {
-        let pPVC = ProfilePicsViewController()
-        self.presentViewController(pPVC, animated: true, completion: nil)
+        let layout = ProfilePicsLayout()
+        let pPCVC = ProfilePicsCollectionViewController(collectionViewLayout: layout)
+        self.navigationController?.pushViewController(pPCVC, animated: true)
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -16,19 +16,21 @@
 		C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CED30F1B88FB010008BCF2 /* Main.storyboard */; };
 		C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CED3141B88FB010008BCF2 /* LaunchScreen.xib */; };
 		C4CED3221B88FB010008BCF2 /* TenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED3211B88FB010008BCF2 /* TenTests.swift */; };
-		C4CED32F1B8916480008BCF2 /* CircleHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED32C1B8916480008BCF2 /* CircleHelpers.swift */; };
-		C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED32D1B8916480008BCF2 /* RadialMenu.swift */; };
-		C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED32E1B8916480008BCF2 /* RadialSubMenu.swift */; };
+		D41B3D721BC07493005002C8 /* ProfilePicsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41B3D701BC07493005002C8 /* ProfilePicsCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		D41B3D731BC07493005002C8 /* ProfilePicsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B3D711BC07493005002C8 /* ProfilePicsCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D41B3D761BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B3D741BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D41B3D771BC074AB005002C8 /* ProfilePicsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41B3D751BC074AB005002C8 /* ProfilePicsCollectionViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		D41B3D791BC07924005002C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B3D781BC07924005002C8 /* Helpers.swift */; settings = {ASSET_TAGS = (); }; };
 		D44EC94D1BBB82B100BF41A2 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EC94B1BBB82B100BF41A2 /* ChatsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D44EC94E1BBB82B100BF41A2 /* ChatsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC94C1BBB82B100BF41A2 /* ChatsTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		D44EC95A1BBB843A00BF41A2 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EC9581BBB843A00BF41A2 /* SettingsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D44EC95B1BBB843A00BF41A2 /* SettingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC9591BBB843A00BF41A2 /* SettingsTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		D44EC95F1BBB849500BF41A2 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EC95D1BBB849500BF41A2 /* NotificationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D44EC9601BBB849500BF41A2 /* NotificationTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC95E1BBB849500BF41A2 /* NotificationTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */; settings = {ASSET_TAGS = (); }; };
+		D4CB8B1A1BC4697E00F2D2E7 /* ADCircularMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB8B191BC4697E00F2D2E7 /* ADCircularMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F301BBDB9090019C09B /* ProfileViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		D4D96F3A1BBF84670019C09B /* ProfilePicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F381BBF84670019C09B /* ProfilePicsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D4D96F3B1BBF84670019C09B /* ProfilePicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F391BBF84670019C09B /* ProfilePicsViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,19 +59,23 @@
 		C4CED31B1B88FB010008BCF2 /* TenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED3201B88FB010008BCF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CED3211B88FB010008BCF2 /* TenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenTests.swift; sourceTree = "<group>"; };
-		C4CED32C1B8916480008BCF2 /* CircleHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleHelpers.swift; sourceTree = "<group>"; };
-		C4CED32D1B8916480008BCF2 /* RadialMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialMenu.swift; sourceTree = "<group>"; };
-		C4CED32E1B8916480008BCF2 /* RadialSubMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialSubMenu.swift; sourceTree = "<group>"; };
+		D41B3D701BC07493005002C8 /* ProfilePicsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePicsCollectionViewCell.xib; sourceTree = "<group>"; };
+		D41B3D711BC07493005002C8 /* ProfilePicsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsCollectionViewController.swift; sourceTree = "<group>"; };
+		D41B3D741BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D41B3D751BC074AB005002C8 /* ProfilePicsCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePicsCollectionViewController.xib; sourceTree = "<group>"; };
+		D41B3D781BC07924005002C8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D44EC94B1BBB82B100BF41A2 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		D44EC94C1BBB82B100BF41A2 /* ChatsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatsTableViewController.xib; sourceTree = "<group>"; };
 		D44EC9581BBB843A00BF41A2 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D44EC9591BBB843A00BF41A2 /* SettingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewController.xib; sourceTree = "<group>"; };
 		D44EC95D1BBB849500BF41A2 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		D44EC95E1BBB849500BF41A2 /* NotificationTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewController.xib; sourceTree = "<group>"; };
+		D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsLayout.swift; sourceTree = "<group>"; };
+		D4CB8B171BC4697E00F2D2E7 /* ADCircularMenuViewController-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADCircularMenuViewController-Bridging-Header.h"; sourceTree = "<group>"; };
+		D4CB8B181BC4697E00F2D2E7 /* ADCircularMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularMenuViewController.h; sourceTree = "<group>"; };
+		D4CB8B191BC4697E00F2D2E7 /* ADCircularMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenuViewController.m; sourceTree = "<group>"; };
 		D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4D96F301BBDB9090019C09B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		D4D96F381BBF84670019C09B /* ProfilePicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsViewController.swift; sourceTree = "<group>"; };
-		D4D96F391BBF84670019C09B /* ProfilePicsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePicsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +122,9 @@
 				D44EC95C1BBB846F00BF41A2 /* Notification */,
 				D44EC9571BBB841E00BF41A2 /* Settings */,
 				C4CED3081B88FB010008BCF2 /* Ten */,
+				D41B3D7A1BC0792D005002C8 /* Helpers */,
 				16988AE01B8CCC6000270DBA /* LocationManager */,
-				C4CED32B1B8916480008BCF2 /* RadialMenu */,
+				D4CB8B161BC4697E00F2D2E7 /* ADCircularMenuController */,
 				C4CED31E1B88FB010008BCF2 /* TenTests */,
 				C4CED3071B88FB010008BCF2 /* Products */,
 				E96E63921E9EBB4A5FCFEE0A /* Pods */,
@@ -173,14 +180,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C4CED32B1B8916480008BCF2 /* RadialMenu */ = {
+		D41B3D7A1BC0792D005002C8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C4CED32C1B8916480008BCF2 /* CircleHelpers.swift */,
-				C4CED32D1B8916480008BCF2 /* RadialMenu.swift */,
-				C4CED32E1B8916480008BCF2 /* RadialSubMenu.swift */,
+				D41B3D781BC07924005002C8 /* Helpers.swift */,
 			);
-			path = RadialMenu;
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		D44EC9471BBB719100BF41A2 /* Profile */ = {
@@ -219,11 +224,25 @@
 			name = Notification;
 			sourceTree = "<group>";
 		};
+		D4CB8B161BC4697E00F2D2E7 /* ADCircularMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				D4CB8B171BC4697E00F2D2E7 /* ADCircularMenuViewController-Bridging-Header.h */,
+				D4CB8B181BC4697E00F2D2E7 /* ADCircularMenuViewController.h */,
+				D4CB8B191BC4697E00F2D2E7 /* ADCircularMenuViewController.m */,
+			);
+			name = ADCircularMenuController;
+			path = Ten/ADCircularMenuController;
+			sourceTree = "<group>";
+		};
 		D4D96F371BBF82270019C09B /* ProfilePics */ = {
 			isa = PBXGroup;
 			children = (
-				D4D96F381BBF84670019C09B /* ProfilePicsViewController.swift */,
-				D4D96F391BBF84670019C09B /* ProfilePicsViewController.xib */,
+				D41B3D741BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift */,
+				D41B3D701BC07493005002C8 /* ProfilePicsCollectionViewCell.xib */,
+				D41B3D711BC07493005002C8 /* ProfilePicsCollectionViewController.swift */,
+				D41B3D751BC074AB005002C8 /* ProfilePicsCollectionViewController.xib */,
+				D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */,
 			);
 			name = ProfilePics;
 			sourceTree = "<group>";
@@ -323,12 +342,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41B3D771BC074AB005002C8 /* ProfilePicsCollectionViewController.xib in Resources */,
 				D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */,
 				16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */,
 				C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */,
+				D41B3D721BC07493005002C8 /* ProfilePicsCollectionViewCell.xib in Resources */,
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
 				D44EC94E1BBB82B100BF41A2 /* ChatsTableViewController.xib in Resources */,
-				D4D96F3B1BBF84670019C09B /* ProfilePicsViewController.xib in Resources */,
 				D44EC9601BBB849500BF41A2 /* NotificationTableViewController.xib in Resources */,
 				D44EC95B1BBB843A00BF41A2 /* SettingsTableViewController.xib in Resources */,
 			);
@@ -397,15 +417,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44EC95F1BBB849500BF41A2 /* NotificationTableViewController.swift in Sources */,
+				D41B3D791BC07924005002C8 /* Helpers.swift in Sources */,
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
-				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
+				D41B3D761BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
-				D4D96F3A1BBF84670019C09B /* ProfilePicsViewController.swift in Sources */,
-				C4CED3301B8916480008BCF2 /* RadialMenu.swift in Sources */,
+				D4CB8B1A1BC4697E00F2D2E7 /* ADCircularMenuViewController.m in Sources */,
+				D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */,
 				D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */,
+				D41B3D731BC07493005002C8 /* ProfilePicsCollectionViewController.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,
-				C4CED32F1B8916480008BCF2 /* CircleHelpers.swift in Sources */,
 				D44EC94D1BBB82B100BF41A2 /* ChatsTableViewController.swift in Sources */,
 				D44EC95A1BBB843A00BF41A2 /* SettingsTableViewController.swift in Sources */,
 			);
@@ -469,6 +490,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -489,6 +511,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$PROJECT/ADCircularMenuController/ADCircularMenuViewController-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -513,6 +536,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -526,6 +550,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$PROJECT/ADCircularMenuController/ADCircularMenuViewController-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
