@@ -6,189 +6,207 @@
 //  Copyright (c) 2015 LiMao Tech. All rights reserved.
 //
 
-/*
-import UIKit
-
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-}
-*/
-
 import UIKit
 import QuartzCore
 import CoreLocation
+import Foundation
+import AFNetworking
 
-class MainViewController: UIViewController {
-    
-    
-    var addButton:UIImageView
-    var tapView:UIView
-    var radialMenu:RadialMenu!
+class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    let locationManager:CLLocationManager
+    let menuButton = UIButton(frame: CGRectMake(0, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
+    let randomButton = UIButton(frame: CGRectMake(SCREEN_WIDTH-SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
     
-    let num = 5
-    let addButtonSize: CGFloat = 20.0
-    let menuRadius: CGFloat = 125.0
-    let subMenuRadius: CGFloat = 15.0
-    var didSetupConstraints = false
-    
-    let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.yellowColor(), UIColor.grayColor(), UIColor.greenColor()]
-    
-    @IBOutlet weak var locationLabel: UILabel!
-    
-    required init(coder aDecoder: NSCoder) {
-        
-        addButton = UIImageView(image: UIImage(named: "plus"))
-        tapView = UIView()
-        locationManager = appDelegate.locationManager
-        
-        super.init(coder: aDecoder)
-    }
-    
+    // circular menu
+    let circularMenuVC = ADCircularMenuViewController(frame: UIScreen.mainScreen().bounds)
+    var lvoneBtn:UIButton!
+    var lvtwoBtn:UIButton!
+    var lvthreeBtn:UIButton!
+    var lvfourBtn:UIButton!
+    var lvfiveBtn:UIButton!
+    var lvsixBtn:UIButton!
+    var lvsevenBtn:UIButton!
+    var lveightBtn:UIButton!
+    var lvnineBtn:UIButton!
+    var lvtenBtn:UIButton!
+    var btns = Array<UIButton!>()
+    // view loading
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set location
-  //      var latitude = locationManager.location.coordinate.latitude
-   //     self.locationLabel.text =  "\(latitude)"
+        // set circularMenu
+        self.circularMenuVC.circularMenuDelegate = self
+        self.circularMenuVC.view.frame = UIScreen.mainScreen().bounds
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: "pressedButton:")
+        //setupButtons
+        setupButtons()
         
-        // Setup radial menu
-        var subMenus: [RadialSubMenu] = []
-        for i in 0..<num {
-            subMenus.append(self.createSubMenu(i))
-        }
+        // add location observer
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "locationChanged:",
+            name: locationNotiName,
+            object: nil)
         
-        radialMenu = RadialMenu(menus: subMenus, radius: menuRadius)
-        radialMenu.center = view.center
-        radialMenu.openDelayStep = 0.05
-        radialMenu.closeDelayStep = 0.00
-        radialMenu.minAngle = 275
-        radialMenu.maxAngle = 355
-        radialMenu.activatedDelay = 0.5
-        radialMenu.backgroundView.alpha = 0.0
-        
-        radialMenu.onClose = {
-            for subMenu in self.radialMenu.subMenus {
-                self.resetSubMenu(subMenu)
-            }
-        }
-        
-        radialMenu.onHighlight = { subMenu in
-            self.highlightSubMenu(subMenu)
-            let pos = subMenu.tag % self.colors.count
-            
-            println("selected: \(pos)")
-            
-            if pos == 4 {
-                
-                let vc = UITableViewController(nibName: "SettingsTableViewController", bundle: nil)
-                self.navigationController!.pushViewController(vc, animated: true )
-            }
-            
-            let color = self.colorForSubMenu(subMenu).colorWithAlphaComponent(1.0)
-            
-            // TODO: Add nice color transition
-            self.view.backgroundColor = color
-        }
-        
-        radialMenu.onUnhighlight = { subMenu in
-            self.resetSubMenu(subMenu)
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        radialMenu.onClose = {
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-        
-        view.addSubview(radialMenu)
-        
-        // Setup add button
-        addButton.userInteractionEnabled = true
-        addButton.alpha = 0.65
-        view.addSubview(addButton)
-        
-        tapView.center = view.center
-        tapView.addGestureRecognizer(longPress)
-        view.addSubview(tapView)
-        
-        view.backgroundColor = UIColor.whiteColor()
+        // config buttons
+        menuButton.setImage(UIImage(named: "btn_menu"), forState: UIControlState.Normal)
+        randomButton.setImage(UIImage(named: "btn_radar_random"), forState: UIControlState.Normal)
+        menuButton.addTarget(self, action: "menuButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
+        randomButton.addTarget(self, action: "randomButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(menuButton)
+        self.view.addSubview(randomButton)
     }
     
-    // FIXME: Consider moving this to the radial menu and making standard interaction types  that are configurable
-    func pressedButton(gesture:UIGestureRecognizer) {
-        switch(gesture.state) {
-        case .Began:
-            self.radialMenu.openAtPosition(self.addButton.center)
-        case .Ended:
-            self.radialMenu.close()
-        case .Changed:
-            self.radialMenu.moveAtPosition(gesture.locationInView(self.view))
+    func setupButtons(){
+        var btnArray = [lvoneBtn,lvtwoBtn,lvthreeBtn,lvfourBtn,lvfiveBtn,lvsixBtn,lvsevenBtn,lveightBtn,lvnineBtn,lvtenBtn]
+        let marginw:CGFloat = 30
+        let marginh:CGFloat = 20
+        let iconw:CGFloat = 58
+        let iconh:CGFloat = 67
+        let x = (SCREEN_WIDTH - iconw*3 - marginw*2)/2
+        let y:CGFloat = 90
+        for i in 0...btnArray.count-2{
+            let row = i/3
+            let col = i%3
+            btnArray[i] = UIButton(frame: CGRectMake(x + CGFloat(row)*(marginw+iconw), y + CGFloat(col)*(marginh+iconh), iconw, iconh))
+            btnArray[i].setImage(UIImage(named: "btn_l\(i+1)_unlock"), forState: UIControlState.Normal)
+            btnArray[i].addTarget(self, action: "levelSelect:", forControlEvents: UIControlEvents.TouchUpInside)
+            self.circularMenuVC.view.addSubview(btnArray[i])
+//            btnArray[i].hidden = true
+            btns.append(btnArray[i])
+        }
+        lvtenBtn = UIButton(frame: CGRectMake(x+marginw+iconw, y + 3*(marginh+iconh), iconw, iconh))
+        lvtenBtn.setImage(UIImage(named: "btn_l10_lock"), forState: UIControlState.Normal)
+        lvtenBtn.addTarget(self, action: "levelSelect:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.circularMenuVC.view.addSubview(lvtenBtn)
+//        lvtenBtn.hidden = true
+        btns.append(lvtenBtn)
+        
+    }
+    
+    //levelButton actions
+    func levelSelect(sender:UIButton){
+        self.navigationController?.navigationBar.hidden = false
+        let lVC = LevelUserController()
+        self.navigationController?.pushViewController(lVC, animated: true)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = true
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_radar")!)
+    }
+    
+    // button actions
+    func menuButtonAction() {
+        self.view.addSubview(self.circularMenuVC.view)
+        circularMenuVC.show()
+    }
+    func randomButtonAction() {
+        self.navigationController?.navigationBar.hidden = false
+        let rVC = RandomUserController()
+        self.navigationController?.pushViewController(rVC, animated: true)
+    }
+    
+    
+    func circularMenuClickedButtonAtIndex(buttonIndex: Int32) {
+        // did select subMenu
+        
+        print("selected: \(buttonIndex)")
+        
+        //TODO: add more pos to different pages
+        
+        switch buttonIndex {
+        case 0:
+            print("Not Implemented yet!")
+        case 1:
+            print("Not Implemented yet!")
+        case 2:
+            print("Not Implemented yet!")
+        case 3:
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = false
+            let pVC = ProfileViewController()
+            self.navigationController?.pushViewController(pVC, animated: true)
+        case 4:
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = false
+            let cVC = ChatViewController()
+            self.navigationController?.pushViewController(cVC, animated: true)
+            
+        case 5:
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = false
+            let nVC = NotificationViewController()
+            self.navigationController?.pushViewController(nVC, animated: true)
+            
+        case 6:
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.hidden = false
+            let sVC = SettingsViewController()
+            self.navigationController?.pushViewController(sVC, animated: true)
+            
         default:
-            break
+            print("Not Implemented yet!")
+            
         }
-    }
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        if (!didSetupConstraints) {
-            
-            // FIXME: Any way to simplify this?
-            addButton.autoAlignAxisToSuperviewAxis(.Baseline)
-            //addButton.autoAlignAxisToSuperviewAxis(.Vertical)
-            addButton.autoSetDimensionsToSize(CGSize(width: addButtonSize, height: addButtonSize))
-            
-            tapView.autoAlignAxisToSuperviewAxis(.Baseline)
-            //tapView.autoAlignAxisToSuperviewAxis(.Vertical)
-            tapView.autoSetDimensionsToSize(CGSize(width: addButtonSize*2, height: addButtonSize*2))
 
-            didSetupConstraints = true
+    }
+    
+    @IBAction func updateLocation(sender: AnyObject) {
+        
+        //nothing
+        if(sharedManager.authorization_status == 1){
+            sharedManager.startUpdatingLocation()
+            NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("sharedManagerStopUpdatingLocation"), userInfo: nil, repeats: false)
         }
     }
     
-    // MARK - RadialSubMenu helpers
-    
-    func createSubMenu(i: Int) -> RadialSubMenu {
-        let subMenu = RadialSubMenu(frame: CGRect(x: 0.0, y: 0.0, width: CGFloat(subMenuRadius*2), height: CGFloat(subMenuRadius*2)))
-        subMenu.userInteractionEnabled = true
-        subMenu.layer.cornerRadius = subMenuRadius
-        subMenu.layer.borderColor = UIColor.whiteColor().colorWithAlphaComponent(0.5).CGColor
-        subMenu.layer.borderWidth = 1
-        subMenu.tag = i
-        resetSubMenu(subMenu)
-        return subMenu
+    @objc func locationChanged(notification: NSNotification){
+        //do stuff
+        print("Location Changed...")
+        // Stop location services, here
+        if(sharedManager.is_ready == 1){
+            let lati = sharedManager.currentLocation!.coordinate.latitude
+            let longi = sharedManager.currentLocation!.coordinate.longitude
+            
+            print("\(lati) \(longi)")
+            // self.postLocationToServer(longi.description, lati: lati.description)
+        }
+        
     }
     
-    func colorForSubMenu(subMenu: RadialSubMenu) -> UIColor {
-        let pos = subMenu.tag % colors.count
-        return colors[pos] as UIColor!
+    func sharedManagerStopUpdatingLocation(){
+        sharedManager.stopUpdatingLocation()
     }
     
-    func highlightSubMenu(subMenu: RadialSubMenu) {
-        let color = colorForSubMenu(subMenu)
-        subMenu.backgroundColor = color.colorWithAlphaComponent(1.0)
-    }
-    
-    func resetSubMenu(subMenu: RadialSubMenu) {
-        let color = colorForSubMenu(subMenu)
-        subMenu.backgroundColor = color.colorWithAlphaComponent(0.75)
+    func postLocationToServer(longi:NSString, lati: NSString){
+        
+        // upload using POST:
+        // TODO: error on AFNetworking connect with background
+        
+        let manager = AFHTTPRequestOperationManager()
+        let parameters = ["id":"1","latitude" : lati,"longitude" : longi]
+        
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.responseSerializer = AFHTTPResponseSerializer()
+        //manager.responseSerializer.acceptableContentTypes =
+        
+        manager.POST( updateLocationByIdURL,
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                print("the respond object is: ")
+                print( operation.responseData )
+                let str = NSString(data: responseObject! as! NSData, encoding: NSUTF8StringEncoding)
+                print(str);
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                print("Error: " + error.localizedDescription)
+                let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
+                print(NSString(data: data, encoding: NSUTF8StringEncoding))
+        })
+        
     }
 }
-
-
