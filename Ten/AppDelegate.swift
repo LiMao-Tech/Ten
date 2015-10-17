@@ -16,9 +16,9 @@ import Foundation
 let locationNotiName = "LocationNotification"
 let updateLocationByIdURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
 
-
-let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.height
-let SCREEN_WIDTH = UIScreen.mainScreen().bounds.width
+let SCREEN = UIScreen.mainScreen().bounds
+let SCREEN_HEIGHT = SCREEN.height
+let SCREEN_WIDTH = SCREEN.width
 
 let BUTTON_DENO : CGFloat = 15
 let NAV_BAR_HEIGHT : CGFloat = SCREEN_HEIGHT == 568 ? 44 : 66

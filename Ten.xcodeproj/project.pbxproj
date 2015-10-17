@@ -11,6 +11,22 @@
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		640D05AC1BCB68F700C10E20 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D05AB1BCB68F700C10E20 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		640D05B01BCB691900C10E20 /* LMUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D05AD1BCB691900C10E20 /* LMUserCell.swift */; settings = {ASSET_TAGS = (); }; };
+		640D05B11BCB691900C10E20 /* LMUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640D05AE1BCB691900C10E20 /* LMUserCell.xib */; settings = {ASSET_TAGS = (); }; };
+		646C1B8C1BCB789400EEBF04 /* BaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B8B1BCB789400EEBF04 /* BaseUser.swift */; settings = {ASSET_TAGS = (); }; };
+		646C1B901BCB8C8600EEBF04 /* RandomAndLevelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */; settings = {ASSET_TAGS = (); }; };
+		646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */; settings = {ASSET_TAGS = (); }; };
+		646C1B941BCB8ED000EEBF04 /* LevelUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B931BCB8ED000EEBF04 /* LevelUserController.swift */; settings = {ASSET_TAGS = (); }; };
+		646C1B961BCB913C00EEBF04 /* RandomAndLevelUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B951BCB913C00EEBF04 /* RandomAndLevelUserCell.swift */; settings = {ASSET_TAGS = (); }; };
+		64A8D59A1BCAA7B600AC1E6E /* ADCircularMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A8D5991BCAA2AB00AC1E6E /* ADCircularMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
+		64BDA0BF1BCBC30A009DF292 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0BE1BCBC30A009DF292 /* NotificationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0C01BCBC4E3009DF292 /* NotificationInfoCell.swift */; settings = {ASSET_TAGS = (); }; };
+		64BDA0C31BCBC508009DF292 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0C21BCBC508009DF292 /* Notification.swift */; settings = {ASSET_TAGS = (); }; };
+		64BDA0C51BCBC64E009DF292 /* NotificationFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0C41BCBC64E009DF292 /* NotificationFrame.swift */; settings = {ASSET_TAGS = (); }; };
+		64BDA0C91BCC02BC009DF292 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0C81BCC02BC009DF292 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		64BDA0CC1BCC0815009DF292 /* settingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0CA1BCC0815009DF292 /* settingCell.swift */; settings = {ASSET_TAGS = (); }; };
+		64BDA0D31BCFBDBE009DF292 /* SettingDoubleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0D21BCFBDBE009DF292 /* SettingDoubleLabelCell.swift */; settings = {ASSET_TAGS = (); }; };
 		C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30B1B88FB010008BCF2 /* AppDelegate.swift */; };
 		C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30D1B88FB010008BCF2 /* MainViewController.swift */; };
 		C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CED30F1B88FB010008BCF2 /* Main.storyboard */; };
@@ -21,14 +37,7 @@
 		D41B3D761BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B3D741BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D41B3D771BC074AB005002C8 /* ProfilePicsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41B3D751BC074AB005002C8 /* ProfilePicsCollectionViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		D41B3D791BC07924005002C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B3D781BC07924005002C8 /* Helpers.swift */; settings = {ASSET_TAGS = (); }; };
-		D44EC94D1BBB82B100BF41A2 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EC94B1BBB82B100BF41A2 /* ChatsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D44EC94E1BBB82B100BF41A2 /* ChatsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC94C1BBB82B100BF41A2 /* ChatsTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		D44EC95A1BBB843A00BF41A2 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EC9581BBB843A00BF41A2 /* SettingsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D44EC95B1BBB843A00BF41A2 /* SettingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC9591BBB843A00BF41A2 /* SettingsTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		D44EC95F1BBB849500BF41A2 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44EC95D1BBB849500BF41A2 /* NotificationTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D44EC9601BBB849500BF41A2 /* NotificationTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D44EC95E1BBB849500BF41A2 /* NotificationTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */; settings = {ASSET_TAGS = (); }; };
-		D4CB8B1A1BC4697E00F2D2E7 /* ADCircularMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB8B191BC4697E00F2D2E7 /* ADCircularMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F301BBDB9090019C09B /* ProfileViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -49,6 +58,27 @@
 		164EA74C1BB799E700446691 /* MobileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileInfo.swift; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		640D05AB1BCB68F700C10E20 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = ../../../../GitHub/Develop/ChatViewController.swift; sourceTree = "<group>"; };
+		640D05AD1BCB691900C10E20 /* LMUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMUserCell.swift; sourceTree = "<group>"; };
+		640D05AE1BCB691900C10E20 /* LMUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMUserCell.xib; sourceTree = "<group>"; };
+		646C1B8B1BCB789400EEBF04 /* BaseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUser.swift; sourceTree = "<group>"; };
+		646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAndLevelUser.swift; sourceTree = "<group>"; };
+		646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUserController.swift; sourceTree = "<group>"; };
+		646C1B931BCB8ED000EEBF04 /* LevelUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUserController.swift; sourceTree = "<group>"; };
+		646C1B951BCB913C00EEBF04 /* RandomAndLevelUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAndLevelUserCell.swift; sourceTree = "<group>"; };
+		64A8D5931BCAA27600AC1E6E /* ADCircularMenuViewController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADCircularMenuViewController-Bridging-Header.h"; sourceTree = "<group>"; };
+		64A8D5941BCAA27600AC1E6E /* ADCircularMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADCircularMenuViewController.h; sourceTree = "<group>"; };
+		64A8D5951BCAA27600AC1E6E /* ADCircularMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenuViewController.m; sourceTree = "<group>"; };
+		64A8D5971BCAA2AB00AC1E6E /* ADCircularMenuViewController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADCircularMenuViewController-Bridging-Header.h"; sourceTree = "<group>"; };
+		64A8D5981BCAA2AB00AC1E6E /* ADCircularMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADCircularMenuViewController.h; sourceTree = "<group>"; };
+		64A8D5991BCAA2AB00AC1E6E /* ADCircularMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenuViewController.m; sourceTree = "<group>"; };
+		64BDA0BE1BCBC30A009DF292 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		64BDA0C01BCBC4E3009DF292 /* NotificationInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationInfoCell.swift; sourceTree = "<group>"; };
+		64BDA0C21BCBC508009DF292 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		64BDA0C41BCBC64E009DF292 /* NotificationFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationFrame.swift; sourceTree = "<group>"; };
+		64BDA0C81BCC02BC009DF292 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		64BDA0CA1BCC0815009DF292 /* settingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingCell.swift; sourceTree = "<group>"; };
+		64BDA0D21BCFBDBE009DF292 /* SettingDoubleLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDoubleLabelCell.swift; sourceTree = "<group>"; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED3061B88FB010008BCF2 /* Ten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED30A1B88FB010008BCF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,16 +94,7 @@
 		D41B3D741BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D41B3D751BC074AB005002C8 /* ProfilePicsCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePicsCollectionViewController.xib; sourceTree = "<group>"; };
 		D41B3D781BC07924005002C8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		D44EC94B1BBB82B100BF41A2 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
-		D44EC94C1BBB82B100BF41A2 /* ChatsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatsTableViewController.xib; sourceTree = "<group>"; };
-		D44EC9581BBB843A00BF41A2 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		D44EC9591BBB843A00BF41A2 /* SettingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewController.xib; sourceTree = "<group>"; };
-		D44EC95D1BBB849500BF41A2 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
-		D44EC95E1BBB849500BF41A2 /* NotificationTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewController.xib; sourceTree = "<group>"; };
 		D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsLayout.swift; sourceTree = "<group>"; };
-		D4CB8B171BC4697E00F2D2E7 /* ADCircularMenuViewController-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ADCircularMenuViewController-Bridging-Header.h"; sourceTree = "<group>"; };
-		D4CB8B181BC4697E00F2D2E7 /* ADCircularMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularMenuViewController.h; sourceTree = "<group>"; };
-		D4CB8B191BC4697E00F2D2E7 /* ADCircularMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenuViewController.m; sourceTree = "<group>"; };
 		D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4D96F301BBDB9090019C09B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,9 +126,54 @@
 			name = LocationManager;
 			sourceTree = "<group>";
 		};
+		640D05AF1BCB691900C10E20 /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				640D05AB1BCB68F700C10E20 /* ChatViewController.swift */,
+				640D05AD1BCB691900C10E20 /* LMUserCell.swift */,
+				640D05AE1BCB691900C10E20 /* LMUserCell.xib */,
+			);
+			name = UserCell;
+			path = ../../Documents/xcodeworkspace/userlist/userlist;
+			sourceTree = "<group>";
+		};
+		640D05B21BCB6E8C00C10E20 /* Ramdom&level */ = {
+			isa = PBXGroup;
+			children = (
+				646C1B951BCB913C00EEBF04 /* RandomAndLevelUserCell.swift */,
+				646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */,
+				646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */,
+				646C1B931BCB8ED000EEBF04 /* LevelUserController.swift */,
+			);
+			name = "Ramdom&level";
+			sourceTree = "<group>";
+		};
+		64A8D5921BCAA27600AC1E6E /* ADCircularMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				64A8D5931BCAA27600AC1E6E /* ADCircularMenuViewController-Bridging-Header.h */,
+				64A8D5941BCAA27600AC1E6E /* ADCircularMenuViewController.h */,
+				64A8D5951BCAA27600AC1E6E /* ADCircularMenuViewController.m */,
+			);
+			name = ADCircularMenuController;
+			path = Ten/ADCircularMenuController;
+			sourceTree = "<group>";
+		};
+		64A8D5961BCAA2AB00AC1E6E /* ADCircularMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				64A8D5971BCAA2AB00AC1E6E /* ADCircularMenuViewController-Bridging-Header.h */,
+				64A8D5981BCAA2AB00AC1E6E /* ADCircularMenuViewController.h */,
+				64A8D5991BCAA2AB00AC1E6E /* ADCircularMenuViewController.m */,
+			);
+			name = ADCircularMenuController;
+			path = Ten/ADCircularMenuController;
+			sourceTree = "<group>";
+		};
 		AA00EDF29C15F6580F061DCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64A8D5921BCAA27600AC1E6E /* ADCircularMenuController */,
 				C16B2F1E77B7FE57018887C4 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -116,6 +182,7 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				64A8D5961BCAA2AB00AC1E6E /* ADCircularMenuController */,
 				D4D96F371BBF82270019C09B /* ProfilePics */,
 				D44EC9471BBB719100BF41A2 /* Profile */,
 				D44EC94A1BBB825F00BF41A2 /* Chats */,
@@ -124,10 +191,8 @@
 				C4CED3081B88FB010008BCF2 /* Ten */,
 				D41B3D7A1BC0792D005002C8 /* Helpers */,
 				16988AE01B8CCC6000270DBA /* LocationManager */,
-				D4CB8B161BC4697E00F2D2E7 /* ADCircularMenuController */,
 				C4CED31E1B88FB010008BCF2 /* TenTests */,
 				C4CED3071B88FB010008BCF2 /* Products */,
-				E96E63921E9EBB4A5FCFEE0A /* Pods */,
 				AA00EDF29C15F6580F061DCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -166,6 +231,7 @@
 		C4CED31E1B88FB010008BCF2 /* TenTests */ = {
 			isa = PBXGroup;
 			children = (
+				E96E63921E9EBB4A5FCFEE0A /* Pods */,
 				C4CED3211B88FB010008BCF2 /* TenTests.swift */,
 				C4CED31F1B88FB010008BCF2 /* Supporting Files */,
 			);
@@ -200,8 +266,9 @@
 		D44EC94A1BBB825F00BF41A2 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
-				D44EC94B1BBB82B100BF41A2 /* ChatsTableViewController.swift */,
-				D44EC94C1BBB82B100BF41A2 /* ChatsTableViewController.xib */,
+				646C1B8B1BCB789400EEBF04 /* BaseUser.swift */,
+				640D05B21BCB6E8C00C10E20 /* Ramdom&level */,
+				640D05AF1BCB691900C10E20 /* UserCell */,
 			);
 			name = Chats;
 			sourceTree = "<group>";
@@ -209,8 +276,9 @@
 		D44EC9571BBB841E00BF41A2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				D44EC9581BBB843A00BF41A2 /* SettingsTableViewController.swift */,
-				D44EC9591BBB843A00BF41A2 /* SettingsTableViewController.xib */,
+				64BDA0C81BCC02BC009DF292 /* SettingsViewController.swift */,
+				64BDA0CA1BCC0815009DF292 /* settingCell.swift */,
+				64BDA0D21BCFBDBE009DF292 /* SettingDoubleLabelCell.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -218,21 +286,12 @@
 		D44EC95C1BBB846F00BF41A2 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				D44EC95D1BBB849500BF41A2 /* NotificationTableViewController.swift */,
-				D44EC95E1BBB849500BF41A2 /* NotificationTableViewController.xib */,
+				64BDA0BE1BCBC30A009DF292 /* NotificationViewController.swift */,
+				64BDA0C01BCBC4E3009DF292 /* NotificationInfoCell.swift */,
+				64BDA0C21BCBC508009DF292 /* Notification.swift */,
+				64BDA0C41BCBC64E009DF292 /* NotificationFrame.swift */,
 			);
 			name = Notification;
-			sourceTree = "<group>";
-		};
-		D4CB8B161BC4697E00F2D2E7 /* ADCircularMenuController */ = {
-			isa = PBXGroup;
-			children = (
-				D4CB8B171BC4697E00F2D2E7 /* ADCircularMenuViewController-Bridging-Header.h */,
-				D4CB8B181BC4697E00F2D2E7 /* ADCircularMenuViewController.h */,
-				D4CB8B191BC4697E00F2D2E7 /* ADCircularMenuViewController.m */,
-			);
-			name = ADCircularMenuController;
-			path = Ten/ADCircularMenuController;
 			sourceTree = "<group>";
 		};
 		D4D96F371BBF82270019C09B /* ProfilePics */ = {
@@ -254,6 +313,7 @@
 				032746A50B016C79F1BAEF9D /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,14 +403,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41B3D771BC074AB005002C8 /* ProfilePicsCollectionViewController.xib in Resources */,
+				640D05B11BCB691900C10E20 /* LMUserCell.xib in Resources */,
 				D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */,
 				16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */,
 				C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */,
 				D41B3D721BC07493005002C8 /* ProfilePicsCollectionViewCell.xib in Resources */,
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
-				D44EC94E1BBB82B100BF41A2 /* ChatsTableViewController.xib in Resources */,
-				D44EC9601BBB849500BF41A2 /* NotificationTableViewController.xib in Resources */,
-				D44EC95B1BBB843A00BF41A2 /* SettingsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,19 +474,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D44EC95F1BBB849500BF41A2 /* NotificationTableViewController.swift in Sources */,
+				64BDA0CC1BCC0815009DF292 /* settingCell.swift in Sources */,
+				64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */,
+				646C1B941BCB8ED000EEBF04 /* LevelUserController.swift in Sources */,
+				64BDA0C51BCBC64E009DF292 /* NotificationFrame.swift in Sources */,
 				D41B3D791BC07924005002C8 /* Helpers.swift in Sources */,
+				646C1B8C1BCB789400EEBF04 /* BaseUser.swift in Sources */,
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
+				640D05B01BCB691900C10E20 /* LMUserCell.swift in Sources */,
+				64BDA0D31BCFBDBE009DF292 /* SettingDoubleLabelCell.swift in Sources */,
 				D41B3D761BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
-				D4CB8B1A1BC4697E00F2D2E7 /* ADCircularMenuViewController.m in Sources */,
+				646C1B961BCB913C00EEBF04 /* RandomAndLevelUserCell.swift in Sources */,
 				D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */,
+				64A8D59A1BCAA7B600AC1E6E /* ADCircularMenuViewController.m in Sources */,
+				64BDA0C91BCC02BC009DF292 /* SettingsViewController.swift in Sources */,
+				646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */,
+				64BDA0BF1BCBC30A009DF292 /* NotificationViewController.swift in Sources */,
 				D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */,
+				646C1B901BCB8C8600EEBF04 /* RandomAndLevelUser.swift in Sources */,
+				640D05AC1BCB68F700C10E20 /* ChatViewController.swift in Sources */,
+				64BDA0C31BCBC508009DF292 /* Notification.swift in Sources */,
 				D41B3D731BC07493005002C8 /* ProfilePicsCollectionViewController.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,
-				D44EC94D1BBB82B100BF41A2 /* ChatsTableViewController.swift in Sources */,
-				D44EC95A1BBB843A00BF41A2 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,14 +628,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04E4A3C8E90507E375B44E7E /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ten/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -574,14 +648,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 032746A50B016C79F1BAEF9D /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ten/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

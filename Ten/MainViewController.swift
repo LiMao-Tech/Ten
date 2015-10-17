@@ -21,7 +21,17 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     // circular menu
     let circularMenuVC = ADCircularMenuViewController(frame: UIScreen.mainScreen().bounds)
-    
+    var lvoneBtn:UIButton!
+    var lvtwoBtn:UIButton!
+    var lvthreeBtn:UIButton!
+    var lvfourBtn:UIButton!
+    var lvfiveBtn:UIButton!
+    var lvsixBtn:UIButton!
+    var lvsevenBtn:UIButton!
+    var lveightBtn:UIButton!
+    var lvnineBtn:UIButton!
+    var lvtenBtn:UIButton!
+    var btns = Array<UIButton!>()
     // view loading
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +39,9 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         // set circularMenu
         self.circularMenuVC.circularMenuDelegate = self
         self.circularMenuVC.view.frame = UIScreen.mainScreen().bounds
+        
+        //setupButtons
+        setupButtons()
         
         // add location observer
         NSNotificationCenter.defaultCenter().addObserver(
@@ -38,12 +51,46 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
             object: nil)
         
         // config buttons
-        menuButton.setImage(UIImage(named: "menuButton"), forState: UIControlState.Normal)
+        menuButton.setImage(UIImage(named: "btn_menu"), forState: UIControlState.Normal)
         randomButton.setImage(UIImage(named: "btn_radar_random"), forState: UIControlState.Normal)
         menuButton.addTarget(self, action: "menuButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
         randomButton.addTarget(self, action: "randomButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(menuButton)
         self.view.addSubview(randomButton)
+    }
+    
+    func setupButtons(){
+        var btnArray = [lvoneBtn,lvtwoBtn,lvthreeBtn,lvfourBtn,lvfiveBtn,lvsixBtn,lvsevenBtn,lveightBtn,lvnineBtn,lvtenBtn]
+        let marginw:CGFloat = 30
+        let marginh:CGFloat = 20
+        let iconw:CGFloat = 58
+        let iconh:CGFloat = 67
+        let x = (SCREEN_WIDTH - iconw*3 - marginw*2)/2
+        let y:CGFloat = 90
+        for i in 0...btnArray.count-2{
+            let row = i/3
+            let col = i%3
+            btnArray[i] = UIButton(frame: CGRectMake(x + CGFloat(row)*(marginw+iconw), y + CGFloat(col)*(marginh+iconh), iconw, iconh))
+            btnArray[i].setImage(UIImage(named: "btn_l\(i+1)_unlock"), forState: UIControlState.Normal)
+            btnArray[i].addTarget(self, action: "levelSelect:", forControlEvents: UIControlEvents.TouchUpInside)
+            self.circularMenuVC.view.addSubview(btnArray[i])
+//            btnArray[i].hidden = true
+            btns.append(btnArray[i])
+        }
+        lvtenBtn = UIButton(frame: CGRectMake(x+marginw+iconw, y + 3*(marginh+iconh), iconw, iconh))
+        lvtenBtn.setImage(UIImage(named: "btn_l10_lock"), forState: UIControlState.Normal)
+        lvtenBtn.addTarget(self, action: "levelSelect:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.circularMenuVC.view.addSubview(lvtenBtn)
+//        lvtenBtn.hidden = true
+        btns.append(lvtenBtn)
+        
+    }
+    
+    //levelButton actions
+    func levelSelect(sender:UIButton){
+        self.navigationController?.navigationBar.hidden = false
+        let lVC = LevelUserController()
+        self.navigationController?.pushViewController(lVC, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -57,7 +104,9 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         circularMenuVC.show()
     }
     func randomButtonAction() {
-        
+        self.navigationController?.navigationBar.hidden = false
+        let rVC = RandomUserController()
+        self.navigationController?.pushViewController(rVC, animated: true)
     }
     
     
@@ -83,19 +132,19 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         case 4:
             self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
             self.navigationController?.navigationBar.hidden = false
-            let cVC = ChatsTableViewController()
+            let cVC = ChatViewController()
             self.navigationController?.pushViewController(cVC, animated: true)
             
         case 5:
             self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
             self.navigationController?.navigationBar.hidden = false
-            let nVC = NotificationTableViewController()
+            let nVC = NotificationViewController()
             self.navigationController?.pushViewController(nVC, animated: true)
             
         case 6:
             self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
             self.navigationController?.navigationBar.hidden = false
-            let sVC = SettingsTableViewController()
+            let sVC = SettingsViewController()
             self.navigationController?.pushViewController(sVC, animated: true)
             
         default:
