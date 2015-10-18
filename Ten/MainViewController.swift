@@ -21,16 +21,16 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     // circular menu
     let circularMenuVC = ADCircularMenuViewController(frame: UIScreen.mainScreen().bounds)
-    var lvoneBtn:UIButton!
-    var lvtwoBtn:UIButton!
-    var lvthreeBtn:UIButton!
-    var lvfourBtn:UIButton!
-    var lvfiveBtn:UIButton!
-    var lvsixBtn:UIButton!
-    var lvsevenBtn:UIButton!
-    var lveightBtn:UIButton!
-    var lvnineBtn:UIButton!
-    var lvtenBtn:UIButton!
+    var lvoneBtn:LevelButton!
+    var lvtwoBtn:LevelButton!
+    var lvthreeBtn:LevelButton!
+    var lvfourBtn:LevelButton!
+    var lvfiveBtn:LevelButton!
+    var lvsixBtn:LevelButton!
+    var lvsevenBtn:LevelButton!
+    var lveightBtn:LevelButton!
+    var lvnineBtn:LevelButton!
+    var lvtenBtn:LevelButton!
     var btns = Array<UIButton!>()
     // view loading
     override func viewDidLoad() {
@@ -70,15 +70,17 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         for i in 0...btnArray.count-2{
             let row = i/3
             let col = i%3
-            btnArray[i] = UIButton(frame: CGRectMake(x + CGFloat(row)*(marginw+iconw), y + CGFloat(col)*(marginh+iconh), iconw, iconh))
+            btnArray[i] = LevelButton(frame: CGRectMake(x + CGFloat(row)*(marginw+iconw), y + CGFloat(col)*(marginh+iconh), iconw, iconh))
+            btnArray[i].level = "Level\(i+1)"
             btnArray[i].setImage(UIImage(named: "btn_l\(i+1)_unlock"), forState: UIControlState.Normal)
             btnArray[i].addTarget(self, action: "levelSelect:", forControlEvents: UIControlEvents.TouchUpInside)
             self.circularMenuVC.view.addSubview(btnArray[i])
 //            btnArray[i].hidden = true
             btns.append(btnArray[i])
         }
-        lvtenBtn = UIButton(frame: CGRectMake(x+marginw+iconw, y + 3*(marginh+iconh), iconw, iconh))
+        lvtenBtn = LevelButton(frame: CGRectMake(x+marginw+iconw, y + 3*(marginh+iconh), iconw, iconh))
         lvtenBtn.setImage(UIImage(named: "btn_l10_lock"), forState: UIControlState.Normal)
+        lvtenBtn.level = "Level10"
         lvtenBtn.addTarget(self, action: "levelSelect:", forControlEvents: UIControlEvents.TouchUpInside)
         self.circularMenuVC.view.addSubview(lvtenBtn)
 //        lvtenBtn.hidden = true
@@ -87,9 +89,10 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     }
     
     //levelButton actions
-    func levelSelect(sender:UIButton){
+    func levelSelect(sender:LevelButton){
         self.navigationController?.navigationBar.hidden = false
         let lVC = LevelUserController()
+        lVC.level = sender.level
         self.navigationController?.pushViewController(lVC, animated: true)
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class LevelUserController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var userList:UITableView!
-    var level = "level8"
+    var level = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = level

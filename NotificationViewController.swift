@@ -16,10 +16,9 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         self.navigationController?.navigationBar.translucent = false
         self.navigationItem.title = "Notification"
         //tabview
-        let tabHeight:CGFloat = SCREEN.width*0.1375
-        tabView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, tabHeight))
-        let item = UIButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, tabHeight))
-        let item0 = UIButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, tabHeight))
+        tabView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, TAP_BAR_HEIGHT))
+        let item = UIButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
+        let item0 = UIButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         item.setImage(UIImage(named: "tab_notification_systems"), forState: UIControlState.Normal)
         item0.setImage(UIImage(named: "tab_notification_notification"), forState: UIControlState.Normal)
         tabView.addSubview(item0)
