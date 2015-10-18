@@ -50,7 +50,6 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         let note = Notification()
         let noteFrame = NotificationFrame()
         noteFrame.notification = note
-        print(noteFrame.cellheight)
         return noteFrame.cellheight
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

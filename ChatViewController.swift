@@ -1,6 +1,7 @@
 //
 //  ChatViewController.swift
-//  Ten
+//  userlist
+
 //
 //  Created by gt on 15/10/12.
 //  Copyright © 2015年 LiMao Tech. All rights reserved.
@@ -54,7 +55,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = userList.dequeueReusableCellWithIdentifier("userCell")
         if(cell == nil){
-            cell = LMUserCell.loadFromNib()
+            cell = UserCell.loadFromNib()
         }
         return cell!
     }
