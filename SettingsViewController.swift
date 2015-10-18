@@ -14,8 +14,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     let itemNames = ["Passcode","Change PIN","PCoin","","Term of Service","Privacy Policy"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        let back = UIImageView(frame: self.view.bounds)
-        back.image = UIImage(named: "bg")
+        self.view.backgroundColor = UIColor.blackColor()
         settingList = UITableView(frame: CGRectMake(30, 0, SCREEN_WIDTH - 60, 324))
         settingList.dataSource = self
         settingList.delegate = self
@@ -26,7 +25,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         let w:CGFloat = 215
         let h:CGFloat = 37
         let x = (SCREEN_WIDTH - w)/2
-        let y = CGRectGetMaxY(settingList.frame) + (SCREEN_HEIGHT - h)/2
+        let y = CGRectGetMaxY(settingList.frame) + (SCREEN_HEIGHT - CGRectGetMaxY(settingList.frame) - h)/2
         logoutBtn = UIButton(frame: CGRectMake(x, y, w, h))
         logoutBtn.setImage(UIImage(named: "btn_logout"), forState: .Normal)
         logoutBtn.addTarget(self, action: "logout", forControlEvents: .TouchUpInside)
@@ -66,6 +65,11 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let pvc = PCoinViewController()
+        self.navigationController?.pushViewController(pvc, animated: true)
     }
     
     func logout(){

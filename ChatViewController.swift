@@ -19,10 +19,9 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         self.navigationItem.title = "Chat"
         backgroundView = UIImageView(frame: SCREEN)
         backgroundView.image = UIImage(named: "bg")
-        let tabHeight:CGFloat = SCREEN.width*0.1375
-        tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, tabHeight))
-        let item = UIButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, tabHeight))
-        let item0 = UIButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, tabHeight))
+        tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
+        let item = UIButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
+        let item0 = UIButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         item.setImage(UIImage(named: "tab_chat_activeChats"), forState: UIControlState.Normal)
         item0.setImage(UIImage(named: "tab_chat_inactiveChats"), forState: UIControlState.Normal)
         tabView.addSubview(item0)
