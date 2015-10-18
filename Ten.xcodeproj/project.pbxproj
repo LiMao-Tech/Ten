@@ -12,10 +12,11 @@
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		640D05AC1BCB68F700C10E20 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D05AB1BCB68F700C10E20 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		640D05B01BCB691900C10E20 /* LMUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D05AD1BCB691900C10E20 /* LMUserCell.swift */; settings = {ASSET_TAGS = (); }; };
-		640D05B11BCB691900C10E20 /* LMUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640D05AE1BCB691900C10E20 /* LMUserCell.xib */; settings = {ASSET_TAGS = (); }; };
 		645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */; settings = {ASSET_TAGS = (); }; };
 		645E0D5E1BD355C100CF6977 /* PCoinUnlockedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */; settings = {ASSET_TAGS = (); }; };
+		645E0D851BD3735600CF6977 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D831BD3735600CF6977 /* UserCell.swift */; settings = {ASSET_TAGS = (); }; };
+		645E0D861BD3735600CF6977 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645E0D841BD3735600CF6977 /* UserCell.xib */; settings = {ASSET_TAGS = (); }; };
+		645E0D881BD37ADB00CF6977 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D871BD37ADB00CF6977 /* SettingButton.swift */; settings = {ASSET_TAGS = (); }; };
 		646C1B8C1BCB789400EEBF04 /* BaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B8B1BCB789400EEBF04 /* BaseUser.swift */; settings = {ASSET_TAGS = (); }; };
 		646C1B901BCB8C8600EEBF04 /* RandomAndLevelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */; settings = {ASSET_TAGS = (); }; };
 		646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -67,10 +68,11 @@
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		640D05AB1BCB68F700C10E20 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = ../../../../GitHub/Develop/ChatViewController.swift; sourceTree = "<group>"; };
-		640D05AD1BCB691900C10E20 /* LMUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMUserCell.swift; sourceTree = "<group>"; };
-		640D05AE1BCB691900C10E20 /* LMUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMUserCell.xib; sourceTree = "<group>"; };
 		645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinUnlockedCell.swift; sourceTree = "<group>"; };
 		645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinUnlockedModel.swift; sourceTree = "<group>"; };
+		645E0D831BD3735600CF6977 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = ../../../../GitHub/Develop/UserCell.swift; sourceTree = "<group>"; };
+		645E0D841BD3735600CF6977 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = ../../../../GitHub/Develop/UserCell.xib; sourceTree = "<group>"; };
+		645E0D871BD37ADB00CF6977 /* SettingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
 		646C1B8B1BCB789400EEBF04 /* BaseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUser.swift; sourceTree = "<group>"; };
 		646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAndLevelUser.swift; sourceTree = "<group>"; };
 		646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUserController.swift; sourceTree = "<group>"; };
@@ -145,9 +147,9 @@
 		640D05AF1BCB691900C10E20 /* UserCell */ = {
 			isa = PBXGroup;
 			children = (
+				645E0D831BD3735600CF6977 /* UserCell.swift */,
+				645E0D841BD3735600CF6977 /* UserCell.xib */,
 				640D05AB1BCB68F700C10E20 /* ChatViewController.swift */,
-				640D05AD1BCB691900C10E20 /* LMUserCell.swift */,
-				640D05AE1BCB691900C10E20 /* LMUserCell.xib */,
 			);
 			name = UserCell;
 			path = ../../Documents/xcodeworkspace/userlist/userlist;
@@ -193,6 +195,7 @@
 				64BDA0DC1BD279AF009DF292 /* PcoinModels */,
 				64BDA0D91BD2756E009DF292 /* PcoinCells */,
 				64BDA0D51BD26E68009DF292 /* PCoinViewController.swift */,
+				645E0D871BD37ADB00CF6977 /* SettingButton.swift */,
 			);
 			name = "P Coin";
 			sourceTree = "<group>";
@@ -451,9 +454,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41B3D771BC074AB005002C8 /* ProfilePicsCollectionViewController.xib in Resources */,
-				640D05B11BCB691900C10E20 /* LMUserCell.xib in Resources */,
 				D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */,
 				16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */,
+				645E0D861BD3735600CF6977 /* UserCell.xib in Resources */,
 				C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */,
 				D41B3D721BC07493005002C8 /* ProfilePicsCollectionViewCell.xib in Resources */,
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
@@ -525,12 +528,13 @@
 				64BDA0CC1BCC0815009DF292 /* settingCell.swift in Sources */,
 				64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */,
 				646C1B941BCB8ED000EEBF04 /* LevelUserController.swift in Sources */,
+				645E0D851BD3735600CF6977 /* UserCell.swift in Sources */,
 				64BDA0C51BCBC64E009DF292 /* NotificationFrame.swift in Sources */,
+				645E0D881BD37ADB00CF6977 /* SettingButton.swift in Sources */,
 				645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */,
 				D41B3D791BC07924005002C8 /* Helpers.swift in Sources */,
 				646C1B8C1BCB789400EEBF04 /* BaseUser.swift in Sources */,
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
-				640D05B01BCB691900C10E20 /* LMUserCell.swift in Sources */,
 				64BDA0D31BCFBDBE009DF292 /* SettingDoubleLabelCell.swift in Sources */,
 				D41B3D761BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift in Sources */,
 				64BDA0DB1BD275D1009DF292 /* PCoinPurchaseCell.swift in Sources */,

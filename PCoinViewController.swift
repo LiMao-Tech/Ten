@@ -9,28 +9,41 @@
 import UIKit
 
 enum pcoinModelType{
-    case Pcoin,History,Transfer,unlocked
+    case Pcoin,History,Transfer,Unlocked
 }
 
 class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var topView : UIView!
     var pcoinItemList : UITableView!
-    var modelType : pcoinModelType = .Transfer
+    var modelType : pcoinModelType = .Unlocked
     let pcoinValue = [10,20,50,100]
+    var item0:SettingButton!
+    var item1:SettingButton!
+    var item2:SettingButton!
+    var item3:SettingButton!
+    var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "P Coin"
         //topview
         topView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let len = SCREEN_WIDTH/4
-        let item0 = UIButton(frame: CGRectMake(0, 0, len, TAP_BAR_HEIGHT))
-        let item1 = UIButton(frame: CGRectMake(len, 0, len, TAP_BAR_HEIGHT))
-        let item2 = UIButton(frame: CGRectMake(2*len, 0, len, TAP_BAR_HEIGHT))
-        let item3 = UIButton(frame: CGRectMake(3*len, 0, len, TAP_BAR_HEIGHT))
+        item0 = SettingButton(frame: CGRectMake(0, 0, len, TAP_BAR_HEIGHT))
+        item1 = SettingButton(frame: CGRectMake(len, 0, len, TAP_BAR_HEIGHT))
+        item2 = SettingButton(frame: CGRectMake(2*len, 0, len, TAP_BAR_HEIGHT))
+        item3 = SettingButton(frame: CGRectMake(3*len, 0, len, TAP_BAR_HEIGHT))
         item0.setImage(UIImage(named: "tab_pcoin_purchase"), forState: .Normal)
         item1.setImage(UIImage(named: "tab_pcoin_history"), forState: .Normal)
         item2.setImage(UIImage(named: "tab_pcoin_transfer"), forState: .Normal)
         item3.setImage(UIImage(named: "tab_pcoin_unlocked"), forState: .Normal)
+        item0.addTarget(self, action: "changeModel:", forControlEvents: .TouchUpInside)
+        item1.addTarget(self, action: "changeModel:", forControlEvents: .TouchUpInside)
+        item2.addTarget(self, action: "changeModel:", forControlEvents: .TouchUpInside)
+        item3.addTarget(self, action: "changeModel:", forControlEvents: .TouchUpInside)
+        item0.model = .Pcoin
+        item1.model = .History
+        item2.model = .Transfer
+        item3.model = .Unlocked
         topView.addSubview(item0)
         topView.addSubview(item1)
         topView.addSubview(item2)
@@ -46,7 +59,13 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
         self.view.addSubview(topView)
         self.view.addSubview(pcoinItemList)
+        selectedBtn = item0
         // Do any additional setup after loading the view.
+    }
+    
+    func changeModel(sender:SettingButton){
+        modelType = sender.model
+        pcoinItemList.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +92,14 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
             cell?.transfer = PCoinTransferModel()
             return cell!
         }
+        if(modelType == .Unlocked){
+            var cell = pcoinItemList.dequeueReusableCellWithIdentifier("unlockedCell") as? PCoinUnlockedCell
+            if(cell == nil){
+                cell = PCoinUnlockedCell.init(style: .Default, reuseIdentifier: "unlockedCell")
+            }
+            cell?.unlocked = PCoinUnlockedModel()
+            return cell!
+        }
         
         var cell = pcoinItemList.dequeueReusableCellWithIdentifier("purchaseCell") as? PCoinPurchaseCell
         if(cell == nil){
@@ -90,6 +117,9 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         if(modelType == .Transfer){
             return 4
         }
+        if(modelType == .Unlocked){
+            return 4
+        }
         
         return 4
     }
@@ -100,6 +130,10 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         if(modelType == .Transfer){
             return 75
         }
+        if(modelType == .Unlocked){
+            return 70
+        }
+        
         
         return 64
     }

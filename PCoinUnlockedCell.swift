@@ -14,25 +14,26 @@ class PCoinUnlockedCell: UITableViewCell {
     var splitLine:UIView!
     var unlocked:PCoinUnlockedModel!{
         didSet{
-            let text = "You Spent \(unlocked.value) P Coin to unlock Level4" as NSString
-            let size = text.boundingRectWithSize(CGSizeMake( SCREEN_WIDTH-20, CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFontOfSize(17)], context: nil)
-            unlockedLabel = UILabel(frame: CGRectMake(10, 10, size.width, size.height))
-            unlockedLabel.font = UIFont.systemFontOfSize(17)
-            unlockedLabel.textColor = UIColor.orangeColor()
-            unlockedLabel.text = text as String
-            timeLabel = UILabel(frame: CGRectMake(10, 15+size.width, 200, 15))
-            timeLabel.font = UIFont.systemFontOfSize(13)
-            timeLabel.textColor = UIColor.whiteColor()
+            unlockedLabel.text = "You Spent \(unlocked.value) P Coin unlock Level4"
             timeLabel.text = unlocked.time
-            splitLine = UIView(frame: CGRectMake(0, CGRectGetMaxY(timeLabel.frame)+5, SCREEN_WIDTH, 1))
-            splitLine.backgroundColor = UIColor.whiteColor()
-            self.addSubview(unlockedLabel)
-            self.addSubview(timeLabel)
-            self.addSubview(splitLine)
         }
     }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        unlockedLabel = UILabel(frame: CGRectMake(10, 10, SCREEN_WIDTH-20, 20))
+        unlockedLabel.font = UIFont.systemFontOfSize(17)
+        unlockedLabel.textColor = UIColor.orangeColor()
+        timeLabel = UILabel(frame: CGRectMake(10, CGRectGetMaxY(unlockedLabel.frame)+5, 200, 15))
+        timeLabel.font = UIFont.systemFontOfSize(13)
+        timeLabel.textColor = UIColor.whiteColor()
+        splitLine = UIView(frame: CGRectMake(0, CGRectGetMaxY(timeLabel.frame)+4, SCREEN_WIDTH, 1))
+        splitLine.backgroundColor = UIColor.whiteColor()
+        self.addSubview(unlockedLabel)
+        self.addSubview(timeLabel)
+        self.addSubview(splitLine)
+        self.backgroundColor = UIColor.blackColor()
+
         
     }
 
