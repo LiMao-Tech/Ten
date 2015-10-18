@@ -1,5 +1,5 @@
 //
-//  PCoinTransferModel.swift
+//  PCoinUnlockedModel.swift
 //  Ten
 //
 //  Created by gt on 15/10/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PCoinTransferModel: PCoinUnlockedModel {
-    var username = "Mark Teng"
-
+class PCoinUnlockedModel: NSObject {
+    var value = 10
+    var time = "Yesterday"
 }

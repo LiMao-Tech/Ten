@@ -14,6 +14,8 @@
 		640D05AC1BCB68F700C10E20 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D05AB1BCB68F700C10E20 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		640D05B01BCB691900C10E20 /* LMUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D05AD1BCB691900C10E20 /* LMUserCell.swift */; settings = {ASSET_TAGS = (); }; };
 		640D05B11BCB691900C10E20 /* LMUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640D05AE1BCB691900C10E20 /* LMUserCell.xib */; settings = {ASSET_TAGS = (); }; };
+		645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */; settings = {ASSET_TAGS = (); }; };
+		645E0D5E1BD355C100CF6977 /* PCoinUnlockedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */; settings = {ASSET_TAGS = (); }; };
 		646C1B8C1BCB789400EEBF04 /* BaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B8B1BCB789400EEBF04 /* BaseUser.swift */; settings = {ASSET_TAGS = (); }; };
 		646C1B901BCB8C8600EEBF04 /* RandomAndLevelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */; settings = {ASSET_TAGS = (); }; };
 		646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -67,6 +69,8 @@
 		640D05AB1BCB68F700C10E20 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = ../../../../GitHub/Develop/ChatViewController.swift; sourceTree = "<group>"; };
 		640D05AD1BCB691900C10E20 /* LMUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMUserCell.swift; sourceTree = "<group>"; };
 		640D05AE1BCB691900C10E20 /* LMUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMUserCell.xib; sourceTree = "<group>"; };
+		645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinUnlockedCell.swift; sourceTree = "<group>"; };
+		645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinUnlockedModel.swift; sourceTree = "<group>"; };
 		646C1B8B1BCB789400EEBF04 /* BaseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUser.swift; sourceTree = "<group>"; };
 		646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAndLevelUser.swift; sourceTree = "<group>"; };
 		646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUserController.swift; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				64BDA0DA1BD275D1009DF292 /* PCoinPurchaseCell.swift */,
 				64BDA0DF1BD27FCA009DF292 /* PCoinHistoryCell.swift */,
 				64BDA0E11BD333F0009DF292 /* PCoinTransferCell.swift */,
+				645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */,
 			);
 			name = PcoinCells;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				64BDA0E31BD33A53009DF292 /* PCoinTransferModel.swift */,
+				645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */,
 			);
 			name = PcoinModels;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */,
 				646C1B941BCB8ED000EEBF04 /* LevelUserController.swift in Sources */,
 				64BDA0C51BCBC64E009DF292 /* NotificationFrame.swift in Sources */,
+				645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */,
 				D41B3D791BC07924005002C8 /* Helpers.swift in Sources */,
 				646C1B8C1BCB789400EEBF04 /* BaseUser.swift in Sources */,
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
@@ -533,6 +540,7 @@
 				64BDA0E41BD33A53009DF292 /* PCoinTransferModel.swift in Sources */,
 				D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */,
 				64A8D59A1BCAA7B600AC1E6E /* ADCircularMenuViewController.m in Sources */,
+				645E0D5E1BD355C100CF6977 /* PCoinUnlockedModel.swift in Sources */,
 				64BDA0C91BCC02BC009DF292 /* SettingsViewController.swift in Sources */,
 				646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */,
 				64BDA0BF1BCBC30A009DF292 /* NotificationViewController.swift in Sources */,
