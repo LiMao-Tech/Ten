@@ -123,6 +123,8 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         switch buttonIndex {
         case 0:
             print("Not Implemented yet!")
+            let rVC = RegistViewController()
+            self.navigationController?.pushViewController(rVC, animated: true)
         case 1:
             print("Not Implemented yet!")
         case 2:

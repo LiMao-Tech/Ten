@@ -22,6 +22,17 @@
 		646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */; settings = {ASSET_TAGS = (); }; };
 		646C1B941BCB8ED000EEBF04 /* LevelUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B931BCB8ED000EEBF04 /* LevelUserController.swift */; settings = {ASSET_TAGS = (); }; };
 		646C1B961BCB913C00EEBF04 /* RandomAndLevelUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B951BCB913C00EEBF04 /* RandomAndLevelUserCell.swift */; settings = {ASSET_TAGS = (); }; };
+		649B94D21BD4846000F1B6CA /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 649B94C31BD4846000F1B6CA /* FMDatabase.m */; settings = {ASSET_TAGS = (); }; };
+		649B94D31BD4846000F1B6CA /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 649B94C51BD4846000F1B6CA /* FMDatabaseAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		649B94D41BD4846000F1B6CA /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 649B94C71BD4846000F1B6CA /* FMDatabasePool.m */; settings = {ASSET_TAGS = (); }; };
+		649B94D51BD4846000F1B6CA /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 649B94C91BD4846000F1B6CA /* FMDatabaseQueue.m */; settings = {ASSET_TAGS = (); }; };
+		649B94D61BD4846000F1B6CA /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 649B94CC1BD4846000F1B6CA /* FMResultSet.m */; settings = {ASSET_TAGS = (); }; };
+		649B94D71BD4846000F1B6CA /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94CD1BD4846000F1B6CA /* FMDBManager.swift */; settings = {ASSET_TAGS = (); }; };
+		649B94D81BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94CF1BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift */; settings = {ASSET_TAGS = (); }; };
+		649B94D91BD4846000F1B6CA /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94D01BD4846000F1B6CA /* FMDatabaseVariadic.swift */; settings = {ASSET_TAGS = (); }; };
+		649B94DC1BD4854C00F1B6CA /* TenUserModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94DB1BD4854C00F1B6CA /* TenUserModal.swift */; settings = {ASSET_TAGS = (); }; };
+		649B94DE1BD4857500F1B6CA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 649B94DD1BD4857500F1B6CA /* libsqlite3.0.tbd */; };
+		649B94E51BD4D38000F1B6CA /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94E41BD4D38000F1B6CA /* RegistViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		64A8D59A1BCAA7B600AC1E6E /* ADCircularMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A8D5991BCAA2AB00AC1E6E /* ADCircularMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		64BDA0BF1BCBC30A009DF292 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0BE1BCBC30A009DF292 /* NotificationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0C01BCBC4E3009DF292 /* NotificationInfoCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -78,6 +89,23 @@
 		646C1B911BCB8EAD00EEBF04 /* RandomUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUserController.swift; sourceTree = "<group>"; };
 		646C1B931BCB8ED000EEBF04 /* LevelUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUserController.swift; sourceTree = "<group>"; };
 		646C1B951BCB913C00EEBF04 /* RandomAndLevelUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAndLevelUserCell.swift; sourceTree = "<group>"; };
+		649B94C21BD4846000F1B6CA /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		649B94C31BD4846000F1B6CA /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		649B94C41BD4846000F1B6CA /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		649B94C51BD4846000F1B6CA /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		649B94C61BD4846000F1B6CA /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		649B94C71BD4846000F1B6CA /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		649B94C81BD4846000F1B6CA /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		649B94C91BD4846000F1B6CA /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		649B94CA1BD4846000F1B6CA /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		649B94CB1BD4846000F1B6CA /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		649B94CC1BD4846000F1B6CA /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		649B94CD1BD4846000F1B6CA /* FMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
+		649B94CF1BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
+		649B94D01BD4846000F1B6CA /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		649B94DB1BD4854C00F1B6CA /* TenUserModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUserModal.swift; sourceTree = "<group>"; };
+		649B94DD1BD4857500F1B6CA /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		649B94E41BD4D38000F1B6CA /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		64A8D5931BCAA27600AC1E6E /* ADCircularMenuViewController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADCircularMenuViewController-Bridging-Header.h"; sourceTree = "<group>"; };
 		64A8D5941BCAA27600AC1E6E /* ADCircularMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADCircularMenuViewController.h; sourceTree = "<group>"; };
 		64A8D5951BCAA27600AC1E6E /* ADCircularMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenuViewController.m; sourceTree = "<group>"; };
@@ -122,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649B94DE1BD4857500F1B6CA /* libsqlite3.0.tbd in Frameworks */,
 				3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +194,41 @@
 				64BDA0D71BD27223009DF292 /* LevelButton.swift */,
 			);
 			name = "Ramdom&level";
+			sourceTree = "<group>";
+		};
+		649B94C11BD4846000F1B6CA /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				649B94C21BD4846000F1B6CA /* FMDatabase.h */,
+				649B94C31BD4846000F1B6CA /* FMDatabase.m */,
+				649B94C41BD4846000F1B6CA /* FMDatabaseAdditions.h */,
+				649B94C51BD4846000F1B6CA /* FMDatabaseAdditions.m */,
+				649B94C61BD4846000F1B6CA /* FMDatabasePool.h */,
+				649B94C71BD4846000F1B6CA /* FMDatabasePool.m */,
+				649B94C81BD4846000F1B6CA /* FMDatabaseQueue.h */,
+				649B94C91BD4846000F1B6CA /* FMDatabaseQueue.m */,
+				649B94CA1BD4846000F1B6CA /* FMDB.h */,
+				649B94CB1BD4846000F1B6CA /* FMResultSet.h */,
+				649B94CC1BD4846000F1B6CA /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		649B94CE1BD4846000F1B6CA /* Swift extensions */ = {
+			isa = PBXGroup;
+			children = (
+				649B94CF1BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift */,
+				649B94D01BD4846000F1B6CA /* FMDatabaseVariadic.swift */,
+			);
+			path = "Swift extensions";
+			sourceTree = "<group>";
+		};
+		649B94DF1BD486D200F1B6CA /* RegistProfile */ = {
+			isa = PBXGroup;
+			children = (
+				649B94E41BD4D38000F1B6CA /* RegistViewController.swift */,
+			);
+			name = RegistProfile;
 			sourceTree = "<group>";
 		};
 		64A8D5921BCAA27600AC1E6E /* ADCircularMenuController */ = {
@@ -223,6 +287,7 @@
 		AA00EDF29C15F6580F061DCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				649B94DD1BD4857500F1B6CA /* libsqlite3.0.tbd */,
 				64A8D5921BCAA27600AC1E6E /* ADCircularMenuController */,
 				C16B2F1E77B7FE57018887C4 /* Pods.framework */,
 			);
@@ -232,6 +297,11 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				649B94DF1BD486D200F1B6CA /* RegistProfile */,
+				649B94CE1BD4846000F1B6CA /* Swift extensions */,
+				649B94C11BD4846000F1B6CA /* fmdb */,
+				649B94CD1BD4846000F1B6CA /* FMDBManager.swift */,
+				649B94DB1BD4854C00F1B6CA /* TenUserModal.swift */,
 				64A8D5961BCAA2AB00AC1E6E /* ADCircularMenuController */,
 				D4D96F371BBF82270019C09B /* ProfilePics */,
 				D44EC9471BBB719100BF41A2 /* Profile */,
@@ -525,6 +595,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649B94DC1BD4854C00F1B6CA /* TenUserModal.swift in Sources */,
+				649B94D91BD4846000F1B6CA /* FMDatabaseVariadic.swift in Sources */,
 				64BDA0CC1BCC0815009DF292 /* settingCell.swift in Sources */,
 				64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */,
 				646C1B941BCB8ED000EEBF04 /* LevelUserController.swift in Sources */,
@@ -537,20 +609,28 @@
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
 				64BDA0D31BCFBDBE009DF292 /* SettingDoubleLabelCell.swift in Sources */,
 				D41B3D761BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift in Sources */,
+				649B94D51BD4846000F1B6CA /* FMDatabaseQueue.m in Sources */,
 				64BDA0DB1BD275D1009DF292 /* PCoinPurchaseCell.swift in Sources */,
+				649B94D41BD4846000F1B6CA /* FMDatabasePool.m in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
 				646C1B961BCB913C00EEBF04 /* RandomAndLevelUserCell.swift in Sources */,
+				649B94D81BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift in Sources */,
+				649B94E51BD4D38000F1B6CA /* RegistViewController.swift in Sources */,
 				64BDA0E41BD33A53009DF292 /* PCoinTransferModel.swift in Sources */,
 				D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */,
 				64A8D59A1BCAA7B600AC1E6E /* ADCircularMenuViewController.m in Sources */,
+				649B94D31BD4846000F1B6CA /* FMDatabaseAdditions.m in Sources */,
 				645E0D5E1BD355C100CF6977 /* PCoinUnlockedModel.swift in Sources */,
 				64BDA0C91BCC02BC009DF292 /* SettingsViewController.swift in Sources */,
+				649B94D61BD4846000F1B6CA /* FMResultSet.m in Sources */,
+				649B94D21BD4846000F1B6CA /* FMDatabase.m in Sources */,
 				646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */,
 				64BDA0BF1BCBC30A009DF292 /* NotificationViewController.swift in Sources */,
 				D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */,
 				646C1B901BCB8C8600EEBF04 /* RandomAndLevelUser.swift in Sources */,
 				64BDA0D81BD27223009DF292 /* LevelButton.swift in Sources */,
+				649B94D71BD4846000F1B6CA /* FMDBManager.swift in Sources */,
 				64BDA0E21BD333F0009DF292 /* PCoinTransferCell.swift in Sources */,
 				64BDA0D61BD26E68009DF292 /* PCoinViewController.swift in Sources */,
 				640D05AC1BCB68F700C10E20 /* ChatViewController.swift in Sources */,

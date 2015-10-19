@@ -41,8 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     
     //var locationManager = SharedLocationManager()
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         // Override point for customization after application launch.
         
         NSThread.sleepForTimeInterval(3.0)
@@ -62,6 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
 
         print([SCREEN_WIDTH, SCREEN_HEIGHT])
+        
+        sharedDatabase.createUserTable()
+        sharedDatabase.insertUser(userIndex: 1, user_id: "exampleid_1", user_name: "Luren0", gender: 0, birth_date: NSDate(), joined_date: NSDate(), last_login_datetime: NSDate(), p_coin: "100.00", outer_score: 10, inner_score: 10, energy: 10, quote: "quote", latitude: 10.12342, longitude: 12.72518)
           
         return true
     }

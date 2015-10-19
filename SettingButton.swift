@@ -7,9 +7,16 @@
 //
 
 import UIKit
-
+enum systemType{
+    case System,Notification
+}
+enum chatType{
+    case Active,Inactive
+}
 class SettingButton: UIButton {
     var model:pcoinModelType = .Pcoin
+    var systemModel:systemType = .System
+    var chatModel:chatType = .Active
     var seletedImage:UIImage!
     var normalImage:UIImage!
     /*

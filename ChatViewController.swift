@@ -18,6 +18,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Chat"
+        self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+        
         backgroundView = UIImageView(frame: SCREEN)
         backgroundView.image = UIImage(named: "bg")
         tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
