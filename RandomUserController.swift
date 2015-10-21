@@ -12,6 +12,7 @@ class RandomUserController: UIViewController,UITableViewDelegate,UITableViewData
     var userList:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = .Black
         self.navigationItem.title = "Random"
         userList = UITableView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64))
         userList.dataSource = self

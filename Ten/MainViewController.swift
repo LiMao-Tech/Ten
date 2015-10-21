@@ -21,6 +21,8 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     // circular menu
     let circularMenuVC = ADCircularMenuViewController(frame: UIScreen.mainScreen().bounds)
+    
+    var gifView:UIImageView!
     var lvoneBtn:LevelButton!
     var lvtwoBtn:LevelButton!
     var lvthreeBtn:LevelButton!
@@ -36,6 +38,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barStyle = .Black
         // set circularMenu
         self.circularMenuVC.circularMenuDelegate = self
         self.circularMenuVC.view.frame = UIScreen.mainScreen().bounds
@@ -50,11 +53,23 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
             name: locationNotiName,
             object: nil)
         
+        //gifView
+        let x = (SCREEN_WIDTH-250)/2
+        let y = (SCREEN_HEIGHT-250)/2
+        gifView = UIImageView(frame: CGRectMake(x, y, 250, 250))
+        let imageArray = [UIImage(named: "RadarGreen0")!,UIImage(named: "RadarGreen1")!,UIImage(named: "RadarGreen2")!,UIImage(named: "RadarGreen3")!,UIImage(named: "RadarGreen4")!,UIImage(named: "RadarGreen5")!,UIImage(named: "RadarGreen6")!,UIImage(named: "RadarGreen7")!,UIImage(named: "RadarGreen8")!,UIImage(named: "RadarGreen9")!,UIImage(named: "RadarGreen10")!,UIImage(named: "RadarGreen11")!]
+        gifView.animationImages = imageArray
+        gifView.animationDuration = 0.4
+        gifView.animationRepeatCount = 20
+        gifView.startAnimating()
+        gifView.backgroundColor = UIColor.clearColor()
+    
         // config buttons
         menuButton.setImage(UIImage(named: "btn_menu"), forState: UIControlState.Normal)
         randomButton.setImage(UIImage(named: "btn_radar_random"), forState: UIControlState.Normal)
         menuButton.addTarget(self, action: "menuButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
         randomButton.addTarget(self, action: "randomButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(gifView)
         self.view.addSubview(menuButton)
         self.view.addSubview(randomButton)
     }
@@ -88,6 +103,10 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     //levelButton actions
     func levelSelect(sender:LevelButton){
         self.navigationController?.navigationBar.hidden = false
@@ -104,6 +123,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     // button actions
     func menuButtonAction() {
         self.view.addSubview(self.circularMenuVC.view)
+        self.circularMenuVC.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_radar")!)
         circularMenuVC.show()
     }
     func randomButtonAction() {
@@ -186,6 +206,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         sharedManager.stopUpdatingLocation()
     }
     
+    
     func postLocationToServer(longi:NSString, lati: NSString){
         
         // upload using POST:
@@ -214,4 +235,5 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         })
         
     }
+    
 }

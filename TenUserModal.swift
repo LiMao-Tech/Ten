@@ -60,7 +60,5 @@ class TenUserModal: NSObject {
         self.quote = quote
         self.latitude = latitude
         self.longitude = longitude
-    
     }
-
 }

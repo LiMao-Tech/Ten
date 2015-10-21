@@ -11,16 +11,25 @@ import UIKit
 class NotificationViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     var tabView:UIView!
     var infoList:UITableView!
+    var modelType:systemType = .System
+    var selectedBtn:SettingButton!
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.barStyle = .Black
         super.viewDidLoad()
         self.navigationController?.navigationBar.translucent = false
         self.navigationItem.title = "Notification"
         //tabview
         tabView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, TAP_BAR_HEIGHT))
-        let item = UIButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
-        let item0 = UIButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
-        item.setImage(UIImage(named: "tab_notification_systems"), forState: UIControlState.Normal)
-        item0.setImage(UIImage(named: "tab_notification_notification"), forState: UIControlState.Normal)
+        let item = SettingButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
+        let item0 = SettingButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
+        item.normalImage = UIImage(named: "tab_notification_systems_normal")
+        item.seletedImage = UIImage(named: "tab_notification_systems")
+        item0.normalImage = UIImage(named: "tab_notification_notification_normal")
+        item0.seletedImage = UIImage(named: "tab_notification_notification")
+        item.setImage(item.seletedImage, forState: UIControlState.Normal)
+        item0.setImage(item.normalImage, forState: UIControlState.Normal)
+        item.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
+        item0.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
         tabView.addSubview(item0)
         tabView.addSubview(item)
         
@@ -36,11 +45,14 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         self.view.addSubview(infoList)
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func itemClicked(sender:SettingButton){
+        selectedBtn.setImage(selectedBtn.normalImage, forState: .Normal)
+        selectedBtn = sender
+        sender.setImage(sender.seletedImage, forState: .Normal)
+        modelType = sender.systemModel
+        infoList.reloadData()
     }
+
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
