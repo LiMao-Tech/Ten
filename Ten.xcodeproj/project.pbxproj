@@ -20,12 +20,18 @@
 		160FA77D1BC97AEF001FED10 /* TenDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 160FA77C1BC97AEE001FED10 /* TenDB.sql */; settings = {ASSET_TAGS = (); }; };
 		160FA77F1BC9C460001FED10 /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FA77E1BC9C460001FED10 /* userModel.swift */; settings = {ASSET_TAGS = (); }; };
 		164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA74C1BB799E700446691 /* MobileInfo.swift */; };
+		16795F861BDAE002007FFA7A /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16795F841BDAE002007FFA7A /* ImageUploadViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		16795F871BDAE002007FFA7A /* ImageUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16795F851BDAE002007FFA7A /* ImageUploadViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		16795F8A1BDAE0B4007FFA7A /* AFNetworkingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16795F891BDAE0B4007FFA7A /* AFNetworkingModule.swift */; settings = {ASSET_TAGS = (); }; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		16D1748F1BBE6D1000820AEF /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D1748E1BBE6D1000820AEF /* TutorialViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		16D174911BBE6D2100820AEF /* TutorialChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D174901BBE6D2100820AEF /* TutorialChildViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		16D1749C1BC05AD100820AEF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D1749A1BC05AD100820AEF /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		16D1749D1BC05AD100820AEF /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16D1749B1BC05AD100820AEF /* ProfileViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		16DF8BC71BCC9737002A5DAB /* TenUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF8BC61BCC9737002A5DAB /* TenUserModel.swift */; settings = {ASSET_TAGS = (); }; };
+		16DF8BCA1BCCA21C002A5DAB /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DF8BC81BCCA21C002A5DAB /* CalculationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		16DF8BCB1BCCA21C002A5DAB /* CalculationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DF8BC91BCCA21C002A5DAB /* CalculationViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30B1B88FB010008BCF2 /* AppDelegate.swift */; };
 		C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30D1B88FB010008BCF2 /* MainViewController.swift */; };
@@ -78,12 +84,18 @@
 		160FA77C1BC97AEE001FED10 /* TenDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = TenDB.sql; sourceTree = "<group>"; };
 		160FA77E1BC9C460001FED10 /* userModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
 		164EA74C1BB799E700446691 /* MobileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileInfo.swift; sourceTree = "<group>"; };
+		16795F841BDAE002007FFA7A /* ImageUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadViewController.swift; sourceTree = "<group>"; };
+		16795F851BDAE002007FFA7A /* ImageUploadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageUploadViewController.xib; sourceTree = "<group>"; };
+		16795F891BDAE0B4007FFA7A /* AFNetworkingModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFNetworkingModule.swift; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		16D1748E1BBE6D1000820AEF /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		16D174901BBE6D2100820AEF /* TutorialChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialChildViewController.swift; sourceTree = "<group>"; };
 		16D1749A1BC05AD100820AEF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		16D1749B1BC05AD100820AEF /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		16DF8BC61BCC9737002A5DAB /* TenUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUserModel.swift; sourceTree = "<group>"; };
+		16DF8BC81BCCA21C002A5DAB /* CalculationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
+		16DF8BC91BCCA21C002A5DAB /* CalculationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculationViewController.xib; sourceTree = "<group>"; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED3061B88FB010008BCF2 /* Ten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED30A1B88FB010008BCF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +148,9 @@
 				160FA73A1BC8178B001FED10 /* FMDBManager.swift */,
 				160FA7641BC824D1001FED10 /* Ten-Bridging-Header.h */,
 				160FA77E1BC9C460001FED10 /* userModel.swift */,
+				16DF8BC61BCC9737002A5DAB /* TenUserModel.swift */,
+				16DF8BC81BCCA21C002A5DAB /* CalculationViewController.swift */,
+				16DF8BC91BCCA21C002A5DAB /* CalculationViewController.xib */,
 			);
 			name = "Database Manager";
 			sourceTree = "<group>";
@@ -165,6 +180,16 @@
 				160FA7791BC825A7001FED10 /* FMDatabaseVariadic.swift */,
 			);
 			path = "Swift extensions";
+			sourceTree = "<group>";
+		};
+		16795F881BDAE05E007FFA7A /* AFNetworking Module */ = {
+			isa = PBXGroup;
+			children = (
+				16795F841BDAE002007FFA7A /* ImageUploadViewController.swift */,
+				16795F851BDAE002007FFA7A /* ImageUploadViewController.xib */,
+				16795F891BDAE0B4007FFA7A /* AFNetworkingModule.swift */,
+			);
+			name = "AFNetworking Module";
 			sourceTree = "<group>";
 		};
 		16988AE01B8CCC6000270DBA /* LocationManager */ = {
@@ -199,6 +224,7 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				16795F881BDAE05E007FFA7A /* AFNetworking Module */,
 				160FA7391BC814BB001FED10 /* Database Manager */,
 				16D1746B1BBCF36C00820AEF /* Welcome&Tutorial */,
 				D44EC9471BBB719100BF41A2 /* Profile */,
@@ -406,6 +432,8 @@
 			files = (
 				16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */,
 				C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */,
+				16795F871BDAE002007FFA7A /* ImageUploadViewController.xib in Resources */,
+				16DF8BCB1BCCA21C002A5DAB /* CalculationViewController.xib in Resources */,
 				16D1749D1BC05AD100820AEF /* ProfileViewController.xib in Resources */,
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
 				D44EC94E1BBB82B100BF41A2 /* ChatsTableViewController.xib in Resources */,
@@ -478,8 +506,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16DF8BC71BCC9737002A5DAB /* TenUserModel.swift in Sources */,
 				D44EC95F1BBB849500BF41A2 /* NotificationTableViewController.swift in Sources */,
 				160FA73B1BC8178B001FED10 /* FMDBManager.swift in Sources */,
+				16795F861BDAE002007FFA7A /* ImageUploadViewController.swift in Sources */,
 				C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */,
 				C4CED3311B8916480008BCF2 /* RadialSubMenu.swift in Sources */,
 				160FA75E1BC81FDA001FED10 /* FMDatabaseAdditions.m in Sources */,
@@ -498,6 +528,8 @@
 				160FA7611BC81FDA001FED10 /* FMResultSet.m in Sources */,
 				160FA75F1BC81FDA001FED10 /* FMDatabasePool.m in Sources */,
 				D44EC9631BBB858600BF41A2 /* ProfileCollectionViewController.swift in Sources */,
+				16DF8BCA1BCCA21C002A5DAB /* CalculationViewController.swift in Sources */,
+				16795F8A1BDAE0B4007FFA7A /* AFNetworkingModule.swift in Sources */,
 				16D1748F1BBE6D1000820AEF /* TutorialViewController.swift in Sources */,
 				D44EC95A1BBB843A00BF41A2 /* SettingsTableViewController.swift in Sources */,
 				160FA75D1BC81FDA001FED10 /* FMDatabase.m in Sources */,

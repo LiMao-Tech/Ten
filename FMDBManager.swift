@@ -90,20 +90,91 @@ class FMDBManager: NSObject {
     
     }
     
-    func insertUser(userIndex user_index: Int, user_id: String, user_name: String, gender:Int, birth_date: String, joined_date: String, last_login_datetime: String, p_coin: String, outer_score: Int, inner_score: Int, energy: Int, quote: String, latitude: Float, longitude: Float ) -> Bool{
+    func insertUser(userIndex user_index: Int, user_id: String, user_name: String, gender:Int, birth_date: NSDate, joined_date: NSDate, last_login_datetime: NSDate, p_coin: String, outer_score: Int, inner_score: Int, energy: Int, quote: String, latitude: Float, longitude: Float ) -> Bool{
     
+        var flag = true
         
-        return true
+        // int transfer
+        let userIndex = user_index.description
+        let gender_Str = gender.description
+        let outerScore = outer_score.description
+        let innerScore = inner_score.description
+        let energy_Str = energy.description
+        let lat = latitude.description
+        let lon = longitude.description
+        
+        // date transfer
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        
+        let birthDate = dateFormatter.stringFromDate(birth_date)
+        let joinedDate = dateFormatter.stringFromDate(joined_date)
+        let lastLoginDatetime = dateFormatter.stringFromDate(last_login_datetime)
+        
+        //TODO: asking about what is the type of p_coin
+        
+        
+        fmdbQueue?.inDatabase(){
+            db in
+            
+            // creating the table for TenUsers -- 0 is male, 1 is female
+            let sqlStatement = "INSERT INTO TenUsers" +
+                
+                " (user_index, user_id, user_name, gender, birth_date, joined_date, last_login_datetime, p_coin, outer_score, inner_score, energy, quote, latitude, longitude) " +
+                
+                "VALUES" +
+            
+                " (\(userIndex), '\(user_id)', '\(user_name)', \(gender_Str), \(birthDate), \(joinedDate), \(lastLoginDatetime), \(p_coin), \(outerScore), \(innerScore), \(energy_Str), '\(quote)', \(lat), \(lon) ); "
+            
+            //print("sql statement for insertion is: \n \(sqlStatement)")
+            
+            let createDatabaseFlag = db.executeUpdate(sqlStatement, withArgumentsInArray: nil)
+            
+            if (!createDatabaseFlag) {
+                print("insert into table failure: \(db.lastErrorMessage())")
+                flag = false
+            }
+            else {
+                print("table insertion is successful")
+                flag = true
+            }
+        }
+        
+        
+        return flag
     }
     
-    func readUser(readUserWithID user_id: String){
+    func readUserWithID(ID user_id: String) -> TenUserModel {
     
-    
-        return
+        var cur_user = TenUserModel()
+        
+        fmdbQueue?.inDatabase(){
+            db in
+            
+            // creating the table for TenUsers -- 0 is male, 1 is female
+            let sqlStatement = "SELECT * FROM TenUsers"
+            
+            let rs = db.executeQuery(sqlStatement, withArgumentsInArray: nil)
+            if(rs != nil){
+                while rs.next() {
+                    print(rs.resultDictionary())
+                }
+                
+                
+                //cur_user.initWithAllParameters(userIndex: <#T##Int#>, user_id: <#T##String#>, user_name: <#T##String#>, gender: <#T##Int#>, birth_date: <#T##NSDate#>, joined_date: <#T##NSDate#>, last_login_datetime: <#T##NSDate#>, p_coin: <#T##String#>, outer_score: <#T##Int#>, inner_score: <#T##Int#>, energy: <#T##Int#>, quote: <#T##String#>, latitude: <#T##Float#>, longitude: <#T##Float#>)
+            }
+            else{
+                //cur_user = nil
+            }
+        }
+        
+        
+        
+        return cur_user
     
     }
     
-    func readUser(readUserwithIndex: Int){
+    func readUserWithIndex(Index user_index: Int){
     
         return
     

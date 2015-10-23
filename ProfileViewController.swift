@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import ELCImagePickerController
+//import ELCImagePickerController
 
-class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationControllerDelegate,ELCImagePickerControllerDelegate, UIImagePickerControllerDelegate{
+class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
 
     // Image Picker Variables //
-    var chosenImages : NSMutableArray?
+    var chosenImage : UIImage?
     var counter : Int?
-    var ELCpicker : ELCImagePickerController? = ELCImagePickerController()
+    //var ELCpicker : ELCImagePickerController? = ELCImagePickerController()
     var picker : UIImagePickerController? = UIImagePickerController()
     
     // scrollView Variables //
@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         
-        chosenImages = NSMutableArray()
+        chosenImage = UIImage()
         
         print("\(self.view.frame.width) and \(self.view.frame.height)")
         
@@ -159,8 +159,8 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         
         // Add the actions
         
-        ELCpicker?.imagePickerDelegate = self
-        ELCpicker?.maximumImagesCount = 1 //TODO: Tuantuan, this is where you can change the number of image you want to select
+        //ELCpicker?.imagePickerDelegate = self
+        //ELCpicker?.maximumImagesCount = 1 //TODO: Tuantuan, this is where you can change the number of image you want to select
         picker?.delegate = self
         
         alert.addAction(cameraAction)
@@ -193,11 +193,11 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
     }
     func openGallary()
     {
-        //picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone
         {
-            self.presentViewController(ELCpicker!, animated: true, completion: nil)
+            self.presentViewController(picker!, animated: true, completion: nil)
 
         }
         else
@@ -206,36 +206,15 @@ class ProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationCo
         }
     }
     
-    // MARK: All Following are ELCImagePicker Methods
-    func elcImagePickerController(picker: ELCImagePickerController!, didFinishPickingMediaWithInfo info: [AnyObject]!) {
-        
-        // TODO: add the info images into
-        ELCpicker?.dismissViewControllerAnimated(true, completion: nil)
-        
-        var image = UIImage()
-        
-        for any in info {
-            let dict = any as! NSMutableDictionary
-            image = dict.objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
-            chosenImages!.addObject(image)
-        }
-        
-        self.buttonProfile?.setImage(image, forState: UIControlState.Normal)
-        
-        print(chosenImages)
-        
-    }
-    
-    func elcImagePickerControllerDidCancel(picker: ELCImagePickerController!) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         // TODO: add image into profile
+        // chosenImages
         picker .dismissViewControllerAnimated(true, completion: nil)
         let image=info[UIImagePickerControllerOriginalImage] as? UIImage
-        chosenImages?.addObject(image!)
+        chosenImage = image
         self.buttonProfile?.setImage(image, forState: UIControlState.Normal)
     }
     

@@ -40,6 +40,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.hidden = true
+        let pVC = CalculationViewController()
+        self.navigationController?.pushViewController(pVC, animated: true)
+        
         let defaultData = NSUserDefaults.standardUserDefaults()
         if(!defaultData.boolForKey("notFirstTime")){
             
@@ -56,12 +61,12 @@ class MainViewController: UIViewController {
         
         
             // add location observer
-            NSNotificationCenter.defaultCenter().addObserver(
+            /*NSNotificationCenter.defaultCenter().addObserver(
                 self,
                 selector: "locationChanged:",
                 name: locationNotiName,
                 object: nil)
-            // set location, status, and update lati and longi
+            // set location, status, and update lati and longi*/
             self.initRadialMenu()
             view.addSubview(menuButton)
             view.addSubview(tapView)
