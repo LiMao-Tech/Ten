@@ -15,7 +15,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = .Black
-        self.view.backgroundColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_settings"), forBarMetrics: .Default)
         settingList = UITableView(frame: CGRectMake(30, 0, SCREEN_WIDTH - 60, 324))
         settingList.dataSource = self
         settingList.delegate = self

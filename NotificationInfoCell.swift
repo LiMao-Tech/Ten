@@ -20,12 +20,12 @@ class NotificationInfoCell: UITableViewCell {
             detailLabel = UILabel(frame: notificationFrame.detailFrame)
             splitLine = UILabel (frame: notificationFrame.splitFrame)
             splitLine.backgroundColor = UIColor.whiteColor()
-            titleLable.font = UIFont.systemFontOfSize(17)
+            titleLable.font = UIFont(name: "PTSans", size: 17)
             titleLable.textColor = UIColor.orangeColor()
-            timeLabel.font = UIFont.systemFontOfSize(13)
+            timeLabel.font = UIFont(name: "PTSans", size: 13)
             timeLabel.textColor = UIColor.whiteColor()
             timeLabel.textAlignment = .Right
-            detailLabel.font = UIFont.systemFontOfSize(15)
+            detailLabel.font = UIFont(name: "PTSans", size: 15)
             detailLabel.textColor = UIColor.whiteColor()
             detailLabel.numberOfLines = 0
             titleLable.text = notificationFrame.notification.title

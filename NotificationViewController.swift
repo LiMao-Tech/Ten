@@ -17,7 +17,7 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         self.navigationController?.navigationBar.barStyle = .Black
         super.viewDidLoad()
         self.navigationController?.navigationBar.translucent = false
-        self.navigationItem.title = "Notification"
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_notification"), forBarMetrics: .Default)
         //tabview
         tabView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let item = SettingButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
@@ -27,7 +27,7 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         item0.normalImage = UIImage(named: "tab_notification_notification_normal")
         item0.seletedImage = UIImage(named: "tab_notification_notification")
         item.setImage(item.seletedImage, forState: UIControlState.Normal)
-        item0.setImage(item.normalImage, forState: UIControlState.Normal)
+        item0.setImage(item0.normalImage, forState: UIControlState.Normal)
         item.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
         item0.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
         tabView.addSubview(item0)
@@ -43,6 +43,8 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         //addsubview
         self.view.addSubview(tabView)
         self.view.addSubview(infoList)
+        
+        selectedBtn = item
         // Do any additional setup after loading the view.
     }
     func itemClicked(sender:SettingButton){

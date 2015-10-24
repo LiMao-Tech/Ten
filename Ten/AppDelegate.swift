@@ -34,7 +34,8 @@ let DISTANCE_FILTER : Double = 100 // meters
 let PROFILE_FONT_SIZE : CGFloat = 12
 let USERNAME_FONT_SIZE : CGFloat = 26
 
-
+let FONTNAME_BOLD = "PTSans-Bold"
+let FONTNAME_NORMAL = "PTSans"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {

@@ -13,8 +13,8 @@ class LevelUserController: UIViewController,UITableViewDataSource,UITableViewDel
     var level = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = level
         self.navigationController?.navigationBar.barStyle = .Black
+         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_level\(level)"), forBarMetrics: .Default)
         userList = UITableView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64))
         userList.dataSource = self
         userList.delegate = self

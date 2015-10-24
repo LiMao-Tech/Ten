@@ -13,7 +13,7 @@ class RandomUserController: UIViewController,UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = .Black
-        self.navigationItem.title = "Random"
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_random"), forBarMetrics: .Default)
         userList = UITableView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64))
         userList.dataSource = self
         userList.delegate = self
