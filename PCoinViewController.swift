@@ -15,7 +15,7 @@ enum pcoinModelType{
 class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var topView : UIView!
     var pcoinItemList : UITableView!
-    var modelType : pcoinModelType = .Unlocked
+    var modelType : pcoinModelType = .Pcoin
     let pcoinValue = [10,20,50,100]
     var item0:SettingButton!
     var item1:SettingButton!
@@ -24,7 +24,7 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "P Coin"
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_pCoin"), forBarMetrics: .Default)
         //topview
         topView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let len = SCREEN_WIDTH/4
@@ -32,10 +32,18 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         item1 = SettingButton(frame: CGRectMake(len, 0, len, TAP_BAR_HEIGHT))
         item2 = SettingButton(frame: CGRectMake(2*len, 0, len, TAP_BAR_HEIGHT))
         item3 = SettingButton(frame: CGRectMake(3*len, 0, len, TAP_BAR_HEIGHT))
-        item0.setImage(UIImage(named: "tab_pcoin_purchase"), forState: .Normal)
-        item1.setImage(UIImage(named: "tab_pcoin_history"), forState: .Normal)
-        item2.setImage(UIImage(named: "tab_pcoin_transfer"), forState: .Normal)
-        item3.setImage(UIImage(named: "tab_pcoin_unlocked"), forState: .Normal)
+        item0.normalImage = UIImage(named: "tab_pcoin_purchase")
+        item0.seletedImage = UIImage(named: "tab_pcoin_purchase")
+        item1.normalImage = UIImage(named: "tab_pcoin_history_normal")
+        item1.seletedImage = UIImage(named: "tab_pcoin_history")
+        item2.normalImage = UIImage(named: "tab_pcoin_transfer_normal")
+        item2.seletedImage = UIImage(named: "tab_pcoin_transfer")
+        item3.normalImage = UIImage(named: "tab_pcoin_unlocked_normal")
+        item3.seletedImage = UIImage(named: "tab_pcoin_unlocked")
+        item0.setImage(item0.seletedImage, forState: .Normal)
+        item1.setImage(item1.normalImage, forState: .Normal)
+        item2.setImage(item2.normalImage, forState: .Normal)
+        item3.setImage(item3.normalImage, forState: .Normal)
         item0.addTarget(self, action: "changeModel:", forControlEvents: .TouchUpInside)
         item1.addTarget(self, action: "changeModel:", forControlEvents: .TouchUpInside)
         item2.addTarget(self, action: "changeModel:", forControlEvents: .TouchUpInside)
@@ -60,10 +68,14 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         self.view.addSubview(topView)
         self.view.addSubview(pcoinItemList)
         selectedBtn = item0
+        self.navigationController?.navigationBar.barStyle = .Black
         // Do any additional setup after loading the view.
     }
     
     func changeModel(sender:SettingButton){
+        selectedBtn.setImage(selectedBtn.normalImage, forState: .Normal)
+        selectedBtn = sender
+        sender.setImage(sender.seletedImage, forState: .Normal)
         modelType = sender.model
         pcoinItemList.reloadData()
     }
@@ -137,6 +149,11 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         return 64
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+
     /*
     // MARK: - Navigation
 

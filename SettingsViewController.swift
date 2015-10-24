@@ -14,7 +14,8 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     let itemNames = ["Passcode","Change PIN","PCoin","","Term of Service","Privacy Policy"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_settings"), forBarMetrics: .Default)
         settingList = UITableView(frame: CGRectMake(30, 0, SCREEN_WIDTH - 60, 324))
         settingList.dataSource = self
         settingList.delegate = self
@@ -74,6 +75,9 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     
     func logout(){
         print("logout")
+    }
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 
     /*

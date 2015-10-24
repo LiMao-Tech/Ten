@@ -34,14 +34,14 @@ let DISTANCE_FILTER : Double = 100 // meters
 let PROFILE_FONT_SIZE : CGFloat = 12
 let USERNAME_FONT_SIZE : CGFloat = 26
 
-
+let FONTNAME_BOLD = "PTSans-Bold"
+let FONTNAME_NORMAL = "PTSans"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     var window: UIWindow?
     
     //var locationManager = SharedLocationManager()
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -62,7 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
 
         print([SCREEN_WIDTH, SCREEN_HEIGHT])
-          
+        
+//        sharedDatabase.createUserTable()
+//        sharedDatabase.insertUser(userIndex: 1, user_id: "exampleid_1", user_name: "Luren0", gender: 0, birth_date: NSDate(), joined_date: NSDate(), last_login_datetime: NSDate(), p_coin: "100.00", outer_score: 10, inner_score: 10, energy: 10, quote: "quote", latitude: 10.12342, longitude: 12.72518)
+//          
         return true
     }
     

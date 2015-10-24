@@ -15,16 +15,26 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var tabView:UIView!
     var userList:UITableView!
     var backgroundView:UIImageView!
+    var modelType:chatType = .Active
+    var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Chat"
+        self.navigationController?.navigationBar.barStyle = .Black
+
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_chat"), forBarMetrics: .Default)
         backgroundView = UIImageView(frame: SCREEN)
         backgroundView.image = UIImage(named: "bg")
         tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
-        let item = UIButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
-        let item0 = UIButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
-        item.setImage(UIImage(named: "tab_chat_activeChats"), forState: UIControlState.Normal)
-        item0.setImage(UIImage(named: "tab_chat_inactiveChats"), forState: UIControlState.Normal)
+        let item = SettingButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
+        let item0 = SettingButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
+        item.normalImage = UIImage(named: "tab_chat_activeChats_normal")
+        item.seletedImage = UIImage(named: "tab_chat_activeChats")
+        item0.normalImage = UIImage(named: "tab_chat_inactiveChats_normal")
+        item0.seletedImage = UIImage(named: "tab_chat_inactiveChats")
+        item.setImage(item.seletedImage, forState: UIControlState.Normal)
+        item0.setImage(item0.normalImage, forState: UIControlState.Normal)
+        item.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
+        item0.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
         tabView.addSubview(item0)
         tabView.addSubview(item)
         
@@ -38,8 +48,17 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         self.view.addSubview(userList)
         self.view.addSubview(tabView)
         
+        selectedBtn = item
         //        userList.reloadData()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func itemClicked(sender:SettingButton){
+        selectedBtn.setImage(selectedBtn.normalImage, forState: .Normal)
+        selectedBtn = sender
+        sender.setImage(sender.seletedImage, forState: .Normal)
+        modelType = sender.chatModel
+        userList.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
