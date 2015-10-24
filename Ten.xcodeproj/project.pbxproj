@@ -10,7 +10,7 @@
 		164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA74C1BB799E700446691 /* MobileInfo.swift */; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
-		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; };
 		640D05AC1BCB68F700C10E20 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D05AB1BCB68F700C10E20 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */; settings = {ASSET_TAGS = (); }; };
 		645E0D5E1BD355C100CF6977 /* PCoinUnlockedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */; settings = {ASSET_TAGS = (); }; };
@@ -197,6 +197,13 @@
 			name = LocationManager;
 			sourceTree = "<group>";
 		};
+		33111E5E54E2F21A48F2D331 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		640D05AF1BCB691900C10E20 /* UserCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +364,7 @@
 				C4CED31E1B88FB010008BCF2 /* TenTests */,
 				C4CED3071B88FB010008BCF2 /* Products */,
 				AA00EDF29C15F6580F061DCA /* Frameworks */,
+				33111E5E54E2F21A48F2D331 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
