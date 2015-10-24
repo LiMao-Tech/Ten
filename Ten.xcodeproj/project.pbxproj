@@ -10,7 +10,7 @@
 		164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EA74C1BB799E700446691 /* MobileInfo.swift */; };
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
-		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; };
 		C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30B1B88FB010008BCF2 /* AppDelegate.swift */; };
 		C4CED30E1B88FB010008BCF2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CED30D1B88FB010008BCF2 /* MainViewController.swift */; };
 		C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CED30F1B88FB010008BCF2 /* Main.storyboard */; };
