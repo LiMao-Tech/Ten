@@ -48,7 +48,7 @@
     self = [super init];
     _screenFrame = frame;
     _startingPoint= CGPointMake(BUTTON_DENO, _screenFrame.size.height*(BUTTON_DENO-1)/BUTTON_DENO);
-    NSArray * names = [[NSArray alloc] initWithObjects: @"btn_menu_search_female", @"btn_menu_search_male", @"btn_menu_search_all", @"user_pic_88", @"btn_menu_chat_normal", @"btn_menu_notification_normal", @"btn_menu_setting", nil];
+    NSArray * names = [[NSArray alloc] initWithObjects: @"btn_menu_search_female", @"btn_menu_search_male", @"btn_menu_search_all", @"btn_menu_profile", @"btn_menu_chat_normal", @"btn_menu_notification_normal", @"btn_menu_setting", nil];
     if (self)
     {
         _iNumberOfButtons = names.count;

@@ -26,6 +26,27 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
     
     var buttonProfile : UIButton?
     
+    var maleBtn:SettingButton!
+    var feMaleBtn:SettingButton!
+    
+    var singleBtn:SettingButton!
+    var marriedBtn:SettingButton!
+    
+    var emailAddr:UITextField!
+    
+    var hobby:UITextField!
+    
+    var statusDetail:UITextView!
+    
+    var innerBar:UISlider!
+    var innerValue:UILabel!
+    
+    var outerBar:UISlider!
+    var outerValue:UILabel!
+    
+    var energyBar:UISlider!
+    var energyValue:UILabel!
+    
     let lineLength:CGFloat = SCREEN_HEIGHT == 568 ? 150 : 200
     
     override func viewDidLoad() {
@@ -40,6 +61,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         scrollView = UIScrollView(frame: CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64))
 //        self.scrollView?.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+SCREEN_HEIGHT/16)
         scrollView!.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT*1.5)
+        scrollView!.bounces = false
         
         //let scrowViewWidth = SCREEN_WIDTH
         //let scrowViewHeight = SCREEN_HEIGHT
@@ -73,14 +95,55 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         let birthLine = UIView(frame: CGRectMake(textX, CGRectGetMaxY(birthData.frame)+2, lineLength, 1))
         birthLine.backgroundColor = UIColor.whiteColor()
         let sexLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*5/12, labelWidth: 200, labelHeight: 100, labelText: "Sex*")
+        feMaleBtn = initChooseBtn(CGRectMake(textX, SCREEN_HEIGHT*5/12+40, 62, 20), selectedImage: UIImage(named: "icon_checkbox")!, normalImage: UIImage(named: "icon_checkcircle")!, title: "  Female", action: "sexBtnClicked:")
+        maleBtn = initChooseBtn(CGRectMake(textX+80, SCREEN_HEIGHT*5/12+40, 50, 20), selectedImage: UIImage(named: "icon_checkbox")!, normalImage: UIImage(named: "icon_checkcircle")!, title: "  Male", action: "sexBtnClicked:")
         let marriageLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*6/12, labelWidth: 200, labelHeight: 100, labelText: "Marriage")
+        singleBtn = initChooseBtn(CGRectMake(textX, SCREEN_HEIGHT*6/12+40, 55, 20), selectedImage: UIImage(named: "icon_checkbox")!, normalImage: UIImage(named: "icon_checkcircle")!, title: "  Single", action: "marriageBtnClicked:")
+        marriedBtn = initChooseBtn(CGRectMake(textX+80, SCREEN_HEIGHT*6/12+40, 65, 20), selectedImage: UIImage(named: "icon_checkbox")!, normalImage: UIImage(named: "icon_checkcircle")!, title: "  Married", action: "marriageBtnClicked:")
         let emailLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*7/12, labelWidth: 200, labelHeight: 100, labelText: "Email")
+        emailAddr = UITextField(frame: CGRectMake(textX, SCREEN_HEIGHT*7/12+40, lineLength, 20))
+        emailAddr.textColor = UIColor.whiteColor()
+        emailAddr.font = UIFont(name: FONTNAME_NORMAL, size: 15)
+        emailAddr.text = "example@example.com"
         let hobbyLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*8/12, labelWidth: 200, labelHeight: 100, labelText: "Hobby")
+        hobby = UITextField(frame: CGRectMake(textX, SCREEN_HEIGHT*8/12+40, lineLength, 20))
+        hobby.textColor = UIColor.whiteColor()
+        hobby.font = UIFont(name: FONTNAME_NORMAL, size: 15)
+        hobby.text = "e.g. Music"
+        let hobbyLine = UIView(frame: CGRectMake(textX, CGRectGetMaxY(hobby.frame)+2, lineLength, 1))
+        hobbyLine.backgroundColor = UIColor.whiteColor()
         let moreDetailLabel = initLabel(posX: 15, posY: SCREEN_HEIGHT*9/12, labelWidth: 200, labelHeight: 100, labelText: "More Details")
         let statusLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*10/12, labelWidth: 200, labelHeight: 100, labelText: "Status")
+        statusDetail = UITextView(frame: CGRectMake(textX, SCREEN_HEIGHT*10/12+40, lineLength, SCREEN_HEIGHT*2/12-10))
+        statusDetail.backgroundColor = UIColor(red: 63.0/255.0, green: 63.0/255.0, blue: 64.0/255.0, alpha: 1)
+        statusDetail.textColor = UIColor.whiteColor()
+        statusDetail.bounces = false
+        statusDetail.font = UIFont.systemFontOfSize(15)
+        statusDetail.text = "There is so much to.."
         let InnerLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*12/12, labelWidth: 200, labelHeight: 100, labelText: "Inner")
+        innerBar = UISlider(frame: CGRectMake(textX, SCREEN_HEIGHT*12/12+40, lineLength-30, 20))
+        innerBar.minimumValue = 1
+        innerBar.maximumValue = 10
+        innerBar.addTarget(self, action: "barChanged", forControlEvents: UIControlEvents.ValueChanged)
+        innerValue = UILabel(frame: CGRectMake(CGRectGetMaxX(innerBar.frame)+10, SCREEN_HEIGHT*12/12+40, 20, 20))
+        innerValue.text = "0"
+        innerValue.textColor = UIColor.whiteColor()
         let OuterLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*13/12, labelWidth: 200, labelHeight: 100, labelText: "Outer")
+        outerBar = UISlider(frame: CGRectMake(textX, SCREEN_HEIGHT*13/12+40, lineLength-30, 20))
+        outerBar.minimumValue = 1
+        outerBar.maximumValue = 10
+        outerBar.addTarget(self, action: "barChanged", forControlEvents: UIControlEvents.ValueChanged)
+        outerValue = UILabel(frame: CGRectMake(CGRectGetMaxX(outerBar.frame)+10, SCREEN_HEIGHT*13/12+40, 20, 20))
+        outerValue.text = "0"
+        outerValue.textColor = UIColor.whiteColor()
         let EnergyLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*14/12, labelWidth: 200, labelHeight: 100, labelText: "Energy")
+        energyBar = UISlider(frame: CGRectMake(textX, SCREEN_HEIGHT*14/12+40, lineLength-30, 20))
+        energyBar.minimumValue = 1
+        energyBar.maximumValue = 10
+        energyBar.addTarget(self, action: "barChanged", forControlEvents: UIControlEvents.ValueChanged)
+        energyValue = UILabel(frame: CGRectMake(CGRectGetMaxX(energyBar.frame)+10, SCREEN_HEIGHT*14/12+40, 20, 20))
+        energyValue.text = "0"
+        energyValue.textColor = UIColor.whiteColor()
         
         
         self.scrollView!.addSubview(button)
@@ -103,9 +166,23 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         self.scrollView!.addSubview(userLine)
         self.scrollView!.addSubview(birthData)
         self.scrollView!.addSubview(birthLine)
-        
+        self.scrollView!.addSubview(feMaleBtn)
+        self.scrollView!.addSubview(maleBtn)
+        self.scrollView!.addSubview(singleBtn)
+        self.scrollView!.addSubview(marriedBtn)
+        self.scrollView!.addSubview(emailAddr)
+        self.scrollView!.addSubview(hobby)
+        self.scrollView!.addSubview(hobbyLine)
+        self.scrollView!.addSubview(statusDetail)
+        self.scrollView!.addSubview(innerBar)
+        self.scrollView!.addSubview(innerValue)
+        self.scrollView!.addSubview(outerBar)
+        self.scrollView!.addSubview(outerValue)
+        self.scrollView!.addSubview(energyBar)
+        self.scrollView!.addSubview(energyValue)
         
         self.view.addSubview(self.scrollView!)
+        
         //self.scrollView.
         
         // Do any additional setup after loading the view.
@@ -114,8 +191,62 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         
         
         
+    }
+    func sexBtnClicked(sender:SettingButton){
+        sender.enabled = false
+        if(sender.currentTitle == "  Female"){
+            feMaleBtn.setImage(feMaleBtn.seletedImage, forState: .Normal)
+            feMaleBtn.titleLabel?.alpha = 0.4
+            maleBtn.setImage(maleBtn.normalImage, forState: .Normal)
+            maleBtn.enabled = true
+            maleBtn.titleLabel?.alpha = 1
+        }
+        else{
+            feMaleBtn.setImage(feMaleBtn.normalImage, forState: .Normal)
+            feMaleBtn.titleLabel?.alpha = 1
+            maleBtn.setImage(maleBtn.seletedImage, forState: .Normal)
+            maleBtn.titleLabel?.alpha = 0.4
+            feMaleBtn.enabled = true
+        }
         
     }
+    
+    func marriageBtnClicked(sender:SettingButton){
+        sender.enabled = false
+        if(sender.currentTitle == "  Single"){
+            singleBtn.setImage(singleBtn.seletedImage, forState: .Normal)
+            singleBtn.titleLabel?.alpha = 0.4
+            marriedBtn.setImage(marriedBtn.normalImage, forState: .Normal)
+            marriedBtn.enabled = true
+            marriedBtn.titleLabel?.alpha = 1
+        }
+        else{
+            singleBtn.setImage(singleBtn.normalImage, forState: .Normal)
+            singleBtn.titleLabel?.alpha = 1
+            marriedBtn.setImage(marriedBtn.seletedImage, forState: .Normal)
+            marriedBtn.titleLabel?.alpha = 0.4
+            singleBtn.enabled = true
+        }
+    }
+    
+    func barChanged(){
+        innerValue.text = "\(Int(innerBar.value))"
+        outerValue.text = "\(Int(outerBar.value))"
+        energyValue.text = "\(Int(energyBar.value))"
+    }
+    
+    func initChooseBtn(frame:CGRect,selectedImage:UIImage,normalImage:UIImage,title:String?,action:Selector) -> SettingButton{
+        let chooseBtn = SettingButton(frame: frame)
+        chooseBtn.seletedImage = selectedImage
+        chooseBtn.normalImage = normalImage
+        chooseBtn.setImage(chooseBtn.normalImage, forState: .Normal)
+        chooseBtn.setTitle(title, forState: .Normal)
+        chooseBtn.titleLabel?.font = UIFont.systemFontOfSize(13)
+        chooseBtn.addTarget(self, action: action, forControlEvents: .TouchUpInside)
+        chooseBtn.adjustsImageWhenDisabled = false
+        return chooseBtn
+    }
+    
     func doneClicked(){
         birthData.resignFirstResponder()
     }

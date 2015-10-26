@@ -5,6 +5,20 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 25,
+          "top" : 24,
+          "right" : 25,
+          "left" : 24
+        }
+      },
       "idiom" : "universal",
       "filename" : "btn_profile_down.png",
       "scale" : "2x"
