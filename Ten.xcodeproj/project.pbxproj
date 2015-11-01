@@ -27,7 +27,6 @@
 		649B94D71BD4846000F1B6CA /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94CD1BD4846000F1B6CA /* FMDBManager.swift */; };
 		649B94D81BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94CF1BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift */; };
 		649B94D91BD4846000F1B6CA /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94D01BD4846000F1B6CA /* FMDatabaseVariadic.swift */; };
-		649B94DC1BD4854C00F1B6CA /* TenUserModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B94DB1BD4854C00F1B6CA /* TenUserModal.swift */; };
 		649B94DE1BD4857500F1B6CA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 649B94DD1BD4857500F1B6CA /* libsqlite3.0.tbd */; };
 		649B951B1BD87C1A00F1B6CA /* RegistProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B951A1BD87C1A00F1B6CA /* RegistProfileViewController.swift */; };
 		64A8D59A1BCAA7B600AC1E6E /* ADCircularMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A8D5991BCAA2AB00AC1E6E /* ADCircularMenuViewController.m */; };
@@ -62,6 +61,8 @@
 		D4A9C4141BDBBF0F004F2501 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A9C4131BDBBF0F004F2501 /* ChatViewController.swift */; };
 		D4A9C4161BDBBF1C004F2501 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A9C4151BDBBF1C004F2501 /* UserCell.swift */; };
 		D4A9C4181BDBBF26004F2501 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A9C4171BDBBF26004F2501 /* UserCell.xib */; };
+		D4AAFD7F1BE6B9B200485AED /* TenLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AAFD7D1BE6B9B200485AED /* TenLogin.swift */; };
+		D4AAFD801BE6B9B200485AED /* TenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AAFD7E1BE6B9B200485AED /* TenUser.swift */; };
 		D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */; };
 		D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F301BBDB9090019C09B /* ProfileViewController.xib */; };
 /* End PBXBuildFile section */
@@ -101,10 +102,9 @@
 		649B94CA1BD4846000F1B6CA /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		649B94CB1BD4846000F1B6CA /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		649B94CC1BD4846000F1B6CA /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		649B94CD1BD4846000F1B6CA /* FMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
+		649B94CD1BD4846000F1B6CA /* FMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FMDBManager.swift; path = ../FMDBManager.swift; sourceTree = "<group>"; };
 		649B94CF1BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
 		649B94D01BD4846000F1B6CA /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
-		649B94DB1BD4854C00F1B6CA /* TenUserModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUserModal.swift; sourceTree = "<group>"; };
 		649B94DD1BD4857500F1B6CA /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		649B951A1BD87C1A00F1B6CA /* RegistProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistProfileViewController.swift; sourceTree = "<group>"; };
 		649B951C1BD8996900F1B6CA /* PT_Sans-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Bold.ttf"; sourceTree = "<group>"; };
@@ -149,6 +149,8 @@
 		D4A9C4131BDBBF0F004F2501 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = SOURCE_ROOT; };
 		D4A9C4151BDBBF1C004F2501 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = SOURCE_ROOT; };
 		D4A9C4171BDBBF26004F2501 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = SOURCE_ROOT; };
+		D4AAFD7D1BE6B9B200485AED /* TenLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenLogin.swift; sourceTree = "<group>"; };
+		D4AAFD7E1BE6B9B200485AED /* TenUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUser.swift; sourceTree = "<group>"; };
 		D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4D96F301BBDB9090019C09B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +209,7 @@
 		649B94C11BD4846000F1B6CA /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
+				649B94CD1BD4846000F1B6CA /* FMDBManager.swift */,
 				649B94C21BD4846000F1B6CA /* FMDatabase.h */,
 				649B94C31BD4846000F1B6CA /* FMDatabase.m */,
 				649B94C41BD4846000F1B6CA /* FMDatabaseAdditions.h */,
@@ -306,9 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				649B94CE1BD4846000F1B6CA /* Swift extensions */,
+				D4AAFD7C1BE6B9B200485AED /* dbmodels */,
 				649B94C11BD4846000F1B6CA /* fmdb */,
-				649B94CD1BD4846000F1B6CA /* FMDBManager.swift */,
-				649B94DB1BD4854C00F1B6CA /* TenUserModal.swift */,
 				64A8D5961BCAA2AB00AC1E6E /* ADCircularMenuController */,
 				D4D96F371BBF82270019C09B /* ProfilePics */,
 				649B94DF1BD486D200F1B6CA /* RegistProfile */,
@@ -425,6 +427,15 @@
 				64BDA0C41BCBC64E009DF292 /* NotificationFrame.swift */,
 			);
 			name = Notification;
+			sourceTree = "<group>";
+		};
+		D4AAFD7C1BE6B9B200485AED /* dbmodels */ = {
+			isa = PBXGroup;
+			children = (
+				D4AAFD7D1BE6B9B200485AED /* TenLogin.swift */,
+				D4AAFD7E1BE6B9B200485AED /* TenUser.swift */,
+			);
+			path = dbmodels;
 			sourceTree = "<group>";
 		};
 		D4D96F371BBF82270019C09B /* ProfilePics */ = {
@@ -611,12 +622,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				649B94DC1BD4854C00F1B6CA /* TenUserModal.swift in Sources */,
+				D4AAFD7F1BE6B9B200485AED /* TenLogin.swift in Sources */,
 				649B94D91BD4846000F1B6CA /* FMDatabaseVariadic.swift in Sources */,
 				64BDA0CC1BCC0815009DF292 /* settingCell.swift in Sources */,
 				64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */,
 				646C1B941BCB8ED000EEBF04 /* LevelUserController.swift in Sources */,
 				64BDA0C51BCBC64E009DF292 /* NotificationFrame.swift in Sources */,
+				D4AAFD801BE6B9B200485AED /* TenUser.swift in Sources */,
 				645E0D881BD37ADB00CF6977 /* SettingButton.swift in Sources */,
 				645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */,
 				D41B3D791BC07924005002C8 /* Helpers.swift in Sources */,
