@@ -26,7 +26,7 @@ class SignUpController: UIViewController {
         newPinRe.textColor = UIColor.whiteColor()
         //nextBtn
         let x = (SCREEN_WIDTH-215)/2
-        let y = SCREEN_HEIGHT-190
+        let y = SCREEN_HEIGHT-80
         nextBtn = UIButton(frame: CGRectMake(x,y,215,37))
         nextBtn.setImage(UIImage(named: "btn_next"), forState: .Normal)
         nextBtn.addTarget(self, action: "nextClick", forControlEvents: .TouchUpInside)

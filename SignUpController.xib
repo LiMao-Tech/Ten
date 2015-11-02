@@ -48,18 +48,27 @@
                     <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="16"/>
                     <color key="textColor" red="1" green="0.3529411764705882" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="30" y="260" width="370" height="19"/>
+                    </variation>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nHd-hC-UnS">
                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="30" y="309" width="340" height="30"/>
+                    </variation>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-HE-nER">
                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="30" y="389" width="340" height="30"/>
+                    </variation>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m3C-mX-STE">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -107,21 +116,21 @@
                     <exclude reference="m3C-mX-STE"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="7HG-kz-nV9"/>
-                    <exclude reference="7WH-zK-mR1"/>
-                    <exclude reference="bcT-vn-TZ2"/>
-                    <exclude reference="Fic-p7-NPL"/>
-                    <exclude reference="cDY-9T-Esj"/>
-                    <exclude reference="uFB-gr-FLS"/>
-                    <exclude reference="fEI-5W-DPL"/>
-                    <exclude reference="gCc-Kh-KHg"/>
-                    <exclude reference="pRt-T2-JoY"/>
-                    <exclude reference="eQA-ET-IQw"/>
-                    <exclude reference="kcX-Fv-y6z"/>
-                    <exclude reference="nVO-3q-tgQ"/>
                     <exclude reference="J0g-n4-5tf"/>
                     <exclude reference="OSL-8l-ax5"/>
                     <exclude reference="gB4-IK-KTG"/>
+                    <exclude reference="eQA-ET-IQw"/>
+                    <exclude reference="kcX-Fv-y6z"/>
+                    <exclude reference="nVO-3q-tgQ"/>
+                    <exclude reference="fEI-5W-DPL"/>
+                    <exclude reference="gCc-Kh-KHg"/>
+                    <exclude reference="pRt-T2-JoY"/>
+                    <exclude reference="Fic-p7-NPL"/>
+                    <exclude reference="cDY-9T-Esj"/>
+                    <exclude reference="uFB-gr-FLS"/>
+                    <exclude reference="7HG-kz-nV9"/>
+                    <exclude reference="7WH-zK-mR1"/>
+                    <exclude reference="bcT-vn-TZ2"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -133,21 +142,21 @@
                     <include reference="m3C-mX-STE"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="7HG-kz-nV9"/>
-                    <include reference="7WH-zK-mR1"/>
-                    <include reference="bcT-vn-TZ2"/>
-                    <include reference="Fic-p7-NPL"/>
-                    <include reference="cDY-9T-Esj"/>
-                    <include reference="uFB-gr-FLS"/>
-                    <include reference="fEI-5W-DPL"/>
-                    <include reference="gCc-Kh-KHg"/>
-                    <include reference="pRt-T2-JoY"/>
-                    <include reference="eQA-ET-IQw"/>
-                    <include reference="kcX-Fv-y6z"/>
-                    <include reference="nVO-3q-tgQ"/>
                     <include reference="J0g-n4-5tf"/>
                     <include reference="OSL-8l-ax5"/>
                     <include reference="gB4-IK-KTG"/>
+                    <include reference="eQA-ET-IQw"/>
+                    <include reference="kcX-Fv-y6z"/>
+                    <include reference="nVO-3q-tgQ"/>
+                    <include reference="fEI-5W-DPL"/>
+                    <include reference="gCc-Kh-KHg"/>
+                    <include reference="pRt-T2-JoY"/>
+                    <include reference="Fic-p7-NPL"/>
+                    <include reference="cDY-9T-Esj"/>
+                    <include reference="uFB-gr-FLS"/>
+                    <include reference="7HG-kz-nV9"/>
+                    <include reference="7WH-zK-mR1"/>
+                    <include reference="bcT-vn-TZ2"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="324" y="182"/>

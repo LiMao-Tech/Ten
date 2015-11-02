@@ -144,9 +144,9 @@ class FMDBManager: NSObject {
         return flag
     }
     
-    func readUserWithID(ID user_id: String) -> TenUserModal {
+    func readUserWithID(ID user_id: String) -> TenUserModel {
     
-        var cur_user = TenUserModal()
+        var cur_user = TenUserModel()
         
         fmdbQueue?.inDatabase(){
             db in

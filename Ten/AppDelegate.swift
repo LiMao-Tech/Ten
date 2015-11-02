@@ -39,6 +39,8 @@ let FONTNAME_NORMAL = "PTSans"
 
 let UUID = NSUUID().UUIDString
 
+let deviceToken = NSUserDefaults.standardUserDefaults().objectForKey("deviceToken")
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     var window: UIWindow?
@@ -49,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        print(UUID)
         //----------------- remote notification started ----------------------//
         print(UIDevice.currentDevice().systemVersion)
         switch(getMajorSystemVersion()) {
@@ -56,6 +59,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             UIApplication.sharedApplication().registerForRemoteNotificationTypes(
                 [UIRemoteNotificationType.Badge, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Alert])
         case 8:
+            let pushSettings: UIUserNotificationSettings = UIUserNotificationSettings(
+                forTypes:
+                [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound],
+                categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(pushSettings)
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+        case 9:
             let pushSettings: UIUserNotificationSettings = UIUserNotificationSettings(
                 forTypes:
                 [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound],
@@ -98,12 +108,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let trimEnds = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"))
-        let cleanToken = trimEnds.stringByReplacingOccurrencesOfString(" ", withString: "", options: [])
-        
-        //registerTokenOnServer(cleanToken) //theoretical method! Needs your own implementation
-        print(cleanToken)
-        // TODO: save this cleanToken into server and to default user data
+//        if(NSUserDefaults.standardUserDefaults().objectForKey("deviceToken") != nil){
+            let trimEnds = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"))
+            let cleanToken = trimEnds.stringByReplacingOccurrencesOfString(" ", withString: "", options: [])
+            NSUserDefaults.standardUserDefaults().setObject(cleanToken, forKey: "deviceToken")
+            //registerTokenOnServer(cleanToken) //theoretical method! Needs your own implementation
+            print(cleanToken)
+            // TODO: save this cleanToken into server and to default user data
+//        }
+        print(deviceToken)
     }
     
     // Failed to register for Push
@@ -196,7 +209,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         print("in Will Terminate State, byebye")
     }
-
 
 }
 
