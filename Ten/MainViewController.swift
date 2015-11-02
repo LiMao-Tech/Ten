@@ -85,7 +85,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         for i in 0...btnArray.count-2{
             let row = i/3
             let col = i%3
-            btnArray[i] = LevelButton(frame: CGRectMake(x + CGFloat(row)*(marginw+iconw), y + CGFloat(col)*(marginh+iconh), iconw, iconh))
+            btnArray[i] = LevelButton(frame: CGRectMake(x + CGFloat(col)*(marginw+iconw), y + CGFloat(row)*(marginh+iconh), iconw, iconh))
             btnArray[i].level = "\(i+1)"
             btnArray[i].setImage(UIImage(named: "btn_l\(i+1)_unlock"), forState: UIControlState.Normal)
             btnArray[i].addTarget(self, action: "levelSelect:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -148,6 +148,9 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
             self.navigationController?.pushViewController(rpVC, animated: true)
         case 1:
             print("Not Implemented yet!")
+            self.navigationController?.navigationBar.hidden = false
+            let wVC = WelcomeController()
+            self.navigationController?.pushViewController(wVC, animated: true)
         case 2:
             print("Not Implemented yet!")
         case 3:

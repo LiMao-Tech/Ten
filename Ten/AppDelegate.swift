@@ -37,13 +37,35 @@ let USERNAME_FONT_SIZE : CGFloat = 26
 let FONTNAME_BOLD = "PTSans-Bold"
 let FONTNAME_NORMAL = "PTSans"
 
+let UUID = NSUUID().UUIDString
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     var window: UIWindow?
     
     //var locationManager = SharedLocationManager()
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //----------------- remote notification started ----------------------//
+        print(UIDevice.currentDevice().systemVersion)
+        switch(getMajorSystemVersion()) {
+        case 7:
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes(
+                [UIRemoteNotificationType.Badge, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Alert])
+        case 8:
+            let pushSettings: UIUserNotificationSettings = UIUserNotificationSettings(
+                forTypes:
+                [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound],
+                categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(pushSettings)
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+        default: return true
+        }
+        // ---------------------------- END for remote notification -----------------------------//
+
         
         NSThread.sleepForTimeInterval(3.0)
         
@@ -69,6 +91,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return true
     }
     
+    // ---------------------------- for remote notification -----------------------------//
+    
+    func getMajorSystemVersion() -> Int {
+        return Int(String(Array(UIDevice.currentDevice().systemVersion.characters)[0]))!
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let trimEnds = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"))
+        let cleanToken = trimEnds.stringByReplacingOccurrencesOfString(" ", withString: "", options: [])
+        
+        //registerTokenOnServer(cleanToken) //theoretical method! Needs your own implementation
+        print(cleanToken)
+        // TODO: save this cleanToken into server and to default user data
+    }
+    
+    // Failed to register for Push
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        
+        NSLog("Failed to get token; error: %@", error) //Log an error for debugging purposes, user doesn't need to know
+    }
+    
+    // ---------------------------- END for remote notification -----------------------------//
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
