@@ -34,12 +34,18 @@
                     <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="0.0" y="90" width="400" height="19"/>
+                    </variation>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CC6-wY-h5G">
                     <rect key="frame" x="30" y="141" width="540" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="30" y="139" width="340" height="30"/>
+                    </variation>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up by your email address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvJ-HX-bw2">
                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -119,12 +125,12 @@
                     <exclude reference="x2l-6f-Nha"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="DLT-l8-kju"/>
-                    <exclude reference="WWO-kK-QGT"/>
-                    <exclude reference="mjW-qY-O7M"/>
                     <exclude reference="TLV-3H-GZs"/>
                     <exclude reference="UlD-FN-5AT"/>
                     <exclude reference="pV0-0G-x5j"/>
+                    <exclude reference="DLT-l8-kju"/>
+                    <exclude reference="WWO-kK-QGT"/>
+                    <exclude reference="mjW-qY-O7M"/>
                     <exclude reference="2pY-od-hns"/>
                     <exclude reference="XlZ-5W-fL0"/>
                     <exclude reference="vuC-j4-SBk"/>
@@ -137,12 +143,12 @@
                     <include reference="x2l-6f-Nha"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="DLT-l8-kju"/>
-                    <include reference="WWO-kK-QGT"/>
-                    <include reference="mjW-qY-O7M"/>
                     <include reference="TLV-3H-GZs"/>
                     <include reference="UlD-FN-5AT"/>
                     <include reference="pV0-0G-x5j"/>
+                    <include reference="DLT-l8-kju"/>
+                    <include reference="WWO-kK-QGT"/>
+                    <include reference="mjW-qY-O7M"/>
                     <include reference="2pY-od-hns"/>
                     <include reference="XlZ-5W-fL0"/>
                     <include reference="vuC-j4-SBk"/>
