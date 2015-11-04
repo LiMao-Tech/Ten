@@ -214,6 +214,8 @@
 		C4CED2FE1B88FB010008BCF2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "LiMao Tech";
 				TargetAttributes = {

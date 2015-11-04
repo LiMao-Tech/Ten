@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var locationLabel: UILabel!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         
         addButton = UIImageView(image: UIImage(named: "plus"))
         tapView = UIView()
@@ -93,7 +93,7 @@ class MainViewController: UIViewController {
             self.highlightSubMenu(subMenu)
             let pos = subMenu.tag % self.colors.count
             
-            println("selected: \(pos)")
+            print("selected: \(pos)")
             
             if pos == 4 {
                 

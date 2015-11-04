@@ -21,7 +21,7 @@ func isFullCircle(minAngle: Double, maxAngle: Double) -> Bool {
 }
 
 func isFullCircle(minAngle: Int, maxAngle: Int) -> Bool {
-    return isFullCircle(Double(minAngle), Double(maxAngle))
+    return isFullCircle(Double(minAngle), maxAngle: Double(maxAngle))
 }
 
 func getAngleForIndex(idx: Int, max: Int, minAngle: Double, maxAngle: Double) -> Double {
@@ -38,7 +38,7 @@ func getPointForAngle(angle: Double, radius: Double) -> CGPoint {
 }
 
 func getPointAlongCircle(idx: Int, max: Int, minAngle: Double, maxAngle: Double, radius: Double) -> CGPoint {
-    let angle = getAngleForIndex(idx, max, minAngle, maxAngle)
+    let angle = getAngleForIndex(idx, max: max, minAngle: minAngle, maxAngle: maxAngle)
     return getPointForAngle(angle, radius)
 }
 
