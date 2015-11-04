@@ -11,7 +11,6 @@
 		16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16988ADC1B8A57A500270DBA /* Images.xcassets */; };
 		16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */; };
 		3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16B2F1E77B7FE57018887C4 /* Pods.framework */; };
-		640D05AC1BCB68F700C10E20 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D05AB1BCB68F700C10E20 /* ChatViewController.swift */; };
 		64320D7A1BE5B2010000BB13 /* LoginPinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64320D781BE5B2010000BB13 /* LoginPinController.swift */; };
 		64320D7B1BE5B2010000BB13 /* LoginPinController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64320D791BE5B2010000BB13 /* LoginPinController.xib */; };
 		644642471BE7520A00C1F915 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644642451BE7520A00C1F915 /* SignUpController.swift */; };
@@ -20,8 +19,6 @@
 		6446424C1BE7B3A100C1F915 /* TenUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446424B1BE7B3A100C1F915 /* TenUserModel.swift */; };
 		645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */; };
 		645E0D5E1BD355C100CF6977 /* PCoinUnlockedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */; };
-		645E0D851BD3735600CF6977 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D831BD3735600CF6977 /* UserCell.swift */; };
-		645E0D861BD3735600CF6977 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645E0D841BD3735600CF6977 /* UserCell.xib */; };
 		645E0D881BD37ADB00CF6977 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D871BD37ADB00CF6977 /* SettingButton.swift */; };
 		646C1B8C1BCB789400EEBF04 /* BaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B8B1BCB789400EEBF04 /* BaseUser.swift */; };
 		646C1B901BCB8C8600EEBF04 /* RandomAndLevelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */; };
@@ -68,6 +65,11 @@
 		D41B3D761BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B3D741BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift */; };
 		D41B3D771BC074AB005002C8 /* ProfilePicsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41B3D751BC074AB005002C8 /* ProfilePicsCollectionViewController.xib */; };
 		D41B3D791BC07924005002C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B3D781BC07924005002C8 /* Helpers.swift */; };
+		D48134861BE9E0AE00F49D63 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48134851BE9E0AE00F49D63 /* ChatViewController.swift */; };
+		D481348A1BE9E0CB00F49D63 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48134881BE9E0CB00F49D63 /* UserCell.swift */; };
+		D481348B1BE9E0CB00F49D63 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48134891BE9E0CB00F49D63 /* UserCell.xib */; };
+		D481348F1BE9E26500F49D63 /* TenLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481348D1BE9E26500F49D63 /* TenLogin.swift */; };
+		D48134901BE9E26500F49D63 /* TenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481348E1BE9E26500F49D63 /* TenUser.swift */; };
 		D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */; };
 		D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */; };
 		D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F301BBDB9090019C09B /* ProfileViewController.xib */; };
@@ -89,7 +91,6 @@
 		164EA74C1BB799E700446691 /* MobileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileInfo.swift; sourceTree = "<group>"; };
 		16988ADC1B8A57A500270DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16988ADE1B8CCC5500270DBA /* SharedLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SharedLocationManager.swift; path = Ten/SharedLocationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		640D05AB1BCB68F700C10E20 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = ../../../../GitHub/Develop/ChatViewController.swift; sourceTree = "<group>"; };
 		64320D781BE5B2010000BB13 /* LoginPinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPinController.swift; sourceTree = "<group>"; };
 		64320D791BE5B2010000BB13 /* LoginPinController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPinController.xib; sourceTree = "<group>"; };
 		644642451BE7520A00C1F915 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -98,8 +99,6 @@
 		6446424B1BE7B3A100C1F915 /* TenUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUserModel.swift; sourceTree = "<group>"; };
 		645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinUnlockedCell.swift; sourceTree = "<group>"; };
 		645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinUnlockedModel.swift; sourceTree = "<group>"; };
-		645E0D831BD3735600CF6977 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = ../../../../GitHub/Develop/UserCell.swift; sourceTree = "<group>"; };
-		645E0D841BD3735600CF6977 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = ../../../../GitHub/Develop/UserCell.xib; sourceTree = "<group>"; };
 		645E0D871BD37ADB00CF6977 /* SettingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
 		646C1B8B1BCB789400EEBF04 /* BaseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUser.swift; sourceTree = "<group>"; };
 		646C1B8F1BCB8C8500EEBF04 /* RandomAndLevelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomAndLevelUser.swift; sourceTree = "<group>"; };
@@ -119,7 +118,7 @@
 		649B94CA1BD4846000F1B6CA /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		649B94CB1BD4846000F1B6CA /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		649B94CC1BD4846000F1B6CA /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		649B94CD1BD4846000F1B6CA /* FMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
+		649B94CD1BD4846000F1B6CA /* FMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FMDBManager.swift; path = ../FMDBManager.swift; sourceTree = "<group>"; };
 		649B94CF1BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
 		649B94D01BD4846000F1B6CA /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
 		649B94DD1BD4857500F1B6CA /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -162,6 +161,11 @@
 		D41B3D741BC074AB005002C8 /* ProfilePicsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D41B3D751BC074AB005002C8 /* ProfilePicsCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePicsCollectionViewController.xib; sourceTree = "<group>"; };
 		D41B3D781BC07924005002C8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		D48134851BE9E0AE00F49D63 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D48134881BE9E0CB00F49D63 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		D48134891BE9E0CB00F49D63 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		D481348D1BE9E26500F49D63 /* TenLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenLogin.swift; sourceTree = "<group>"; };
+		D481348E1BE9E26500F49D63 /* TenUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUser.swift; sourceTree = "<group>"; };
 		D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsLayout.swift; sourceTree = "<group>"; };
 		D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4D96F301BBDB9090019C09B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -195,17 +199,6 @@
 			name = LocationManager;
 			sourceTree = "<group>";
 		};
-		640D05AF1BCB691900C10E20 /* UserCell */ = {
-			isa = PBXGroup;
-			children = (
-				645E0D831BD3735600CF6977 /* UserCell.swift */,
-				645E0D841BD3735600CF6977 /* UserCell.xib */,
-				640D05AB1BCB68F700C10E20 /* ChatViewController.swift */,
-			);
-			name = UserCell;
-			path = ../../Documents/xcodeworkspace/userlist/userlist;
-			sourceTree = "<group>";
-		};
 		640D05B21BCB6E8C00C10E20 /* Ramdom&level */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +227,7 @@
 		649B94C11BD4846000F1B6CA /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
+				649B94CD1BD4846000F1B6CA /* FMDBManager.swift */,
 				649B94C21BD4846000F1B6CA /* FMDatabase.h */,
 				649B94C31BD4846000F1B6CA /* FMDatabase.m */,
 				649B94C41BD4846000F1B6CA /* FMDatabaseAdditions.h */,
@@ -330,21 +324,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BD3A54875D3B87AFF75A4BE0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				D481348C1BE9E26500F49D63 /* dbmodels */,
 				644642491BE76B6600C1F915 /* NewLiMaoTenAppOct26.mobileprovision */,
 				64955CCA1BE5A4B000792EDD /* Login */,
 				649B94CE1BD4846000F1B6CA /* Swift extensions */,
 				649B94C11BD4846000F1B6CA /* fmdb */,
-				649B94CD1BD4846000F1B6CA /* FMDBManager.swift */,
 				64A8D5961BCAA2AB00AC1E6E /* ADCircularMenuController */,
 				D4D96F371BBF82270019C09B /* ProfilePics */,
 				649B94DF1BD486D200F1B6CA /* RegistProfile */,
@@ -358,7 +345,6 @@
 				C4CED31E1B88FB010008BCF2 /* TenTests */,
 				C4CED3071B88FB010008BCF2 /* Products */,
 				AA00EDF29C15F6580F061DCA /* Frameworks */,
-				BD3A54875D3B87AFF75A4BE0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -435,9 +421,10 @@
 		D44EC94A1BBB825F00BF41A2 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
+				D48134871BE9E0B900F49D63 /* UserCell */,
+				D48134851BE9E0AE00F49D63 /* ChatViewController.swift */,
 				646C1B8B1BCB789400EEBF04 /* BaseUser.swift */,
 				640D05B21BCB6E8C00C10E20 /* Ramdom&level */,
-				640D05AF1BCB691900C10E20 /* UserCell */,
 			);
 			name = Chats;
 			sourceTree = "<group>";
@@ -462,6 +449,24 @@
 				64BDA0C41BCBC64E009DF292 /* NotificationFrame.swift */,
 			);
 			name = Notification;
+			sourceTree = "<group>";
+		};
+		D48134871BE9E0B900F49D63 /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				D48134881BE9E0CB00F49D63 /* UserCell.swift */,
+				D48134891BE9E0CB00F49D63 /* UserCell.xib */,
+			);
+			name = UserCell;
+			sourceTree = "<group>";
+		};
+		D481348C1BE9E26500F49D63 /* dbmodels */ = {
+			isa = PBXGroup;
+			children = (
+				D481348D1BE9E26500F49D63 /* TenLogin.swift */,
+				D481348E1BE9E26500F49D63 /* TenUser.swift */,
+			);
+			path = dbmodels;
 			sourceTree = "<group>";
 		};
 		D4D96F371BBF82270019C09B /* ProfilePics */ = {
@@ -535,7 +540,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "LiMao Tech";
 				TargetAttributes = {
 					C4CED3051B88FB010008BCF2 = {
@@ -587,11 +592,11 @@
 				64F5CEBF1BD8B51800512972 /* PT_Sans-Web-Bold.ttf in Resources */,
 				D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */,
 				16988ADD1B8A57A500270DBA /* Images.xcassets in Resources */,
-				645E0D861BD3735600CF6977 /* UserCell.xib in Resources */,
 				64F5CEC01BD8B51A00512972 /* PT_Sans-Web-BoldItalic.ttf in Resources */,
 				C4CED3111B88FB010008BCF2 /* Main.storyboard in Resources */,
 				D41B3D721BC07493005002C8 /* ProfilePicsCollectionViewCell.xib in Resources */,
 				C4CED3161B88FB010008BCF2 /* LaunchScreen.xib in Resources */,
+				D481348B1BE9E0CB00F49D63 /* UserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +666,6 @@
 				64BDA0CC1BCC0815009DF292 /* settingCell.swift in Sources */,
 				64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */,
 				646C1B941BCB8ED000EEBF04 /* LevelUserController.swift in Sources */,
-				645E0D851BD3735600CF6977 /* UserCell.swift in Sources */,
 				64BDA0C51BCBC64E009DF292 /* NotificationFrame.swift in Sources */,
 				645E0D881BD37ADB00CF6977 /* SettingButton.swift in Sources */,
 				645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */,
@@ -673,6 +677,7 @@
 				649B94D51BD4846000F1B6CA /* FMDatabaseQueue.m in Sources */,
 				64BDA0DB1BD275D1009DF292 /* PCoinPurchaseCell.swift in Sources */,
 				649B94D41BD4846000F1B6CA /* FMDatabasePool.m in Sources */,
+				D481348F1BE9E26500F49D63 /* TenLogin.swift in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
 				646C1B961BCB913C00EEBF04 /* RandomAndLevelUserCell.swift in Sources */,
@@ -687,21 +692,23 @@
 				649B94D61BD4846000F1B6CA /* FMResultSet.m in Sources */,
 				649B94D21BD4846000F1B6CA /* FMDatabase.m in Sources */,
 				646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */,
+				D48134901BE9E26500F49D63 /* TenUser.swift in Sources */,
 				64BDA0BF1BCBC30A009DF292 /* NotificationViewController.swift in Sources */,
 				D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */,
 				646C1B901BCB8C8600EEBF04 /* RandomAndLevelUser.swift in Sources */,
 				64BDA0D81BD27223009DF292 /* LevelButton.swift in Sources */,
 				644642471BE7520A00C1F915 /* SignUpController.swift in Sources */,
+				D481348A1BE9E0CB00F49D63 /* UserCell.swift in Sources */,
 				649B94D71BD4846000F1B6CA /* FMDBManager.swift in Sources */,
 				64BDA0E21BD333F0009DF292 /* PCoinTransferCell.swift in Sources */,
 				64BDA0D61BD26E68009DF292 /* PCoinViewController.swift in Sources */,
-				640D05AC1BCB68F700C10E20 /* ChatViewController.swift in Sources */,
 				64955CCD1BE5A59100792EDD /* WelcomeController.swift in Sources */,
 				64BDA0E01BD27FCA009DF292 /* PCoinHistoryCell.swift in Sources */,
 				64BDA0C31BCBC508009DF292 /* Notification.swift in Sources */,
 				6446424C1BE7B3A100C1F915 /* TenUserModel.swift in Sources */,
 				D41B3D731BC07493005002C8 /* ProfilePicsCollectionViewController.swift in Sources */,
 				C4CED30C1B88FB010008BCF2 /* AppDelegate.swift in Sources */,
+				D48134861BE9E0AE00F49D63 /* ChatViewController.swift in Sources */,
 				649B951B1BD87C1A00F1B6CA /* RegistProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,6 +773,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -833,7 +841,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04E4A3C8E90507E375B44E7E /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -842,6 +849,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -853,7 +861,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 032746A50B016C79F1BAEF9D /* Pods.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -862,6 +869,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -882,6 +890,7 @@
 				);
 				INFOPLIST_FILE = TenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ten.app/Ten";
 			};
@@ -897,6 +906,7 @@
 				);
 				INFOPLIST_FILE = TenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ten.app/Ten";
 			};
