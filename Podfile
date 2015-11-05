@@ -1,3 +1,4 @@
+pod 'Tweaks'
 pod 'PureLayout'
 pod 'AFNetworking'
 pod 'AFNetworkActivityLogger'

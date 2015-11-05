@@ -15,7 +15,6 @@
 		64320D7B1BE5B2010000BB13 /* LoginPinController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64320D791BE5B2010000BB13 /* LoginPinController.xib */; };
 		644642471BE7520A00C1F915 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644642451BE7520A00C1F915 /* SignUpController.swift */; };
 		644642481BE7520A00C1F915 /* SignUpController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 644642461BE7520A00C1F915 /* SignUpController.xib */; };
-		6446424A1BE76B6600C1F915 /* NewLiMaoTenAppOct26.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 644642491BE76B6600C1F915 /* NewLiMaoTenAppOct26.mobileprovision */; };
 		6446424C1BE7B3A100C1F915 /* TenUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446424B1BE7B3A100C1F915 /* TenUserModel.swift */; };
 		645E0D5A1BD3544C00CF6977 /* PCoinUnlockedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */; };
 		645E0D5E1BD355C100CF6977 /* PCoinUnlockedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */; };
@@ -70,6 +69,7 @@
 		D481348B1BE9E0CB00F49D63 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48134891BE9E0CB00F49D63 /* UserCell.xib */; };
 		D481348F1BE9E26500F49D63 /* TenLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481348D1BE9E26500F49D63 /* TenLogin.swift */; };
 		D48134901BE9E26500F49D63 /* TenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481348E1BE9E26500F49D63 /* TenUser.swift */; };
+		D48134921BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = D48134911BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision */; };
 		D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */; };
 		D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */; };
 		D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F301BBDB9090019C09B /* ProfileViewController.xib */; };
@@ -95,7 +95,6 @@
 		64320D791BE5B2010000BB13 /* LoginPinController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPinController.xib; sourceTree = "<group>"; };
 		644642451BE7520A00C1F915 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		644642461BE7520A00C1F915 /* SignUpController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpController.xib; sourceTree = "<group>"; };
-		644642491BE76B6600C1F915 /* NewLiMaoTenAppOct26.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewLiMaoTenAppOct26.mobileprovision; sourceTree = "<group>"; };
 		6446424B1BE7B3A100C1F915 /* TenUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUserModel.swift; sourceTree = "<group>"; };
 		645E0D591BD3544C00CF6977 /* PCoinUnlockedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinUnlockedCell.swift; sourceTree = "<group>"; };
 		645E0D5D1BD355C100CF6977 /* PCoinUnlockedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinUnlockedModel.swift; sourceTree = "<group>"; };
@@ -166,6 +165,7 @@
 		D48134891BE9E0CB00F49D63 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		D481348D1BE9E26500F49D63 /* TenLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenLogin.swift; sourceTree = "<group>"; };
 		D481348E1BE9E26500F49D63 /* TenUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUser.swift; sourceTree = "<group>"; };
+		D48134911BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewLiMaoTenAppOct26.mobileprovision; sourceTree = "<group>"; };
 		D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsLayout.swift; sourceTree = "<group>"; };
 		D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4D96F301BBDB9090019C09B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -328,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				D481348C1BE9E26500F49D63 /* dbmodels */,
-				644642491BE76B6600C1F915 /* NewLiMaoTenAppOct26.mobileprovision */,
 				64955CCA1BE5A4B000792EDD /* Login */,
 				649B94CE1BD4846000F1B6CA /* Swift extensions */,
 				649B94C11BD4846000F1B6CA /* fmdb */,
@@ -338,7 +337,9 @@
 				D44EC9471BBB719100BF41A2 /* Profile */,
 				D44EC94A1BBB825F00BF41A2 /* Chats */,
 				D44EC95C1BBB846F00BF41A2 /* Notification */,
+				64BDA0D41BD26E52009DF292 /* P Coin */,
 				D44EC9571BBB841E00BF41A2 /* Settings */,
+				D48134911BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision */,
 				C4CED3081B88FB010008BCF2 /* Ten */,
 				D41B3D7A1BC0792D005002C8 /* Helpers */,
 				16988AE01B8CCC6000270DBA /* LocationManager */,
@@ -432,7 +433,6 @@
 		D44EC9571BBB841E00BF41A2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				64BDA0D41BD26E52009DF292 /* P Coin */,
 				64BDA0C81BCC02BC009DF292 /* SettingsViewController.swift */,
 				64BDA0CA1BCC0815009DF292 /* settingCell.swift */,
 				64BDA0D21BCFBDBE009DF292 /* SettingDoubleLabelCell.swift */,
@@ -582,7 +582,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6446424A1BE76B6600C1F915 /* NewLiMaoTenAppOct26.mobileprovision in Resources */,
+				D48134921BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision in Resources */,
 				64320D7B1BE5B2010000BB13 /* LoginPinController.xib in Resources */,
 				644642481BE7520A00C1F915 /* SignUpController.xib in Resources */,
 				64F5CEC11BD8B51C00512972 /* PT_Sans-Web-Italic.ttf in Resources */,
@@ -768,7 +768,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = NO;
@@ -792,6 +793,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "402c200b-e19e-4b52-97c3-98ff12171d05";
 				SDKROOT = iphoneos;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$PROJECT/ADCircularMenuController/ADCircularMenuViewController-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -815,7 +817,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = NO;
@@ -831,6 +834,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "402c200b-e19e-4b52-97c3-98ff12171d05";
 				SDKROOT = iphoneos;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$PROJECT/ADCircularMenuController/ADCircularMenuViewController-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
@@ -843,15 +847,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
 				INFOPLIST_FILE = Ten/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "402c200b-e19e-4b52-97c3-98ff12171d05";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -863,15 +867,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
 				INFOPLIST_FILE = Ten/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "402c200b-e19e-4b52-97c3-98ff12171d05";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
