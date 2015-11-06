@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = .Black
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_settings"), forBarMetrics: .Default)
+        self.view.backgroundColor = UIColor.blackColor()
         settingList = UITableView(frame: CGRectMake(30, 0, SCREEN_WIDTH - 60, 324))
         settingList.dataSource = self
         settingList.delegate = self
@@ -68,9 +69,10 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
         return 6
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let pvc = PCoinViewController()
         self.navigationController?.pushViewController(pvc, animated: true)
+        settingList.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func logout(){

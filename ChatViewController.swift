@@ -20,7 +20,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = .Black
-
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_chat"), forBarMetrics: .Default)
         backgroundView = UIImageView(frame: SCREEN)
         backgroundView.image = UIImage(named: "bg")
@@ -80,5 +79,11 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let sVC = SingleChatController()
+        self.navigationController?.pushViewController(sVC, animated: true)
+        self.userList.deselectRowAtIndexPath(indexPath, animated: true)
+        
     }
 }

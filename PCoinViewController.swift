@@ -25,6 +25,7 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_pCoin"), forBarMetrics: .Default)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         //topview
         topView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let len = SCREEN_WIDTH/4
