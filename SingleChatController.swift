@@ -27,6 +27,7 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
     let iconSize: CGFloat = 30
     var contentHeight: CGFloat = 32
     var imageTop:UIImageView!
+    var assets: [DKAsset]?
     override func viewDidLoad() {
         super.viewDidLoad()
         imageTop = UIImageView(frame: CGRectMake(0, 0, screenBounds.width, 64))
@@ -179,19 +180,27 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
     }
     func choosePhoto(){
         print("photo")
-        let photo = UIImagePickerController()
-        photo.delegate = self
-        photo.allowsEditing = true
-        photo.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
-        self.presentViewController(photo, animated: true) { () -> Void in
+        let pickerController = DKImagePickerController()
+        
+        pickerController.singleSelect = false
+        pickerController.maxSelectableCount = 3
+        
+        pickerController.assetType = DKImagePickerControllerAssetType.allAssets
+        pickerController.allowMultipleTypes = true
+        pickerController.sourceType = [.Camera, .Photo]
+        
+        pickerController.didCancel = { () in
+            print("did cancel")
         }
-    }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        print("finished")
-        picker.dismissViewControllerAnimated(true, completion: { () -> Void in
+        //didSelectImages
+        pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
+            self.assets = assets
+            print("did select assets")
+            print(assets.map({ $0.url}))
             
-        })
-        imageTop.image = image
+        }
+        
+        self.presentViewController(pickerController, animated: true) {}
     }
     func transformCoin(){
         print("coin")

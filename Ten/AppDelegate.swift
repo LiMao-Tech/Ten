@@ -39,6 +39,8 @@ let FONTNAME_NORMAL = "PTSans"
 
 let UUID = NSUUID().UUIDString
 
+let COMPANYCODE = "e40cb24cffee7767d8f3bd9faf882af614b9e4bd402dc53a70f4723cde991734"
+
 let deviceToken = NSUserDefaults.standardUserDefaults().objectForKey("deviceToken")
 
 @UIApplicationMain
@@ -46,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     
     //var locationManager = SharedLocationManager()
-    
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -108,14 +109,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-//        if(NSUserDefaults.standardUserDefaults().objectForKey("deviceToken") != nil){
+        if(NSUserDefaults.standardUserDefaults().objectForKey("deviceToken") != nil){
             let trimEnds = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"))
             let cleanToken = trimEnds.stringByReplacingOccurrencesOfString(" ", withString: "", options: [])
             NSUserDefaults.standardUserDefaults().setObject(cleanToken, forKey: "deviceToken")
             //registerTokenOnServer(cleanToken) //theoretical method! Needs your own implementation
             print(cleanToken)
             // TODO: save this cleanToken into server and to default user data
-//        }
+        }
         print(deviceToken)
     }
     

@@ -194,6 +194,7 @@
 		6417287E1BEC48CA00790103 /* 085@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 641727D21BEC48CA00790103 /* 085@2x.png */; };
 		6417287F1BEC48CA00790103 /* _expression_cn.plist in Resources */ = {isa = PBXBuildFile; fileRef = 641727D31BEC48CA00790103 /* _expression_cn.plist */; };
 		641728801BEC48CA00790103 /* _expression_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = 641727D41BEC48CA00790103 /* _expression_en.plist */; };
+		642883DD1BF04A6B00E908D4 /* NewLiMaoTenAppOct26.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = D48134911BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision */; };
 		64320D7A1BE5B2010000BB13 /* LoginPinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64320D781BE5B2010000BB13 /* LoginPinController.swift */; };
 		64320D7B1BE5B2010000BB13 /* LoginPinController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64320D791BE5B2010000BB13 /* LoginPinController.xib */; };
 		644642471BE7520A00C1F915 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644642451BE7520A00C1F915 /* SignUpController.swift */; };
@@ -233,6 +234,15 @@
 		64BDA0E01BD27FCA009DF292 /* PCoinHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0DF1BD27FCA009DF292 /* PCoinHistoryCell.swift */; };
 		64BDA0E21BD333F0009DF292 /* PCoinTransferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0E11BD333F0009DF292 /* PCoinTransferCell.swift */; };
 		64BDA0E41BD33A53009DF292 /* PCoinTransferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0E31BD33A53009DF292 /* PCoinTransferModel.swift */; };
+		64D1BC481BEF25030099782B /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1BC3F1BEF25030099782B /* DKCamera.swift */; };
+		64D1BC491BEF25030099782B /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64D1BC401BEF25030099782B /* DKCameraResource.bundle */; };
+		64D1BC4A1BEF25030099782B /* DKAssetGroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1BC421BEF25030099782B /* DKAssetGroupDetailVC.swift */; };
+		64D1BC4B1BEF25030099782B /* DKAssetGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1BC431BEF25030099782B /* DKAssetGroupVC.swift */; };
+		64D1BC4C1BEF25030099782B /* DKImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64D1BC441BEF25030099782B /* DKImagePickerController.bundle */; };
+		64D1BC4D1BEF25030099782B /* DKImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1BC451BEF25030099782B /* DKImagePickerController.swift */; };
+		64D1BC4E1BEF25030099782B /* DKImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1BC461BEF25030099782B /* DKImageResource.swift */; };
+		64D1BC4F1BEF25030099782B /* DKPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1BC471BEF25030099782B /* DKPopoverViewController.swift */; };
+		64D1BC511BEF253D0099782B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D1BC501BEF253D0099782B /* AssetsLibrary.framework */; };
 		64F5CEBF1BD8B51800512972 /* PT_Sans-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 649B951C1BD8996900F1B6CA /* PT_Sans-Web-Bold.ttf */; };
 		64F5CEC01BD8B51A00512972 /* PT_Sans-Web-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 649B951D1BD8996900F1B6CA /* PT_Sans-Web-BoldItalic.ttf */; };
 		64F5CEC11BD8B51C00512972 /* PT_Sans-Web-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 649B951E1BD8996900F1B6CA /* PT_Sans-Web-Italic.ttf */; };
@@ -252,7 +262,6 @@
 		D481348B1BE9E0CB00F49D63 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48134891BE9E0CB00F49D63 /* UserCell.xib */; };
 		D481348F1BE9E26500F49D63 /* TenLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481348D1BE9E26500F49D63 /* TenLogin.swift */; };
 		D48134901BE9E26500F49D63 /* TenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D481348E1BE9E26500F49D63 /* TenUser.swift */; };
-		D48134921BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = D48134911BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision */; };
 		D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */; };
 		D4D96F311BBDB9090019C09B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */; };
 		D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D96F301BBDB9090019C09B /* ProfileViewController.xib */; };
@@ -511,6 +520,15 @@
 		64BDA0DF1BD27FCA009DF292 /* PCoinHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinHistoryCell.swift; sourceTree = "<group>"; };
 		64BDA0E11BD333F0009DF292 /* PCoinTransferCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinTransferCell.swift; sourceTree = "<group>"; };
 		64BDA0E31BD33A53009DF292 /* PCoinTransferModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinTransferModel.swift; sourceTree = "<group>"; };
+		64D1BC3F1BEF25030099782B /* DKCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCamera.swift; sourceTree = "<group>"; };
+		64D1BC401BEF25030099782B /* DKCameraResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DKCameraResource.bundle; sourceTree = "<group>"; };
+		64D1BC421BEF25030099782B /* DKAssetGroupDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAssetGroupDetailVC.swift; sourceTree = "<group>"; };
+		64D1BC431BEF25030099782B /* DKAssetGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAssetGroupVC.swift; sourceTree = "<group>"; };
+		64D1BC441BEF25030099782B /* DKImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DKImagePickerController.bundle; sourceTree = "<group>"; };
+		64D1BC451BEF25030099782B /* DKImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKImagePickerController.swift; sourceTree = "<group>"; };
+		64D1BC461BEF25030099782B /* DKImageResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKImageResource.swift; sourceTree = "<group>"; };
+		64D1BC471BEF25030099782B /* DKPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKPopoverViewController.swift; sourceTree = "<group>"; };
+		64D1BC501BEF253D0099782B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		C16B2F1E77B7FE57018887C4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED3061B88FB010008BCF2 /* Ten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CED30A1B88FB010008BCF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -542,6 +560,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64D1BC511BEF253D0099782B /* AssetsLibrary.framework in Frameworks */,
 				649B94DE1BD4857500F1B6CA /* libsqlite3.0.tbd in Frameworks */,
 				3391D7982FE2352604D3A986 /* Pods.framework in Frameworks */,
 			);
@@ -787,6 +806,13 @@
 			path = expression;
 			sourceTree = "<group>";
 		};
+		642883DB1BF040AF00E908D4 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EditProfile;
+			sourceTree = "<group>";
+		};
 		64955CCA1BE5A4B000792EDD /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,9 +928,32 @@
 			name = Chat;
 			sourceTree = "<group>";
 		};
+		64D1BC3E1BEF25030099782B /* DKCamera */ = {
+			isa = PBXGroup;
+			children = (
+				64D1BC3F1BEF25030099782B /* DKCamera.swift */,
+				64D1BC401BEF25030099782B /* DKCameraResource.bundle */,
+			);
+			path = DKCamera;
+			sourceTree = "<group>";
+		};
+		64D1BC411BEF25030099782B /* DKImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				64D1BC421BEF25030099782B /* DKAssetGroupDetailVC.swift */,
+				64D1BC431BEF25030099782B /* DKAssetGroupVC.swift */,
+				64D1BC441BEF25030099782B /* DKImagePickerController.bundle */,
+				64D1BC451BEF25030099782B /* DKImagePickerController.swift */,
+				64D1BC461BEF25030099782B /* DKImageResource.swift */,
+				64D1BC471BEF25030099782B /* DKPopoverViewController.swift */,
+			);
+			path = DKImagePickerController;
+			sourceTree = "<group>";
+		};
 		AA00EDF29C15F6580F061DCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64D1BC501BEF253D0099782B /* AssetsLibrary.framework */,
 				649B94DD1BD4857500F1B6CA /* libsqlite3.0.tbd */,
 				64A8D5921BCAA27600AC1E6E /* ADCircularMenuController */,
 				C16B2F1E77B7FE57018887C4 /* Pods.framework */,
@@ -915,13 +964,14 @@
 		C4CED2FD1B88FB010008BCF2 = {
 			isa = PBXGroup;
 			children = (
+				64D1BC3E1BEF25030099782B /* DKCamera */,
+				64D1BC411BEF25030099782B /* DKImagePickerController */,
 				D481348C1BE9E26500F49D63 /* dbmodels */,
 				64955CCA1BE5A4B000792EDD /* Login */,
 				649B94CE1BD4846000F1B6CA /* Swift extensions */,
 				649B94C11BD4846000F1B6CA /* fmdb */,
 				64A8D5961BCAA2AB00AC1E6E /* ADCircularMenuController */,
 				D4D96F371BBF82270019C09B /* ProfilePics */,
-				649B94DF1BD486D200F1B6CA /* RegistProfile */,
 				D44EC9471BBB719100BF41A2 /* Profile */,
 				D44EC94A1BBB825F00BF41A2 /* Chats */,
 				D44EC95C1BBB846F00BF41A2 /* Notification */,
@@ -1001,6 +1051,8 @@
 		D44EC9471BBB719100BF41A2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				649B94DF1BD486D200F1B6CA /* RegistProfile */,
+				642883DB1BF040AF00E908D4 /* EditProfile */,
 				D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */,
 				D4D96F301BBDB9090019C09B /* ProfileViewController.xib */,
 			);
@@ -1176,7 +1228,6 @@
 				641727DE1BEC48CA00790103 /* 005@2x.png in Resources */,
 				641728621BEC48CA00790103 /* 071@2x.png in Resources */,
 				641728371BEC48CA00790103 /* 050.png in Resources */,
-				6446424A1BE76B6600C1F915 /* NewLiMaoTenAppOct26.mobileprovision in Resources */,
 				641728261BEC48CA00790103 /* 041@2x.png in Resources */,
 				6417287C1BEC48CA00790103 /* 084@2x.png in Resources */,
 				641727EE1BEC48CA00790103 /* 013@2x.png in Resources */,
@@ -1226,6 +1277,7 @@
 				641728081BEC48CA00790103 /* 026@2x.png in Resources */,
 				6417283B1BEC48CA00790103 /* 052.png in Resources */,
 				641728731BEC48CA00790103 /* 080.png in Resources */,
+				64D1BC4C1BEF25030099782B /* DKImagePickerController.bundle in Resources */,
 				641727D61BEC48CA00790103 /* 001@2x.png in Resources */,
 				6417281F1BEC48CA00790103 /* 038.png in Resources */,
 				641728701BEC48CA00790103 /* 078@2x.png in Resources */,
@@ -1242,6 +1294,7 @@
 				64F5CEBF1BD8B51800512972 /* PT_Sans-Web-Bold.ttf in Resources */,
 				6417280A1BEC48CA00790103 /* 027@2x.png in Resources */,
 				641728271BEC48CA00790103 /* 042.png in Resources */,
+				642883DD1BF04A6B00E908D4 /* NewLiMaoTenAppOct26.mobileprovision in Resources */,
 				641727EB1BEC48CA00790103 /* 012.png in Resources */,
 				641727D51BEC48CA00790103 /* 001.png in Resources */,
 				6417284C1BEC48CA00790103 /* 060@2x.png in Resources */,
@@ -1256,6 +1309,7 @@
 				641727E31BEC48CA00790103 /* 008.png in Resources */,
 				641728151BEC48CA00790103 /* 033.png in Resources */,
 				641728581BEC48CA00790103 /* 066@2x.png in Resources */,
+				64D1BC491BEF25030099782B /* DKCameraResource.bundle in Resources */,
 				641728291BEC48CA00790103 /* 043.png in Resources */,
 				641728221BEC48CA00790103 /* 039@2x.png in Resources */,
 				D4D96F321BBDB9090019C09B /* ProfileViewController.xib in Resources */,
@@ -1426,6 +1480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				641725C81BEC439200790103 /* OtherChatCell.swift in Sources */,
+				64D1BC4A1BEF25030099782B /* DKAssetGroupDetailVC.swift in Sources */,
 				649B94D91BD4846000F1B6CA /* FMDatabaseVariadic.swift in Sources */,
 				64BDA0CC1BCC0815009DF292 /* settingCell.swift in Sources */,
 				64BDA0C11BCBC4E3009DF292 /* NotificationInfoCell.swift in Sources */,
@@ -1442,14 +1497,17 @@
 				64BDA0DB1BD275D1009DF292 /* PCoinPurchaseCell.swift in Sources */,
 				649B94D41BD4846000F1B6CA /* FMDatabasePool.m in Sources */,
 				641725BF1BEC435F00790103 /* GTFaceView.swift in Sources */,
+				64D1BC4F1BEF25030099782B /* DKPopoverViewController.swift in Sources */,
 				D481348F1BE9E26500F49D63 /* TenLogin.swift in Sources */,
 				164EA74D1BB799E700446691 /* MobileInfo.swift in Sources */,
+				64D1BC4B1BEF25030099782B /* DKAssetGroupVC.swift in Sources */,
 				16988ADF1B8CCC5500270DBA /* SharedLocationManager.swift in Sources */,
 				646C1B961BCB913C00EEBF04 /* RandomAndLevelUserCell.swift in Sources */,
 				649B94D81BD4846000F1B6CA /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				64BDA0E41BD33A53009DF292 /* PCoinTransferModel.swift in Sources */,
 				D48F93161BC1CDEC003DE7A2 /* ProfilePicsLayout.swift in Sources */,
 				641725BB1BEC435000790103 /* GTTextAttachment.swift in Sources */,
+				64D1BC481BEF25030099782B /* DKCamera.swift in Sources */,
 				641725BE1BEC435F00790103 /* GTFaceButton.swift in Sources */,
 				64A8D59A1BCAA7B600AC1E6E /* ADCircularMenuViewController.m in Sources */,
 				649B94D31BD4846000F1B6CA /* FMDatabaseAdditions.m in Sources */,
@@ -1460,6 +1518,7 @@
 				649B94D21BD4846000F1B6CA /* FMDatabase.m in Sources */,
 				641725B91BEC433D00790103 /* SingleChatMessageFrame.swift in Sources */,
 				646C1B921BCB8EAD00EEBF04 /* RandomUserController.swift in Sources */,
+				64D1BC4E1BEF25030099782B /* DKImageResource.swift in Sources */,
 				641725C51BEC439200790103 /* ChatBaseCell.swift in Sources */,
 				D48134901BE9E26500F49D63 /* TenUser.swift in Sources */,
 				64BDA0BF1BCBC30A009DF292 /* NotificationViewController.swift in Sources */,
@@ -1468,6 +1527,7 @@
 				64BDA0D81BD27223009DF292 /* LevelButton.swift in Sources */,
 				644642471BE7520A00C1F915 /* SignUpController.swift in Sources */,
 				D481348A1BE9E0CB00F49D63 /* UserCell.swift in Sources */,
+				64D1BC4D1BEF25030099782B /* DKImagePickerController.swift in Sources */,
 				641725B81BEC433D00790103 /* SingleChatMessage.swift in Sources */,
 				649B94D71BD4846000F1B6CA /* FMDBManager.swift in Sources */,
 				641725C61BEC439200790103 /* MeChatCell.swift in Sources */,
@@ -1619,15 +1679,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ten/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "402c200b-e19e-4b52-97c3-98ff12171d05";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -1639,15 +1699,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHING TING LAI (4ZBLUBCAQ6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ten/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.limaotech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "402c200b-e19e-4b52-97c3-98ff12171d05";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;

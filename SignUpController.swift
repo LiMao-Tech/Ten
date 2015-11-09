@@ -41,7 +41,11 @@ class SignUpController: UIViewController {
     
     func signupPost(){
         let manager = AFHTTPRequestOperationManager()
-        let parameters = ["email":emailAddr,"pwd":newPinRe.text,"UUID":UUID,"timestamp":"00000","Device Token":deviceToken]
+        let timeStamp = NSDate().description
+        print(timeStamp)
+        let parameters = ["email":emailAddr!,"pwd":newPinRe.text!,"UUID":UUID,"timestamp":timeStamp,"Device Token":deviceToken,"company code":COMPANYCODE]
+        let stringHash = "\(emailAddr!)\(newPinRe.text!)\(UUID)\(timeStamp)\(deviceToken)\(COMPANYCODE)"
+        
         /*[15/10/27 上午9:33:59] Yumen Tsao: email
         [15/10/27 上午9:34:06] Yumen Tsao: pwd
         [15/10/27 上午9:34:11] Yumen Tsao: UUID
