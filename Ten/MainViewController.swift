@@ -22,7 +22,6 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     // circular menu
     let circularMenuVC = ADCircularMenuViewController(frame: UIScreen.mainScreen().bounds)
     
-    var gifView:UIImageView!
     var lvoneBtn:LevelButton!
     var lvtwoBtn:LevelButton!
     var lvthreeBtn:LevelButton!
@@ -37,11 +36,24 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     // view loading
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let bg = UIImageView(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT))
+        bg.image = UIImage(named: "bg_radar")
         
         self.navigationController?.navigationBar.barStyle = .Black
         // set circularMenu
         self.circularMenuVC.circularMenuDelegate = self
         self.circularMenuVC.view.frame = UIScreen.mainScreen().bounds
+        
+        //gif
+        let y = (SCREEN_HEIGHT - SCREEN_WIDTH)/2
+        let gifView = YLImageView(frame: CGRectMake(0, y-31, SCREEN_WIDTH, SCREEN_WIDTH))
+        
+        YLGIFImage.setPrefetchNum(5)
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        let path = NSBundle.mainBundle().URLForResource("Radar", withExtension: "gif")?.absoluteString as String!
+        gifView.image = YLGIFImage(contentsOfFile: path)
         
         //setupButtons
         setupButtons()
@@ -52,26 +64,29 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
             selector: "locationChanged:",
             name: locationNotiName,
             object: nil)
-        
-        //gifView
-//        let x = (SCREEN_WIDTH-250)/2
-//        let y = (SCREEN_HEIGHT-250)/2
-//        gifView = UIImageView(frame: CGRectMake(x, y, 250, 250))
-//        let imageArray = [UIImage(named: "RadarGreen0")!,UIImage(named: "RadarGreen1")!,UIImage(named: "RadarGreen2")!,UIImage(named: "RadarGreen3")!,UIImage(named: "RadarGreen4")!,UIImage(named: "RadarGreen5")!,UIImage(named: "RadarGreen6")!,UIImage(named: "RadarGreen7")!,UIImage(named: "RadarGreen8")!,UIImage(named: "RadarGreen9")!,UIImage(named: "RadarGreen10")!,UIImage(named: "RadarGreen11")!]
-//        gifView.animationImages = imageArray
-//        gifView.animationDuration = 0.4
-//        gifView.animationRepeatCount = 20
-//        gifView.startAnimating()
-//        gifView.backgroundColor = UIColor.clearColor()
     
         // config buttons
         menuButton.setImage(UIImage(named: "btn_menu"), forState: UIControlState.Normal)
         randomButton.setImage(UIImage(named: "btn_radar_random"), forState: UIControlState.Normal)
         menuButton.addTarget(self, action: "menuButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
         randomButton.addTarget(self, action: "randomButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
-//        self.view.addSubview(gifView)
+        
+        let distanceY = CGRectGetMinY(menuButton.frame) - 70
+        let distance = GTSlider(frame: CGRectMake(45,distanceY,SCREEN_WIDTH - 90,24))
+        distance.setMinimumTrackImage(UIImage(named: "line_outer_highlight"), forState: .Normal)
+        distance.setMaximumTrackImage(UIImage(named: "line_outer_normal"), forState: .Normal)
+        let minus = UIButton(frame: CGRectMake(10,distanceY,24,24))
+        let plus = UIButton(frame: CGRectMake(SCREEN_WIDTH - 34,distanceY,24,24))
+        minus.setImage(UIImage(named: "btn_radar_minus"), forState: .Normal)
+        plus.setImage(UIImage(named: "btn_radar_plus"), forState: .Normal)
+        self.view.addSubview(bg)
+        self.view.addSubview(gifView)
         self.view.addSubview(menuButton)
         self.view.addSubview(randomButton)
+        self.view.addSubview(distance)
+        self.view.addSubview(minus)
+        self.view.addSubview(plus)
+       
     }
     
     func setupButtons(){
@@ -103,9 +118,6 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
     
     //levelButton actions
     func levelSelect(sender:LevelButton){
@@ -117,7 +129,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_radar")!)
+        
     }
     
     // button actions
@@ -153,6 +165,9 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
             self.navigationController?.pushViewController(wVC, animated: true)
         case 2:
             print("Not Implemented yet!")
+            self.navigationController?.navigationBar.hidden = false
+            let eVC = EditProfileController()
+            self.navigationController?.pushViewController(eVC, animated: true)
         case 3:
             self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
             self.navigationController?.navigationBar.hidden = false
@@ -232,7 +247,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
                 print(str);
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation,error) in
                 print("Error: " + error.localizedDescription)
                 let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
                 print(NSString(data: data, encoding: NSUTF8StringEncoding))

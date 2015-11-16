@@ -17,15 +17,14 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         self.navigationController?.navigationBar.barStyle = .Black
         super.viewDidLoad()
         self.navigationController?.navigationBar.translucent = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_notification"), forBarMetrics: .Default)
         //tabview
         tabView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let item = SettingButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         let item0 = SettingButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
-        item.normalImage = UIImage(named: "tab_notification_systems_normal")
-        item.seletedImage = UIImage(named: "tab_notification_systems")
+        item.normalImage = UIImage(named: "tab_notification_system_normal")
+        item.seletedImage = UIImage(named: "tab_notification_system_highlight")
         item0.normalImage = UIImage(named: "tab_notification_notification_normal")
-        item0.seletedImage = UIImage(named: "tab_notification_notification")
+        item0.seletedImage = UIImage(named: "tab_notification_notification_highlight")
         item.setImage(item.seletedImage, forState: UIControlState.Normal)
         item0.setImage(item0.normalImage, forState: UIControlState.Normal)
         item.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
@@ -47,6 +46,11 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         selectedBtn = item
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_notification"), forBarMetrics: .Default)
+    }
+    
     func itemClicked(sender:SettingButton){
         selectedBtn.setImage(selectedBtn.normalImage, forState: .Normal)
         selectedBtn = sender

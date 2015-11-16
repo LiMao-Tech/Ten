@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol GTCoinPuschaseDelegate : class {
+    func buyButtonDidClickeds(cell:PCoinPurchaseCell)
+}
+
 class PCoinPurchaseCell: UITableViewCell {
     var pcoinImage:UIImageView!
     var pcoinLabel:UILabel!
     var priceLabel:UILabel!
     var buyButton:UIButton!
     var splitLine:UIView!
+    var index = 0
+    var delegate:GTCoinPuschaseDelegate?
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         //pcoinImage
@@ -55,5 +61,12 @@ class PCoinPurchaseCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func buyButtonClicked(){
+        if((self.delegate) != nil){
+            self.delegate!.buyButtonDidClickeds(self)
+        }
+
+    }
+    
 
 }

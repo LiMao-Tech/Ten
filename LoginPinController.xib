@@ -22,21 +22,14 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sug-O0-rh0">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="64" id="L8z-fA-QX4"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="请输入PIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMK-eB-9oq">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入PIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMK-eB-9oq">
                     <rect key="frame" x="30" y="114" width="540" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpn-ax-LvG">
+                <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpn-ax-LvG">
                     <rect key="frame" x="30" y="185" width="540" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="15"/>
@@ -47,14 +40,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jpn-ax-LvG" secondAttribute="trailing" constant="30" id="3rC-OQ-Hvc"/>
-                <constraint firstItem="Sug-O0-rh0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Fn-oP-0Ad"/>
                 <constraint firstItem="jpn-ax-LvG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Jqc-cr-xDS"/>
-                <constraint firstAttribute="trailing" secondItem="Sug-O0-rh0" secondAttribute="trailing" id="LUy-GV-Ccp"/>
-                <constraint firstItem="wMK-eB-9oq" firstAttribute="top" secondItem="Sug-O0-rh0" secondAttribute="bottom" constant="50" id="MAd-en-34p"/>
                 <constraint firstItem="wMK-eB-9oq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="OtE-Qq-mUR"/>
                 <constraint firstAttribute="trailing" secondItem="wMK-eB-9oq" secondAttribute="trailing" constant="30" id="VM7-PE-PJA"/>
                 <constraint firstItem="jpn-ax-LvG" firstAttribute="top" secondItem="wMK-eB-9oq" secondAttribute="bottom" constant="50" id="ak9-t4-mmG"/>
-                <constraint firstItem="Sug-O0-rh0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="j73-N5-pLa"/>
+                <constraint firstItem="wMK-eB-9oq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="114" id="fW0-Hz-r0F"/>
             </constraints>
             <point key="canvasLocation" x="-187" y="264"/>
         </view>

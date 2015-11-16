@@ -12,7 +12,7 @@ enum pcoinModelType{
     case Pcoin,History,Transfer,Unlocked
 }
 
-class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,GTCoinPuschaseDelegate {
     var topView : UIView!
     var pcoinItemList : UITableView!
     var modelType : pcoinModelType = .Pcoin
@@ -24,7 +24,7 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_pCoin"), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_pcoin"), forBarMetrics: .Default)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         //topview
         topView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
@@ -33,14 +33,14 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         item1 = SettingButton(frame: CGRectMake(len, 0, len, TAP_BAR_HEIGHT))
         item2 = SettingButton(frame: CGRectMake(2*len, 0, len, TAP_BAR_HEIGHT))
         item3 = SettingButton(frame: CGRectMake(3*len, 0, len, TAP_BAR_HEIGHT))
-        item0.normalImage = UIImage(named: "tab_pcoin_purchase")
-        item0.seletedImage = UIImage(named: "tab_pcoin_purchase")
+        item0.normalImage = UIImage(named: "tab_pcoin_purchase_normal")
+        item0.seletedImage = UIImage(named: "tab_pcoin_purchase_highlight")
         item1.normalImage = UIImage(named: "tab_pcoin_history_normal")
-        item1.seletedImage = UIImage(named: "tab_pcoin_history")
+        item1.seletedImage = UIImage(named: "tab_pcoin_history_highlight")
         item2.normalImage = UIImage(named: "tab_pcoin_transfer_normal")
-        item2.seletedImage = UIImage(named: "tab_pcoin_transfer")
-        item3.normalImage = UIImage(named: "tab_pcoin_unlocked_normal")
-        item3.seletedImage = UIImage(named: "tab_pcoin_unlocked")
+        item2.seletedImage = UIImage(named: "tab_pcoin_transfer_highlight")
+        item3.normalImage = UIImage(named: "tab_pcoin_unlock_normal")
+        item3.seletedImage = UIImage(named: "tab_pcoin_unlock_highlight")
         item0.setImage(item0.seletedImage, forState: .Normal)
         item1.setImage(item1.normalImage, forState: .Normal)
         item2.setImage(item2.normalImage, forState: .Normal)
@@ -81,9 +81,8 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         pcoinItemList.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func buyButtonDidClickeds(cell: PCoinPurchaseCell) {
+        print(cell.index)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -120,6 +119,8 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         }
         cell?.pcoinLabel.text = "\(pcoinValue[indexPath.row]) P Coin"
         cell?.priceLabel.text = "Price:\(pcoinValue[indexPath.row]/10) USD"
+        cell?.index = indexPath.row
+        cell?.delegate = self
         return cell!
     }
     
@@ -144,16 +145,13 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
             return 75
         }
         if(modelType == .Unlocked){
-            return 70
+            return 65
         }
         
         
         return 64
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
 
     /*
     // MARK: - Navigation

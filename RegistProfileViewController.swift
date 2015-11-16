@@ -18,13 +18,13 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
     var picker : UIImagePickerController? = UIImagePickerController()
     
     // scrollView Variables //
-    var scrollView: UIScrollView?
+    var scrollView: UIScrollView!
     
     var username:UITextField!
     
     var birthData:UITextField!
     
-    var buttonProfile : UIButton?
+    var buttonProfile : UIButton!
     
     var maleBtn:SettingButton!
     var feMaleBtn:SettingButton!
@@ -32,34 +32,31 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
     var singleBtn:SettingButton!
     var marriedBtn:SettingButton!
     
-    var emailAddr:UITextField!
+    var emailAddr:UILabel!
     
     var hobby:UITextField!
     
     var statusDetail:UITextView!
     
-    var innerBar:UISlider!
+    var innerBar:GTSlider!
     var innerValue:UILabel!
     
-    var outerBar:UISlider!
+    var outerBar:GTSlider!
     var outerValue:UILabel!
     
-    var energyBar:UISlider!
+    var energyBar:GTSlider!
     var energyValue:UILabel!
     
     let lineLength:CGFloat = SCREEN_HEIGHT == 568 ? 150 : 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_profile"), forBarMetrics: .Default)
         chosenImage = UIImage()
         
         print("\(self.view.frame.width) and \(self.view.frame.height)")
         
         scrollView = UIScrollView(frame: CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64))
-//        self.scrollView?.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+SCREEN_HEIGHT/16)
         scrollView!.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT*1.5)
         scrollView!.bounces = false
         
@@ -101,8 +98,8 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         singleBtn = initChooseBtn(CGRectMake(textX, SCREEN_HEIGHT*6/12+40, 55, 20), selectedImage: UIImage(named: "icon_checkbox")!, normalImage: UIImage(named: "icon_checkcircle")!, title: "  Single", action: "marriageBtnClicked:")
         marriedBtn = initChooseBtn(CGRectMake(textX+80, SCREEN_HEIGHT*6/12+40, 65, 20), selectedImage: UIImage(named: "icon_checkbox")!, normalImage: UIImage(named: "icon_checkcircle")!, title: "  Married", action: "marriageBtnClicked:")
         let emailLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*7/12, labelWidth: 200, labelHeight: 100, labelText: "Email")
-        emailAddr = UITextField(frame: CGRectMake(textX, SCREEN_HEIGHT*7/12+40, lineLength, 20))
-        emailAddr.textColor = UIColor.whiteColor()
+        emailAddr = UILabel(frame: CGRectMake(textX, SCREEN_HEIGHT*7/12+40, lineLength, 20))
+        emailAddr.textColor = UIColor(red: 137.0/255.0, green: 142.0/255.0, blue: 153.0/255.0, alpha: 1.0)
         emailAddr.font = UIFont(name: FONTNAME_NORMAL, size: 15)
         emailAddr.text = "example@example.com"
         let hobbyLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*8/12, labelWidth: 200, labelHeight: 100, labelText: "Hobby")
@@ -121,24 +118,24 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         statusDetail.font = UIFont.systemFontOfSize(15)
         statusDetail.text = "There is so much to.."
         let InnerLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*12/12, labelWidth: 200, labelHeight: 100, labelText: "Inner")
-        innerBar = UISlider(frame: CGRectMake(textX, SCREEN_HEIGHT*12/12+40, lineLength-30, 20))
-        innerBar.minimumValue = 1
+        innerBar = GTSlider(frame: CGRectMake(textX, SCREEN_HEIGHT*12/12+40, lineLength-30, 20))
+        innerBar.minimumValue = 0
         innerBar.maximumValue = 10
         innerBar.addTarget(self, action: "barChanged", forControlEvents: UIControlEvents.ValueChanged)
         innerValue = UILabel(frame: CGRectMake(CGRectGetMaxX(innerBar.frame)+10, SCREEN_HEIGHT*12/12+40, 20, 20))
         innerValue.text = "0"
         innerValue.textColor = UIColor.whiteColor()
         let OuterLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*13/12, labelWidth: 200, labelHeight: 100, labelText: "Outer")
-        outerBar = UISlider(frame: CGRectMake(textX, SCREEN_HEIGHT*13/12+40, lineLength-30, 20))
-        outerBar.minimumValue = 1
+        outerBar = GTSlider(frame: CGRectMake(textX, SCREEN_HEIGHT*13/12+40, lineLength-30, 20))
+        outerBar.minimumValue = 0
         outerBar.maximumValue = 10
         outerBar.addTarget(self, action: "barChanged", forControlEvents: UIControlEvents.ValueChanged)
         outerValue = UILabel(frame: CGRectMake(CGRectGetMaxX(outerBar.frame)+10, SCREEN_HEIGHT*13/12+40, 20, 20))
         outerValue.text = "0"
         outerValue.textColor = UIColor.whiteColor()
         let EnergyLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*14/12, labelWidth: 200, labelHeight: 100, labelText: "Energy")
-        energyBar = UISlider(frame: CGRectMake(textX, SCREEN_HEIGHT*14/12+40, lineLength-30, 20))
-        energyBar.minimumValue = 1
+        energyBar = GTSlider(frame: CGRectMake(textX, SCREEN_HEIGHT*14/12+40, lineLength-30, 20))
+        energyBar.minimumValue = 0
         energyBar.maximumValue = 10
         energyBar.addTarget(self, action: "barChanged", forControlEvents: UIControlEvents.ValueChanged)
         energyValue = UILabel(frame: CGRectMake(CGRectGetMaxX(energyBar.frame)+10, SCREEN_HEIGHT*14/12+40, 20, 20))
@@ -192,6 +189,11 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_profile"), forBarMetrics: .Default)
+        }
+    
     func sexBtnClicked(sender:SettingButton){
         sender.enabled = false
         if(sender.currentTitle == "  Female"){

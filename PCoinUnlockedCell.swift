@@ -27,7 +27,7 @@ class PCoinUnlockedCell: UITableViewCell {
         timeLabel = UILabel(frame: CGRectMake(10, CGRectGetMaxY(unlockedLabel.frame)+5, 200, 15))
         timeLabel.font = UIFont.systemFontOfSize(13)
         timeLabel.textColor = UIColor.whiteColor()
-        splitLine = UIView(frame: CGRectMake(0, CGRectGetMaxY(timeLabel.frame)+4, SCREEN_WIDTH, 1))
+        splitLine = UIView(frame: CGRectMake(0, CGRectGetMaxY(timeLabel.frame)+14, SCREEN_WIDTH, 1))
         splitLine.backgroundColor = UIColor.whiteColor()
         self.addSubview(unlockedLabel)
         self.addSubview(timeLabel)

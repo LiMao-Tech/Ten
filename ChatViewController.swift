@@ -19,17 +19,15 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barStyle = .Black
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_chat"), forBarMetrics: .Default)
         backgroundView = UIImageView(frame: SCREEN)
         backgroundView.image = UIImage(named: "bg")
         tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let item = SettingButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         let item0 = SettingButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         item.normalImage = UIImage(named: "tab_chat_activeChats_normal")
-        item.seletedImage = UIImage(named: "tab_chat_activeChats")
+        item.seletedImage = UIImage(named: "tab_chat_activeChats_highlight")
         item0.normalImage = UIImage(named: "tab_chat_inactiveChats_normal")
-        item0.seletedImage = UIImage(named: "tab_chat_inactiveChats")
+        item0.seletedImage = UIImage(named: "tab_chat_inactiveChats_highlight")
         item.setImage(item.seletedImage, forState: UIControlState.Normal)
         item0.setImage(item0.normalImage, forState: UIControlState.Normal)
         item.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
@@ -52,6 +50,10 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_chat"), forBarMetrics: .Default)
+    }
+    
     func itemClicked(sender:SettingButton){
         selectedBtn.setImage(selectedBtn.normalImage, forState: .Normal)
         selectedBtn = sender
@@ -64,9 +66,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 90
     }

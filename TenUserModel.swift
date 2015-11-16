@@ -121,7 +121,7 @@ class TenUserModel: NSObject {
                 //print(str);
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation,error) in
                 print("Error: " + error.localizedDescription)
                 //let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
                 //print(NSString(data: data, encoding: NSUTF8StringEncoding))
@@ -180,7 +180,7 @@ class TenUserModel: NSObject {
                 //println(“JSON: “ + responseObject.description)
                 print("JSON success" )
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation,error) in
                 print("Error --- PUT ----: " + error.localizedDescription)
         })
         
@@ -218,7 +218,7 @@ class TenUserModel: NSObject {
                 //print(str);
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation,error) in
                 print("Error: " + error.localizedDescription)
                 //let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
                 //print(NSString(data: data, encoding: NSUTF8StringEncoding))
