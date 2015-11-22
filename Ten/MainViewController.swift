@@ -32,22 +32,26 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     var lveightBtn:LevelButton!
     var lvnineBtn:LevelButton!
     var lvtenBtn:LevelButton!
+    var distance:GTSlider!
     var btns = Array<UIButton!>()
     // view loading
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = .Black
 
         let bg = UIImageView(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT))
         bg.image = UIImage(named: "bg_radar")
         
-        self.navigationController?.navigationBar.barStyle = .Black
         // set circularMenu
         self.circularMenuVC.circularMenuDelegate = self
         self.circularMenuVC.view.frame = UIScreen.mainScreen().bounds
         
         //gif
-        let y = (SCREEN_HEIGHT - SCREEN_WIDTH)/2
-        let gifView = YLImageView(frame: CGRectMake(0, y-31, SCREEN_WIDTH, SCREEN_WIDTH))
+        let l = SCREEN_WIDTH*0.915
+        let gifView = YLImageView(frame: CGRectMake(0, 0, l, l))
+        gifView.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+        
+
         
         YLGIFImage.setPrefetchNum(5)
         
@@ -71,14 +75,24 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         menuButton.addTarget(self, action: "menuButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
         randomButton.addTarget(self, action: "randomButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
         
-        let distanceY = CGRectGetMinY(menuButton.frame) - 70
-        let distance = GTSlider(frame: CGRectMake(45,distanceY,SCREEN_WIDTH - 90,24))
+        let distanceY = CGRectGetMinY(menuButton.frame) - 80
+        distance = GTSlider(frame: CGRectMake(45,distanceY,SCREEN_WIDTH - 90,24))
         distance.setMinimumTrackImage(UIImage(named: "line_outer_highlight"), forState: .Normal)
         distance.setMaximumTrackImage(UIImage(named: "line_outer_normal"), forState: .Normal)
+        distance.minimumValue = 10
+        distance.maximumValue = 1000
         let minus = UIButton(frame: CGRectMake(10,distanceY,24,24))
         let plus = UIButton(frame: CGRectMake(SCREEN_WIDTH - 34,distanceY,24,24))
         minus.setImage(UIImage(named: "btn_radar_minus"), forState: .Normal)
         plus.setImage(UIImage(named: "btn_radar_plus"), forState: .Normal)
+        
+        minus.addTarget(self, action: "minusClicked", forControlEvents: .TouchUpInside)
+        plus.addTarget(self, action: "plusClicked", forControlEvents: .TouchUpInside)
+        let refreshBtn = UIButton(frame: CGRectMake(0,0,22.5,21))
+        refreshBtn.center = CGPointMake(SCREEN_WIDTH/2,menuButton.center.y)
+        refreshBtn.setImage(UIImage(named: "btn_radar_refresh"), forState: .Normal)
+        refreshBtn.addTarget(self, action: "refreshBtnClicked", forControlEvents: .TouchUpInside)
+        
         self.view.addSubview(bg)
         self.view.addSubview(gifView)
         self.view.addSubview(menuButton)
@@ -86,8 +100,21 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         self.view.addSubview(distance)
         self.view.addSubview(minus)
         self.view.addSubview(plus)
+        self.view.addSubview(refreshBtn)
        
     }
+    func minusClicked(){
+        distance.value = distance.value - 200
+    }
+    
+    func plusClicked(){
+        distance.value = distance.value + 200
+    }
+    
+    func refreshBtnClicked(){
+        print("refresh")
+    }
+    
     
     func setupButtons(){
         var btnArray = [lvoneBtn,lvtwoBtn,lvthreeBtn,lvfourBtn,lvfiveBtn,lvsixBtn,lvsevenBtn,lveightBtn,lvnineBtn,lvtenBtn]

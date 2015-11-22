@@ -14,7 +14,6 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
     var modelType:systemType = .System
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
-        self.navigationController?.navigationBar.barStyle = .Black
         super.viewDidLoad()
         self.navigationController?.navigationBar.translucent = false
         //tabview
@@ -57,11 +56,6 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         sender.setImage(sender.seletedImage, forState: .Normal)
         modelType = sender.systemModel
         infoList.reloadData()
-    }
-
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
