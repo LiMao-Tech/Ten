@@ -15,6 +15,7 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = notificationTitle
         self.navigationController?.navigationBar.translucent = false
         //tabview
         tabView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, TAP_BAR_HEIGHT))
@@ -47,7 +48,7 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_notification"), forBarMetrics: .Default)
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_notification"), forBarMetrics: .Default)
     }
     
     func itemClicked(sender:SettingButton){

@@ -32,7 +32,7 @@ class EditProfileController: UIViewController,UIAlertViewDelegate,UINavigationCo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
-        
+        self.title = profileTitle
         chosenImage = UIImage()
         
         buttonProfile = initButton(posX: SCREEN_WIDTH/2, posY: 104, btnWidth: 140/3*2, btnHeight: 140/3*2, imageName: "user_pic_radar_140", targetAction: "toImagePicker")
@@ -125,7 +125,7 @@ class EditProfileController: UIViewController,UIAlertViewDelegate,UINavigationCo
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_profile"), forBarMetrics: .Default)
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_profile"), forBarMetrics: .Default)
     }
     
     func editDone(){

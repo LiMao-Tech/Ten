@@ -12,15 +12,31 @@ class RandomUserController: UIViewController,UITableViewDelegate,UITableViewData
     var userList:UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barStyle = .Black
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_random"), forBarMetrics: .Default)
+        setup()
+        refreshControl()
+        // Do any additionalsetup after loading the view.
+    }
+    
+    func setup(){
+        self.title = randomTitle
         userList = UITableView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64))
         userList.dataSource = self
         userList.delegate = self
         userList.backgroundColor = UIColor.blackColor()
         userList.separatorStyle = .None
         self.view.addSubview(userList)
-        // Do any additionalsetup after loading the view.
+    
+    }
+    func refreshControl(){
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: "refreshStateChange:", forControlEvents: .ValueChanged)
+        
+        self.userList.addSubview(refresh)
+    }
+    
+    func refreshStateChange(refresh:UIRefreshControl){
+        refresh.endRefreshing()
+        print("refreshed")
     }
     
     override func didReceiveMemoryWarning() {

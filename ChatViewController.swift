@@ -19,6 +19,13 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = chatTitle
+        setup()
+        refreshControl()
+        //        userList.reloadData()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    func setup(){
         backgroundView = UIImageView(frame: SCREEN)
         backgroundView.image = UIImage(named: "bg")
         tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
@@ -46,14 +53,20 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         self.view.addSubview(tabView)
         
         selectedBtn = item
-        //        userList.reloadData()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_chat"), forBarMetrics: .Default)
+    func refreshControl(){
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: "refreshStateChange:", forControlEvents: .ValueChanged)
+        
+        self.userList.addSubview(refresh)
     }
     
+    func refreshStateChange(refresh:UIRefreshControl){
+        refresh.endRefreshing()
+        print("refreshed")
+    }
+
     func itemClicked(sender:SettingButton){
         selectedBtn.setImage(selectedBtn.normalImage, forState: .Normal)
         selectedBtn = sender

@@ -24,7 +24,8 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_pcoin"), forBarMetrics: .Default)
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_pcoin"), forBarMetrics: .Default)
+        self.title = pcoinTitle
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         //topview
         topView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))

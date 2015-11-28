@@ -52,6 +52,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        self.title = profileTitle
         chosenImage = UIImage()
         
         print("\(self.view.frame.width) and \(self.view.frame.height)")
@@ -191,7 +192,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_profile"), forBarMetrics: .Default)
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_profile"), forBarMetrics: .Default)
         }
     
     func sexBtnClicked(sender:SettingButton){

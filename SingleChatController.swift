@@ -26,13 +26,14 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
     let margin:CGFloat = 5
     let iconSize: CGFloat = 30
     var contentHeight: CGFloat = 32
-    var imageTop:UIImageView!
     var assets: [DKAsset]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageTop = UIImageView(frame: CGRectMake(0, 0, screenBounds.width, 64))
-        imageTop.backgroundColor = UIColor.redColor()
-        self.view.addSubview(imageTop)
+        setup()
+        refreshControl()
+        // Do any additional setup after loading the view.
+    }
+    func setup(){
         let background = UIImageView(frame: CGRectMake(0, 0, screenBounds.width, screenBounds.height))
         background.image = UIImage(named: "bg_chat_")
         self.view.backgroundColor = UIColor.clearColor()
@@ -52,7 +53,7 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
         bottom.addSubview(faceBtn)
         sendBtn = UIButton(frame: CGRectMake(screenBounds.width-35, bottom.bounds.height - iconSize - 7.0, iconSize, iconSize))
         sendBtn.setImage(UIImage(named: "btn_chat_sendsmg"), forState:UIControlState.Normal)
-//        sendBtn.addTarget(self, action: "sendBtnClicked", forControlEvents: UIControlEvents.TouchUpInside)
+        //        sendBtn.addTarget(self, action: "sendBtnClicked", forControlEvents: UIControlEvents.TouchUpInside)
         bottom.addSubview(sendBtn)
         contentText = UITextView(frame: CGRectMake(CGRectGetMaxX(faceBtn.frame) + margin, 6, screenBounds.width-3*iconSize-5*margin, 32))
         contentText.delegate = self
@@ -69,13 +70,25 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
         messageList.dataSource = self
         messageList.delegate = self
         messageList.bounces = true
-//        getMessages()
+        //        getMessages()
         self.rollToLastRow()
         messageList.allowsSelection = false
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        // Do any additional setup after loading the view.
     }
+    
+    func refreshControl(){
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: "refreshStateChange:", forControlEvents: .ValueChanged)
+        
+        self.messageList.addSubview(refresh)
+    }
+    
+    func refreshStateChange(refresh:UIRefreshControl){
+        refresh.endRefreshing()
+        print("refreshed")
+    }
+
     
     func getMessages(){
         let url :NSURL = NSURL(string: "http://www.code-desire.com.tw/LiMao/upload/Joe/clsDbManager/chatGetMsgList.aspx")!

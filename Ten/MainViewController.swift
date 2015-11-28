@@ -16,8 +16,8 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    let menuButton = UIButton(frame: CGRectMake(0, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
-    let randomButton = UIButton(frame: CGRectMake(SCREEN_WIDTH-SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
+    let menuButton = UIButton(frame: CGRectMake(5, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO-5, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
+    let randomButton = UIButton(frame: CGRectMake(SCREEN_WIDTH-SCREEN_HEIGHT/BUTTON_DENO-5, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO-5, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
     
     // circular menu
     let circularMenuVC = ADCircularMenuViewController(frame: UIScreen.mainScreen().bounds)
@@ -38,6 +38,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = .Black
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_bg"), forBarMetrics: .Default)
 
         let bg = UIImageView(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT))
         bg.image = UIImage(named: "bg_radar")
@@ -50,8 +51,6 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         let l = SCREEN_WIDTH*0.915
         let gifView = YLImageView(frame: CGRectMake(0, 0, l, l))
         gifView.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
-        
-
         
         YLGIFImage.setPrefetchNum(5)
         

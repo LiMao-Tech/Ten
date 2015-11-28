@@ -194,7 +194,6 @@
 		6417287E1BEC48CA00790103 /* 085@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 641727D21BEC48CA00790103 /* 085@2x.png */; };
 		6417287F1BEC48CA00790103 /* _expression_cn.plist in Resources */ = {isa = PBXBuildFile; fileRef = 641727D31BEC48CA00790103 /* _expression_cn.plist */; };
 		641728801BEC48CA00790103 /* _expression_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = 641727D41BEC48CA00790103 /* _expression_en.plist */; };
-		642883DD1BF04A6B00E908D4 /* NewLiMaoTenAppOct26.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = D48134911BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision */; };
 		642883F41BF0DA0D00E908D4 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642883F31BF0DA0D00E908D4 /* EditProfileController.swift */; };
 		642884271BF0FE4900E908D4 /* YLGIFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642884251BF0FE4900E908D4 /* YLGIFImage.swift */; };
 		642884281BF0FE4900E908D4 /* YLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642884261BF0FE4900E908D4 /* YLImageView.swift */; };
@@ -239,6 +238,7 @@
 		64BDA0E01BD27FCA009DF292 /* PCoinHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0DF1BD27FCA009DF292 /* PCoinHistoryCell.swift */; };
 		64BDA0E21BD333F0009DF292 /* PCoinTransferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0E11BD333F0009DF292 /* PCoinTransferCell.swift */; };
 		64BDA0E41BD33A53009DF292 /* PCoinTransferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA0E31BD33A53009DF292 /* PCoinTransferModel.swift */; };
+		64D048BB1C097D4E0052A9B7 /* Commen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D048BA1C097D4E0052A9B7 /* Commen.swift */; };
 		64D1BC481BEF25030099782B /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1BC3F1BEF25030099782B /* DKCamera.swift */; };
 		64D1BC491BEF25030099782B /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64D1BC401BEF25030099782B /* DKCameraResource.bundle */; };
 		64D1BC4A1BEF25030099782B /* DKAssetGroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D1BC421BEF25030099782B /* DKAssetGroupDetailVC.swift */; };
@@ -530,6 +530,7 @@
 		64BDA0DF1BD27FCA009DF292 /* PCoinHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinHistoryCell.swift; sourceTree = "<group>"; };
 		64BDA0E11BD333F0009DF292 /* PCoinTransferCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinTransferCell.swift; sourceTree = "<group>"; };
 		64BDA0E31BD33A53009DF292 /* PCoinTransferModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCoinTransferModel.swift; sourceTree = "<group>"; };
+		64D048BA1C097D4E0052A9B7 /* Commen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commen.swift; sourceTree = "<group>"; };
 		64D1BC3F1BEF25030099782B /* DKCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCamera.swift; sourceTree = "<group>"; };
 		64D1BC401BEF25030099782B /* DKCameraResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DKCameraResource.bundle; sourceTree = "<group>"; };
 		64D1BC421BEF25030099782B /* DKAssetGroupDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAssetGroupDetailVC.swift; sourceTree = "<group>"; };
@@ -559,7 +560,6 @@
 		D48134891BE9E0CB00F49D63 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		D481348D1BE9E26500F49D63 /* TenLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenLogin.swift; sourceTree = "<group>"; };
 		D481348E1BE9E26500F49D63 /* TenUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenUser.swift; sourceTree = "<group>"; };
-		D48134911BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewLiMaoTenAppOct26.mobileprovision; sourceTree = "<group>"; };
 		D48F93151BC1CDEC003DE7A2 /* ProfilePicsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePicsLayout.swift; sourceTree = "<group>"; };
 		D4D96F2F1BBDB9090019C09B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4D96F301BBDB9090019C09B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -836,8 +836,10 @@
 		643F9C751BF6DCC300361C55 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				64D048BA1C097D4E0052A9B7 /* Commen.swift */,
 				645E0D871BD37ADB00CF6977 /* SettingButton.swift */,
 				643F9C761BF6E62800361C55 /* GTSlider.swift */,
+				649B94CE1BD4846000F1B6CA /* Swift extensions */,
 				AA00EDF29C15F6580F061DCA /* Frameworks */,
 			);
 			name = Other;
@@ -1000,7 +1002,6 @@
 				643F9C751BF6DCC300361C55 /* Other */,
 				D481348C1BE9E26500F49D63 /* dbmodels */,
 				64955CCA1BE5A4B000792EDD /* Login */,
-				649B94CE1BD4846000F1B6CA /* Swift extensions */,
 				64A8D5961BCAA2AB00AC1E6E /* ADCircularMenuController */,
 				D4D96F371BBF82270019C09B /* ProfilePics */,
 				D44EC9471BBB719100BF41A2 /* Profile */,
@@ -1008,7 +1009,6 @@
 				D44EC95C1BBB846F00BF41A2 /* Notification */,
 				64BDA0D41BD26E52009DF292 /* P Coin */,
 				D44EC9571BBB841E00BF41A2 /* Settings */,
-				D48134911BE9E33900F49D63 /* NewLiMaoTenAppOct26.mobileprovision */,
 				C4CED3081B88FB010008BCF2 /* Ten */,
 				D41B3D7A1BC0792D005002C8 /* Helpers */,
 				16988AE01B8CCC6000270DBA /* LocationManager */,
@@ -1326,7 +1326,6 @@
 				64F5CEBF1BD8B51800512972 /* PT_Sans-Web-Bold.ttf in Resources */,
 				6417280A1BEC48CA00790103 /* 027@2x.png in Resources */,
 				641728271BEC48CA00790103 /* 042.png in Resources */,
-				642883DD1BF04A6B00E908D4 /* NewLiMaoTenAppOct26.mobileprovision in Resources */,
 				641727EB1BEC48CA00790103 /* 012.png in Resources */,
 				641727D51BEC48CA00790103 /* 001.png in Resources */,
 				6417284C1BEC48CA00790103 /* 060@2x.png in Resources */,
@@ -1565,6 +1564,7 @@
 				64D1BC4D1BEF25030099782B /* DKImagePickerController.swift in Sources */,
 				642883F41BF0DA0D00E908D4 /* EditProfileController.swift in Sources */,
 				641725B81BEC433D00790103 /* SingleChatMessage.swift in Sources */,
+				64D048BB1C097D4E0052A9B7 /* Commen.swift in Sources */,
 				649B94D71BD4846000F1B6CA /* FMDBManager.swift in Sources */,
 				641725C61BEC439200790103 /* MeChatCell.swift in Sources */,
 				64BDA0E21BD333F0009DF292 /* PCoinTransferCell.swift in Sources */,
