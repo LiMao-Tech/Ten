@@ -377,8 +377,6 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         let image = UIImageJPEGRepresentation(chosenImage!, 0.5)
         let picName = Tools.getFileNameTime(NSDate())+".jpeg"
         let params = ["id":tenUser.UserIndex]
-//        let param = String(tenUser.UserIndex).dataUsingEncoding(NSUTF8StringEncoding)
-
         manager.POST(headImageUrl, parameters: params, constructingBodyWithBlock: { (data: AFMultipartFormData!) -> Void in
             data.appendPartWithFileData(image!, name: "upload", fileName: picName, mimeType: "image/jpeg")
             }, success: { (operation, responseObject) -> Void in
