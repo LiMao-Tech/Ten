@@ -16,9 +16,6 @@
 		640F3BE51C0C898700B31DA0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F3BDE1C0C898700B31DA0 /* FMDatabaseQueue.m */; };
 		640F3BE61C0C898700B31DA0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F3BE11C0C898700B31DA0 /* FMResultSet.m */; };
 		640F3BE81C0C89FB00B31DA0 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 640F3BE71C0C89FB00B31DA0 /* libsqlite3.0.tbd */; };
-		640F3BF01C0CAED000B31DA0 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640F3BEF1C0CAED000B31DA0 /* ActionViewController.swift */; };
-		640F3BF31C0CAED000B31DA0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640F3BF11C0CAED000B31DA0 /* MainInterface.storyboard */; };
-		640F3BFC1C0CB07A00B31DA0 /* TimeTransformExtension.appex in Resources */ = {isa = PBXBuildFile; fileRef = 640F3BED1C0CAED000B31DA0 /* TimeTransformExtension.appex */; };
 		640F3C021C0CB9F200B31DA0 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640F3C011C0CB9F200B31DA0 /* Tools.swift */; };
 		640F3C041C1189D700B31DA0 /* PasscodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640F3C031C1189D700B31DA0 /* PasscodeController.swift */; };
 		641725B81BEC433D00790103 /* SingleChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641725B61BEC433D00790103 /* SingleChatMessage.swift */; };
@@ -277,13 +274,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		640F3BF51C0CAED000B31DA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C4CED2FE1B88FB010008BCF2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 640F3BEC1C0CAED000B31DA0;
-			remoteInfo = TimeTransformExtension;
-		};
 		C4CED31C1B88FB010008BCF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4CED2FE1B88FB010008BCF2 /* Project object */;
@@ -324,7 +314,6 @@
 		640F3BE01C0C898700B31DA0 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		640F3BE11C0C898700B31DA0 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		640F3BE71C0C89FB00B31DA0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		640F3BED1C0CAED000B31DA0 /* TimeTransformExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimeTransformExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		640F3BEF1C0CAED000B31DA0 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		640F3BF21C0CAED000B31DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		640F3BF41C0CAED000B31DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -593,13 +582,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		640F3BEA1C0CAED000B31DA0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C4CED3031B88FB010008BCF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1069,7 +1051,6 @@
 			children = (
 				C4CED3061B88FB010008BCF2 /* Ten.app */,
 				C4CED31B1B88FB010008BCF2 /* TenTests.xctest */,
-				640F3BED1C0CAED000B31DA0 /* TimeTransformExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1216,23 +1197,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		640F3BEC1C0CAED000B31DA0 /* TimeTransformExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 640F3BF81C0CAED000B31DA0 /* Build configuration list for PBXNativeTarget "TimeTransformExtension" */;
-			buildPhases = (
-				640F3BE91C0CAED000B31DA0 /* Sources */,
-				640F3BEA1C0CAED000B31DA0 /* Frameworks */,
-				640F3BEB1C0CAED000B31DA0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TimeTransformExtension;
-			productName = TimeTransformExtension;
-			productReference = 640F3BED1C0CAED000B31DA0 /* TimeTransformExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		C4CED3051B88FB010008BCF2 /* Ten */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4CED3251B88FB010008BCF2 /* Build configuration list for PBXNativeTarget "Ten" */;
@@ -1248,7 +1212,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				640F3BF61C0CAED000B31DA0 /* PBXTargetDependency */,
 			);
 			name = Ten;
 			productName = Ten;
@@ -1284,10 +1247,6 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "LiMao Tech";
 				TargetAttributes = {
-					640F3BEC1C0CAED000B31DA0 = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = QDC996CTVH;
-					};
 					C4CED3051B88FB010008BCF2 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = QDC996CTVH;
@@ -1318,20 +1277,11 @@
 			targets = (
 				C4CED3051B88FB010008BCF2 /* Ten */,
 				C4CED31A1B88FB010008BCF2 /* TenTests */,
-				640F3BEC1C0CAED000B31DA0 /* TimeTransformExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		640F3BEB1C0CAED000B31DA0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				640F3BF31C0CAED000B31DA0 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C4CED3041B88FB010008BCF2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1448,7 +1398,6 @@
 				641728321BEC48CA00790103 /* 047@2x.png in Resources */,
 				641728671BEC48CA00790103 /* 074.png in Resources */,
 				641728011BEC48CA00790103 /* 023.png in Resources */,
-				640F3BFC1C0CB07A00B31DA0 /* TimeTransformExtension.appex in Resources */,
 				641728311BEC48CA00790103 /* 047.png in Resources */,
 				641727F31BEC48CA00790103 /* 016.png in Resources */,
 				6417286E1BEC48CA00790103 /* 077@2x.png in Resources */,
@@ -1589,14 +1538,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		640F3BE91C0CAED000B31DA0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				640F3BF01C0CAED000B31DA0 /* ActionViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C4CED3021B88FB010008BCF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1685,11 +1626,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		640F3BF61C0CAED000B31DA0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 640F3BEC1C0CAED000B31DA0 /* TimeTransformExtension */;
-			targetProxy = 640F3BF51C0CAED000B31DA0 /* PBXContainerItemProxy */;
-		};
 		C4CED31D1B88FB010008BCF2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C4CED3051B88FB010008BCF2 /* Ten */;
@@ -1725,37 +1661,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		640F3BF91C0CAED000B31DA0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = TimeTransformExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limaotech.Ten.TimeTransformExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ADCircularMenuViewController-Bridging-Header.h";
-			};
-			name = Debug;
-		};
-		640F3BFA1C0CAED000B31DA0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = TimeTransformExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limaotech.Ten.TimeTransformExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ADCircularMenuViewController-Bridging-Header.h";
-			};
-			name = Release;
-		};
 		C4CED3231B88FB010008BCF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1930,15 +1835,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		640F3BF81C0CAED000B31DA0 /* Build configuration list for PBXNativeTarget "TimeTransformExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				640F3BF91C0CAED000B31DA0 /* Debug */,
-				640F3BFA1C0CAED000B31DA0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C4CED3011B88FB010008BCF2 /* Build configuration list for PBXProject "Ten" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

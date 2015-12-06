@@ -16,7 +16,8 @@ class PasscodeController: UIViewController,LockViewDelegate {
         // Do any additional setup after loading the view.
     }
     func setup(){
-        let lock = LockView(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT-64))
+        let lock = LockView(frame: CGRectMake(0,64,SCREEN_WIDTH,SCREEN_HEIGHT-64))
+        lock.delegate = self
         self.view.addSubview(lock)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
     }

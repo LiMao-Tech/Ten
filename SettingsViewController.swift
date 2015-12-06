@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     var settingList:UITableView!
     var logoutBtn:UIButton!
     let itemNames = ["Passcode","Change PIN","PCoin","","Term of Service","Privacy Policy"]
+    var remainingPinEntries = 3
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_settings"), forBarMetrics: .Default)
@@ -70,24 +71,18 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == 2){
-            let pvc = PCoinViewController()
-            self.navigationController?.pushViewController(pvc, animated: true)
-            settingList.deselectRowAtIndexPath(indexPath, animated: true)
-        }
         if(indexPath.row == 0){
             let pcVC = PasscodeController()
             self.navigationController?.pushViewController(pcVC, animated: true)
             settingList.deselectRowAtIndexPath(indexPath, animated: true)
         }
         if (indexPath.row == 1){
-            let pinVC = THPinViewController()
-            pinVC.promptTitle = "输入PIN"
-            pinVC.promptColor = UIColor.whiteColor()
-            pinVC.view.tintColor = UIColor.darkTextColor()
-            pinVC.hideLetters = true
             
-            pinVC.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        }
+        if(indexPath.row == 2){
+            let pvc = PCoinViewController()
+            self.navigationController?.pushViewController(pvc, animated: true)
+            settingList.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
     
@@ -103,7 +98,31 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     func pinView(pinView: THPinView!, isPinValid pin: String!) -> Bool {
         return true
     }
-    
+    func userCanRetryInPinViewController(pinViewController: THPinViewController!) -> Bool {
+        return self.remainingPinEntries > 0
+    }
+    func incorrectPinEnteredInPinViewController(pinViewController: THPinViewController!){
+        
+    }
+    func pinViewControllerWillDismissAfterPinEntryWasSuccessful(pinViewController: THPinViewController!){
+        
+    }
+    func pinViewControllerDidDismissAfterPinEntryWasSuccessful(pinViewController: THPinViewController!){
+        
+    }
+    func pinViewControllerWillDismissAfterPinEntryWasUnsuccessful(pinViewController: THPinViewController!){
+        
+    }
+    func pinViewControllerDidDismissAfterPinEntryWasUnsuccessful(pinViewController: THPinViewController!){
+        
+    }
+    func pinViewControllerWillDismissAfterPinEntryWasCancelled(pinViewController: THPinViewController!){
+        
+    }
+    func pinViewControllerDidDismissAfterPinEntryWasCancelled(pinViewController: THPinViewController!){
+        
+    }
+
         
 
     /*
