@@ -369,19 +369,6 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
             }) { (operation, error) -> Void in
                 print("postUserError:"+error.localizedDescription)
         }
-        /*
-        var UserName : String = ""
-        var Gender : Int8 = 0
-        var Birthday : String = ""
-        var JoinedDate : String = ""
-        var PCoin : Double = 1
-        var OuterScore : Int = 0
-        var InnerScore : Int = 0
-        var Energy : Int = 0
-        var Hobby : String = ""
-        var Quote : String = ""
-        var Lati : Double = -1
-        var Longi : Double = -1*/
     }
     func postImage(){
         let manager = AFHTTPRequestOperationManager()
