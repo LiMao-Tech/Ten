@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let InitialBlockPixelSize : Int = 75
+
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
@@ -102,8 +104,10 @@ class ProfileViewController: UIViewController {
     }
     
     func pushPictureCollectionView() {
-        let layout = ProfilePicsLayout()
-        let pPCVC = ProfilePicsCollectionViewController(collectionViewLayout: layout)
+        let lmLayout : LMCollectionViewLayout = LMCollectionViewLayout()
+        lmLayout.blockPixels = CGSize(width: InitialBlockPixelSize, height: InitialBlockPixelSize)
+        
+        let pPCVC = ProfilePicsCollectionViewController(collectionViewLayout: lmLayout)
         self.navigationController?.pushViewController(pPCVC, animated: true)
     }
     

@@ -87,9 +87,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             NSUserDefaults.standardUserDefaults().setObject(cleanToken, forKey: "deviceToken")
             print(cleanToken)
             // TODO: save this cleanToken into server and to default user data
+            
         }
-        print("token:")
-        print(deviceToken)
     }
     
     // Failed to register for Push
