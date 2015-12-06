@@ -14,32 +14,44 @@ Backend.
 
 class TenUser: NSObject {
     
-    let PhoneType : Int8 = 0
+    var PhoneType : Int8 = 0
     
-    var UserIndex : Int?
-    var UserName : String
-    var Gender : Int8
-    var Birthday : NSDate
-    var JoinedDate : NSDate
-    var PCoin : Double
-    var OuterScore : Int
-    var InnerScore : Int
-    var Energy : Int
-    var Hobby : String?
-    var Quote : String?
-    var Lati : Double?
-    var Longi : Double?
+    var UserIndex : Int = 0
+    var UserName : String = ""
+    var Gender : Int8 = 0
+    var Marriage: Int8 = 0
+    var Birthday : String = ""
+    var JoinedDate : String = ""
+    var PCoin : Double = 1
+    var OuterScore : Int = 0
+    var InnerScore : Int = 0
+    var Energy : Int = 0
+    var Hobby : String = ""
+    var Quote : String = ""
+    var Lati : Double = -1
+    var Longi : Double = -1
+    var ProfileUrl = ""
+
     
-    init(userName : String, gender : Int8, birthday : NSDate, joinedDate : NSDate,
-        pCoin : Double, outerScore : Int, innerScore : Int, energy : Int) {
-            self.UserName = userName
-            self.Gender = gender
-            self.Birthday = birthday
-            self.JoinedDate = joinedDate
-            self.PCoin = pCoin
-            self.OuterScore = outerScore
-            self.InnerScore = innerScore
-            self.Energy = energy
+//    init(userName : String, gender : Int8, birthday : NSDate, joinedDate : NSDate,
+//        pCoin : Double, outerScore : Int, innerScore : Int, energy : Int) {
+//            self.UserName = userName
+//            self.Gender = gender
+//            self.Birthday = birthday
+//            self.JoinedDate = joinedDate
+//            self.PCoin = pCoin
+//            self.OuterScore = outerScore
+//            self.InnerScore = innerScore
+//            self.Energy = energy
+//    }
+    init(loginDict:[String : AnyObject]) {
+        super.init()
+        self.initWithDict(loginDict)
+        UserName.hashValue
+    }
+    
+    func initWithDict(loginDict:[String : AnyObject]){
+        self.setValuesForKeysWithDictionary(loginDict)
     }
     
     

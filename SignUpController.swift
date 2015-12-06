@@ -11,6 +11,7 @@ let GTgrayColor = UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, 
 import UIKit
 import AFNetworking
 import CryptoSwift
+
 class SignUpController: UIViewController {
     @IBOutlet weak var newPin: UITextField!
     @IBOutlet weak var newPinRe: UITextField!
@@ -24,14 +25,23 @@ class SignUpController: UIViewController {
         newPinRe.backgroundColor = GTgrayColor
         newPin.textColor = UIColor.whiteColor()
         newPinRe.textColor = UIColor.whiteColor()
+        let accessoryView = UIToolbar(frame: CGRectMake(0, 0, SCREEN_WIDTH, 35))
+        let doneBtn = UIBarButtonItem(title: "完成", style: .Done, target: self, action: "doneClicked")
+        let space = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        accessoryView.setItems([space,doneBtn], animated: true)
+        newPin.inputAccessoryView = accessoryView
+        newPinRe.inputAccessoryView = accessoryView
+
         //nextBtn
         let x = (SCREEN_WIDTH-215)/2
         let y = SCREEN_HEIGHT-80
+        
         nextBtn = UIButton(frame: CGRectMake(x,y,215,37))
         nextBtn.setImage(UIImage(named: "btn_next"), forState: .Normal)
         nextBtn.addTarget(self, action: "nextClick", forControlEvents: .TouchUpInside)
         self.view.addSubview(bg)
         self.view.addSubview(nextBtn)
+        self.view.sendSubviewToBack(bg)
         // Do any additional setup after loading the view.
     }
     func nextClick(){
@@ -39,45 +49,44 @@ class SignUpController: UIViewController {
             signupPost()
         }
     }
+    func doneClicked(){
+        self.view.endEditing(true)
+    }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_pin"), forBarMetrics: .Default)
     }
     
     func signupPost(){
-        let signupURL = ""
-        let manager = AFHTTPRequestOperationManager()
-        let timeStamp = NSDate().description
-        let stringHash = "\(emailAddr!)\(newPinRe.text!)\(UUID)\(timeStamp)\(deviceToken)\(COMPANYCODE)"
-        let hashResult = stringHash.sha256()
-        let parameters = ["userID":emailAddr!,"userPWD":newPinRe.text!,"lastLogin":timeStamp,"DeviceUUID":UUID,"DeviceToken":deviceToken as! String,"HashValue":hashResult]
         
-        /*[15/10/27 上午9:33:59] Yumen Tsao: email
-        [15/10/27 上午9:34:06] Yumen Tsao: pwd
-        [15/10/27 上午9:34:11] Yumen Tsao: UUID
-        [15/10/27 上午9:34:17] Yumen Tsao: Device Token
-        [15/10/27 上午9:36:16] Yumen Tsao: timestamp
-        [15/10/27 上午9:36:43] Yumen Tsao: company code
-        [15/10/27 上午9:37:17] Yumen Tsao: sha-256*/
-        
-        manager.requestSerializer = AFJSONRequestSerializer()
-        manager.responseSerializer = AFHTTPResponseSerializer()
-        
-        manager.POST( signupURL,
-            parameters: parameters,
-            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                print("the respond object is: ")
-                print( operation.responseData )
-                let str = NSString(data: responseObject! as! NSData, encoding: NSUTF8StringEncoding)
-                print(str);
-                
-            },
-            failure: { (operation,error) in
-                print("Error: " + error.localizedDescription)
-                let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
-                print(NSString(data: data, encoding: NSUTF8StringEncoding))
+        self.navigationController?.navigationBar.hidden = false
+        let rpVC = RegistProfileViewController()
+        rpVC.email = self.emailAddr!
+        rpVC.password = self.newPinRe.text!
+        self.presentViewController(rpVC, animated: true, completion: { () -> Void in
+            
         })
+//        let manager = AFHTTPRequestOperationManager()
+//        let timeStamp = NSDate().description
+//        let stringHash = "\(emailAddr!)\(newPinRe.text!)\(UUID)\(timeStamp)\(deviceToken)\(COMPANYCODE)"
+//        let hashResult = stringHash.sha256()
+//        let parameters = ["userID":emailAddr!,"userPWD":newPinRe.text!,"lastLogin":timeStamp,"DeviceUUID":UUID,"DeviceToken":deviceToken as! String,"HashValue":hashResult]
 
+//        manager.requestSerializer = AFJSONRequestSerializer()
+//        manager.responseSerializer = AFJSONResponseSerializer()
+//        
+//        manager.POST( loginUrl,
+//            parameters: parameters,
+//            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+//                print(responseObject)
+//               
+//                })
+//            },
+//            failure: { (operation,error) in
+//                print("Error: " + error.localizedDescription)
+//                let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
+//                print(NSString(data: data, encoding: NSUTF8StringEncoding))
+//        })
         
     }
 

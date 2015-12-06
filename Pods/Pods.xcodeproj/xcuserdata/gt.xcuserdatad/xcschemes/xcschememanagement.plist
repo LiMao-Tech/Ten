@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CryptoSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>THPinViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Tweaks.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +47,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>139B54C42A9C5673592629F94857CC70</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2DF9BF9FEA77DBF101142F543E6A4A30</key>
+		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8A23233F4E09B179FB3B207386949A10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>952FE1EB61CA49FEC151B1763B93E741</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A05357DCED657147133A0B7DC7AD5B6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B907E1FDC7FF5CB7ACC3C50F888FDC5C</key>
+		<key>C205B242FE85C910C1FF57CF968FD032</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4D03A754C0A0E8DD92FD8C1DCE76333</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -34,7 +34,6 @@ class EditProfileController: UIViewController,UIAlertViewDelegate,UINavigationCo
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         self.title = profileTitle
         chosenImage = UIImage()
-        
         buttonProfile = initButton(posX: SCREEN_WIDTH/2, posY: 104, btnWidth: 140/3*2, btnHeight: 140/3*2, imageName: "user_pic_radar_140", targetAction: "toImagePicker")
         var y = CGRectGetMaxY(buttonProfile.frame)+10
         userName = UILabel(frame: CGRectMake(0,y,SCREEN_WIDTH,20))
@@ -116,7 +115,6 @@ class EditProfileController: UIViewController,UIAlertViewDelegate,UINavigationCo
         self.scroll.addSubview(energyBar)
         self.scroll.addSubview(energyValue)
         self.scroll.addSubview(button)
-        
     }
 
     override func didReceiveMemoryWarning() {

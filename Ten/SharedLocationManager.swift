@@ -35,8 +35,7 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
         self.authorization_status = 0; // not determinated
         self.FIRST_TIME = 0;
         self.is_ready = 0;
-        
-        
+
     }
     
     func startUpdatingLocation() {

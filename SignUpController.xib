@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="PT_Sans-Web-Regular.ttf">
@@ -70,33 +70,23 @@
                         <rect key="frame" x="30" y="389" width="340" height="30"/>
                     </variation>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m3C-mX-STE">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navBar_pin" translatesAutoresizingMaskIntoConstraints="NO" id="PFw-iH-wwC">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="EmH-Rf-mWU"/>
+                        <constraint firstAttribute="height" constant="64" id="Ace-N0-evi"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="EmH-Rf-mWU"/>
-                        </mask>
-                    </variation>
-                    <variation key="widthClass=compact">
-                        <mask key="constraints">
-                            <include reference="EmH-Rf-mWU"/>
-                        </mask>
-                    </variation>
                 </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="m3C-mX-STE" secondAttribute="trailing" id="7HG-kz-nV9"/>
-                <constraint firstItem="m3C-mX-STE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7WH-zK-mR1"/>
+                <constraint firstItem="PFw-iH-wwC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1jT-pH-SkM"/>
+                <constraint firstItem="PFw-iH-wwC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bsu-6Z-5LR"/>
                 <constraint firstAttribute="trailing" secondItem="dT4-eV-Fv3" secondAttribute="trailing" constant="30" id="Fic-p7-NPL"/>
                 <constraint firstItem="Gta-HE-nER" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="J0g-n4-5tf"/>
                 <constraint firstAttribute="trailing" secondItem="Gta-HE-nER" secondAttribute="trailing" constant="30" id="OSL-8l-ax5"/>
-                <constraint firstItem="m3C-mX-STE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bcT-vn-TZ2"/>
+                <constraint firstAttribute="trailing" secondItem="PFw-iH-wwC" secondAttribute="trailing" id="YPi-Sr-EbM"/>
                 <constraint firstItem="dT4-eV-Fv3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="cDY-9T-Esj"/>
                 <constraint firstAttribute="trailing" secondItem="nHd-hC-UnS" secondAttribute="trailing" constant="30" id="eQA-ET-IQw"/>
                 <constraint firstItem="HM4-XH-qon" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="fEI-5W-DPL"/>
@@ -113,7 +103,6 @@
                     <exclude reference="HM4-XH-qon"/>
                     <exclude reference="nHd-hC-UnS"/>
                     <exclude reference="Gta-HE-nER"/>
-                    <exclude reference="m3C-mX-STE"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="J0g-n4-5tf"/>
@@ -128,9 +117,6 @@
                     <exclude reference="Fic-p7-NPL"/>
                     <exclude reference="cDY-9T-Esj"/>
                     <exclude reference="uFB-gr-FLS"/>
-                    <exclude reference="7HG-kz-nV9"/>
-                    <exclude reference="7WH-zK-mR1"/>
-                    <exclude reference="bcT-vn-TZ2"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -139,7 +125,6 @@
                     <include reference="HM4-XH-qon"/>
                     <include reference="nHd-hC-UnS"/>
                     <include reference="Gta-HE-nER"/>
-                    <include reference="m3C-mX-STE"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="J0g-n4-5tf"/>
@@ -154,12 +139,12 @@
                     <include reference="Fic-p7-NPL"/>
                     <include reference="cDY-9T-Esj"/>
                     <include reference="uFB-gr-FLS"/>
-                    <include reference="7HG-kz-nV9"/>
-                    <include reference="7WH-zK-mR1"/>
-                    <include reference="bcT-vn-TZ2"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="324" y="182"/>
         </view>
     </objects>
+    <resources>
+        <image name="navBar_pin" width="375" height="64"/>
+    </resources>
 </document>

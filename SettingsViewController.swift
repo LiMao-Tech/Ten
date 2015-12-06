@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import THPinViewController
 class SettingsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var settingList:UITableView!
     var logoutBtn:UIButton!
@@ -70,15 +70,41 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let pvc = PCoinViewController()
-        self.navigationController?.pushViewController(pvc, animated: true)
-        settingList.deselectRowAtIndexPath(indexPath, animated: true)
+        if(indexPath.row == 2){
+            let pvc = PCoinViewController()
+            self.navigationController?.pushViewController(pvc, animated: true)
+            settingList.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        if(indexPath.row == 0){
+            let pcVC = PasscodeController()
+            self.navigationController?.pushViewController(pcVC, animated: true)
+            settingList.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        if (indexPath.row == 1){
+            let pinVC = THPinViewController()
+            pinVC.promptTitle = "输入PIN"
+            pinVC.promptColor = UIColor.whiteColor()
+            pinVC.view.tintColor = UIColor.darkTextColor()
+            pinVC.hideLetters = true
+            
+            pinVC.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        }
     }
+    
     
     func logout(){
         print("logout")
     }
-
+    
+    //thpindelegatemethod
+    func pinLengthForPinView(pinView: THPinView!) -> UInt {
+        return 4
+    }
+    func pinView(pinView: THPinView!, isPinValid pin: String!) -> Bool {
+        return true
+    }
+    
+        
 
     /*
     // MARK: - Navigation

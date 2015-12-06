@@ -7,12 +7,20 @@
 //
 
 import UIKit
-
+import AFNetworking
+import Alamofire
 
 class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
-    
+    //property
+    var password:String!
+    var email:String!
+    var tenLogin:TenLogin!
+    var tenUser:TenUser!
+    var gender:Int?
+    var marriage:Int?
     // Image Picker Variables //
     var chosenImage : UIImage?
+    var imageUrl : String?
     var counter : Int?
     //var ELCpicker : ELCImagePickerController? = ELCImagePickerController()
     var picker : UIImagePickerController? = UIImagePickerController()
@@ -56,6 +64,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         chosenImage = UIImage()
         
         print("\(self.view.frame.width) and \(self.view.frame.height)")
+        
         
         scrollView = UIScrollView(frame: CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64))
         scrollView!.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT*1.5)
@@ -102,7 +111,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         emailAddr = UILabel(frame: CGRectMake(textX, SCREEN_HEIGHT*7/12+40, lineLength, 20))
         emailAddr.textColor = UIColor(red: 137.0/255.0, green: 142.0/255.0, blue: 153.0/255.0, alpha: 1.0)
         emailAddr.font = UIFont(name: FONTNAME_NORMAL, size: 15)
-        emailAddr.text = "example@example.com"
+        emailAddr.text = email
         let hobbyLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*8/12, labelWidth: 200, labelHeight: 100, labelText: "Hobby")
         hobby = UITextField(frame: CGRectMake(textX, SCREEN_HEIGHT*8/12+40, lineLength, 20))
         hobby.textColor = UIColor.whiteColor()
@@ -203,6 +212,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
             maleBtn.setImage(maleBtn.normalImage, forState: .Normal)
             maleBtn.enabled = true
             maleBtn.titleLabel?.alpha = 1
+            gender = 0
         }
         else{
             feMaleBtn.setImage(feMaleBtn.normalImage, forState: .Normal)
@@ -210,6 +220,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
             maleBtn.setImage(maleBtn.seletedImage, forState: .Normal)
             maleBtn.titleLabel?.alpha = 0.4
             feMaleBtn.enabled = true
+            gender = 1
         }
         
     }
@@ -222,6 +233,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
             marriedBtn.setImage(marriedBtn.normalImage, forState: .Normal)
             marriedBtn.enabled = true
             marriedBtn.titleLabel?.alpha = 1
+            marriage = 0
         }
         else{
             singleBtn.setImage(singleBtn.normalImage, forState: .Normal)
@@ -229,6 +241,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
             marriedBtn.setImage(marriedBtn.seletedImage, forState: .Normal)
             marriedBtn.titleLabel?.alpha = 0.4
             singleBtn.enabled = true
+            marriage = 1
         }
     }
     
@@ -304,9 +317,95 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
     
     
     func toRadarPage(){
+        let manager = AFHTTPRequestOperationManager()
+        let time = NSDate()
+        let format = NSDateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let timeStamp = format.stringFromDate(time)
+        let stringHash = "\(email)\(password)\(UUID)\(timeStamp)\(deviceToken!)\(COMPANYCODE)"
+        let hashResult = stringHash.sha256()
         
-        //TODO: will need to add user data into this area
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        let params = ["UserID":email,"UserPWD":password,"DeviceUUID":UUID,"lastLogin":timeStamp,"DeviceToken":deviceToken!,"HashValue":hashResult]
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        
+        manager.POST( loginUrl,
+            parameters: params,
+            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                let dict = responseObject as! [String : AnyObject]
+                self.tenLogin = TenLogin(loginDict: dict)
+                print(self.tenLogin.LoginIndex)
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    self.postUsers()
+                    
+                })
+            },
+            failure: { (operation,error) in
+                print("Error: " + error.localizedDescription)
+                let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData
+                print(NSString(data: data, encoding: NSUTF8StringEncoding))
+                
+        })
+
+    }
+    func postUsers(){
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        
+        let birthday = Tools.formatStringTime(birthData.text!)
+        let joinTime = Tools.getNormalTime(NSDate())
+        
+        let params = ["UserName":username.text!,"Gender":gender!,"Birthday":birthday,"JoinedDate":joinTime,"PCoin":0,"OuterScore":Int(outerBar.value),"InnerScore":Int(innerBar.value),"Energy":Int(energyBar.value),"Hobby":hobby.text!,"Quote":statusDetail.text!,"Lati":0,"Longi":0]
+//        print("userParams:\(params)")
+        manager.POST(userUrl, parameters: params, success: { (operation, responseObject) -> Void in
+            print(responseObject)
+            let dict = responseObject as! [String : AnyObject]
+            self.tenUser = TenUser.init(loginDict: dict)
+            print (self.tenUser.Birthday)
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                self.postImage()
+            })
+            }) { (operation, error) -> Void in
+                print("postUserError:"+error.localizedDescription)
+        }
+        /*
+        var UserName : String = ""
+        var Gender : Int8 = 0
+        var Birthday : String = ""
+        var JoinedDate : String = ""
+        var PCoin : Double = 1
+        var OuterScore : Int = 0
+        var InnerScore : Int = 0
+        var Energy : Int = 0
+        var Hobby : String = ""
+        var Quote : String = ""
+        var Lati : Double = -1
+        var Longi : Double = -1*/
+    }
+    func postImage(){
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer = AFHTTPRequestSerializer()
+        manager.responseSerializer = AFHTTPResponseSerializer()
+        let image = UIImageJPEGRepresentation(chosenImage!, 0.5)
+        let picName = Tools.getFileNameTime(NSDate())+".jpeg"
+        let params = ["id":tenUser.UserIndex]
+//        let param = String(tenUser.UserIndex).dataUsingEncoding(NSUTF8StringEncoding)
+
+        manager.POST(headImageUrl, parameters: params, constructingBodyWithBlock: { (data: AFMultipartFormData!) -> Void in
+            data.appendPartWithFileData(image!, name: "upload", fileName: picName, mimeType: "image/jpeg")
+            }, success: { (operation, responseObject) -> Void in
+            let str = NSString(data: responseObject as! NSData, encoding: NSUTF8StringEncoding)
+            print(str)
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                let nVC = storyBoard.instantiateViewControllerWithIdentifier("NavController")
+                self.presentViewController(nVC, animated: true, completion: { () -> Void in
+                    })
+                })
+            }) { (operation, error) -> Void in
+                print("imageUpLoadError:"+error.localizedDescription)
+        }
     }
     
     // MARK: Entering the image picker
