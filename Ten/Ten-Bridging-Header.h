@@ -10,7 +10,7 @@
 #define ADCircularMenuViewController_Bridging_Header_h
 
 #import "ADCircularMenuViewController.h"
-#import "LMCollectionViewLayout.h"
+#import "ProfilePicsCollectionViewController.h"
 #import "LockView.h"
 #import "FMDB.h"
 #endif /* ADCircularMenuViewController_Bridging_Header_h */

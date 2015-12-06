@@ -120,6 +120,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         print("*********** in Did Become Active *************")
         
+        // clear notification badge
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
         // checking for location Manager's authorization status
         
         if(sharedManager.FIRST_TIME == 0){

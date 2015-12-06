@@ -99,15 +99,11 @@ class ProfileViewController: UIViewController {
         // update profile picture everytime
         self.profileImageView.image = UIImage(named: "meiting")
         
-        
-        
     }
     
     func pushPictureCollectionView() {
-        let lmLayout : LMCollectionViewLayout = LMCollectionViewLayout()
-        lmLayout.blockPixels = CGSize(width: InitialBlockPixelSize, height: InitialBlockPixelSize)
         
-        let pPCVC = ProfilePicsCollectionViewController(collectionViewLayout: lmLayout)
+        let pPCVC = ProfilePicsCollectionViewController(height: SCREEN_HEIGHT, width: SCREEN_WIDTH, toolbarHeight: TOOL_BAR_HEIGHT)
         self.navigationController?.pushViewController(pPCVC, animated: true)
     }
     
