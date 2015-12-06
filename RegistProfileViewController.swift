@@ -388,6 +388,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
                 self.presentViewController(nVC, animated: true, completion: { () -> Void in
                     })
                 })
+                //push note
             }) { (operation, error) -> Void in
                 print("imageUpLoadError:"+error.localizedDescription)
         }
