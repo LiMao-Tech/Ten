@@ -42,6 +42,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
 
         let bg = UIImageView(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT))
         bg.image = UIImage(named: "bg_radar")
+        bg.contentMode = UIViewContentMode.ScaleAspectFill
         
         // set circularMenu
         self.circularMenuVC.circularMenuDelegate = self
