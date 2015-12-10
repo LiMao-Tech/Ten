@@ -45,9 +45,14 @@ class GTFaceView: UIView {
             faceView.addSubview(faceBtn)
             faceCodes.addObject(faceBtn.faceCode)
         }
+        
+        //pagecontrol
+        
         super.init(frame: CGRectMake(0, 0, screen.width, 224))
         self.backgroundColor = UIColor(red: 236.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1.0)
         self.addSubview(faceView)
+        
+        
     }
 
     required init?(coder aDecoder: NSCoder) {

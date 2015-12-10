@@ -41,13 +41,13 @@ class LoginPinController: UIViewController {
         let timeStamp = Tools.getNormalTime(NSDate())
         
 //        let stringHash = "\(emailAddr!)\(pinText.text!)\(UUID)\(timeStamp)\(deviceToken!)\(COMPANYCODE)"
-        let stringHash = "281340731@qq.com123456\(timeStamp)\(UUID)\(deviceToken!)\(COMPANYCODE)"
-        let stringHashPrint = "281340731@qq.com|123456|\(timeStamp)|\(UUID)|\(deviceToken!)|\(COMPANYCODE)"
+        let stringHash = "281340731@qq.com123456\(timeStamp)\(UUID)\(DEVICETOKEN!)\(COMPANYCODE)"
+        let stringHashPrint = "281340731@qq.com|123456|\(timeStamp)|\(UUID)|\(DEVICETOKEN!)|\(COMPANYCODE)"
         print(stringHashPrint)
         let hashResult = stringHash.sha256()
         print("hashresult"+hashResult)
         
-        let url:NSString = loginUrl+"?userID=281340731@qq.com&userPWD=123456&lastLogin=\(timeStamp)&DeviceUUID=\(UUID)&DeviceToken=\(deviceToken!)&HashValue=\(hashResult)"
+        let url:NSString = loginUrl+"?userID=281340731@qq.com&userPWD=123456&lastLogin=\(timeStamp)&DeviceUUID=\(UUID)&DeviceToken=\(DEVICETOKEN!)&HashValue=\(hashResult)"
         let urlNew = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         /*[15/10/27 上午9:33:59] Yumen Tsao: email
         [15/10/27 上午9:34:06] Yumen Tsao: pwd

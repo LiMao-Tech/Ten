@@ -14,12 +14,12 @@ Backend.
 
 class TenUser: NSObject {
     
-    var PhoneType : Int8 = 0
+    var PhoneType : Int = 0
     
     var UserIndex : Int = 0
     var UserName : String = ""
-    var Gender : Int8 = 0
-    var Marriage: Int8 = 0
+    var Gender : Int = 0
+    var Marriage: Int = 0
     var Birthday : String = ""
     var JoinedDate : String = ""
     var PCoin : Double = 1

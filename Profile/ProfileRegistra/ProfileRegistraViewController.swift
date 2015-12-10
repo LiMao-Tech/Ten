@@ -322,10 +322,9 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let timeStamp = format.stringFromDate(time)
-        let stringHash = "\(email)\(password)\(UUID)\(timeStamp)\(deviceToken!)\(COMPANYCODE)"
+        let stringHash = "\(email)\(password)\(UUID)\(timeStamp)\(DEVICETOKEN!)\(COMPANYCODE)"
         let hashResult = stringHash.sha256()
-        
-        let params = ["UserID":email,"UserPWD":password,"DeviceUUID":UUID,"lastLogin":timeStamp,"DeviceToken":deviceToken!,"HashValue":hashResult]
+        let params = ["UserID":email,"UserPWD":password,"DeviceUUID":UUID,"lastLogin":timeStamp,"DeviceToken":DEVICETOKEN!,"HashValue":hashResult]
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
         
@@ -335,9 +334,9 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
                 let dict = responseObject as! [String : AnyObject]
                 self.tenLogin = TenLogin(loginDict: dict)
                 print(self.tenLogin.LoginIndex)
+                print("loginpostSuccess")
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                     self.postUsers()
-                    
                 })
             },
             failure: { (operation,error) in
@@ -366,10 +365,12 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 self.postImage()
             })
-            }) { (operation, error) -> Void in
+            },
+            failure: { (operation, error) -> Void in
                 print("postUserError:"+error.localizedDescription)
-        }
+        })
     }
+    
     func postImage(){
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer = AFHTTPRequestSerializer()
@@ -383,17 +384,25 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
             let str = NSString(data: responseObject as! NSData, encoding: NSUTF8StringEncoding)
             print(str)
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                let nVC = storyBoard.instantiateViewControllerWithIdentifier("NavController")
-                self.presentViewController(nVC, animated: true, completion: { () -> Void in
-                    })
-                })
+                self.putUserIndex()
                 //push note
-            }) { (operation, error) -> Void in
+            })
+            },
+                failure: { (operation, error) -> Void in
                 print("imageUpLoadError:"+error.localizedDescription)
+            })
+        }
+
+    func putUserIndex(){
+        Alamofire.request(.PUT, loginUrl+"/\(tenLogin.LoginIndex)", parameters: ["LoginIndex": tenLogin.LoginIndex,"UserIndex": tenUser.UserIndex,"UserID": tenLogin.UserID,"UserPWD": tenLogin.UserPWD,"LastLogin": tenLogin.LastLogin,"DeviceUUID": tenLogin.DeviceUUID,"DeviceToken": tenLogin.DeviceToken,"HashValue": tenLogin.HashValue]).response { (response) -> Void in
+            let data = NSString(data: response.2!, encoding: NSUTF8StringEncoding)
+            print(data)
+            let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let nVC = storyBoard.instantiateViewControllerWithIdentifier("NavController")
+            self.presentViewController(nVC, animated: true, completion: { () -> Void in
+            })
         }
     }
-    
     // MARK: Entering the image picker
     func toImagePicker(){
         //

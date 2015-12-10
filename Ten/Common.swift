@@ -11,10 +11,10 @@ import UIKit
 //urls
 let locationNotiName = "LocationNotification"
 let updateLocationByIdURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
-let mainUrl = "http://192.168.1.106/api/"
+let mainUrl = "http://www.limao-tech.com/Ten/api/"
 let loginUrl = mainUrl+"TenLogins"
 let userUrl = mainUrl+"TenUsers"
-let headImageUrl = "http://192.168.1.106/TenImage/UploadProfileImage"
+let headImageUrl = "http://www.limao-tech.com/Ten/TenImage/UploadProfileImage"
 
 //screenFrame
 let SCREEN = UIScreen.mainScreen().bounds
