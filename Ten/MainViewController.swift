@@ -22,6 +22,8 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     // circular menu
     let circularMenuVC = ADCircularMenuViewController(frame: UIScreen.mainScreen().bounds)
     
+    var distanceLabel:UILabel!
+    
     var lvoneBtn:LevelButton!
     var lvtwoBtn:LevelButton!
     var lvthreeBtn:LevelButton!
@@ -48,6 +50,12 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         self.circularMenuVC.circularMenuDelegate = self
         self.circularMenuVC.view.frame = UIScreen.mainScreen().bounds
         
+        //distanceLabel
+        distanceLabel = UILabel(frame: CGRectMake(0,80,SCREEN_WIDTH,20))
+        distanceLabel.textColor = UIColor.whiteColor()
+        distanceLabel.text = "distance Label"
+        distanceLabel.font = UIFont(name: FONTNAME_NORMAL, size: 16)
+        distanceLabel.textAlignment = .Center
         //gif
         let l = SCREEN_WIDTH*0.915
         let gifView = YLImageView(frame: CGRectMake(0, 0, l, l))
@@ -81,6 +89,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         distance.setMaximumTrackImage(UIImage(named: "line_outer_normal"), forState: .Normal)
         distance.minimumValue = 10
         distance.maximumValue = 1000
+        distance.addTarget(self, action: "distanceChange", forControlEvents: UIControlEvents.ValueChanged)
         let minus = UIButton(frame: CGRectMake(10,distanceY,24,24))
         let plus = UIButton(frame: CGRectMake(SCREEN_WIDTH - 34,distanceY,24,24))
         minus.setImage(UIImage(named: "btn_radar_minus"), forState: .Normal)
@@ -101,6 +110,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         self.view.addSubview(minus)
         self.view.addSubview(plus)
         self.view.addSubview(refreshBtn)
+        self.view.addSubview(distanceLabel)
        
     }
     func minusClicked(){
@@ -109,6 +119,9 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     func plusClicked(){
         distance.value = distance.value + 200
+    }
+    func distanceChange(){
+        distanceLabel.text = "\(distance.value) km"
     }
     
     func refreshBtnClicked(){
