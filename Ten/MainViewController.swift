@@ -118,10 +118,12 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     }
     
     func plusClicked(){
-        distance.value = distance.value + 200
+//        distance.value = distance.value + 200
+        distance.setValue(500, animated: true)
     }
     func distanceChange(){
         distanceLabel.text = "\(distance.value) km"
+        distance.setValue(200.0, animated: true)
     }
     
     func refreshBtnClicked(){

@@ -42,13 +42,24 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         //addsubview
         self.view.addSubview(tabView)
         self.view.addSubview(infoList)
-        
+        refreshControl()
         selectedBtn = item
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_notification"), forBarMetrics: .Default)
+    }
+    
+    func refreshControl(){
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: "refreshStateChange:", forControlEvents: .ValueChanged)
+        self.infoList.addSubview(refresh)
+    }
+    
+    func refreshStateChange(refresh:UIRefreshControl){
+        refresh.endRefreshing()
+        print("refreshed")
     }
     
     func itemClicked(sender:SettingButton){
