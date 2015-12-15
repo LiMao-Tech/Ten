@@ -33,8 +33,10 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let item0 = SettingButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         item.normalImage = UIImage(named: "tab_chat_activeChats_normal")
         item.seletedImage = UIImage(named: "tab_chat_activeChats_highlight")
+        item.contentMode = .ScaleAspectFit
         item0.normalImage = UIImage(named: "tab_chat_inactiveChats_normal")
         item0.seletedImage = UIImage(named: "tab_chat_inactiveChats_highlight")
+        item0.contentMode = .ScaleAspectFill
         item.setImage(item.seletedImage, forState: UIControlState.Normal)
         item0.setImage(item0.normalImage, forState: UIControlState.Normal)
         item.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)

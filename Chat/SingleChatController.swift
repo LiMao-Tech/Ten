@@ -19,14 +19,19 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
     var messageList : UITableView!
     var bottomImage : UIImageView!
     var faceView:GTFaceView!
-    var duration = 0.25
-    var keyboardIsShow = false
-    var needTransfrom = true
     var member = NSDictionary()
     let margin:CGFloat = 5
     let iconSize: CGFloat = 30
     var contentHeight: CGFloat = 32
     var assets: [DKAsset]?
+    
+    //keyboard properties
+    var duration = 0.25
+    var keyboardIsShow = false
+    var needTransfrom = true
+    var initialFrame:CGRect!
+    var keyBoardHeight:CGFloat = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -70,6 +75,7 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
         messageList.dataSource = self
         messageList.delegate = self
         messageList.bounces = true
+        initialFrame = messageList.frame
         //        getMessages()
         self.rollToLastRow()
         messageList.allowsSelection = false
@@ -227,14 +233,13 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
         }else{
             needTransfrom = true
         }
-        
+        contentText.resignFirstResponder()
         if((contentText.inputView) == nil){
             contentText.inputView = faceView
-            contentText.resignFirstResponder()
             faceBtn.setImage(UIImage(named: "btn_chat_keyboard"), forState:UIControlState.Normal)
+            
         }else{
             contentText.inputView = nil
-            contentText.resignFirstResponder()
             faceBtn.setImage(UIImage(named: "btn_chat_emoji"), forState:UIControlState.Normal)
         }
         contentText.becomeFirstResponder()
@@ -243,32 +248,52 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
     键盘弹出
     */
     func keyboardWillShow(note:NSNotification){
+
+        let userInfo:NSDictionary = note.userInfo!
+//        print(userInfo)
+        let aValue = userInfo.objectForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let value = aValue.CGRectValue()
+        let h = value.height
+        
         if(needTransfrom){
             UIView.animateWithDuration(0, animations: { () -> Void in
-                self.bottom.transform = CGAffineTransformMakeTranslation(0, -224)
+                self.bottom.transform = CGAffineTransformMakeTranslation(0, -h)
                 var temp = self.messageList.frame
-                temp.size.height -= 224
+                temp.size.height -= h-self.keyBoardHeight
                 self.messageList.frame = temp
                 self.keyboardIsShow = true
                 print("out")
             })
              self.rollToLastRow()
+        }else{
+            self.bottom.transform = CGAffineTransformMakeTranslation(0, -h)
+            var temp = self.messageList.frame
+            temp.size.height -= h-self.keyBoardHeight
+            self.messageList.frame = temp
         }
+        keyBoardHeight = h
     }
     /**
     键盘收回
     */
     func keyboardWillHide(note:NSNotification){
+        let userInfo:NSDictionary = note.userInfo!
+        let aValue = userInfo.objectForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let value = aValue.CGRectValue()
+        let h = value.height
         if(needTransfrom){
-            UIView.animateWithDuration(0, animations: { () -> Void in
+            UIView.animateWithDuration(0, animations: {() -> Void in
                 self.bottom.transform = CGAffineTransformMakeTranslation(0, 0)
                 var temp = self.messageList.frame
-                temp.size.height += 224
+                temp.size.height += h
                 self.messageList.frame = temp
                 self.keyboardIsShow = false
                 print("in")
             })
             self.rollToLastRow()
+        }
+        if(!keyboardIsShow){
+            keyBoardHeight = 0
         }
     }
     /**
@@ -341,7 +366,7 @@ class SingleChatController: UIViewController,UITableViewDelegate,UITableViewData
                 bottomFrame.origin.y = screenBounds.height - bottomFrame.size.height
             }
             else{
-                bottomFrame.origin.y = screenBounds.height - bottomFrame.size.height - 224
+                bottomFrame.origin.y = screenBounds.height - bottomFrame.size.height - keyBoardHeight
             }
             tableFrame.size.height = bottomFrame.origin.y - 64
             contentFrame.origin.y = bottomFrame.height - contentFrame.size.height - 6

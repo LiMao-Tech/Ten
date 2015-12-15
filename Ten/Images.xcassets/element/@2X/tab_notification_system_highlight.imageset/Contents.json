@@ -11,6 +11,11 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "tab_notification_system_highlight@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
       "scale" : "3x"
     }
   ],

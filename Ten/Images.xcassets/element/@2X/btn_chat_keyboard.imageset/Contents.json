@@ -6,13 +6,8 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "tab_notification_notification_normal.png",
+      "filename" : "btn_chat_keyboard.png",
       "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "tab_notification_notification_normal@3x.png",
-      "scale" : "3x"
     },
     {
       "idiom" : "universal",

@@ -45,15 +45,12 @@ class WelcomeController: UIViewController {
         splitView.addSubview(orLabel)
         // Do any additional setup after loading the view.
     }
-//    override func viewWillAppear(animated: Bool) {
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_welcome"), forBarMetrics: .Default)
-//    }
     
     func submitClick() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let nVC = storyBoard.instantiateViewControllerWithIdentifier("NavController")
-        self.presentViewController(nVC, animated: true, completion: { () -> Void in
-        })
+//        let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+//        let nVC = storyBoard.instantiateViewControllerWithIdentifier("NavController")
+//        self.presentViewController(nVC, animated: true, completion: { () -> Void in
+//        })
         if(!loginEmail.text!.isEmpty){
             let pVC = LoginPinController()
             pVC.emailAddr = loginEmail.text

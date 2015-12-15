@@ -35,6 +35,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     var lvnineBtn:LevelButton!
     var lvtenBtn:LevelButton!
     var distance:GTSlider!
+    var gap:Int!
     var btns = Array<UIButton!>()
     // view loading
     override func viewDidLoad() {
@@ -53,7 +54,6 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         //distanceLabel
         distanceLabel = UILabel(frame: CGRectMake(0,80,SCREEN_WIDTH,20))
         distanceLabel.textColor = UIColor.whiteColor()
-        distanceLabel.text = "distance Label"
         distanceLabel.font = UIFont(name: FONTNAME_NORMAL, size: 16)
         distanceLabel.textAlignment = .Center
         //gif
@@ -89,6 +89,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         distance.setMaximumTrackImage(UIImage(named: "line_outer_normal"), forState: .Normal)
         distance.minimumValue = 10
         distance.maximumValue = 1000
+        gap = Int(distance.maximumValue/4)
         distance.addTarget(self, action: "distanceChange", forControlEvents: UIControlEvents.ValueChanged)
         let minus = UIButton(frame: CGRectMake(10,distanceY,24,24))
         let plus = UIButton(frame: CGRectMake(SCREEN_WIDTH - 34,distanceY,24,24))
@@ -111,7 +112,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         self.view.addSubview(plus)
         self.view.addSubview(refreshBtn)
         self.view.addSubview(distanceLabel)
-       
+        distanceChange()
     }
     func minusClicked(){
         distance.value = distance.value - 200
@@ -122,8 +123,13 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         distance.setValue(500, animated: true)
     }
     func distanceChange(){
-        distanceLabel.text = "\(distance.value) km"
-        distance.setValue(200.0, animated: true)
+        let index = Int(distance.value/Float(gap)+0.5)
+        var Value = Float(index*gap)
+        if Value == 0.0 {
+            Value = 10
+        }
+        distance.setValue(Value, animated: true)
+        distanceLabel.text = "\(Int(Value)) km"
     }
     
     func refreshBtnClicked(){

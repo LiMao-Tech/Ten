@@ -16,9 +16,8 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = notificationTitle
-        self.navigationController?.navigationBar.translucent = false
         //tabview
-        tabView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, TAP_BAR_HEIGHT))
+        tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let item = SettingButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         let item0 = SettingButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         item.normalImage = UIImage(named: "tab_notification_system_normal")
@@ -44,6 +43,7 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         self.view.addSubview(infoList)
         refreshControl()
         selectedBtn = item
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         // Do any additional setup after loading the view.
     }
     

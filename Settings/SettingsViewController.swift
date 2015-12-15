@@ -15,15 +15,15 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     var remainingPinEntries = 3
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_settings"), forBarMetrics: .Default)
+
         self.title = settingTitle
-        self.view.backgroundColor = UIColor.blackColor()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         settingList = UITableView(frame: CGRectMake(30, 0, SCREEN_WIDTH - 60, 324))
         settingList.dataSource = self
         settingList.delegate = self
         settingList.separatorStyle = .None
         settingList.bounces = false
-        settingList.backgroundColor = UIColor.blackColor()
+        settingList.backgroundColor = UIColor.clearColor()
         
         let w:CGFloat = 215
         let h:CGFloat = 37
