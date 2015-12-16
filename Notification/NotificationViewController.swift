@@ -9,17 +9,25 @@
 import UIKit
 
 class NotificationViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
-    var tabView:UIView!
-    var infoList:UITableView!
-    var modelType:systemType = .System
-    var selectedBtn:SettingButton!
+
+    // Declarations
+    var tabView : UIView!
+    var infoList : UITableView!
+    var modelType : systemType = .System
+    var selectedBtn : SettingButton!
+
+    // View Controls
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        self.title = notificationTitle
+        self.title = NotificationTitle
+        
         //tabview
         tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
+        
         let item = SettingButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         let item0 = SettingButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
+        
         item.normalImage = UIImage(named: "tab_notification_system_normal")
         item.seletedImage = UIImage(named: "tab_notification_system_highlight")
         item0.normalImage = UIImage(named: "tab_notification_notification_normal")
@@ -28,11 +36,13 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         item0.setImage(item0.normalImage, forState: UIControlState.Normal)
         item.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
         item0.addTarget(self, action: "itemClicked:", forControlEvents: .TouchUpInside)
+        
         tabView.addSubview(item0)
         tabView.addSubview(item)
         
-        //list
+        // list
         infoList = UITableView(frame: CGRectMake(0, CGRectGetMaxY(tabView.frame), SCREEN_WIDTH, SCREEN_HEIGHT - CGRectGetMaxY(tabView.frame)))
+        
         infoList.backgroundColor = UIColor.clearColor()
         infoList.delegate = self
         infoList.dataSource = self
@@ -41,14 +51,14 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         //addsubview
         self.view.addSubview(tabView)
         self.view.addSubview(infoList)
+        
         refreshControl()
         selectedBtn = item
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_notification"), forBarMetrics: .Default)
+
     }
     
     func refreshControl(){
@@ -76,6 +86,7 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         noteFrame.notification = note
         return noteFrame.cellheight
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = infoList.dequeueReusableCellWithIdentifier("notificationInfoCell") as? NotificationInfoCell
         if(cell == nil){
@@ -88,6 +99,7 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         return cell!
 
     }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }

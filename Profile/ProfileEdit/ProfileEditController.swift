@@ -32,7 +32,7 @@ class EditProfileController: UIViewController,UIAlertViewDelegate,UINavigationCo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
-        self.title = profileTitle
+        self.title = ProfileTitle
         chosenImage = UIImage()
         buttonProfile = initButton(posX: SCREEN_WIDTH/2, posY: 104, btnWidth: 140/3*2, btnHeight: 140/3*2, imageName: "user_pic_radar_140", targetAction: "toImagePicker")
         var y = CGRectGetMaxY(buttonProfile.frame)+10

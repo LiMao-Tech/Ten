@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController,UITableViewDataSource,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = settingTitle
+        self.title = SettingTitle
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
         settingList = UITableView(frame: CGRectMake(30, 0, SCREEN_WIDTH - 60, 324))
         settingList.dataSource = self

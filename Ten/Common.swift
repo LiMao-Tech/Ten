@@ -1,5 +1,5 @@
 //
-//  Commen.swift
+//  Common.swift
 //  Ten
 //
 //  Created by gt on 15/11/28.
@@ -9,12 +9,12 @@
 import UIKit
 
 //urls
-let locationNotiName = "LocationNotification"
-let updateLocationByIdURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
-let mainUrl = "http://www.limao-tech.com/Ten/api/"
-let loginUrl = mainUrl+"TenLogins"
-let userUrl = mainUrl+"TenUsers"
-let headImageUrl = "http://www.limao-tech.com/Ten/TenImage/UploadProfileImage"
+let LocationNotiName = "LocationNotification"
+let UpdateLocationByIdURL = "http://www.code-desire.com.tw/LiMaoMVC/TenUsers/UpdateLocationByID"
+let MainUrl = "http://www.limao-tech.com/Ten/api/"
+let LoginUrl = MainUrl + "TenLogins"
+let UserUrl = MainUrl + "TenUsers"
+let HeadImageUrl = "http://www.limao-tech.com/Ten/TenImage/UploadProfileImage"
 
 //screenFrame
 let SCREEN = UIScreen.mainScreen().bounds
@@ -38,15 +38,16 @@ let USERNAME_FONT_SIZE : CGFloat = 26
 //font
 let FONTNAME_BOLD = "PTSans-Bold"
 let FONTNAME_NORMAL = "PTSans"
+
 //netParameters
 let UUID = NSUUID().UUIDString
 
 let COMPANYCODE = "e40cb24cffee7767d8f3bd9faf882af614b9e4bd402dc53a70f4723cde991734"
 
 //Strings
-let chatTitle = "Chat"
-let profileTitle = "Profile"
-let settingTitle = "Settings"
-let pcoinTitle = "P Coin"
-let notificationTitle = "Notification"
-let randomTitle = "Random"
+let ChatTitle = "聊天"
+let ProfileTitle = "首页"
+let SettingTitle = "设定"
+let PcoinTitle = "P Coin"
+let NotificationTitle = "通知"
+let RandomTitle = "随机"

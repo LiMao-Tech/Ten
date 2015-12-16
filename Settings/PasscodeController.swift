@@ -15,6 +15,7 @@ class PasscodeController: UIViewController,LockViewDelegate {
         setup()
         // Do any additional setup after loading the view.
     }
+    
     func setup(){
         let lock = LockView(frame: CGRectMake(0,64,SCREEN_WIDTH,SCREEN_HEIGHT-64))
         lock.delegate = self

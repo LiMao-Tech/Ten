@@ -48,7 +48,7 @@ class SharedLocationManager: NSObject, CLLocationManagerDelegate {
         print("Stop Location Updates")
         self.locationManager?.stopUpdatingLocation()
         is_ready = 1
-        NSNotificationCenter.defaultCenter().postNotificationName(locationNotiName, object: self)
+        NSNotificationCenter.defaultCenter().postNotificationName(LocationNotiName, object: self)
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

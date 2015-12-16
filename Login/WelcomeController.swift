@@ -9,10 +9,15 @@
 import UIKit
 
 class WelcomeController: UIViewController {
+    
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var signupEmail: UITextField!
+    @IBOutlet weak var welcomeBGImageView: UIImageView!
+    
     var splitView:UIView!
     var submitBtn:UIButton!
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +48,14 @@ class WelcomeController: UIViewController {
         splitView.addSubview(line0)
         splitView.addSubview(line1)
         splitView.addSubview(orLabel)
-        // Do any additional setup after loading the view.
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.welcomeBGImageView.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard () {
+        self.loginEmail.resignFirstResponder()
+        self.signupEmail.resignFirstResponder()
     }
     
     func submitClick() {
@@ -64,16 +76,7 @@ class WelcomeController: UIViewController {
             })
         }
     }
-
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

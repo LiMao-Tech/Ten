@@ -44,7 +44,7 @@ NSString *cloudAddrYumen = @"http://www.code-desire.com.tw/LiMao/Barter/Images/"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self datasInit];
+    [self dataInit];
     
     // init the layout
     LMCollectionViewLayout * layout = [[LMCollectionViewLayout alloc] init];
@@ -122,7 +122,7 @@ NSString *cloudAddrYumen = @"http://www.code-desire.com.tw/LiMao/Barter/Images/"
 }
 
 
-- (void)datasInit {
+- (void)dataInit {
     num = 0;
     self.numbers = [@[] mutableCopy];
     self.numberWidths = @[].mutableCopy;
@@ -133,8 +133,6 @@ NSString *cloudAddrYumen = @"http://www.code-desire.com.tw/LiMao/Barter/Images/"
         [self.numberWidths addObject:@([self randomLength])];
         [self.numberHeights addObject:@([self randomLength])];
     }
-    
-    
 }
 - (void) viewDidAppear:(BOOL)animated {
     [self.lmCollectionView reloadData];
@@ -145,15 +143,6 @@ NSString *cloudAddrYumen = @"http://www.code-desire.com.tw/LiMao/Barter/Images/"
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 /*
 - (IBAction)remove:(id)sender {
     

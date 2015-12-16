@@ -11,7 +11,7 @@ import Tweaks
 import PureLayout
 import CoreLocation
 import Foundation
-//import AFNetworkActivityLogger
+
 
 var DEVICETOKEN: AnyObject? = 0
 
@@ -22,15 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     //var locationManager = SharedLocationManager()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
         print(UUID)
+        
         //----------------- remote notification started ----------------------//
         print(UIDevice.currentDevice().systemVersion)
+        
         switch(getMajorSystemVersion()) {
         case 7:
             UIApplication.sharedApplication().registerForRemoteNotificationTypes(
                 [UIRemoteNotificationType.Badge, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Alert])
+            
         case 8:
             let pushSettings: UIUserNotificationSettings = UIUserNotificationSettings(
                 forTypes:
@@ -38,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 categories: nil)
             UIApplication.sharedApplication().registerUserNotificationSettings(pushSettings)
             UIApplication.sharedApplication().registerForRemoteNotifications()
+            
         case 9:
             let pushSettings: UIUserNotificationSettings = UIUserNotificationSettings(
                 forTypes:
@@ -50,10 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // ---------------------------- END for remote notification -----------------------------//
 
         
-        NSThread.sleepForTimeInterval(3.0)
-        
-        //AFNetworkActivityLogger.sharedLogger().level = AFHTTPRequestLoggerLevel.AFLoggerLevelDebug
-        //AFNetworkActivityLogger.sharedLogger().startLogging()
+        NSThread.sleepForTimeInterval(1.0)
         
         // Shake to open tweaks menu
         if let rootViewController = window?.rootViewController {
@@ -81,14 +81,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-//        if(NSUserDefaults.standardUserDefaults().objectForKey("deviceToken") == nil){
+
             print("token:")
             let trimEnds = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"))
             let cleanToken = trimEnds.stringByReplacingOccurrencesOfString(" ", withString: "", options: [])
             NSUserDefaults.standardUserDefaults().setObject(cleanToken, forKey: "deviceToken")
             print(cleanToken)
             // TODO: save this cleanToken into server and to default user data
-//        }
+
         DEVICETOKEN = NSUserDefaults.standardUserDefaults().objectForKey("deviceToken")
         print("DEVICETOKEN:\(NSUserDefaults.standardUserDefaults().objectForKey("deviceToken"))")
     }

@@ -19,7 +19,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = chatTitle
+        self.title = ChatTitle
         setup()
         refreshControl()
         //        userList.reloadData()

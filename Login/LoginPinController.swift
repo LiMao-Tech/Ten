@@ -47,15 +47,18 @@ class LoginPinController: UIViewController {
         let hashResult = stringHash.sha256()
         print("hashresult"+hashResult)
         
-        let url:NSString = loginUrl+"?userID=281340731@qq.com&userPWD=123456&lastLogin=\(timeStamp)&DeviceUUID=\(UUID)&DeviceToken=\(DEVICETOKEN!)&HashValue=\(hashResult)"
+        let url:NSString = LoginUrl+"?userID=281340731@qq.com&userPWD=123456&lastLogin=\(timeStamp)&DeviceUUID=\(UUID)&DeviceToken=\(DEVICETOKEN!)&HashValue=\(hashResult)"
         let urlNew = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-        /*[15/10/27 上午9:33:59] Yumen Tsao: email
+        
+        /*
+        [15/10/27 上午9:33:59] Yumen Tsao: email
         [15/10/27 上午9:34:06] Yumen Tsao: pwd
         [15/10/27 上午9:34:11] Yumen Tsao: UUID
         [15/10/27 上午9:34:17] Yumen Tsao: Device Token
         [15/10/27 上午9:36:16] Yumen Tsao: timestamp
         [15/10/27 上午9:36:43] Yumen Tsao: company code
-        [15/10/27 上午9:37:17] Yumen Tsao: sha-256*/
+        [15/10/27 上午9:37:17] Yumen Tsao: sha-256
+        */
         
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()

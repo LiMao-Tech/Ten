@@ -9,11 +9,13 @@
 import UIKit
 
 class NotificationFrame: NSObject {
+    
     var titleFrame = CGRectMake(10, 10, SCREEN_WIDTH - 110, 20)
     var detailFrame:CGRect!
     var timeFrame = CGRectMake(SCREEN_WIDTH - 100, 10, 90, 20)
     var cellheight:CGFloat!
     var splitFrame:CGRect!
+    
     var notification:Notification!{
         didSet{
             let size = CGSizeMake(SCREEN_WIDTH - 20, CGFloat(MAXFLOAT))

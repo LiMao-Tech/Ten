@@ -60,7 +60,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
-        self.title = profileTitle
+        self.title = ProfileTitle
         chosenImage = UIImage()
         
         print("\(self.view.frame.width) and \(self.view.frame.height)")
@@ -328,7 +328,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
         
-        manager.POST( loginUrl,
+        manager.POST( LoginUrl,
             parameters: params,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 let dict = responseObject as! [String : AnyObject]
@@ -357,7 +357,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         
         let params = ["UserName":username.text!,"Gender":gender!,"Birthday":birthday,"JoinedDate":joinTime,"PCoin":0,"OuterScore":Int(outerBar.value),"InnerScore":Int(innerBar.value),"Energy":Int(energyBar.value),"Hobby":hobby.text!,"Quote":statusDetail.text!,"Lati":0,"Longi":0]
 //        print("userParams:\(params)")
-        manager.POST(userUrl, parameters: params, success: { (operation, responseObject) -> Void in
+        manager.POST(UserUrl, parameters: params, success: { (operation, responseObject) -> Void in
             print(responseObject)
             let dict = responseObject as! [String : AnyObject]
             self.tenUser = TenUser.init(loginDict: dict)
@@ -378,7 +378,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         let image = UIImageJPEGRepresentation(chosenImage!, 0.5)
         let picName = Tools.getFileNameTime(NSDate())+".jpeg"
         let params = ["id":tenUser.UserIndex]
-        manager.POST(headImageUrl, parameters: params, constructingBodyWithBlock: { (data: AFMultipartFormData!) -> Void in
+        manager.POST(HeadImageUrl, parameters: params, constructingBodyWithBlock: { (data: AFMultipartFormData!) -> Void in
             data.appendPartWithFileData(image!, name: "upload", fileName: picName, mimeType: "image/jpeg")
             }, success: { (operation, responseObject) -> Void in
             let str = NSString(data: responseObject as! NSData, encoding: NSUTF8StringEncoding)
@@ -394,7 +394,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         }
 
     func putUserIndex(){
-        Alamofire.request(.PUT, loginUrl+"/\(tenLogin.LoginIndex)", parameters: ["LoginIndex": tenLogin.LoginIndex,"UserIndex": tenUser.UserIndex,"UserID": tenLogin.UserID,"UserPWD": tenLogin.UserPWD,"LastLogin": tenLogin.LastLogin,"DeviceUUID": tenLogin.DeviceUUID,"DeviceToken": tenLogin.DeviceToken,"HashValue": tenLogin.HashValue]).response { (response) -> Void in
+        Alamofire.request(.PUT, LoginUrl+"/\(tenLogin.LoginIndex)", parameters: ["LoginIndex": tenLogin.LoginIndex,"UserIndex": tenUser.UserIndex,"UserID": tenLogin.UserID,"UserPWD": tenLogin.UserPWD,"LastLogin": tenLogin.LastLogin,"DeviceUUID": tenLogin.DeviceUUID,"DeviceToken": tenLogin.DeviceToken,"HashValue": tenLogin.HashValue]).response { (response) -> Void in
             let data = NSString(data: response.2!, encoding: NSUTF8StringEncoding)
             print(data)
             let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())

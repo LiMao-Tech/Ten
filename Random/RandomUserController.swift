@@ -9,24 +9,25 @@
 import UIKit
 
 class RandomUserController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var userList:UITableView!
+    
+    // Declarations
+    var userList : UITableView!
+    
+    // View Controls
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-        refreshControl()
-        // Do any additionalsetup after loading the view.
-    }
-    
-    func setup(){
-        self.title = randomTitle
+        
+        self.title = RandomTitle
         userList = UITableView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64))
         userList.dataSource = self
         userList.delegate = self
         userList.backgroundColor = UIColor.blackColor()
         userList.separatorStyle = .None
+        
         self.view.addSubview(userList)
-    
+        refreshControl()
     }
+    
     func refreshControl(){
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: "refreshStateChange:", forControlEvents: .ValueChanged)
