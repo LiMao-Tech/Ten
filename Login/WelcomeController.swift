@@ -59,10 +59,10 @@ class WelcomeController: UIViewController {
     }
     
     func submitClick() {
-//        let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-//        let nVC = storyBoard.instantiateViewControllerWithIdentifier("NavController")
-//        self.presentViewController(nVC, animated: true, completion: { () -> Void in
-//        })
+        let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let nVC = storyBoard.instantiateViewControllerWithIdentifier("NavController")
+        self.presentViewController(nVC, animated: true, completion: { () -> Void in
+        })
         if(!loginEmail.text!.isEmpty){
             let pVC = LoginPinController()
             pVC.emailAddr = loginEmail.text
