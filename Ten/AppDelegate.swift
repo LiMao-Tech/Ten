@@ -81,15 +81,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-
+            print(deviceToken)
             print("token:")
             let trimEnds = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"))
             let cleanToken = trimEnds.stringByReplacingOccurrencesOfString(" ", withString: "", options: [])
-            NSUserDefaults.standardUserDefaults().setObject(cleanToken, forKey: "deviceToken")
+//            NSUserDefaults.standardUserDefaults().setObject(cleanToken, forKey: "deviceToken")
+        DEVICETOKEN = cleanToken
             print(cleanToken)
             // TODO: save this cleanToken into server and to default user data
 
-        DEVICETOKEN = NSUserDefaults.standardUserDefaults().objectForKey("deviceToken")
+//        DEVICETOKEN = NSUserDefaults.standardUserDefaults().objectForKey("deviceToken")
         print("DEVICETOKEN:\(NSUserDefaults.standardUserDefaults().objectForKey("deviceToken"))")
     }
     

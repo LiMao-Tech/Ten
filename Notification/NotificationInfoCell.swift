@@ -35,6 +35,7 @@ class NotificationInfoCell: UITableViewCell {
             self.addSubview(detailLabel)
             self.addSubview(titleLable)
             self.addSubview(splitLine)
+            self.backgroundColor = UIColor.clearColor()
             }
     }
     

@@ -8,11 +8,10 @@
 
 import UIKit
 
-class WelcomeController: UIViewController {
+class WelcomeController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var signupEmail: UITextField!
-    @IBOutlet weak var welcomeBGImageView: UIImageView!
     
     var splitView:UIView!
     var submitBtn:UIButton!
@@ -21,11 +20,15 @@ class WelcomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = BG_COLOR
         loginEmail.textColor = UIColor.whiteColor()
-        loginEmail.backgroundColor = GTgrayColor
+        loginEmail.backgroundColor = UIColor.blackColor()
         signupEmail.textColor = UIColor.whiteColor()
-        signupEmail.backgroundColor = GTgrayColor
-        
+        signupEmail.backgroundColor = UIColor.blackColor()
+        signupEmail.delegate = self
+        loginEmail.delegate = self
+        loginEmail.returnKeyType = .Done
+        signupEmail.returnKeyType = .Done
         //splitView
         splitView = UIView(frame: CGRectMake(0,210,SCREEN_WIDTH,20))
         let len = (SCREEN_WIDTH-60-50-20)/2
@@ -38,24 +41,45 @@ class WelcomeController: UIViewController {
         orLabel.textColor = UIColor.whiteColor()
         let line1 = UIView(frame: CGRectMake(100+len,10,len,1))
         line1.backgroundColor = UIColor.whiteColor()
-        let x = (SCREEN_WIDTH-215)/2
-        let y = SCREEN_HEIGHT-80
-        submitBtn = UIButton(frame: CGRectMake(x,y,215,37))
-        submitBtn.setImage(UIImage(named: "btn_submit"), forState: .Normal)
+        line0.alpha = 0.7
+        line1.alpha = 0.7
+
+        submitBtn = UIButton(frame: CGRectMake(SCREEN_WIDTH-80,20,80,44))
+        submitBtn.setTitle("提交", forState: .Normal)
+        submitBtn.titleLabel?.font = UIFont.systemFontOfSize(15)
         submitBtn.addTarget(self, action: "submitClick", forControlEvents: .TouchUpInside)
+        let splitLine = UIView(frame: CGRectMake(0,64,SCREEN_WIDTH,1))
+        splitLine.backgroundColor = UIColor.whiteColor()
+        splitLine.alpha = 0.7
+        self.view.addSubview(splitLine)
         self.view.addSubview(splitView)
         self.view.addSubview(submitBtn)
         splitView.addSubview(line0)
         splitView.addSubview(line1)
         splitView.addSubview(orLabel)
-
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        self.welcomeBGImageView.addGestureRecognizer(tap)
+        
     }
     
-    func dismissKeyboard () {
-        self.loginEmail.resignFirstResponder()
-        self.signupEmail.resignFirstResponder()
+    func doneClicked(){
+        self.view.endEditing(true)
+    }
+
+    
+//    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+//        let trans = textField.frame.origin.y - 300
+//        if(trans<0){
+//            self.view.transform = CGAffineTransformMakeTranslation(0, trans)
+//        }
+//        return true
+//    }
+//    
+//    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+//        self.view.transform = CGAffineTransformMakeTranslation(0, 0)
+//        return true
+//    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     func submitClick() {

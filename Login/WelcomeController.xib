@@ -17,7 +17,6 @@
                 <outlet property="loginEmail" destination="CC6-wY-h5G" id="FQo-Re-kTa"/>
                 <outlet property="signupEmail" destination="7xX-Ys-xfa" id="bDw-NH-q8T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="welcomeBGImageView" destination="F8a-7n-iEu" id="N69-Ft-woL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,22 +24,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F8a-7n-iEu">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎光临" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3v2-Oi-1aP">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="82" id="Vfp-SE-HRj"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="20"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="0.0" y="90" width="400" height="19"/>
-                    </variation>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nik-Sb-yBa">
                     <rect key="frame" x="0.0" y="90" width="600" height="21"/>
                     <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="16"/>
@@ -52,7 +35,7 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CC6-wY-h5G" userLabel="Login Email">
                     <rect key="frame" x="30" y="141" width="540" height="30"/>
-                    <color key="textColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <variation key="widthClass=compact" misplaced="YES">
@@ -84,13 +67,23 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎光临" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3v2-Oi-1aP">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
+                    <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="Vfp-SE-HRj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="0.0" y="90" width="400" height="19"/>
+                    </variation>
+                </label>
             </subviews>
+            <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="F8a-7n-iEu" secondAttribute="bottom" id="1aQ-LY-F3h"/>
                 <constraint firstItem="qvJ-HX-bw2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="DLT-l8-kju"/>
-                <constraint firstItem="F8a-7n-iEu" firstAttribute="leading" secondItem="Nik-Sb-yBa" secondAttribute="leading" id="Dmq-JV-7wK"/>
-                <constraint firstItem="F8a-7n-iEu" firstAttribute="top" secondItem="3v2-Oi-1aP" secondAttribute="top" id="Dwx-sH-ceN"/>
-                <constraint firstItem="F8a-7n-iEu" firstAttribute="trailing" secondItem="Nik-Sb-yBa" secondAttribute="trailing" id="NPw-dt-n7R"/>
                 <constraint firstAttribute="trailing" secondItem="7xX-Ys-xfa" secondAttribute="trailing" constant="30" id="TLV-3H-GZs"/>
                 <constraint firstItem="CC6-wY-h5G" firstAttribute="top" secondItem="Nik-Sb-yBa" secondAttribute="bottom" constant="30" id="UTp-kV-FFl"/>
                 <constraint firstItem="7xX-Ys-xfa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="UlD-FN-5AT"/>

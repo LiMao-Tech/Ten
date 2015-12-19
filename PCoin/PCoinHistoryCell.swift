@@ -42,7 +42,7 @@ class PCoinHistoryCell: UITableViewCell {
         self.addSubview(timeLabel)
         self.addSubview(splitLine)
         
-        self.backgroundColor = UIColor.blackColor()
+        self.backgroundColor = UIColor.clearColor()
     }
 
     required init?(coder aDecoder: NSCoder) {

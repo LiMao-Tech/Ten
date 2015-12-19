@@ -54,7 +54,7 @@ class NotificationViewController: UIViewController,UITableViewDataSource,UITable
         
         refreshControl()
         selectedBtn = item
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        self.view.backgroundColor = BG_COLOR
     }
     
     override func viewWillAppear(animated: Bool) {

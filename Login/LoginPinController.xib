@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="PT_Sans-Web-Regular.ttf">
@@ -24,26 +24,16 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入PIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMK-eB-9oq">
                     <rect key="frame" x="30" y="114" width="540" height="21"/>
-                    <animations/>
                     <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpn-ax-LvG">
                     <rect key="frame" x="30" y="185" width="540" height="30"/>
-                    <animations/>
                     <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navBar_pin" translatesAutoresizingMaskIntoConstraints="NO" id="KOk-Mv-8Tp">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="64" id="BGi-Ld-sGw"/>
-                    </constraints>
-                </imageView>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jpn-ax-LvG" secondAttribute="trailing" constant="30" id="3rC-OQ-Hvc"/>
@@ -52,20 +42,8 @@
                 <constraint firstAttribute="trailing" secondItem="wMK-eB-9oq" secondAttribute="trailing" constant="30" id="VM7-PE-PJA"/>
                 <constraint firstItem="jpn-ax-LvG" firstAttribute="top" secondItem="wMK-eB-9oq" secondAttribute="bottom" constant="50" id="ak9-t4-mmG"/>
                 <constraint firstItem="wMK-eB-9oq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="114" id="fW0-Hz-r0F"/>
-                <constraint firstItem="KOk-Mv-8Tp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hBj-Zt-hvL"/>
-                <constraint firstItem="jpn-ax-LvG" firstAttribute="top" secondItem="KOk-Mv-8Tp" secondAttribute="bottom" constant="49" id="huH-xw-XZH"/>
-                <constraint firstItem="KOk-Mv-8Tp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vU3-b9-qvq"/>
-                <constraint firstAttribute="trailing" secondItem="KOk-Mv-8Tp" secondAttribute="trailing" id="ymo-3E-c7c"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="huH-xw-XZH"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="-187" y="264"/>
         </view>
     </objects>
-    <resources>
-        <image name="navBar_pin" width="375" height="64"/>
-    </resources>
 </document>

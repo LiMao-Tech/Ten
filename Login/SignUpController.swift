@@ -12,38 +12,48 @@ import UIKit
 import AFNetworking
 import CryptoSwift
 
-class SignUpController: UIViewController {
+class SignUpController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var newPin: UITextField!
     @IBOutlet weak var newPinRe: UITextField!
     var emailAddr:String?
     var nextBtn:UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bg = UIImageView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        bg.image = UIImage(named: "bg_welcome")
-        newPin.backgroundColor = GTgrayColor
-        newPinRe.backgroundColor = GTgrayColor
+        let titleView = UIView(frame: CGRectMake(0,0,SCREEN_WIDTH,63))
+        self.view.addSubview(titleView)
+        let titleLabel = UILabel(frame:CGRectMake(0,20,SCREEN_WIDTH,43))
+        titleLabel.text = "设置PIN"
+        titleLabel.textColor = UIColor.whiteColor()
+        titleLabel.font = UIFont(name: FONTNAME_NORMAL, size: 20)
+        titleLabel.textAlignment = .Center
+        titleView.addSubview(titleLabel)
+        newPin.backgroundColor = UIColor.blackColor()
+        newPinRe.backgroundColor = UIColor.blackColor()
+        newPin.returnKeyType = .Done
+        newPinRe.returnKeyType = .Done
         newPin.textColor = UIColor.whiteColor()
         newPinRe.textColor = UIColor.whiteColor()
-        let accessoryView = UIToolbar(frame: CGRectMake(0, 0, SCREEN_WIDTH, 35))
-        let doneBtn = UIBarButtonItem(title: "完成", style: .Done, target: self, action: "doneClicked")
-        let space = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        accessoryView.setItems([space,doneBtn], animated: true)
-        newPin.inputAccessoryView = accessoryView
-        newPinRe.inputAccessoryView = accessoryView
-
+        newPin.delegate = self
+        newPinRe.delegate = self
         //nextBtn
-        let x = (SCREEN_WIDTH-215)/2
-        let y = SCREEN_HEIGHT-80
-        
-        nextBtn = UIButton(frame: CGRectMake(x,y,215,37))
-        nextBtn.setImage(UIImage(named: "btn_next"), forState: .Normal)
+        nextBtn = UIButton(frame: CGRectMake(SCREEN_WIDTH-80,20,80,44))
         nextBtn.addTarget(self, action: "nextClick", forControlEvents: .TouchUpInside)
-        self.view.addSubview(bg)
+        nextBtn.setTitle("下一步", forState: .Normal)
+        nextBtn.titleLabel?.font = UIFont.systemFontOfSize(15)
+        let splitLine = UIView(frame: CGRectMake(0,63,SCREEN_WIDTH,1))
+        splitLine.backgroundColor = UIColor.whiteColor()
+        splitLine.alpha = 0.7
+        self.view.addSubview(splitLine)
         self.view.addSubview(nextBtn)
-        self.view.sendSubviewToBack(bg)
+        self.view.backgroundColor = BG_COLOR
         // Do any additional setup after loading the view.
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
     func nextClick(){
         if(newPin.text == newPinRe.text){
             signupPost()

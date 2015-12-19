@@ -21,7 +21,7 @@ class RandomUserController: UIViewController,UITableViewDelegate,UITableViewData
         userList = UITableView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64))
         userList.dataSource = self
         userList.delegate = self
-        userList.backgroundColor = UIColor.blackColor()
+        userList.backgroundColor = BG_COLOR
         userList.separatorStyle = .None
         
         self.view.addSubview(userList)

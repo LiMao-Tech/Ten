@@ -32,7 +32,7 @@ class PCoinUnlockedCell: UITableViewCell {
         self.addSubview(unlockedLabel)
         self.addSubview(timeLabel)
         self.addSubview(splitLine)
-        self.backgroundColor = UIColor.blackColor()
+        self.backgroundColor = UIColor.clearColor()
 
         
     }

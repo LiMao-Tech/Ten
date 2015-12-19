@@ -13,7 +13,7 @@ import Foundation
 import AFNetworking
 
 class MainViewController: UIViewController, ADCircularMenuDelegate {
-    
+
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     let menuButton = UIButton(frame: CGRectMake(5, SCREEN_HEIGHT*(BUTTON_DENO-1)/BUTTON_DENO-5, SCREEN_HEIGHT/BUTTON_DENO, SCREEN_HEIGHT/BUTTON_DENO))
@@ -39,6 +39,9 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     var gap : Int!
     var btns = Array<UIButton!>()
     
+    let distances = [50,100,500,1000]
+    var index = 0
+    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
     }
@@ -48,11 +51,13 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.barStyle = .Black
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_bg"), forBarMetrics: .Default)
+//    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_bg"), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.backgroundColor = NAV_BAR_COLOR
+        self.view.backgroundColor = BG_COLOR
 
-        let bg = UIImageView(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT))
-        bg.image = UIImage(named: "bg_radar")
-        bg.contentMode = UIViewContentMode.ScaleAspectFill
+//        let bg = UIImageView(frame: CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT))
+//        bg.image = UIImage(named: "bg_radar")
+//        bg.contentMode = UIViewContentMode.ScaleAspectFill
         
         // set circularMenu
         self.circularMenuVC.circularMenuDelegate = self
@@ -65,15 +70,13 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         distanceLabel.textAlignment = .Center
         
         // gif
-        let l = SCREEN_WIDTH*0.915
-        let gifView = YLImageView(frame: CGRectMake(0, 0, l, l))
-        gifView.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
-        
-        YLGIFImage.setPrefetchNum(5)
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        let path = NSBundle.mainBundle().URLForResource("Radar", withExtension: "gif")?.absoluteString as String!
-        gifView.image = YLGIFImage(contentsOfFile: path)
+//        let l = SCREEN_WIDTH*0.915
+//        let gifView = YLImageView(frame: CGRectMake(0, 0, l, l))
+//        gifView.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+//        
+//        YLGIFImage.setPrefetchNum(5)
+//        let path = NSBundle.mainBundle().URLForResource("Radar", withExtension: "gif")?.absoluteString as String!
+//        gifView.image = YLGIFImage(contentsOfFile: path)
         
         //setupButtons
         setupButtons()
@@ -93,12 +96,9 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         
         let distanceY = CGRectGetMinY(menuButton.frame) - 80
         distance = GTSlider(frame: CGRectMake(45,distanceY,SCREEN_WIDTH - 90,24))
-        distance.setMinimumTrackImage(UIImage(named: "line_outer_highlight"), forState: .Normal)
-        distance.setMaximumTrackImage(UIImage(named: "line_outer_normal"), forState: .Normal)
-        distance.minimumValue = 10
-        distance.maximumValue = 1000
+        distance.minimumValue = 0
+        distance.maximumValue = 3
         
-        gap = Int(distance.maximumValue/4)
         distance.addTarget(self, action: "distanceChange", forControlEvents: UIControlEvents.ValueChanged)
         let minus = UIButton(frame: CGRectMake(10,distanceY,24,24))
         let plus = UIButton(frame: CGRectMake(SCREEN_WIDTH - 34,distanceY,24,24))
@@ -112,8 +112,8 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
         refreshBtn.setImage(UIImage(named: "btn_radar_refresh"), forState: .Normal)
         refreshBtn.addTarget(self, action: "refreshBtnClicked", forControlEvents: .TouchUpInside)
         
-        self.view.addSubview(bg)
-        self.view.addSubview(gifView)
+//        self.view.addSubview(bg)
+//        self.view.addSubview(gifView)
         self.view.addSubview(menuButton)
         self.view.addSubview(randomButton)
         self.view.addSubview(distance)
@@ -125,22 +125,26 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     }
     
     func minusClicked(){
-        distance.value = distance.value - 200
+        if(index > 0){
+            index -= 1
+            distance.setValue(Float(index), animated: true)
+            distanceLabel.text = "\(distances[index]) km"
+        }
     }
     
     func plusClicked(){
 //        distance.value = distance.value + 200
-        distance.setValue(500, animated: true)
+        if(index < 3){
+            index += 1
+            distance.setValue(Float(index), animated: true)
+            distanceLabel.text = "\(distances[index]) km"
+        }
     }
     
     func distanceChange(){
-        let index = Int(distance.value/Float(gap)+0.5)
-        var Value = Float(index*gap)
-        if Value == 0.0 {
-            Value = 10
-        }
-        distance.setValue(Value, animated: true)
-        distanceLabel.text = "\(Int(Value)) km"
+        index = Int(distance.value+0.5)
+        distance.setValue(Float(index), animated: true)
+        distanceLabel.text = "\(distances[index]) km"
     }
     
     func refreshBtnClicked(){
@@ -191,7 +195,7 @@ class MainViewController: UIViewController, ADCircularMenuDelegate {
     
     func menuButtonAction() {
         self.view.addSubview(self.circularMenuVC.view)
-        self.circularMenuVC.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_radar")!)
+        self.circularMenuVC.view.backgroundColor = BG_COLOR
         circularMenuVC.show()
     }
     func randomButtonAction() {

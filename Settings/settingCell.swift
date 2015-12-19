@@ -25,7 +25,7 @@ class settingCell: UITableViewCell {
         
         self.addSubview(itemLabel)
         self.addSubview(splitLine)
-        self.backgroundColor = UIColor.blackColor()
+        self.backgroundColor = UIColor.clearColor()
         self.accessoryType = .DisclosureIndicator
     }
 

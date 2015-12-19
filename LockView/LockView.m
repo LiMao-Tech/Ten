@@ -61,7 +61,7 @@
     return nil;
 }
 -(void)setup{
-    self.backgroundColor = [UIColor blackColor];
+    self.backgroundColor = [UIColor clearColor];
     int array[11][3] = {{0,-3,1},{2,-2,2},{-2,-2,3},{1,-1,4},{-1,-1,5},{0,0,6},{1,1,7},{-1,1,8},{2,2,9},{-2,2,10},{0,3,11}};
     for (int i=0; i<11; i++) {
         UIButton *btn = [self buttonWithPosX:array[i][0] posY:array[i][1] tag:array[i][2]];

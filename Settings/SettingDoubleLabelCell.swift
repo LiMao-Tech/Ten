@@ -30,7 +30,7 @@ class SettingDoubleLabelCell: UITableViewCell {
         self.addSubview(versionLabel)
         self.addSubview(splitLabel)
         
-        self.backgroundColor = UIColor.blackColor()
+        self.backgroundColor = UIColor.clearColor()
     }
 
     required init?(coder aDecoder: NSCoder) {

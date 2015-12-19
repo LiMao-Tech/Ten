@@ -26,7 +26,7 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         super.viewDidLoad()
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"navBar_pcoin"), forBarMetrics: .Default)
         self.title = PcoinTitle
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        self.view.backgroundColor = BG_COLOR
         //topview
         topView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let len = SCREEN_WIDTH/4
@@ -62,7 +62,7 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         pcoinItemList = UITableView(frame: CGRectMake(0, CGRectGetMaxY(topView.frame), SCREEN_WIDTH, SCREEN_HEIGHT - CGRectGetMaxY(topView.frame)))
         pcoinItemList.delegate = self
         pcoinItemList.dataSource = self
-        pcoinItemList.backgroundColor = UIColor.blackColor()
+        pcoinItemList.backgroundColor = UIColor.clearColor()
         pcoinItemList.bounces = false
         pcoinItemList.separatorStyle = .None
         pcoinItemList.allowsSelection = false
@@ -70,7 +70,6 @@ class PCoinViewController: UIViewController,UITableViewDataSource,UITableViewDel
         self.view.addSubview(topView)
         self.view.addSubview(pcoinItemList)
         selectedBtn = item0
-        self.navigationController?.navigationBar.barStyle = .Black
         // Do any additional setup after loading the view.
     }
     

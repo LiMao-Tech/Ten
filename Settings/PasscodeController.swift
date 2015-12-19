@@ -20,7 +20,7 @@ class PasscodeController: UIViewController,LockViewDelegate {
         let lock = LockView(frame: CGRectMake(0,64,SCREEN_WIDTH,SCREEN_HEIGHT-64))
         lock.delegate = self
         self.view.addSubview(lock)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        self.view.backgroundColor = BG_COLOR
     }
 
     override func didReceiveMemoryWarning() {

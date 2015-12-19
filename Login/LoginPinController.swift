@@ -9,30 +9,43 @@
 import UIKit
 import AFNetworking
 
-class LoginPinController: UIViewController {
+class LoginPinController: UIViewController,UITextFieldDelegate {
     var loginBtn:UIButton!
     var emailAddr:String?
     @IBOutlet weak var pinText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bg = UIImageView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        bg.image = UIImage(named: "bg_welcome")
-        
         //loginBtn
-        let x = (SCREEN_WIDTH-215)/2
-        let y = SCREEN_HEIGHT-190
-        loginBtn = UIButton(frame: CGRectMake(x,y,215,37))
-        loginBtn.setImage(UIImage(named: "btn_login"), forState: .Normal)
+        let titleView = UIView(frame: CGRectMake(0,0,SCREEN_WIDTH,63))
+        self.view.addSubview(titleView)
+        let titleLabel = UILabel(frame:CGRectMake(0,20,SCREEN_WIDTH,43))
+        titleLabel.text = "PIN"
+        titleLabel.textColor = UIColor.whiteColor()
+        titleLabel.font = UIFont(name: FONTNAME_NORMAL, size: 20)
+        titleLabel.textAlignment = .Center
+        titleView.addSubview(titleLabel)
+        loginBtn = UIButton(frame: CGRectMake(SCREEN_WIDTH-80,20,80,43))
+        loginBtn.setTitle("登录", forState: .Normal)
+        loginBtn.titleLabel?.font = UIFont.systemFontOfSize(15)
         loginBtn.addTarget(self, action: "loginClick", forControlEvents: .TouchUpInside)
-        pinText.backgroundColor = GTgrayColor
+        pinText.backgroundColor = UIColor.blackColor()
         pinText.textColor = UIColor.whiteColor()
-        
-        self.view.addSubview(bg)
+        pinText.delegate = self
+        pinText.returnKeyType = .Done
+        let splitLine = UIView(frame: CGRectMake(0,63,SCREEN_WIDTH,1))
+        splitLine.backgroundColor = UIColor.whiteColor()
+        splitLine.alpha = 0.7
+        self.view.addSubview(splitLine)
         self.view.addSubview(loginBtn)
-        
         self.view.bringSubviewToFront(pinText)
+        self.view.backgroundColor = BG_COLOR
         
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     func loginClick(){
@@ -67,7 +80,12 @@ class LoginPinController: UIViewController {
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 print(responseObject)
-                
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                    let nVC = storyBoard.instantiateViewControllerWithIdentifier("NavController")
+                    self.presentViewController(nVC, animated: true, completion: { () -> Void in
+                    })
+                })
             },
             failure: { (operation,error) in
                 print("Error: " + error.localizedDescription)

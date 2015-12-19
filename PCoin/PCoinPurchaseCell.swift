@@ -49,7 +49,7 @@ class PCoinPurchaseCell: UITableViewCell {
         self.addSubview(buyButton)
         self.addSubview(splitLine)
         
-        self.backgroundColor = UIColor.blackColor()
+        self.backgroundColor = UIColor.clearColor()
     }
 
     required init?(coder aDecoder: NSCoder) {

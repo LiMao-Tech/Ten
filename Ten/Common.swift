@@ -51,3 +51,7 @@ let SettingTitle = "设定"
 let PcoinTitle = "P Coin"
 let NotificationTitle = "通知"
 let RandomTitle = "随机"
+
+//Colors
+let BG_COLOR = UIColor(red: 29.0/255.0, green: 29.0/255.0, blue: 29.0/255.0, alpha: 1.0)
+let NAV_BAR_COLOR = UIColor(red: 25.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1.0)

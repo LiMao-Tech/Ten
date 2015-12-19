@@ -31,7 +31,7 @@ class EditProfileController: UIViewController,UIAlertViewDelegate,UINavigationCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        self.view.backgroundColor = BG_COLOR
         self.title = ProfileTitle
         chosenImage = UIImage()
         buttonProfile = initButton(posX: SCREEN_WIDTH/2, posY: 104, btnWidth: 140/3*2, btnHeight: 140/3*2, imageName: "user_pic_radar_140", targetAction: "toImagePicker")
@@ -87,9 +87,11 @@ class EditProfileController: UIViewController,UIAlertViewDelegate,UINavigationCo
         energyValue = UILabel(frame: CGRectMake(CGRectGetMaxX(energyBar.frame)+10, y, 20, 20))
         energyValue.text = "0"
         energyValue.textColor = UIColor.whiteColor()
-        y = CGRectGetMaxY(energyLabel.frame)+80
-        let button = initButton(posX: SCREEN_WIDTH/2, posY: y, btnWidth: 430/2, btnHeight: 75/2, imageName: "btn_done", targetAction: "editDone")
-       
+        
+        let button = UIButton(frame: CGRectMake(SCREEN_WIDTH-80,20,80,43))
+        button.setTitle("完成", forState: .Normal)
+        button.titleLabel?.font = UIFont.systemFontOfSize(15)
+        button.addTarget(self, action: "editDone", forControlEvents: .TouchUpInside)
         
         
         

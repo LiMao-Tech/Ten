@@ -55,27 +55,38 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
     var energyBar:GTSlider!
     var energyValue:UILabel!
     
-    let lineLength:CGFloat = SCREEN_HEIGHT == 568 ? 150 : 200
+    let lineLength:CGFloat = SCREEN_WIDTH*0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        self.view.backgroundColor = BG_COLOR
         self.title = ProfileTitle
         chosenImage = UIImage()
         
-        print("\(self.view.frame.width) and \(self.view.frame.height)")
+        let titleView = UIView(frame: CGRectMake(0,0,SCREEN_WIDTH,63))
+        self.view.addSubview(titleView)
+        let titleLabel = UILabel(frame:CGRectMake(0,20,SCREEN_WIDTH,43))
+        titleLabel.text = "个人页面"
+        titleLabel.textColor = UIColor.whiteColor()
+        titleLabel.font = UIFont(name: FONTNAME_NORMAL, size: 20)
+        titleLabel.textAlignment = .Center
+        titleView.addSubview(titleLabel)
         
+        let splitLine = UIView(frame: CGRectMake(0,63,SCREEN_WIDTH,1))
+        splitLine.backgroundColor = UIColor.whiteColor()
+        splitLine.alpha = 0.7
+        self.view.addSubview(splitLine)
         
         scrollView = UIScrollView(frame: CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64))
-        scrollView!.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT*1.5)
+        scrollView!.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT*1.3+30)
         scrollView!.bounces = false
         
-        //let scrowViewWidth = SCREEN_WIDTH
-        //let scrowViewHeight = SCREEN_HEIGHT
-        
         // init buttons
-        let button = initButton(posX: SCREEN_WIDTH/2, posY: SCREEN_HEIGHT*1.5 - 50, btnWidth: 430/2, btnHeight: 75/2, imageName: "btn_done", targetAction: "toRadarPage")
-        buttonProfile = initButton(posX: SCREEN_WIDTH/2, posY: 40, btnWidth: 140/3*2, btnHeight: 140/3*2, imageName: "user_pic_radar_140", targetAction: "toImagePicker")
+        let button = UIButton(frame: CGRectMake(SCREEN_WIDTH-80,20,80,43))
+        button.setTitle("完成", forState: .Normal)
+        button.titleLabel?.font = UIFont.systemFontOfSize(15)
+        button.addTarget(self, action: "toRadarPage", forControlEvents: .TouchUpInside)
+        buttonProfile = initButton(posX: SCREEN_WIDTH/2, posY: 70, btnWidth: 140/3*2, btnHeight: 140/3*2, imageName: "user_pic_radar_140", targetAction: "toImagePicker")
         let marginX:CGFloat = 35
         // init labels
         let basicInfoLabel = initLabel(posX: 15, posY: SCREEN_HEIGHT*2/12, labelWidth: 100, labelHeight: 100, labelText: "Basic Info")
@@ -122,11 +133,12 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         let moreDetailLabel = initLabel(posX: 15, posY: SCREEN_HEIGHT*9/12, labelWidth: 200, labelHeight: 100, labelText: "More Details")
         let statusLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*10/12, labelWidth: 200, labelHeight: 100, labelText: "Status")
         statusDetail = UITextView(frame: CGRectMake(textX, SCREEN_HEIGHT*10/12+40, lineLength, SCREEN_HEIGHT*2/12-10))
-        statusDetail.backgroundColor = UIColor(red: 63.0/255.0, green: 63.0/255.0, blue: 64.0/255.0, alpha: 1)
+        statusDetail.backgroundColor = UIColor.blackColor()
         statusDetail.textColor = UIColor.whiteColor()
         statusDetail.bounces = false
         statusDetail.font = UIFont.systemFontOfSize(15)
         statusDetail.text = "There is so much to.."
+        
         let InnerLabel = initLabel(posX: marginX, posY: SCREEN_HEIGHT*12/12, labelWidth: 200, labelHeight: 100, labelText: "Inner")
         innerBar = GTSlider(frame: CGRectMake(textX, SCREEN_HEIGHT*12/12+40, lineLength-30, 20))
         innerBar.minimumValue = 0
@@ -153,7 +165,7 @@ class RegistProfileViewController: UIViewController,UIAlertViewDelegate,UINaviga
         energyValue.textColor = UIColor.whiteColor()
         
         
-        self.scrollView!.addSubview(button)
+        self.view.addSubview(button)
         self.scrollView!.addSubview(buttonProfile!)
         
         self.scrollView!.addSubview(basicInfoLabel)

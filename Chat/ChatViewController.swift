@@ -14,7 +14,6 @@ let screenBounds = UIScreen.mainScreen().bounds
 class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var tabView:UIView!
     var userList:UITableView!
-    var backgroundView:UIImageView!
     var modelType:chatType = .Active
     var selectedBtn:SettingButton!
     override func viewDidLoad() {
@@ -26,8 +25,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         // Do any additional setup after loading the view, typically from a nib.
     }
     func setup(){
-        backgroundView = UIImageView(frame: SCREEN)
-        backgroundView.image = UIImage(named: "bg")
         tabView = UIView(frame: CGRectMake(0, 64, SCREEN_WIDTH, TAP_BAR_HEIGHT))
         let item = SettingButton(frame: CGRectMake(0, 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
         let item0 = SettingButton(frame: CGRectMake(CGRectGetMaxX(item.frame), 0, SCREEN_WIDTH/2, TAP_BAR_HEIGHT))
@@ -50,9 +47,9 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         userList.dataSource = self
         userList.separatorStyle = .None
         
-        self.view.addSubview(backgroundView)
-        self.view.addSubview(userList)
         self.view.addSubview(tabView)
+        self.view.addSubview(userList)
+        self.view.backgroundColor = BG_COLOR
         
         selectedBtn = item
     }
